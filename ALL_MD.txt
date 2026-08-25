@@ -1,0 +1,2420 @@
+# QuantumGo Life-and-Death Solver — Capability Specification
+
+## 1. QuantumGo Position Representation
+
+The solver must be able to represent a complete QuantumGo L&D position consisting of:
+
+- Two simultaneous Go boards:
+  - Board 1 (B1)
+  - Board 2 (B2)
+- Stone colour and position on both boards
+- Side to move
+- Entanglement relationships between stones
+- Target group(s) relevant to the L&D problem
+- L&D objective:
+  - Kill
+  - Live
+- Ko state / relevant game history
+
+The two boards must be treated as one joint game state rather than as two independent Go positions.
+
+## 2. Quantum Entanglement Management
+
+The solver must maintain explicit entanglement relationships.
+
+It must be able to:
+
+- Create an entangled pair.
+- Identify the partner of any entangled stone.
+- Determine whether a stone is currently entangled.
+- Remove an entanglement relationship when a stone disappears.
+- Track entanglement across B1 and B2.
+- Preserve entanglement information during search and undo.
+
+For example:
+
+    B1[D4] ↔ B2[C3]
+
+must remain a relationship in the search state.
+
+## 3. QuantumGo Move Generation
+
+### Opening moves
+
+The solver must understand the special first two QuantumGo moves:
+
+- Move 1: Black chooses one position on B1 and one on B2.
+- Move 2: White chooses one position on B1 and one on B2.
+
+Both placements must independently satisfy Go legality.
+
+### Common phase
+
+From move 3 onward:
+
+- Generate one coordinate `P`.
+- Test `P` on B1.
+- Test `P` on B2.
+- The move is legal only if it is legal on BOTH boards.
+
+Therefore:
+
+    Legal_Q(P) =
+        Legal_B1(P) AND Legal_B2(P)
+
+For an L&D solver, the opening moves normally do not need to be searched from the beginning; the solver can receive an already-established QuantumGo position.
+
+## 4. QuantumGo Move Execution
+
+The solver must correctly execute a QuantumGo move on the joint state.
+
+For a common-phase move:
+
+    P
+    ↓
+    B1[P]
+    B2[P]
+
+The solver must:
+
+- Place the appropriate stones.
+- Detect captures independently on each board.
+- Apply normal Go capture rules.
+- Detect entangled stones among captured stones.
+- Propagate captures through entanglement.
+- Continue propagation until the position reaches a stable state.
+
+## 5. Cross-Board Capture Propagation
+
+This is a core QuantumGo capability.
+
+If:
+
+    B1[A] ↔ B2[B]
+
+and B1[A] is captured, the solver must automatically remove B2[B].
+
+The solver must then check whether removing B2[B] causes another capture.
+
+This process must continue recursively until no additional consequences exist.
+
+Conceptually:
+
+    Local capture
+        ↓
+    Entangled partner removed
+        ↓
+    New local capture?
+        ↓
+    Entangled partner removed
+        ↓
+    ...
+        ↓
+    Stable QuantumGo position
+
+The solver must correctly handle multi-step cross-board capture cascades.
+
+## 6. Legal-Move Verification
+
+The solver must verify:
+
+- Occupied intersections
+- Suicide
+- Capture
+- Ko
+- Any other selected Go legality rules
+- Simultaneous legality on B1 and B2 during the common phase
+
+A move that is legal on only one board must be rejected.
+
+## 7. QuantumGo State Undo / Rollback
+
+Every search move must be reversible.
+
+The solver must be able to:
+
+    Apply move
+        ↓
+    Search child state
+        ↓
+    Undo move
+        ↓
+    Restore EXACT previous state
+
+Undo must restore:
+
+- B1 stones
+- B2 stones
+- Captured stones
+- Entanglement relationships
+- Ko state
+- Side to move
+- Hash value
+- Any L&D-specific state
+
+This is essential for efficient tree search.
+
+## 8. QuantumGo State Hashing
+
+The solver must have a unique/reliable representation of a QuantumGo state for:
+
+- Transposition tables
+- Duplicate-state detection
+- Search caching
+
+The hash must represent more than the two board positions.
+
+Conceptually:
+
+    QuantumHash =
+        B1 state
+        + B2 state
+        + entanglement structure
+        + side to move
+        + relevant ko/history information
+
+Two positions with identical stone layouts but different entanglement relationships must be treated as different states.
+
+Example:
+
+    State A:
+        B1[D4] ↔ B2[C3]
+
+    State B:
+        B1[D4] ↔ B2[F4]
+
+must NOT have the same game-state identity.
+
+## 9. Quantum Target Representation
+
+The solver must represent the L&D target as a QuantumGo object.
+
+Unlike normal Go, the target may involve:
+
+- A group on B1
+- A group on B2
+- Entangled stones
+- Cross-board tactical dependencies
+
+The solver must therefore be able to determine which stones are relevant to the target's survival or capture.
+
+## 10. Quantum Life-and-Death Evaluation
+
+The solver must answer:
+
+### Kill problem
+
+    Can the attacker force the target to die?
+
+### Life problem
+
+    Can the defender force the target to survive?
+
+The evaluation must consider the complete joint state.
+
+It must NOT simply run:
+
+    L&D(B1)
+    +
+    L&D(B2)
+
+independently.
+
+A tactical event on B1 may change the outcome on B2 through entanglement.
+
+## 11. Quantum Unconditional Life / Terminal-State Detection
+
+The solver must determine when an L&D result has become established.
+
+It should support QuantumGo equivalents of terminal L&D conditions such as:
+
+- Target is unconditionally alive.
+- Target is unconditionally dead.
+- Attacker has established a forced kill.
+- Defender has established a forced life result.
+
+The exact definition of QuantumGo unconditional life/death should be explicitly defined for the project rather than inherited blindly from normal Go.
+
+## 12. Quantum Relevance Zone (RZ)
+
+The solver must adapt the Relevance-Zone Search principle from normal Go.
+
+Instead of:
+
+    RZ = relevant positions on one board
+
+The QuantumGo solver should maintain:
+
+    RZ_Q =
+        relevant positions on B1
+        +
+        relevant positions on B2
+        +
+        entanglement-related positions
+
+The RZ must be able to expand dynamically during search.
+
+## 13. Cross-Board Relevance Propagation
+
+A position can become relevant because of either:
+
+### Local Go interaction
+
+    B1[A] → B1[B]
+
+or:
+
+### Entanglement interaction
+
+    B1[A] ↔ B2[C]
+
+Therefore:
+
+    RZ(B1)
+        ↓
+    entangled partner
+        ↓
+    RZ(B2)
+
+The solver must automatically propagate relevance across entanglement links.
+
+This is one of the most important new capabilities compared with the original RZS solver.
+
+## 14. Relevant-Move Generation
+
+The solver should NOT necessarily search every legal board coordinate.
+
+Instead, it should:
+
+1. Identify the current Quantum RZ.
+2. Generate moves within the RZ.
+3. Search relevant moves normally.
+4. Treat demonstrably irrelevant moves according to the RZS/null-move framework.
+5. Expand the RZ when tactical analysis shows that additional positions matter.
+
+This preserves the fundamental efficiency principle of `study-LD-RZ`.
+
+## 15. Quantum Null-Move Handling
+
+The solver should be able to identify moves that cannot affect the current L&D objective.
+
+Such moves may be treated as null/irrelevant moves when justified by the RZS framework.
+
+However, a move must NOT be considered irrelevant merely because it is far away on one board.
+
+It may become relevant through:
+
+    B1 position
+        ↓
+    entanglement
+        ↓
+    B2 position
+        ↓
+    target interaction
+
+Therefore QuantumGo requires a stronger relevance test than normal Go.
+
+## 16. Search Tree
+
+The solver must construct a search tree in which each node represents:
+
+    QuantumGo Position
+        +
+    L&D Objective
+        +
+    Quantum RZ information
+
+Each edge represents a legal QuantumGo move.
+
+The search must support:
+
+- Alternating players
+- Forced variations
+- Capture sequences
+- Cross-board consequences
+- Transpositions
+- Terminal L&D states
+
+## 17. Exact L&D Solving
+
+The final solver should provide an exact result rather than merely a heuristic evaluation.
+
+For example:
+
+    Target: BLACK group on B1
+    Objective: KILL
+    Result: WHITE CAN FORCE KILL
+
+or:
+
+    Target: BLACK quantum group
+    Objective: LIVE
+    Result: BLACK CAN FORCE LIFE
+
+The solver should also provide the corresponding winning variation.
+
+## 18. Principal Variation / Solution Tree
+
+The solver should be able to output:
+
+- Winning move
+- Opponent's best response
+- Winning continuation
+- Terminal result
+
+Example:
+
+    1. Q[D4]
+       ├── 1...C5
+       │     └── 2. Q[E4] → Kill
+       │
+       └── 1...E5
+             └── 2. Q[C4] → Kill
+
+## 19. RZ / Search Statistics
+
+For research purposes, the solver should record:
+
+- Number of searched nodes
+- Number of generated moves
+- Number of relevant moves
+- Number of null moves
+- Maximum search depth
+- RZ size on B1
+- RZ size on B2
+- Number of entanglement propagations
+- Number of cross-board captures
+- Number of transposition-table hits
+- Total solving time
+
+These statistics will allow comparison between:
+
+    Normal RZS
+    vs.
+    Quantum RZS
+
+## 20. Problem Input / Output
+
+The solver should have a machine-readable L&D problem format containing at least:
+
+- Board size
+- B1 position
+- B2 position
+- Entanglement pairs
+- Player to move
+- Target stones/groups
+- Objective
+- Ko rule
+- Optional search parameters
+
+Example:
+
+    {
+        "board_size": 9,
+        "board1": "...",
+        "board2": "...",
+        "entanglement": [
+            ["D4", "C3"]
+        ],
+        "to_move": "W",
+        "target": "B1:D4",
+        "objective": "kill"
+    }
+
+## 21. Human-Readable Solution
+
+The solver should be able to explain a solution in a form understandable to a Go researcher:
+
+    Problem:
+        White to kill the QuantumGo target.
+
+    Result:
+        WHITE WINS
+
+    Winning variation:
+        1. D5
+        1... C4
+        2. E5
+
+    Critical mechanism:
+        The capture on B1 removes the entangled stone
+        on B2, causing the second group to lose its
+        final liberty.
+
+This is particularly useful for validating the research results.
+
+## 22. Compatibility With the Existing RZS Solver
+
+The QuantumGo implementation should reuse as much of the original `study-LD-RZ` framework as possible.
+
+The desired architecture is:
+
+    Existing RZS
+          │
+          ├── Search framework
+          ├── Candidate generation
+          ├── RZ mechanism
+          ├── Transposition tables
+          ├── L&D search logic
+          └── Solution generation
+                    │
+                    ▼
+             QuantumGo adapter
+                    │
+          ┌─────────┴─────────┐
+          │                   │
+       Board 1             Board 2
+          │                   │
+          └─────────┬─────────┘
+                    │
+             Entanglement layer
+
+The goal should be to MODIFY the game-specific components rather than rewrite the entire RZS solver.
+
+## 23. Validation / Test Suite
+
+The solver should include dedicated QuantumGo tests for:
+
+### Basic tests
+
+- Two-board representation
+- Opening quantum moves
+- Shared moves
+- Occupancy
+- Suicide
+- Ko
+
+### Entanglement tests
+
+- Single cross-board capture
+- Multiple entangled captures
+- Capture cascade
+- Partner already captured
+- Multiple entangled pairs
+
+### RZS tests
+
+- Initial RZ construction
+- Cross-board RZ propagation
+- RZ expansion
+- Irrelevant move detection
+- Quantum null moves
+
+### L&D tests
+
+- Forced kill
+- Forced life
+- Seki-like situations
+- Cross-board life/death dependency
+- Positions where solving B1 and B2 independently gives the WRONG result
+
+The last category is especially important: it demonstrates why a QuantumGo solver is necessary.
+
+## 24. Research Comparison
+
+The completed system should allow experiments comparing:
+
+| Capability | Normal RZS | Quantum RZS |
+|---|---:|---:|
+| Single-board L&D | ✓ | ✓ |
+| Two-board state | — | ✓ |
+| Entanglement | — | ✓ |
+| Cross-board capture | — | ✓ |
+| Cross-board RZ | — | ✓ |
+| Quantum null moves | — | ✓ |
+| Exact L&D solving | ✓ | ✓ |
+| Solution tree | ✓ | ✓ |
+| Search statistics | ✓ | ✓ |
+
+The primary research question should be:
+
+> **Can the Relevance-Zone Search framework be extended to efficiently solve exact life-and-death problems in QuantumGo?**
+
+## Minimum Viable Solver
+
+The first working version does NOT need every capability above.
+
+The minimum scientifically meaningful version should have:
+
+1. Two-board state
+2. Entanglement map
+3. Correct QuantumGo move generation
+4. Cross-board capture propagation
+5. Quantum state hashing
+6. Quantum target representation
+7. Quantum L&D terminal evaluation
+8. Quantum Relevance Zone
+9. Cross-board RZ propagation
+10. RZS search
+11. Exact kill/live result
+12. Winning variation
+13. Search statistics
+
+Everything else can be added afterward.
+
+## Core Concept
+
+The central design principle should be:
+
+    Normal RZS
+        ↓
+    Single-board relevance
+        ↓
+    Quantum RZS
+        ↓
+    Two-board + entanglement relevance
+
+The goal is NOT to build:
+
+    "A QuantumGo engine that happens to solve L&D."
+
+The goal is to build:
+
+    "An RZS-based exact life-and-death solver
+     whose game state is QuantumGo."
+
+That distinction should guide the entire implementation.
+# QuantumGo Life-and-Death Solver — Agent Development Phases
+
+## Global Instructions for Every Agent
+
+Before modifying any code, understand these two principles:
+
+### Principle 1 — QuantumGo Rules Are Authoritative
+
+The implementation must follow the project's QuantumGo rules exactly:
+
+- There are two boards: B1 and B2.
+- Only moves 1 and 2 are quantum opening moves.
+- Move 1 is Black's quantum move.
+- Move 2 is White's quantum move.
+- Each opening move places the player's stones at two independently selected coordinates, one on each board.
+- Those two stones form an entangled pair.
+- From move 3 onward, a move consists of one coordinate.
+- That coordinate is played simultaneously on B1 and B2.
+- A common-phase move is legal only if that coordinate is legal on BOTH boards.
+- Normal Go captures occur locally.
+- When a stone belonging to an entangled pair is captured, its partner is automatically removed from the other board.
+- Cross-board capture propagation continues until the position is stable.
+- There is no collapse, measurement, or selection of one board.
+- Both boards remain part of the game permanently.
+- Any existing repository documentation whose opening convention conflicts with these rules must NOT override these QuantumGo rules.
+
+### Principle 2 — This Is a Life-and-Death Solver
+
+This project is NOT a general-purpose QuantumGo engine.
+
+The solver's job is to determine whether a specified target can:
+
+- live, or
+- be killed
+
+under optimal play.
+
+The implementation must therefore be organized around:
+
+- an L&D problem,
+- a target,
+- attacker/defender objectives,
+- exact search,
+- terminal life/death conditions,
+- relevance-zone search.
+
+Do NOT turn the project into a full-game scoring engine.
+
+Do NOT make final territory scoring the central objective.
+
+Do NOT search the complete QuantumGo game from move 1 unless specifically required for a test case.
+
+The normal workflow should be:
+
+    QuantumGo L&D Problem
+            ↓
+    Initial Quantum Position
+            ↓
+    Target + Objective
+            ↓
+    Quantum Relevance Zone
+            ↓
+    Relevant search
+            ↓
+    Exact life/death result
+
+# Phase 0 — Understand the Existing RZS Solver
+
+## Objective
+
+Understand the architecture of `study-LD-RZ` before writing QuantumGo code.
+
+## Agent Tasks
+
+The agent must inspect and document:
+
+- Board representation
+- Group and liberty representation
+- Move generation
+- Capture handling
+- Ko handling
+- Board state copying/undo
+- Search node representation
+- Candidate generation
+- Relevance-zone generation
+- Relevance-zone expansion
+- Null-move handling
+- Terminal L&D evaluation
+- UCA-related logic
+- Transposition table
+- Pattern table
+- MCTS/search components
+- Problem input
+- Solution-tree generation
+
+## Required Output
+
+Produce an internal architecture map showing:
+
+    Existing L&D problem
+        ↓
+    Board state
+        ↓
+    Candidate generation
+        ↓
+    RZ
+        ↓
+    Search
+        ↓
+    L&D result
+
+The agent must identify which parts are:
+
+- QuantumGo-specific
+- ordinary Go-specific
+- RZS-specific
+- reusable without modification
+
+## Critical Restriction
+
+Do NOT begin implementation before understanding how the existing solver decides:
+
+> "This target is alive/dead."
+
+The project must remain an extension of the existing L&D solver.
+
+# Phase 1 — Define the QuantumGo L&D Problem
+
+## Objective
+
+Create the formal representation of a QuantumGo life-and-death problem.
+
+The solver must start from an already-established position, just as a normal tsumego solver does.
+
+## Required State
+
+A QuantumGo problem must contain:
+
+- B1 position
+- B2 position
+- entanglement relationships
+- player to move
+- target stones/groups
+- attacker/defender role
+- L&D objective
+- ko rule
+- board size
+- any additional information required by the existing RZS solver
+
+Conceptually:
+
+    QuantumLDProblem
+        ├── Board 1
+        ├── Board 2
+        ├── Entanglement
+        ├── Player to move
+        ├── Target
+        ├── Objective
+        └── Rules
+
+## Critical Requirement
+
+The target must be represented as a QuantumGo L&D target.
+
+Do NOT assume:
+
+    target = one ordinary Go group on one board
+
+The target may depend on:
+
+- groups on B1,
+- groups on B2,
+- entangled stones,
+- cross-board capture consequences.
+
+## Important
+
+The 5–10 move complete game supplied by the project owner should be used to construct and validate example QuantumGo L&D positions.
+
+It is NOT the specification of the solver architecture.
+
+# Phase 2 — Implement the QuantumGo State Model
+
+## Objective
+
+Extend the existing Go state model into a joint QuantumGo state.
+
+The state must contain:
+
+    B1
+    B2
+    Entanglement Map
+    Side to Move
+    Relevant game history / ko information
+
+## Required Capabilities
+
+The state must support:
+
+- reading B1,
+- reading B2,
+- placing stones,
+- removing stones,
+- identifying groups,
+- identifying liberties,
+- identifying entangled partners,
+- modifying entanglement relationships,
+- copying state,
+- restoring state.
+
+## Critical Requirement
+
+B1 and B2 must NOT be treated as two independent games.
+
+The solver must regard them as one joint state.
+
+# Phase 3 — Implement Exact QuantumGo Move Semantics
+
+## Objective
+
+Implement the project's QuantumGo rules exactly.
+
+## Opening Moves
+
+The state model must recognize:
+
+    Move 1:
+        Black B1[p1] + B2[p2]
+
+    Move 2:
+        White B1[p3] + B2[p4]
+
+The two coordinates of each opening move are checked independently.
+
+## Common Phase
+
+From move 3 onward:
+
+    Move = coordinate p
+
+and the move attempts:
+
+    B1[p]
+    B2[p]
+
+The move is legal only when:
+
+    Legal(B1, p) AND Legal(B2, p)
+
+## Required Tests
+
+The agent must test:
+
+- legal on both → legal
+- illegal on B1 → illegal
+- illegal on B2 → illegal
+- illegal on both → illegal
+
+## Critical Restriction
+
+Do NOT introduce alternative QuantumGo interpretations.
+
+Do NOT implement:
+
+- measurement,
+- collapse,
+- probabilistic board selection,
+- "choose one surviving board",
+- separate winners for B1 and B2.
+
+# Phase 4 — Implement Entangled Capture Propagation
+
+## Objective
+
+Implement the defining cross-board tactical mechanic.
+
+## Required Behaviour
+
+If:
+
+    B1[A] ↔ B2[B]
+
+and B1[A] is captured:
+
+    remove B1[A]
+        ↓
+    remove B2[B]
+        ↓
+    evaluate consequences on B2
+        ↓
+    propagate any resulting captures
+        ↓
+    continue until stable
+
+The same applies in the opposite direction.
+
+## Requirements
+
+The agent must correctly support:
+
+- single entangled captures,
+- multiple simultaneous captured stones,
+- capture cascades,
+- multiple entangled pairs,
+- partner already removed,
+- cascades that return to the original board.
+
+## Critical Requirement
+
+Capture propagation is part of the QuantumGo state transition.
+
+It must be deterministic.
+
+There is no player choice during propagation.
+
+# Phase 5 — Implement Exact Undo and State Restoration
+
+## Objective
+
+Make every QuantumGo transition completely reversible for search.
+
+For:
+
+    play(move)
+    ...
+    undo(move)
+
+The state after `undo()` must be exactly identical to the state before `play()`.
+
+The restoration must include:
+
+- B1
+- B2
+- captured stones
+- entanglement links
+- side to move
+- ko state
+- search-relevant metadata
+- hash state
+
+## Critical Requirement
+
+Do not optimize undo before correctness is proven.
+
+First establish:
+
+    state_before == state_after_undo
+
+for thousands of automatically generated test positions.
+
+# Phase 6 — Implement QuantumGo State Hashing
+
+## Objective
+
+Make QuantumGo states usable by the existing transposition-table/search infrastructure.
+
+The state identity must account for:
+
+- B1 position
+- B2 position
+- entanglement structure
+- player to move
+- relevant ko/history state
+
+## Critical Test
+
+These must be treated as DIFFERENT states:
+
+    State A:
+        B1[D4] ↔ B2[C3]
+
+    State B:
+        B1[D4] ↔ B2[F4]
+
+even if the visible stone layouts are identical.
+
+## Required Property
+
+Equivalent states reached through different move orders should be recognized when the rules permit transposition equivalence.
+
+# Phase 7 — Define QuantumGo L&D Terminal Conditions
+
+## Objective
+
+Adapt the solver's L&D termination logic to QuantumGo.
+
+The solver must determine when the target has become:
+
+- demonstrably dead,
+- demonstrably alive,
+- or still unresolved.
+
+## Critical Requirement
+
+Do NOT use ordinary board scoring.
+
+The question is:
+
+> Can the target be forced alive or dead?
+
+not:
+
+> Who owns more territory?
+
+## Quantum Dependency
+
+A target's status may depend on both boards because an entangled capture can alter the target on the other board.
+
+Therefore:
+
+    L&D(B1 target)
+
+must NOT be evaluated independently from:
+
+    L&D(B2)
+
+# Phase 8 — Define Quantum Unconditional Life / Death
+
+## Objective
+
+Adapt the existing solver's unconditional-result concepts to the joint QuantumGo state.
+
+The agent must formally define what constitutes:
+
+- Quantum unconditional life
+- Quantum unconditional death
+
+The definition must account for:
+
+- local Go liberties,
+- eyes,
+- capture threats,
+- entangled partner removal,
+- cross-board capture chains.
+
+## Required Deliverable
+
+Write a formal definition before implementation.
+
+The implementation must follow the definition exactly.
+
+Do not simply reuse normal-Go UCA logic without proving that it remains valid.
+
+# Phase 9 — Design the Quantum Relevance Zone
+
+## Objective
+
+Extend the central RZS concept to QuantumGo.
+
+Normal Go:
+
+    relevant board positions
+
+QuantumGo:
+
+    relevant B1 positions
+    +
+    relevant B2 positions
+    +
+    entanglement relationships affecting those positions
+
+## Required Property
+
+Relevance must be able to propagate through:
+
+### Local Go interactions
+
+    B1[A] → B1[B]
+
+### Entanglement interactions
+
+    B1[A] ↔ B2[C]
+
+Therefore:
+
+    RZ(B1)
+        ↓
+    entangled partner
+        ↓
+    RZ(B2)
+
+## Key Concept
+
+The Quantum RZ should be the smallest region sufficient to prove the L&D result, subject to the RZS methodology.
+
+Do NOT simply take the entire board.
+
+Do NOT automatically take the same RZ on both boards.
+
+# Phase 10 — Implement Dynamic Quantum RZ Expansion
+
+## Objective
+
+Preserve the defining RZS property:
+
+> The relevance zone expands only when search proves that additional positions matter.
+
+The solver should:
+
+1. Construct an initial Quantum RZ.
+2. Search relevant moves.
+3. Detect when the current RZ is insufficient.
+4. Expand the RZ.
+5. Continue the proof.
+
+## Entanglement Rule
+
+When a relevant stone has an entangled partner, the partner and any tactically necessary surrounding positions may need to enter the Quantum RZ.
+
+However:
+
+> Entanglement alone does not automatically imply that the entire surrounding board is relevant.
+
+Relevance must remain goal-directed.
+
+# Phase 11 — Adapt Candidate Generation
+
+## Objective
+
+Modify the existing candidate-generation mechanism so that candidates are generated for QuantumGo L&D search.
+
+A candidate can be relevant because it:
+
+- affects the target locally,
+- affects a relevant group,
+- creates/removes a liberty,
+- affects an eye,
+- captures an entangled stone,
+- triggers a cross-board capture,
+- changes the Quantum RZ,
+- or is otherwise necessary for the L&D proof.
+
+## Common-Phase Restriction
+
+Every candidate coordinate must satisfy the simultaneous legality rule:
+
+    Legal(B1, p) AND Legal(B2, p)
+
+## Critical Requirement
+
+Do NOT replace RZS candidate generation with:
+
+    "search every legal QuantumGo move."
+
+That would defeat the purpose of the RZS solver.
+
+# Phase 12 — Adapt Null-Move / Irrelevance Logic
+
+## Objective
+
+Preserve the existing RZS idea that moves proven irrelevant to the current L&D objective need not be searched normally.
+
+For QuantumGo, the irrelevance test must account for cross-board entanglement.
+
+A move that is geographically distant from the target may still be relevant if:
+
+    move
+      ↓
+    affects relevant stone
+      ↓
+    entangled partner
+      ↓
+    target consequence on other board
+
+Therefore the solver must not classify a move as irrelevant using single-board distance alone.
+
+# Phase 13 — Integrate With the Existing L&D Search
+
+## Objective
+
+Connect the QuantumGo state and Quantum RZ to the existing search architecture.
+
+The search node should conceptually represent:
+
+    QuantumGo State
+        +
+    L&D Objective
+        +
+    Quantum RZ
+        +
+    Search information
+
+Reuse existing search infrastructure wherever possible.
+
+Do NOT rewrite the entire RZS algorithm simply to support two boards.
+
+The implementation should modify the game-specific assumptions while preserving the L&D-oriented search architecture.
+
+# Phase 14 — Implement Exact Quantum L&D Solving
+
+## Objective
+
+Produce an exact answer to the L&D problem.
+
+The solver must be able to return:
+
+    LIVE
+
+or:
+
+    DEAD
+
+and identify the winning side.
+
+For a kill problem:
+
+    Can attacker force death?
+
+For a life problem:
+
+    Can defender force life?
+
+The solver must support optimal play from both sides.
+
+# Phase 15 — Generate Quantum Solution Trees
+
+## Objective
+
+Produce a human-readable proof/variation of the result.
+
+The output should contain:
+
+- winning move,
+- best defense,
+- winning continuation,
+- terminal L&D result,
+- relevant QuantumGo consequences.
+
+For example:
+
+    1. D5
+       1... C4
+       2. E5
+
+       Result:
+       Target DEAD
+
+Where appropriate, the explanation should explicitly identify:
+
+    B1 capture
+        ↓
+    entangled B2 removal
+        ↓
+    resulting tactical collapse
+
+This makes the solver useful for research validation rather than merely producing a Boolean answer.
+
+# Phase 16 — Build a QuantumGo L&D Test Suite
+
+## Objective
+
+Validate correctness before performance optimization.
+
+Tests must include:
+
+### State tests
+
+- B1/B2 initialization
+- entanglement creation
+- entanglement removal
+- state copy
+- state restoration
+
+### Rule tests
+
+- move 1 legality
+- move 2 legality
+- common-phase legality
+- suicide
+- ko
+- simultaneous move legality
+
+### Capture tests
+
+- B1 → B2 propagation
+- B2 → B1 propagation
+- multi-step cascades
+- multiple entangled pairs
+
+### L&D tests
+
+- trivial life
+- trivial death
+- forced kill
+- forced life
+- cross-board tactical dependence
+- positions where B1 and B2 cannot be solved independently
+
+### RZS tests
+
+- initial Quantum RZ
+- entanglement-based RZ propagation
+- dynamic RZ expansion
+- irrelevant-move handling
+- Quantum null moves
+
+# Phase 17 — Validate Against the Provided 5–10 Move Games
+
+## Objective
+
+Use the complete QuantumGo game supplied by the project owner as a correctness benchmark.
+
+The agent must:
+
+1. Parse the game.
+2. Reconstruct B1 and B2 after every move.
+3. Reconstruct all entanglement relationships.
+4. Verify every capture.
+5. Verify every propagated capture.
+6. Confirm common-phase legality.
+7. Identify useful L&D positions from the game.
+
+The game is a validation dataset.
+
+It is NOT a replacement for formal QuantumGo rules.
+
+# Phase 18 — Performance Optimization
+
+## Objective
+
+Only after correctness is established, optimize the solver.
+
+Potential optimization targets:
+
+- Bitboards
+- Incremental liberty updates
+- Incremental hashes
+- Transposition tables
+- Candidate caching
+- RZ caching
+- Capture propagation optimization
+- Search ordering
+- Pattern reuse
+- Parallel search where compatible
+
+Optimization must NEVER change the L&D semantics.
+
+Correctness comes first.
+
+# Phase 19 — Research Evaluation
+
+## Objective
+
+Evaluate whether Quantum RZS actually works as an extension of the original RZS methodology.
+
+Compare:
+
+    Normal Go RZS
+    vs.
+    QuantumGo RZS
+
+Measure:
+
+- solving time
+- searched nodes
+- effective branching factor
+- RZ size
+- RZ expansion count
+- null-move count
+- transposition-table hit rate
+- maximum search depth
+- number of entanglement propagations
+- number of cross-board captures
+
+The primary question should be:
+
+> Does relevance-zone search remain effective when relevance can propagate through QuantumGo entanglement?
+
+# Phase 20 — Final Deliverable
+
+The completed system should be able to take:
+
+    QuantumGo L&D problem
+        ↓
+    solve exactly
+        ↓
+    return LIVE / DEAD
+        ↓
+    return winning variation
+        ↓
+    return Quantum RZ
+        ↓
+    return search statistics
+
+The final system should NOT be described as:
+
+    "a QuantumGo game engine"
+
+It should be described as:
+
+    "an exact QuantumGo life-and-death solver
+     based on relevance-zone search."
+
+# Non-Negotiable Constraints
+
+Every implementation agent must stop and reconsider the design if it introduces any of the following:
+
+- Treating B1 and B2 as independent games
+- Independent winners for B1 and B2
+- Separate scoring of the two boards
+- Collapse or measurement
+- Probabilistic QuantumGo states
+- Reverting to a different opening-colour convention
+- Allowing a common-phase move when it is illegal on either board
+- Ignoring entanglement during capture
+- Ignoring entanglement during relevance analysis
+- Searching the entire board as the default RZS strategy
+- Replacing exact L&D solving with a general position evaluator
+- Turning the project into a full-game AI before establishing the L&D solver
+
+The implementation must always return to the core model:
+
+    TWO BOARDS
+        +
+    ENTANGLEMENT
+        +
+    QUANTUMGO LEGALITY
+        +
+    LIFE-AND-DEATH OBJECTIVE
+        +
+    RELEVANCE-ZONE SEARCH
+        =
+    QUANTUMGO L&D SOLVER
+# QuantumGo Solver Coding Protocol
+
+## Purpose
+
+This document is the implementation protocol for coding agents working on the QuantumGo Life-and-Death (L&D) solver based on the `study-LD-RZ` repository.
+
+The implementation must extend the repository's **Relevance-Zone-based exact life-and-death solving approach** to the project's QuantumGo rules.
+
+This is **not** a protocol for building a general-purpose QuantumGo game engine.
+
+The final product is an **exact QuantumGo life-and-death solver**.
+
+---
+
+# 0. Non-Negotiable Rules
+
+Every coding agent MUST treat the following as authoritative.
+
+## 0.1 QuantumGo Rules
+
+- There are exactly two persistent boards: B1 and B2.
+- Only moves 1 and 2 are quantum opening moves.
+- Move 1 is Black's quantum move.
+- Move 2 is White's quantum move.
+- Each opening quantum move selects two distinct intersections:
+  - one on B1,
+  - one on B2.
+- Each selected intersection receives a stone of the moving player's colour.
+- The two stones created by the same opening move are an entangled pair.
+- From move 3 onward, a move consists of exactly one coordinate.
+- The same coordinate is played simultaneously on B1 and B2.
+- A common-phase move is legal only if that coordinate is legal on BOTH boards.
+- Normal Go legality applies on each board, including occupancy, suicide, and the chosen ko rule.
+- Captures occur locally according to Go mechanics.
+- If one stone of an entangled pair is captured, its partner is automatically removed on the other board.
+- Cross-board capture propagation continues until no further consequences occur.
+- There is no collapse, measurement, probabilistic board selection, or choice of surviving reality.
+- B1 and B2 always remain present and jointly define one game state.
+- Opening-colour conventions found in unrelated repositories or conflicting implementations MUST NOT override these rules.
+
+## 0.2 Life-and-Death Scope
+
+The solver's job is to answer a specified L&D problem:
+
+- Can the attacker force the target dead?
+- Can the defender force the target alive?
+
+The solver is not primarily a full-game scoring engine.
+
+Do not redesign the project around:
+
+- final territory scoring,
+- independent winners for B1 and B2,
+- complete-game self-play,
+- a general QuantumGo evaluator.
+
+The architecture must stay centered on:
+
+    L&D Problem
+        -> QuantumGo State
+        -> Quantum Target / Objective
+        -> Quantum Relevance Zone
+        -> Exact Search
+        -> LIVE / DEAD result
+
+---
+
+# 1. Repository First, Code Second
+
+Before writing implementation code, the agent MUST inspect the existing `study-LD-RZ` repository and identify the actual code paths for:
+
+- board representation,
+- group/liberty handling,
+- move application,
+- capture handling,
+- ko handling,
+- undo/rollback,
+- candidate generation,
+- relevance-zone construction and expansion,
+- null/irrelevant move handling,
+- L&D terminal evaluation,
+- search nodes,
+- transposition tables,
+- problem input,
+- solution-tree output.
+
+The repository contains the core engine under `CGI/` and uses tsumego/L&D problem input and solver output. Reuse its architecture rather than replacing it wholesale.
+
+The agent MUST produce a short repository map before major modifications.
+
+Example format:
+
+    Existing component              QuantumGo adaptation
+    ----------------------------------------------------
+    Board state                     Joint B1/B2 state
+    Move generation                 Quantum move generation
+    Capture                         Local + entangled propagation
+    RZ                              Quantum RZ
+    Target                          Quantum L&D target
+    Terminal evaluation             Quantum L&D terminal test
+    Hash                            Joint state + entanglement
+
+Do not guess the implementation location when the repository can be inspected directly.
+
+---
+
+# 2. Preserve Existing Normal-Go L&D Behavior
+
+The default normal-Go solver behavior must remain unchanged unless a feature is explicitly selected for QuantumGo.
+
+Preferred architecture:
+
+    Existing normal-Go L&D path
+              |
+              +---- unchanged
+              |
+              +---- QuantumGo-specific state/game adapter
+
+Do not contaminate normal-Go logic with QuantumGo assumptions if a clean abstraction or subclass/adapter can avoid it.
+
+A QuantumGo change is unacceptable if it silently changes results for the existing normal-Go tsumego suite.
+
+---
+
+# 3. Establish a QuantumGo Abstraction Boundary
+
+The implementation should introduce a clearly identifiable QuantumGo layer.
+
+A conceptual design is:
+
+    QuantumGoProblem
+        |
+        v
+    QuantumGoState
+        |
+        +-- BoardState B1
+        +-- BoardState B2
+        +-- EntanglementManager
+        +-- SideToMove
+        +-- Ko/History State
+        |
+        v
+    QuantumGoMoveGenerator
+        |
+        v
+    QuantumGoTransition
+        |
+        v
+    Quantum L&D / Quantum RZS adapter
+
+The exact class names may differ to fit the repository's existing conventions.
+
+Do not create duplicate implementations of core Go rules if the repository already provides a correct reusable implementation.
+
+---
+
+# 4. QuantumGo Problem Input
+
+The solver must accept an already-established QuantumGo L&D position.
+
+The input must represent at least:
+
+- board size,
+- B1 position,
+- B2 position,
+- entanglement pairs,
+- player to move,
+- target stones/groups,
+- L&D objective (LIVE or KILL),
+- ko rule,
+- any existing problem metadata required by the original solver.
+
+A conceptual representation is:
+
+```text
+QuantumGoProblem
+  board_size
+  board1
+  board2
+  entanglements
+  to_move
+  target
+  objective
+  ko_rule
+```
+
+The exact file format should follow the conventions of `study-LD-RZ` wherever practical.
+
+Do not force QuantumGo L&D problems to reconstruct moves 1–2 unless a specific test requires replaying an opening sequence.
+
+---
+
+# 5. QuantumGo State Representation
+
+Implement a single joint state object that owns or references:
+
+```text
+B1 state
+B2 state
+entanglement mapping
+side to move
+ko/history state
+```
+
+The state must have deterministic transitions.
+
+## Required invariants
+
+At all times:
+
+1. Every occupied intersection has exactly one stone colour.
+2. Every entanglement edge refers to valid paired stones unless the pair has just been removed and cleaned up.
+3. No stone is entangled with more than one partner unless the formal QuantumGo rules are later extended to permit it.
+4. The B1/B2 mapping is symmetric:
+
+       partner(partner(S)) == S
+
+5. Removing a stone removes its entanglement edge.
+6. After capture propagation completes, no captured stone remains on either board.
+7. The side to move is correct.
+8. The state hash matches the actual state.
+
+Agents must add assertions/checkers where practical.
+
+---
+
+# 6. Entanglement Representation
+
+Use an explicit, deterministic mapping.
+
+A conceptual structure is:
+
+```cpp
+struct EntangledStone {
+    BoardId board;
+    Position position;
+};
+
+class EntanglementManager {
+public:
+    bool hasPartner(EntangledStone stone) const;
+    EntangledStone partnerOf(EntangledStone stone) const;
+    void link(EntangledStone a, EntangledStone b);
+    void unlink(EntangledStone stone);
+};
+```
+
+The exact API must fit repository conventions.
+
+Do not encode entanglement only in visual/UI metadata.
+
+It is part of the game state and therefore part of:
+
+- transition logic,
+- hashing,
+- undo,
+- L&D analysis,
+- RZ propagation.
+
+---
+
+# 7. Move Representation
+
+Use one move abstraction capable of representing both phases.
+
+Conceptually:
+
+```cpp
+struct QuantumMove {
+    Position b1;
+    Position b2;
+};
+```
+
+For opening moves:
+
+```text
+b1 != b2 is allowed because coordinates belong to different boards.
+```
+
+For common-phase moves:
+
+```text
+b1 == b2
+```
+
+The implementation may instead use a tagged union or separate move types if that integrates more cleanly with the repository.
+
+The important semantic invariant is:
+
+- moves 1–2 = independently selected B1/B2 coordinates;
+- moves >= 3 = same coordinate on both boards.
+
+---
+
+# 8. Legal Move Generation
+
+## Opening moves
+
+For move 1 and move 2:
+
+```text
+legal = legalOnB1(p1) AND legalOnB2(p2)
+```
+
+with independently selected coordinates.
+
+## Common phase
+
+For a shared coordinate `p`:
+
+```text
+legalQuantum(p) = legal(B1, p) AND legal(B2, p)
+```
+
+The move is rejected if it is illegal on either board.
+
+Do not generate a move from the union of B1 and B2 legal moves.
+
+Do not allow a move to be silently applied to only one board.
+
+---
+
+# 9. QuantumGo Transition Protocol
+
+Every move must use a deterministic transition sequence.
+
+Conceptually:
+
+```text
+1. Validate the move on the joint QuantumGo state.
+2. Apply the required stone placements.
+3. Perform ordinary local Go capture checks on both boards.
+4. For every captured entangled stone, enqueue its partner.
+5. Remove queued partners.
+6. Check newly created local captures.
+7. Continue propagation until the queue is empty and no new capture exists.
+8. Update ko/history information.
+9. Update side to move.
+10. Update the state hash.
+```
+
+The implementation should use an iterative queue/worklist for capture propagation rather than uncontrolled recursive calls.
+
+---
+
+# 10. Cross-Board Capture Propagation
+
+This is one of the most important correctness components.
+
+Example:
+
+```text
+B1[A] <-> B2[B]
+```
+
+If B1[A] is captured:
+
+```text
+capture B1[A]
+    -> remove B2[B]
+    -> inspect B2 for new local captures
+    -> remove any newly captured entangled partners
+    -> repeat
+```
+
+The system must support cascades in both directions.
+
+The final state must be a stable fixed point of all local and entanglement-induced capture consequences.
+
+---
+
+# 11. Undo / Rollback Protocol
+
+Every search transition must be exactly reversible.
+
+The move record should be capable of restoring:
+
+- all B1 changes,
+- all B2 changes,
+- all entanglement changes,
+- all capture removals,
+- ko/history state,
+- side to move,
+- incremental hashes,
+- any RZS/search-visible state changed by the transition.
+
+The agent must add an invariant test:
+
+```text
+S0
+ -> play(M)
+ -> undo(M)
+ = S0
+```
+
+This must be checked across many generated and hand-crafted cases, including capture cascades.
+
+---
+
+# 12. QuantumGo Hashing
+
+The transposition-table key must distinguish QuantumGo states that have:
+
+- identical B1 positions,
+- identical B2 positions,
+- but different entanglement relationships.
+
+The conceptual state key is:
+
+```text
+Hash =
+    hash(B1)
+  XOR hash(B2)
+  XOR hash(entanglement structure)
+  XOR hash(side-to-move)
+  XOR hash(relevant ko/history)
+```
+
+The actual construction may use the repository's existing hashing system.
+
+## Critical test
+
+These must produce different keys:
+
+```text
+A:
+B1[D4] <-> B2[C3]
+
+B:
+B1[D4] <-> B2[F4]
+```
+
+when all other state data are identical.
+
+---
+
+# 13. Quantum L&D Target Model
+
+Do not assume that the target is one classical Go group.
+
+A QuantumGo target may depend on:
+
+- a group on B1,
+- a group on B2,
+- entangled stones,
+- cross-board capture consequences.
+
+Represent the target in a way compatible with exact L&D proof.
+
+The target model must support at least:
+
+```text
+objective = LIVE or KILL
+attacker
+defender
+target stones/groups
+```
+
+A target should not be evaluated independently on B1 and B2 unless the formal rules prove that independence is valid in that position.
+
+---
+
+# 14. Quantum L&D Terminal Logic
+
+The terminal logic must answer an L&D question, not a scoring question.
+
+Examples:
+
+```text
+KILL:
+    attacker has forced target death
+
+LIVE:
+    defender has forced target survival
+```
+
+Do not use:
+
+```text
+score(B1) + score(B2)
+```
+
+as the primary terminal condition for an L&D tsumego.
+
+If scoring is ever implemented, it must remain a separate full-game feature and must not replace the L&D objective.
+
+---
+
+# 15. Quantum Unconditional Life / Death
+
+Before implementation, the agent must write down a formal rule for QuantumGo unconditional life and unconditional death.
+
+The definition must account for:
+
+- liberties,
+- eyes,
+- local capture,
+- entanglement-triggered removal,
+- cross-board tactical interactions.
+
+Do not directly assume that ordinary Go UCA code remains sound without analysis.
+
+The formal definition should be referenced by code comments and tests.
+
+---
+
+# 16. Quantum Relevance Zone
+
+The Relevance Zone is central to this project.
+
+Do not replace it with a whole-board search by default.
+
+Conceptually:
+
+```text
+Quantum RZ =
+    relevant positions on B1
+    + relevant positions on B2
+    + entanglement-linked relevant positions
+```
+
+The RZ should be **goal-directed** and sufficient for proving the current L&D result.
+
+Do not automatically copy an RZ from B1 to B2.
+
+Do not automatically include the whole of B1 or B2.
+
+---
+
+# 17. Cross-Board RZ Closure
+
+RZ propagation must account for two connectivity types:
+
+### Go locality
+
+```text
+adjacent positions / group liberties / captures
+```
+
+### Entanglement connectivity
+
+```text
+B1[A] <-> B2[B]
+```
+
+A relevant event on B1 can make B2 relevant through entanglement.
+
+A relevant event on B2 can similarly make B1 relevant.
+
+The implementation should compute an appropriate closure rather than using a single-board geometric radius.
+
+---
+
+# 18. Candidate Generation for RZS
+
+Candidate generation must remain L&D-oriented.
+
+A candidate can be relevant because it may:
+
+- change target liberties,
+- create/remove an eye,
+- capture a target group,
+- defend a target group,
+- attack a relevant group,
+- trigger a cross-board entangled capture,
+- affect a relevant entangled partner,
+- change the RZ proof boundary.
+
+For moves >= 3, every candidate coordinate must pass:
+
+```text
+legal(B1, p) AND legal(B2, p)
+```
+
+Do not fall back to all-board exhaustive candidate generation unless explicitly requested as a diagnostic baseline.
+
+---
+
+# 19. Quantum Null / Irrelevant Moves
+
+Preserve the RZS principle that moves that provably cannot affect the current L&D objective need not be explored as normal tactical branches.
+
+However:
+
+```text
+far from target != automatically irrelevant
+```
+
+A move may be relevant through an entanglement chain.
+
+The irrelevance test therefore needs to account for:
+
+```text
+local effect
++
+entanglement effect
++
+possible cross-board consequence
+```
+
+Never classify a move as irrelevant using only Euclidean/Manhattan distance or a single-board radius.
+
+---
+
+# 20. Search Integration
+
+The QuantumGo state should be plugged into the existing search framework through the smallest possible interface change.
+
+The conceptual search node is:
+
+```text
+QuantumGoState
+    +
+L&D objective
+    +
+Quantum RZ information
+    +
+search metadata
+```
+
+Reuse existing components where their semantics remain valid.
+
+Examples of likely reusable infrastructure include:
+
+- search tree logic,
+- candidate ordering infrastructure,
+- transposition-table infrastructure,
+- result handling,
+- solution-tree output,
+- statistics collection.
+
+Where existing components encode a single-board assumption that is semantically unsafe, create a QuantumGo-specific adapter or implementation instead of silently bending the original logic.
+
+---
+
+# 21. Do Not Rewrite the RZS Algorithm Blindly
+
+Agents must not replace the RZS mechanism with generic MCTS merely because it is easier to connect to a new board representation.
+
+If the original RZS method relies on:
+
+- RZ construction,
+- RZ expansion,
+- candidate filtering,
+- null moves,
+- UCA/terminal proof conditions,
+
+those principles must be retained.
+
+The job is to generalize the relevant game-specific assumptions from:
+
+```text
+single-board Go
+```
+
+to:
+
+```text
+joint two-board QuantumGo
+```
+
+not to abandon RZS.
+
+---
+
+# 22. Solution Output
+
+The solver must return more than a Boolean result when possible.
+
+Recommended result data:
+
+```text
+Result:
+    LIVE / DEAD
+Winning side:
+    BLACK / WHITE
+Best move:
+    ...
+Principal variation:
+    ...
+Quantum capture events:
+    ...
+RZ summary:
+    ...
+Search statistics:
+    ...
+```
+
+The solution tree should remain compatible with the research goals of the original L&D solver.
+
+---
+
+# 23. Required Diagnostics
+
+During development, provide a debug representation of a QuantumGo state.
+
+It should be possible to print:
+
+```text
+B1 board
+B2 board
+entanglement pairs
+side to move
+RZ(B1)
+RZ(B2)
+target
+objective
+hash
+```
+
+For capture debugging, log a cascade such as:
+
+```text
+B1[D4] captured
+    -> partner B2[C3] removed
+    -> B2[E3-E4] group captured
+    -> partner B1[...] removed
+```
+
+The format can be temporary, but it must make cross-board propagation auditable.
+
+---
+
+# 24. Testing Protocol
+
+All QuantumGo implementation work must use layered tests.
+
+## Layer A — Rule tests
+
+Test:
+
+- move 1,
+- move 2,
+- shared move legality,
+- occupancy,
+- suicide,
+- ko.
+
+## Layer B — Capture tests
+
+Test:
+
+- local B1 capture,
+- local B2 capture,
+- B1 -> B2 propagation,
+- B2 -> B1 propagation,
+- multi-step cascades,
+- multiple entangled pairs.
+
+## Layer C — State tests
+
+Test:
+
+- clone/copy,
+- hash,
+- undo,
+- exact state restoration.
+
+## Layer D — L&D tests
+
+Test:
+
+- immediate life,
+- immediate death,
+- forced life,
+- forced kill,
+- cross-board tactical dependence.
+
+At least one test must demonstrate that solving B1 and B2 independently gives the wrong L&D conclusion.
+
+## Layer E — RZS tests
+
+Test:
+
+- initial RZ,
+- cross-board RZ propagation,
+- RZ expansion,
+- relevant candidate generation,
+- irrelevant/null move handling.
+
+## Layer F — Regression tests
+
+Run the existing normal-Go L&D tests and verify that their results do not change.
+
+---
+
+# 25. Required Validation From the Provided 5–10 Move Game
+
+When the project owner provides the complete QuantumGo game:
+
+1. Parse every move.
+2. Reconstruct B1 and B2 after each move.
+3. Verify the special rules for moves 1 and 2.
+4. Verify common-phase synchronized moves.
+5. Verify every local capture.
+6. Verify every entanglement-triggered capture.
+7. Record entanglement pairs after every move.
+8. Use resulting positions to construct at least one L&D test case.
+
+The game is primarily a **rule-validation and state-construction reference**.
+
+It does not define the solver's L&D architecture by itself.
+
+---
+
+# 26. Performance Baseline
+
+Do not optimize before correctness.
+
+Once correctness is established, measure:
+
+- nodes searched,
+- candidate count,
+- relevant candidate count,
+- null/irrelevant move count,
+- maximum search depth,
+- RZ size on B1,
+- RZ size on B2,
+- number of RZ expansions,
+- transposition-table hit rate,
+- capture-propagation events,
+- solving time.
+
+Optimization targets may include:
+
+- bitboards,
+- incremental liberty tracking,
+- incremental hashing,
+- cached entanglement effects,
+- candidate caching,
+- RZ caching,
+- search ordering,
+- transposition tables.
+
+No optimization may change the formal QuantumGo or L&D semantics.
+
+---
+
+# 27. Agent Workflow
+
+Every coding agent should follow this workflow.
+
+### Step 1 — Read
+
+Read:
+
+- this protocol,
+- the capability specification,
+- the development-phase document,
+- the relevant files in `study-LD-RZ`.
+
+### Step 2 — Identify
+
+State exactly which existing code path the task affects.
+
+### Step 3 — Design
+
+State the intended change and the invariants it preserves.
+
+### Step 4 — Implement
+
+Make the smallest coherent change necessary.
+
+### Step 5 — Test
+
+Add or update tests immediately.
+
+### Step 6 — Verify QuantumGo Semantics
+
+Explicitly check:
+
+- two boards,
+- opening rules,
+- synchronized common-phase legality,
+- entangled capture,
+- no collapse.
+
+### Step 7 — Verify L&D Semantics
+
+Explicitly check:
+
+- target definition,
+- attacker/defender objective,
+- exact terminal conditions,
+- RZ behavior.
+
+### Step 8 — Regression Test
+
+Ensure existing normal-Go solver behavior is preserved.
+
+### Step 9 — Document
+
+Record:
+
+- changed files,
+- new interfaces,
+- tests,
+- assumptions,
+- known limitations.
+
+---
+
+# 28. Commit Protocol
+
+When the project uses version control, prefer logically isolated commits.
+
+Recommended progression:
+
+```text
+1. QuantumGo state abstraction
+2. Entanglement representation
+3. Quantum move legality
+4. Quantum transition + capture propagation
+5. Undo + hashing
+6. Quantum L&D target/terminal logic
+7. Quantum RZ
+8. Candidate/null-move integration
+9. Search integration
+10. Solution output
+11. Test suite
+12. Performance optimization
+```
+
+Do not mix unrelated refactors into these commits unless necessary for compilation or correctness.
+
+---
+
+# 29. Acceptance Criteria
+
+A phase is complete only when:
+
+- the relevant tests pass,
+- the formal QuantumGo rules are preserved,
+- the exact L&D semantics are preserved,
+- the RZS principle remains intact,
+- normal-Go regression behavior is unaffected where applicable,
+- the implementation is documented.
+
+A feature is NOT complete merely because the code compiles.
+
+---
+
+# 30. Final System Acceptance Test
+
+The project should eventually support this workflow:
+
+```text
+QuantumGo L&D input
+        |
+        v
+ Joint B1/B2 state
+        |
+        v
+ Entanglement-aware target
+        |
+        v
+ Quantum Relevance Zone
+        |
+        v
+ Relevant QuantumGo candidate generation
+        |
+        v
+ Exact RZS search
+        |
+        v
+ Cross-board capture propagation
+        |
+        v
+ Quantum L&D terminal proof
+        |
+        v
+ LIVE / DEAD
+        |
+        v
+ Winning variation + RZ + statistics
+```
+
+The implementation has succeeded only when the above workflow works as an **L&D proof system**, not merely as a legal-move simulator.
+
+---
+
+# 31. Final Reminder to Coding Agents
+
+Before implementing any feature, ask two questions:
+
+### Question 1
+
+**Does this obey the project's exact QuantumGo rules?**
+
+### Question 2
+
+**Does this help solve a life-and-death problem using relevance-zone-based exact search?**
+
+If the answer to either question is no, do not implement the feature without first revisiting the architecture.
+
+The target architecture is:
+
+```text
+                 QuantumGo L&D Solver
+                          |
+             +------------+------------+
+             |                         |
+        QuantumGo State             RZS
+             |                         |
+      +------+-------+          +------+------+
+      |              |          |             |
+     B1             B2      Quantum RZ   Exact Search
+      |              |          |             |
+      +------+-------+----------+-------------+
+             |
+       Entanglement
+             |
+             v
+    Cross-board consequences
+             |
+             v
+       L&D proof/result
+```
+
+**Do not turn this into a generic QuantumGo engine. Build the smallest correct QuantumGo machinery needed to support an exact, relevance-zone-based life-and-death solver.**
