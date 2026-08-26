@@ -2,9 +2,9 @@
 // test_rzone.cpp  —  Layer E: Quantum RZone tests
 // ============================================================================
 #include "test_framework.h"
-#include "QuantumBoardState.h"
-#include "QuantumRZone.h"
-#include "QuantumTarget.h"
+#include "../src/QuantumBoardState.h"
+#include "../src/QuantumRZone.h"
+#include "../src/QuantumTarget.h"
 
 struct RZoneTests {
     RZoneTests() {

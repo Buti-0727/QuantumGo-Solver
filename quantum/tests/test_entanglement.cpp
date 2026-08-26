@@ -2,8 +2,8 @@
 // test_entanglement.cpp  —  Layer A: Entanglement table invariants
 // ============================================================================
 #include "test_framework.h"
-#include "EntanglementTable.h"
-#include "QuantumHash.h"
+#include "../src/EntanglementTable.h"
+#include "../src/QuantumHash.h"
 
 // Register via static initialiser
 struct EntanglementTests {

@@ -2,8 +2,8 @@
 // test_rules.cpp  —  Layer A: Move legality (Protocol §3, §8)
 // ============================================================================
 #include "test_framework.h"
-#include "QuantumBoardState.h"
-#include "QuantumMoveGen.h"
+#include "../src/QuantumBoardState.h"
+#include "../src/QuantumMoveGen.h"
 
 struct RulesTests {
     RulesTests() {

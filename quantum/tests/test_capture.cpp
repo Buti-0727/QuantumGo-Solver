@@ -2,9 +2,9 @@
 // test_capture.cpp  —  Layer B: Local + cross-board capture cascades
 // ============================================================================
 #include "test_framework.h"
-#include "QuantumBoardState.h"
-#include "QuantumCapture.h"
-#include "QuantumUndo.h"
+#include "../src/QuantumBoardState.h"
+#include "../src/QuantumCapture.h"
+#include "../src/QuantumUndo.h"
 
 struct CaptureTests {
     CaptureTests() {

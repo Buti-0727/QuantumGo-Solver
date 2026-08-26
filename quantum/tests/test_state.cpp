@@ -2,10 +2,10 @@
 // test_state.cpp  —  Layer C: Clone, hash, and undo tests (Protocol §11, §12)
 // ============================================================================
 #include "test_framework.h"
-#include "QuantumBoardState.h"
-#include "QuantumCapture.h"
-#include "QuantumUndo.h"
-#include "QuantumMoveGen.h"
+#include "../src/QuantumBoardState.h"
+#include "../src/QuantumCapture.h"
+#include "../src/QuantumUndo.h"
+#include "../src/QuantumMoveGen.h"
 
 struct StateTests {
     StateTests() {

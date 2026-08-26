@@ -2,11 +2,11 @@
 // test_ld.cpp  —  Layer D: L&D terminal conditions + forced solving
 // ============================================================================
 #include "test_framework.h"
-#include "QuantumBoardState.h"
-#include "QuantumTarget.h"
-#include "QuantumLDSolver.h"
-#include "QuantumCapture.h"
-#include "QuantumUndo.h"
+#include "../src/QuantumBoardState.h"
+#include "../src/QuantumTarget.h"
+#include "../src/QuantumLDSolver.h"
+#include "../src/QuantumCapture.h"
+#include "../src/QuantumUndo.h"
 
 struct LDTests {
     LDTests() {
