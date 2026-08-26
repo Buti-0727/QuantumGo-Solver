@@ -46,10 +46,15 @@
         </div>
 
         <div class="tool-group solver-actions">
-          <label>Auto-Solve & Self-Play:</label>
+          <label>Self-Play & Games:</label>
+          <select class="btn btn-sm" id="gameSelect">
+            <option value="screenshot">Screenshot Position (Tactical Cut)</option>
+            <option value="game1_ply30">Game 00001 (Ply 30 - Fight)</option>
+            <option value="game2_ply40">Game 00002 (Ply 40 - Ko & Cascade)</option>
+            <option value="corner_kill">Corner Kill Tactical Squeeze</option>
+          </select>
           <button class="btn btn-direct-answer" id="directAnswerBtn">⚡ Direct Answer (Auto-Solve)</button>
           <button class="btn btn-accent" id="stepSelfPlayBtn">▶️ Step-by-Step Play</button>
-          <button class="btn btn-secondary" id="presetBtn">📚 Preset Problem</button>
           <button class="btn btn-ghost" id="resetBtn">🔄 Clear Board</button>
         </div>
       </div>

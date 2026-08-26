@@ -22,6 +22,7 @@ set(QGO_SRCS
     src/QuantumRZone.cpp
     src/QuantumSearch.cpp
     src/QuantumLDSolver.cpp
+    src/QuantumSgfParser.cpp
 )
 
 # ── Library ───────────────────────────────────────────────────────────────────

@@ -37,8 +37,7 @@ let currentPV = [];
 let currentPVIndex = 0;
 let autoPlayTimer = null;
 
-// Preset from user screenshot
-function loadPresetFromScreenshot() {
+function loadGamePreset(presetKey) {
   resetBoard();
 
   const p = (colStr, row) => {
@@ -46,6 +45,48 @@ function loadPresetFromScreenshot() {
     const y = row - 1;
     return y * BOARD_SIZE + x;
   };
+
+  if (presetKey === 'screenshot') {
+    loadPresetFromScreenshot();
+  } else if (presetKey === 'game1_ply30') {
+    // Game 00001 ply 30
+    const blackStones = [p('E',5), p('F',5), p('D',4), p('E',4), p('C',4), p('F',4), p('C',5), p('D',6), p('B',3), p('A',3)];
+    const whiteStones = [p('F',7), p('D',5), p('E',6), p('D',7), p('C',6), p('E',7), p('B',4), p('B',5), p('A',4)];
+    blackStones.forEach(i => { boardA[i] = 1; boardB[i] = 1; });
+    whiteStones.forEach(i => { boardA[i] = 2; boardB[i] = 2; });
+    linkStones(p('E',5), p('E',5));
+    linkStones(p('F',7), p('F',7));
+    targetA = new Set([p('D',4), p('E',4)]);
+    targetB = new Set([p('D',4), p('E',4)]);
+    sideToMove = 2; // White attacks
+    lastMove = { pos: p('A',4) };
+    updateUI();
+  } else if (presetKey === 'game2_ply40') {
+    // Game 00002 ply 40
+    const blackStones = [p('C',6), p('D',5), p('D',7), p('F',6), p('F',7), p('E',7), p('G',7), p('G',6), p('B',7)];
+    const whiteStones = [p('E',5), p('G',7), p('G',8), p('H',8), p('H',7), p('H',6), p('E',8), p('D',8), p('C',8), p('B',5)];
+    blackStones.forEach(i => { boardA[i] = 1; boardB[i] = 1; });
+    whiteStones.forEach(i => { boardA[i] = 2; boardB[i] = 2; });
+    linkStones(p('C',6), p('C',6));
+    linkStones(p('E',5), p('E',5));
+    targetA = new Set([p('D',7), p('E',7)]);
+    targetB = new Set([p('D',7), p('E',7)]);
+    sideToMove = 2;
+    lastMove = { pos: p('B',5) };
+    updateUI();
+  } else if (presetKey === 'corner_kill') {
+    // Corner squeeze
+    boardA[p('A',9)] = 1; boardA[p('B',9)] = 1;
+    boardB[p('A',9)] = 1; boardB[p('B',9)] = 1;
+    boardA[p('A',8)] = 2; boardA[p('B',8)] = 2; boardA[p('C',9)] = 2;
+    boardB[p('A',8)] = 2; boardB[p('B',8)] = 2; boardB[p('C',9)] = 2;
+    linkStones(p('A',9), p('B',9));
+    targetA = new Set([p('A',9), p('B',9)]);
+    targetB = new Set([p('A',9), p('B',9)]);
+    sideToMove = 2;
+    updateUI();
+  }
+}
 
   // Board A stones (from screenshot Board A)
   // Black: C7, D6, E7, G7, D4, F5, F3, E2
@@ -530,7 +571,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('directAnswerBtn').addEventListener('click', directAnswer);
   document.getElementById('stepSelfPlayBtn').addEventListener('click', stepSelfPlay);
-  document.getElementById('presetBtn').addEventListener('click', loadPresetFromScreenshot);
+  document.getElementById('gameSelect').addEventListener('change', (e) => {
+    loadGamePreset(e.target.value);
+  });
   document.getElementById('resetBtn').addEventListener('click', resetBoard);
   document.getElementById('toggleRZBtn').addEventListener('click', () => {
     showRZ = !showRZ;
