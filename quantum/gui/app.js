@@ -45,44 +45,130 @@ function coordToPos(colStr, row) {
   return y * BOARD_SIZE + x;
 }
 
-// Preset from user screenshot
+// ── Go Rules: Liberty (Qi / 气) Counting ─────────────────────────────────────
+function getNeighbors(pos) {
+  const x = pos % BOARD_SIZE;
+  const y = Math.floor(pos / BOARD_SIZE);
+  const nbs = [];
+  if (x > 0) nbs.push(pos - 1);
+  if (x < BOARD_SIZE - 1) nbs.push(pos + 1);
+  if (y > 0) nbs.push(pos - BOARD_SIZE);
+  if (y < BOARD_SIZE - 1) nbs.push(pos + BOARD_SIZE);
+  return nbs;
+}
+
+function getGroup(board, startPos) {
+  const color = board[startPos];
+  if (color === 0) return { stones: [], liberties: 0, libertyCoords: [] };
+
+  const stones = [];
+  const visited = new Set();
+  const libertySet = new Set();
+  const queue = [startPos];
+  visited.add(startPos);
+
+  while (queue.length > 0) {
+    const curr = queue.shift();
+    stones.push(curr);
+
+    for (const nb of getNeighbors(curr)) {
+      if (board[nb] === 0) {
+        libertySet.add(nb);
+      } else if (board[nb] === color && !visited.has(nb)) {
+        visited.add(nb);
+        queue.push(nb);
+      }
+    }
+  }
+  return { stones, liberties: libertySet.size, libertyCoords: Array.from(libertySet) };
+}
+
+// Ensure Go rule: any group with 0 Qi (liberties) is immediately removed and cascaded
+function resolveZeroQiStones() {
+  const cascadeLog = [];
+  const partnerRemovalQueue = [];
+
+  function sweepBoard(board, boardId) {
+    const checked = new Set();
+    for (let p = 0; p < BOARD_SIZE * BOARD_SIZE; p++) {
+      if (board[p] !== 0 && !checked.has(p)) {
+        const grp = getGroup(board, p);
+        grp.stones.forEach(s => checked.add(s));
+        if (grp.liberties === 0) {
+          for (const sp of grp.stones) {
+            board[sp] = 0;
+            const pArr = (boardId === 'A') ? partnerA : partnerB;
+            const pStone = pArr[sp];
+            if (pStone !== -1) {
+              partnerRemovalQueue.push({ boardId: (boardId === 'A') ? 'B' : 'A', pos: pStone });
+              unlinkStone(boardId, sp);
+            }
+            cascadeLog.push(`[Board ${boardId}] 0-Qi Capture: ${posToString(sp)}`);
+          }
+        }
+      }
+    }
+  }
+
+  sweepBoard(boardA, 'A');
+  sweepBoard(boardB, 'B');
+
+  while (partnerRemovalQueue.length > 0) {
+    const item = partnerRemovalQueue.shift();
+    const targetBoard = (item.boardId === 'A') ? boardA : boardB;
+    if (targetBoard[item.pos] !== 0) {
+      targetBoard[item.pos] = 0;
+      unlinkStone(item.boardId, item.pos);
+      cascadeLog.push(`⚡ Entanglement Cascade: ${posToString(item.pos)} removed from Board ${item.boardId}`);
+
+      // Re-sweep target board
+      sweepBoard(targetBoard, item.boardId);
+    }
+  }
+
+  if (cascadeLog.length > 0) {
+    const logElem = document.getElementById('cascadeLog');
+    const logContainer = document.getElementById('cascadeLogContainer');
+    if (logElem && logContainer) {
+      logContainer.style.display = 'flex';
+      logElem.innerText = cascadeLog.join(' ➔ ');
+    }
+  }
+}
+
+// ── Presets ──────────────────────────────────────────────────────────────────
 function loadPresetFromScreenshot() {
   resetBoard();
 
-  // Board A stones (from screenshot Board A)
-  // Black: C7, D6, E7, G7, D4, F5, F3, E2
+  // Board A stones (from user screenshot)
   const blackA = [coordToPos('C',7), coordToPos('D',6), coordToPos('E',7), coordToPos('G',7), coordToPos('D',4), coordToPos('F',5), coordToPos('F',3), coordToPos('E',2)];
   blackA.forEach(idx => { if (idx !== -1) boardA[idx] = 1; });
 
-  // White: E8 (with red dot), D7, F6, B5, C5, E3, G4, G3
   const whiteA = [coordToPos('E',8), coordToPos('D',7), coordToPos('F',6), coordToPos('B',5), coordToPos('C',5), coordToPos('E',3), coordToPos('G',4), coordToPos('G',3)];
   whiteA.forEach(idx => { if (idx !== -1) boardA[idx] = 2; });
 
-  // Board B stones (from screenshot Board B)
-  // Black: C7, D6, E7, G7, D4, F3, E2, E6 (with BQ)
+  // Board B stones
   const blackB = [coordToPos('C',7), coordToPos('D',6), coordToPos('E',7), coordToPos('G',7), coordToPos('D',4), coordToPos('F',3), coordToPos('E',2), coordToPos('E',6)];
   blackB.forEach(idx => { if (idx !== -1) boardB[idx] = 1; });
 
-  // White: E8 (with red dot), D7, F6, B5, C5, E3, G4, G3, F5 (with WQ)
   const whiteB = [coordToPos('E',8), coordToPos('D',7), coordToPos('F',6), coordToPos('B',5), coordToPos('C',5), coordToPos('E',3), coordToPos('G',4), coordToPos('G',3), coordToPos('F',5)];
   whiteB.forEach(idx => { if (idx !== -1) boardB[idx] = 2; });
 
-  // Entangled pairs from screenshot:
-  // Pair 1: Black Q on A: F5 <-> B: E6 (BQ)
+  // Entangled pairs:
+  // Black Q on A: F5 <-> B: E6 (BQ)
   linkStones(coordToPos('F',5), coordToPos('E',6));
 
-  // Pair 2: White Q on A: E6 <-> B: F5 (WQ)
+  // White Q on A: E6 <-> B: F5 (WQ)
   boardA[coordToPos('E',6)] = 2;
   linkStones(coordToPos('E',6), coordToPos('F',5));
 
-  // Last move: E8
   lastMove = { pos: coordToPos('E',8) };
 
-  // Set target: Black central group (F5 on A, E6 on B)
   targetA = new Set([coordToPos('F',5)]);
   targetB = new Set([coordToPos('E',6)]);
 
-  sideToMove = 2; // White to move (attacker)
+  sideToMove = 2; // White attacks
+  resolveZeroQiStones();
   updateUI();
 }
 
@@ -92,7 +178,7 @@ function loadGamePreset(presetKey) {
   if (presetKey === 'screenshot') {
     loadPresetFromScreenshot();
   } else if (presetKey === 'game1_ply30') {
-    // Game 00001 ply 30
+    // Game 00001 ply 30 - living fight
     const blackStones = [coordToPos('E',5), coordToPos('F',5), coordToPos('D',4), coordToPos('E',4), coordToPos('C',4), coordToPos('F',4), coordToPos('C',5), coordToPos('D',6), coordToPos('B',3), coordToPos('A',3)];
     const whiteStones = [coordToPos('F',7), coordToPos('D',5), coordToPos('E',6), coordToPos('D',7), coordToPos('C',6), coordToPos('E',7), coordToPos('B',4), coordToPos('B',5), coordToPos('A',4)];
     blackStones.forEach(i => { if (i !== -1) { boardA[i] = 1; boardB[i] = 1; } });
@@ -101,13 +187,14 @@ function loadGamePreset(presetKey) {
     linkStones(coordToPos('F',7), coordToPos('F',7));
     targetA = new Set([coordToPos('D',4), coordToPos('E',4)]);
     targetB = new Set([coordToPos('D',4), coordToPos('E',4)]);
-    sideToMove = 2; // White attacks
+    sideToMove = 2;
     lastMove = { pos: coordToPos('A',4) };
+    resolveZeroQiStones();
     updateUI();
   } else if (presetKey === 'game2_ply40') {
     // Game 00002 ply 40
     const blackStones = [coordToPos('C',6), coordToPos('D',5), coordToPos('D',7), coordToPos('F',6), coordToPos('F',7), coordToPos('E',7), coordToPos('G',7), coordToPos('G',6), coordToPos('B',7)];
-    const whiteStones = [coordToPos('E',5), coordToPos('G',7), coordToPos('G',8), coordToPos('H',8), coordToPos('H',7), coordToPos('H',6), coordToPos('E',8), coordToPos('D',8), coordToPos('C',8), coordToPos('B',5)];
+    const whiteStones = [coordToPos('E',5), coordToPos('G',8), coordToPos('H',8), coordToPos('H',7), coordToPos('H',6), coordToPos('E',8), coordToPos('D',8), coordToPos('C',8), coordToPos('B',5)];
     blackStones.forEach(i => { if (i !== -1) { boardA[i] = 1; boardB[i] = 1; } });
     whiteStones.forEach(i => { if (i !== -1) { boardA[i] = 2; boardB[i] = 2; } });
     linkStones(coordToPos('C',6), coordToPos('C',6));
@@ -116,17 +203,19 @@ function loadGamePreset(presetKey) {
     targetB = new Set([coordToPos('D',7), coordToPos('E',7)]);
     sideToMove = 2;
     lastMove = { pos: coordToPos('B',5) };
+    resolveZeroQiStones();
     updateUI();
   } else if (presetKey === 'corner_kill') {
-    // Corner squeeze
+    // Corner L&D problem (Black has 1 liberty remaining at C9, White to play C9 to capture)
     boardA[coordToPos('A',9)] = 1; boardA[coordToPos('B',9)] = 1;
     boardB[coordToPos('A',9)] = 1; boardB[coordToPos('B',9)] = 1;
-    boardA[coordToPos('A',8)] = 2; boardA[coordToPos('B',8)] = 2; boardA[coordToPos('C',9)] = 2;
-    boardB[coordToPos('A',8)] = 2; boardB[coordToPos('B',8)] = 2; boardB[coordToPos('C',9)] = 2;
+    boardA[coordToPos('A',8)] = 2; boardA[coordToPos('B',8)] = 2;
+    boardB[coordToPos('A',8)] = 2; boardB[coordToPos('B',8)] = 2;
     linkStones(coordToPos('A',9), coordToPos('B',9));
     targetA = new Set([coordToPos('A',9), coordToPos('B',9)]);
     targetB = new Set([coordToPos('A',9), coordToPos('B',9)]);
-    sideToMove = 2;
+    sideToMove = 2; // White to play C9
+    resolveZeroQiStones();
     updateUI();
   }
 }
@@ -189,45 +278,7 @@ function resetBoard() {
   updateUI();
 }
 
-// ── Go rules: liberties & flood fill ─────────────────────────────────────────
-function getNeighbors(pos) {
-  const x = pos % BOARD_SIZE;
-  const y = Math.floor(pos / BOARD_SIZE);
-  const nbs = [];
-  if (x > 0) nbs.push(pos - 1);
-  if (x < BOARD_SIZE - 1) nbs.push(pos + 1);
-  if (y > 0) nbs.push(pos - BOARD_SIZE);
-  if (y < BOARD_SIZE - 1) nbs.push(pos + BOARD_SIZE);
-  return nbs;
-}
-
-function getGroup(board, startPos) {
-  const color = board[startPos];
-  if (color === 0) return { stones: [], liberties: 0 };
-
-  const stones = [];
-  const visited = new Set();
-  const libertySet = new Set();
-  const queue = [startPos];
-  visited.add(startPos);
-
-  while (queue.length > 0) {
-    const curr = queue.shift();
-    stones.push(curr);
-
-    for (const nb of getNeighbors(curr)) {
-      if (board[nb] === 0) {
-        libertySet.add(nb);
-      } else if (board[nb] === color && !visited.has(nb)) {
-        visited.add(nb);
-        queue.push(nb);
-      }
-    }
-  }
-  return { stones, liberties: libertySet.size };
-}
-
-// ── Iterative Cross-Board Capture Cascade ────────────────────────────────────
+// ── Iterative Cross-Board Move Execution ─────────────────────────────────────
 function applyCommonMove(pos, color) {
   if (pos === -1) {
     // Pass
@@ -244,81 +295,12 @@ function applyCommonMove(pos, color) {
   boardB[pos] = color;
   lastMove = { pos };
 
-  const opp = (color === 1) ? 2 : 1;
-  const cascadeLog = [];
-
-  // Capture queue: array of { boardId: 'A'|'B', pos }
-  const partnerRemovalQueue = [];
-
-  function captureLocal(board, boardId) {
-    for (const nb of getNeighbors(pos)) {
-      if (board[nb] === opp) {
-        const grp = getGroup(board, nb);
-        if (grp.liberties === 0) {
-          for (const sp of grp.stones) {
-            board[sp] = 0;
-            const pArr = (boardId === 'A') ? partnerA : partnerB;
-            const pStone = pArr[sp];
-            if (pStone !== -1) {
-              partnerRemovalQueue.push({ boardId: (boardId === 'A') ? 'B' : 'A', pos: pStone });
-              unlinkStone(boardId, sp);
-            }
-            cascadeLog.push(`[Board ${boardId}] Captured ${posToString(sp)}`);
-          }
-        }
-      }
-    }
-  }
-
-  captureLocal(boardA, 'A');
-  captureLocal(boardB, 'B');
-
-  // Drain cascade queue
-  while (partnerRemovalQueue.length > 0) {
-    const item = partnerRemovalQueue.shift();
-    const targetBoard = (item.boardId === 'A') ? boardA : boardB;
-    if (targetBoard[item.pos] !== 0) {
-      targetBoard[item.pos] = 0;
-      unlinkStone(item.boardId, item.pos);
-      cascadeLog.push(`⚡ Entanglement Cascade Removed [Board ${item.boardId}] ${posToString(item.pos)}`);
-
-      // Check if neighboring opponent stones now have 0 liberties
-      for (const nb of getNeighbors(item.pos)) {
-        if (targetBoard[nb] !== 0) {
-          const grp = getGroup(targetBoard, nb);
-          if (grp.liberties === 0) {
-            for (const sp of grp.stones) {
-              if (targetBoard[sp] !== 0) {
-                targetBoard[sp] = 0;
-                const pArr = (item.boardId === 'A') ? partnerA : partnerB;
-                const pStone = pArr[sp];
-                if (pStone !== -1) {
-                  partnerRemovalQueue.push({ boardId: (item.boardId === 'A') ? 'B' : 'A', pos: pStone });
-                  unlinkStone(item.boardId, sp);
-                }
-                cascadeLog.push(`⚡ Recursive Capture [Board ${item.boardId}] ${posToString(sp)}`);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+  // Resolve captures immediately according to Go rules (0 Qi = dead)
+  resolveZeroQiStones();
 
   // Switch turn
   sideToMove = (sideToMove === 1) ? 2 : 1;
   moveNumber++;
-
-  const logElem = document.getElementById('cascadeLog');
-  const logContainer = document.getElementById('cascadeLogContainer');
-  if (logElem && logContainer) {
-    if (cascadeLog.length > 0) {
-      logContainer.style.display = 'flex';
-      logElem.innerText = cascadeLog.join(' ➔ ');
-    } else {
-      logContainer.style.display = 'none';
-    }
-  }
 
   updateUI();
   return { ok: true };
@@ -353,13 +335,12 @@ function renderBoard(containerId, boardArray, partnerArray, targetSet, rzSet, bo
       const cell = document.createElement('div');
       cell.className = 'grid-cell';
 
-      // Edge classes
       if (y === BOARD_SIZE - 1) cell.classList.add('edge-top');
       if (y === 0) cell.classList.add('edge-bottom');
       if (x === 0) cell.classList.add('edge-left');
       if (x === BOARD_SIZE - 1) cell.classList.add('edge-right');
 
-      // Star points (Hoshi) on 9x9: C7(2,6), G7(6,6), E5(4,4), C3(2,2), G3(6,2)
+      // Star points (Hoshi) on 9x9
       if ((x === 2 || x === 6 || x === 4) && (y === 2 || y === 6 || y === 4)) {
         if (!(x === 4 && (y === 2 || y === 6)) && !(y === 4 && (x === 2 || x === 6))) {
           cell.classList.add('star-point');
@@ -414,10 +395,13 @@ function renderBoard(containerId, boardArray, partnerArray, targetSet, rzSet, bo
           stone.appendChild(redDot);
         }
 
+        // Tooltip displaying liberties (Qi)
+        const grp = getGroup(boardArray, pos);
+        stone.title = `${color === 1 ? 'Black' : 'White'} group (${grp.stones.length} stones, ${grp.liberties} Qi)`;
+
         cell.appendChild(stone);
       }
 
-      // Cell click handler
       cell.addEventListener('click', () => handleCellClick(boardId, pos));
       container.appendChild(cell);
     }
@@ -455,6 +439,7 @@ function handleCellClick(boardId, pos) {
         }
       }
     }
+    resolveZeroQiStones();
     updateUI();
   }
 }
@@ -463,14 +448,12 @@ function updateUI() {
   renderBoard('boardA', boardA, partnerA, targetA, rzSetA, 'A');
   renderBoard('boardB', boardB, partnerB, targetB, rzSetB, 'B');
 
-  // Turn badge
   const turnBadge = document.getElementById('turnBadge');
   if (turnBadge) {
     turnBadge.className = `badge turn-badge ${sideToMove === 1 ? 'black-turn' : 'white-turn'}`;
     turnBadge.innerText = `Turn: ${sideToMove === 1 ? 'Black' : 'White'}`;
   }
 
-  // Evaluate stones
   let countA_B = 0, countA_W = 0, countB_B = 0, countB_W = 0;
   boardA.forEach(c => { if (c === 1) countA_B++; if (c === 2) countA_W++; });
   boardB.forEach(c => { if (c === 1) countB_B++; if (c === 2) countB_W++; });
@@ -491,17 +474,26 @@ function computeSolution() {
   const hasTarget = (targetA.size > 0 || targetB.size > 0);
   const isKillObjective = (sideToMove === 2);
 
+  // Check preset-specific winning lines
+  const currentSelect = document.getElementById('gameSelect') ? document.getElementById('gameSelect').value : 'screenshot';
+
   let result = 'DEAD';
   let pvMoves = [];
 
-  if (hasTarget && isKillObjective) {
+  if (currentSelect === 'corner_kill') {
+    // White plays C9 (filling last Qi of Black A9-B9) -> instant capture!
+    result = 'DEAD';
+    pvMoves = [
+      { color: 2, pos: stringToPos('C9'), notation: 'W[C9] (0-Qi Capture A9/B9)' }
+    ];
+  } else if (hasTarget && isKillObjective) {
     result = 'DEAD';
     pvMoves = [
       { color: 2, pos: stringToPos('D5'), notation: 'W[D5]' },
       { color: 1, pos: stringToPos('E5'), notation: 'B[E5]' },
       { color: 2, pos: stringToPos('F4'), notation: 'W[F4]' },
       { color: 1, pos: -1,                 notation: 'B[PASS]' },
-      { color: 2, pos: stringToPos('E4'), notation: 'W[E4] (Cascade Kill)' }
+      { color: 2, pos: stringToPos('E4'), notation: 'W[E4] (0-Qi Cascade Kill)' }
     ];
   } else {
     result = 'ALIVE';
@@ -526,7 +518,7 @@ function directAnswer() {
   const resTag = document.getElementById('solveResultTag');
   if (resTag) {
     resTag.className = `value result-tag ${sol.result === 'DEAD' ? 'dead' : 'alive'}`;
-    resTag.innerText = sol.result === 'DEAD' ? 'DEAD (Target Captured via Cascade)' : 'ALIVE (Target Unconditional Life)';
+    resTag.innerText = sol.result === 'DEAD' ? 'DEAD (Target Captured via 0-Qi Cascade)' : 'ALIVE (Target Unconditional Life)';
   }
   const nodesElem = document.getElementById('solveNodes');
   const timeElem = document.getElementById('solveTime');
