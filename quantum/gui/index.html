@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuantumGo Dual-Board Life & Death Solver</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-icon">⚛</div>
+        <div class="brand-text">
+          <h1>QuantumGo <span>Life & Death Solver</span></h1>
+          <p class="subtitle">Dual-Board State Transitions, Entanglement Cascades & Exact Proof Search</p>
+        </div>
+      </div>
+      <div class="header-controls">
+        <div class="badge phase-badge" id="phaseBadge">Phase: Synchronized Move (Move 3+)</div>
+        <div class="badge turn-badge black-turn" id="turnBadge">Turn: Black</div>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="workspace">
+      <!-- Toolbar -->
+      <div class="toolbar glass-panel">
+        <div class="tool-group">
+          <label>Mode:</label>
+          <button class="btn btn-primary" id="modePlayBtn">🎮 Play / Interactive</button>
+          <button class="btn" id="modeEditBtn">✏️ Problem Setup</button>
+        </div>
+
+        <div class="tool-group edit-tools" id="editTools" style="display: none;">
+          <label>Place:</label>
+          <button class="btn btn-sm active" id="toolBlackBtn">⚫ Black</button>
+          <button class="btn btn-sm" id="toolWhiteBtn">⚪ White</button>
+          <button class="btn btn-sm" id="toolLinkBtn">🔗 Entangle (BQ / WQ)</button>
+          <button class="btn btn-sm" id="toolTargetBtn">🎯 Set Target Group</button>
+          <button class="btn btn-sm btn-danger" id="toolEraseBtn">🗑️ Erase</button>
+        </div>
+
+        <div class="tool-group solver-actions">
+          <label>Self-Play & Games:</label>
+          <select class="btn btn-sm" id="gameSelect">
+            <option value="screenshot">Screenshot Position (Tactical Cut)</option>
+            <option value="game1_ply30">Game 00001 (Ply 30 - Fight)</option>
+            <option value="game2_ply40">Game 00002 (Ply 40 - Ko & Cascade)</option>
+            <option value="corner_kill">Corner Kill Tactical Squeeze</option>
+          </select>
+          <button class="btn btn-direct-answer" id="directAnswerBtn">⚡ Direct Answer (Auto-Solve)</button>
+          <button class="btn btn-accent" id="stepSelfPlayBtn">▶️ Step-by-Step Play</button>
+          <button class="btn btn-ghost" id="resetBtn">🔄 Clear Board</button>
+        </div>
+      </div>
+
+      <!-- Dual Boards Container -->
+      <div class="dual-boards-container">
+        <!-- Board A (B1) -->
+        <div class="board-card glass-panel" id="boardACard">
+          <div class="board-card-header">
+            <h2>Board A <span class="board-sub">(Board 1)</span></h2>
+            <div class="board-status-tag" id="statusTagA">Score: Waiting for evaluation</div>
+          </div>
+          <div class="board-wrapper">
+            <div class="go-board" id="boardA">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Board B (B2) -->
+        <div class="board-card glass-panel" id="boardBCard">
+          <div class="board-card-header">
+            <h2>Board B <span class="board-sub">(Board 2)</span></h2>
+            <div class="board-status-tag" id="statusTagB">Score: Waiting for evaluation</div>
+          </div>
+          <div class="board-wrapper">
+            <div class="go-board" id="boardB">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Panel: Evaluation & Proof Tree -->
+      <div class="bottom-panel glass-panel">
+        <div class="eval-header">
+          <div class="eval-title">
+            <span class="icon">📊</span>
+            <strong>Dual-Board Evaluation (A/B Territory Delta + Exact L&D Proof)</strong>
+          </div>
+          <div class="eval-actions">
+            <button class="btn btn-sm" id="refreshEvalBtn">🔄 Refresh Eval</button>
+            <button class="btn btn-sm" id="toggleRZBtn">🗺️ Relevance Zone (RZ_Q)</button>
+          </div>
+        </div>
+
+        <div class="eval-grid">
+          <div class="eval-card eval-a">
+            <div class="eval-card-title">Board A (Territory & Stones)</div>
+            <div class="eval-card-value" id="evalAVal">Black: 0 stones | White: 0 stones</div>
+          </div>
+          <div class="eval-card eval-b">
+            <div class="eval-card-title">Board B (Territory & Stones)</div>
+            <div class="eval-card-value" id="evalBVal">Black: 0 stones | White: 0 stones</div>
+          </div>
+        </div>
+
+        <!-- Direct Answer / Solver Output Panel -->
+        <div class="solver-report" id="solverReport">
+          <div class="report-row">
+            <span class="label">Proof Status:</span>
+            <span class="value result-tag" id="solveResultTag">Ready</span>
+            <span class="label">Objective:</span>
+            <span class="value" id="solveObjective">Kill Target (White to move)</span>
+            <span class="label">Nodes Searched:</span>
+            <span class="value" id="solveNodes">0 nodes</span>
+            <span class="label">Solve Time:</span>
+            <span class="value" id="solveTime">0.0 ms</span>
+          </div>
+          <div class="report-row pv-row">
+            <span class="label">Optimal Principal Variation (PV):</span>
+            <span class="value pv-sequence" id="solvePV">Click "⚡ Direct Answer" to compute exact solution line</span>
+          </div>
+          <div class="report-row" id="cascadeLogContainer" style="display: none;">
+            <span class="label">Cascade Log:</span>
+            <span class="value cascade-log" id="cascadeLog">None</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <svg class="entangle-overlay" id="entangleSvg"></svg>
+
+  <script src="app.js"></script>
+</body>
+</html>
