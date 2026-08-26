@@ -141,31 +141,31 @@ function loadPresetFromScreenshot() {
   resetBoard();
 
   // Board A stones (from user screenshot)
-  const blackA = [coordToPos('C',7), coordToPos('D',6), coordToPos('E',7), coordToPos('G',7), coordToPos('D',4), coordToPos('F',5), coordToPos('F',3), coordToPos('E',2)];
+  const blackA = [coordToPos('C', 7), coordToPos('D', 6), coordToPos('E', 7), coordToPos('G', 7), coordToPos('D', 4), coordToPos('F', 5), coordToPos('F', 3), coordToPos('E', 2)];
   blackA.forEach(idx => { if (idx !== -1) boardA[idx] = 1; });
 
-  const whiteA = [coordToPos('E',8), coordToPos('D',7), coordToPos('F',6), coordToPos('B',5), coordToPos('C',5), coordToPos('E',3), coordToPos('G',4), coordToPos('G',3)];
+  const whiteA = [coordToPos('E', 8), coordToPos('D', 7), coordToPos('F', 6), coordToPos('B', 5), coordToPos('C', 5), coordToPos('E', 3), coordToPos('G', 4), coordToPos('G', 3)];
   whiteA.forEach(idx => { if (idx !== -1) boardA[idx] = 2; });
 
   // Board B stones
-  const blackB = [coordToPos('C',7), coordToPos('D',6), coordToPos('E',7), coordToPos('G',7), coordToPos('D',4), coordToPos('F',3), coordToPos('E',2), coordToPos('E',6)];
+  const blackB = [coordToPos('C', 7), coordToPos('D', 6), coordToPos('E', 7), coordToPos('G', 7), coordToPos('D', 4), coordToPos('F', 3), coordToPos('E', 2), coordToPos('E', 6)];
   blackB.forEach(idx => { if (idx !== -1) boardB[idx] = 1; });
 
-  const whiteB = [coordToPos('E',8), coordToPos('D',7), coordToPos('F',6), coordToPos('B',5), coordToPos('C',5), coordToPos('E',3), coordToPos('G',4), coordToPos('G',3), coordToPos('F',5)];
+  const whiteB = [coordToPos('E', 8), coordToPos('D', 7), coordToPos('F', 6), coordToPos('B', 5), coordToPos('C', 5), coordToPos('E', 3), coordToPos('G', 4), coordToPos('G', 3), coordToPos('F', 5)];
   whiteB.forEach(idx => { if (idx !== -1) boardB[idx] = 2; });
 
   // Entangled pairs:
   // Black Q on A: F5 <-> B: E6 (BQ)
-  linkStones(coordToPos('F',5), coordToPos('E',6));
+  linkStones(coordToPos('F', 5), coordToPos('E', 6));
 
   // White Q on A: E6 <-> B: F5 (WQ)
-  boardA[coordToPos('E',6)] = 2;
-  linkStones(coordToPos('E',6), coordToPos('F',5));
+  boardA[coordToPos('E', 6)] = 2;
+  linkStones(coordToPos('E', 6), coordToPos('F', 5));
 
-  lastMove = { pos: coordToPos('E',8) };
+  lastMove = { pos: coordToPos('E', 8) };
 
-  targetA = new Set([coordToPos('F',5)]);
-  targetB = new Set([coordToPos('E',6)]);
+  targetA = new Set([coordToPos('F', 5)]);
+  targetB = new Set([coordToPos('E', 6)]);
 
   sideToMove = 2; // White attacks
   resolveZeroQiStones();
@@ -179,41 +179,41 @@ function loadGamePreset(presetKey) {
     loadPresetFromScreenshot();
   } else if (presetKey === 'game1_ply30') {
     // Game 00001 ply 30 - living fight
-    const blackStones = [coordToPos('E',5), coordToPos('F',5), coordToPos('D',4), coordToPos('E',4), coordToPos('C',4), coordToPos('F',4), coordToPos('C',5), coordToPos('D',6), coordToPos('B',3), coordToPos('A',3)];
-    const whiteStones = [coordToPos('F',7), coordToPos('D',5), coordToPos('E',6), coordToPos('D',7), coordToPos('C',6), coordToPos('E',7), coordToPos('B',4), coordToPos('B',5), coordToPos('A',4)];
+    const blackStones = [coordToPos('E', 5), coordToPos('F', 5), coordToPos('D', 4), coordToPos('E', 4), coordToPos('C', 4), coordToPos('F', 4), coordToPos('C', 5), coordToPos('D', 6), coordToPos('B', 3), coordToPos('A', 3)];
+    const whiteStones = [coordToPos('F', 7), coordToPos('D', 5), coordToPos('E', 6), coordToPos('D', 7), coordToPos('C', 6), coordToPos('E', 7), coordToPos('B', 4), coordToPos('B', 5), coordToPos('A', 4)];
     blackStones.forEach(i => { if (i !== -1) { boardA[i] = 1; boardB[i] = 1; } });
     whiteStones.forEach(i => { if (i !== -1) { boardA[i] = 2; boardB[i] = 2; } });
-    linkStones(coordToPos('E',5), coordToPos('E',5));
-    linkStones(coordToPos('F',7), coordToPos('F',7));
-    targetA = new Set([coordToPos('D',4), coordToPos('E',4)]);
-    targetB = new Set([coordToPos('D',4), coordToPos('E',4)]);
+    linkStones(coordToPos('E', 5), coordToPos('E', 5));
+    linkStones(coordToPos('F', 7), coordToPos('F', 7));
+    targetA = new Set([coordToPos('D', 4), coordToPos('E', 4)]);
+    targetB = new Set([coordToPos('D', 4), coordToPos('E', 4)]);
     sideToMove = 2;
-    lastMove = { pos: coordToPos('A',4) };
+    lastMove = { pos: coordToPos('A', 4) };
     resolveZeroQiStones();
     updateUI();
   } else if (presetKey === 'game2_ply40') {
     // Game 00002 ply 40
-    const blackStones = [coordToPos('C',6), coordToPos('D',5), coordToPos('D',7), coordToPos('F',6), coordToPos('F',7), coordToPos('E',7), coordToPos('G',7), coordToPos('G',6), coordToPos('B',7)];
-    const whiteStones = [coordToPos('E',5), coordToPos('G',8), coordToPos('H',8), coordToPos('H',7), coordToPos('H',6), coordToPos('E',8), coordToPos('D',8), coordToPos('C',8), coordToPos('B',5)];
+    const blackStones = [coordToPos('C', 6), coordToPos('D', 5), coordToPos('D', 7), coordToPos('F', 6), coordToPos('F', 7), coordToPos('E', 7), coordToPos('G', 7), coordToPos('G', 6), coordToPos('B', 7)];
+    const whiteStones = [coordToPos('E', 5), coordToPos('G', 8), coordToPos('H', 8), coordToPos('H', 7), coordToPos('H', 6), coordToPos('E', 8), coordToPos('D', 8), coordToPos('C', 8), coordToPos('B', 5)];
     blackStones.forEach(i => { if (i !== -1) { boardA[i] = 1; boardB[i] = 1; } });
     whiteStones.forEach(i => { if (i !== -1) { boardA[i] = 2; boardB[i] = 2; } });
-    linkStones(coordToPos('C',6), coordToPos('C',6));
-    linkStones(coordToPos('E',5), coordToPos('E',5));
-    targetA = new Set([coordToPos('D',7), coordToPos('E',7)]);
-    targetB = new Set([coordToPos('D',7), coordToPos('E',7)]);
+    linkStones(coordToPos('C', 6), coordToPos('C', 6));
+    linkStones(coordToPos('E', 5), coordToPos('E', 5));
+    targetA = new Set([coordToPos('D', 7), coordToPos('E', 7)]);
+    targetB = new Set([coordToPos('D', 7), coordToPos('E', 7)]);
     sideToMove = 2;
-    lastMove = { pos: coordToPos('B',5) };
+    lastMove = { pos: coordToPos('B', 5) };
     resolveZeroQiStones();
     updateUI();
   } else if (presetKey === 'corner_kill') {
     // Corner L&D problem (Black has 1 liberty remaining at C9, White to play C9 to capture)
-    boardA[coordToPos('A',9)] = 1; boardA[coordToPos('B',9)] = 1;
-    boardB[coordToPos('A',9)] = 1; boardB[coordToPos('B',9)] = 1;
-    boardA[coordToPos('A',8)] = 2; boardA[coordToPos('B',8)] = 2;
-    boardB[coordToPos('A',8)] = 2; boardB[coordToPos('B',8)] = 2;
-    linkStones(coordToPos('A',9), coordToPos('B',9));
-    targetA = new Set([coordToPos('A',9), coordToPos('B',9)]);
-    targetB = new Set([coordToPos('A',9), coordToPos('B',9)]);
+    boardA[coordToPos('A', 9)] = 1; boardA[coordToPos('B', 9)] = 1;
+    boardB[coordToPos('A', 9)] = 1; boardB[coordToPos('B', 9)] = 1;
+    boardA[coordToPos('A', 8)] = 2; boardA[coordToPos('B', 8)] = 2;
+    boardB[coordToPos('A', 8)] = 2; boardB[coordToPos('B', 8)] = 2;
+    linkStones(coordToPos('A', 9), coordToPos('B', 9));
+    targetA = new Set([coordToPos('A', 9), coordToPos('B', 9)]);
+    targetB = new Set([coordToPos('A', 9), coordToPos('B', 9)]);
     sideToMove = 2; // White to play C9
     resolveZeroQiStones();
     updateUI();
@@ -492,7 +492,7 @@ function computeSolution() {
       { color: 2, pos: stringToPos('D5'), notation: 'W[D5]' },
       { color: 1, pos: stringToPos('E5'), notation: 'B[E5]' },
       { color: 2, pos: stringToPos('F4'), notation: 'W[F4]' },
-      { color: 1, pos: -1,                 notation: 'B[PASS]' },
+      { color: 1, pos: -1, notation: 'B[PASS]' },
       { color: 2, pos: stringToPos('E4'), notation: 'W[E4] (0-Qi Cascade Kill)' }
     ];
   } else {
