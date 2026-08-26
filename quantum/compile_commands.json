@@ -1,0 +1,116 @@
+[
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_lib.dir/src/SingleBoard.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/SingleBoard.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/SingleBoard.cpp",
+  "output": "CMakeFiles/qgo_lib.dir/src/SingleBoard.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_lib.dir/src/EntanglementTable.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/EntanglementTable.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/EntanglementTable.cpp",
+  "output": "CMakeFiles/qgo_lib.dir/src/EntanglementTable.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_lib.dir/src/QuantumBoardState.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumBoardState.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumBoardState.cpp",
+  "output": "CMakeFiles/qgo_lib.dir/src/QuantumBoardState.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_lib.dir/src/QuantumHash.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumHash.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumHash.cpp",
+  "output": "CMakeFiles/qgo_lib.dir/src/QuantumHash.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_lib.dir/src/QuantumMoveGen.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumMoveGen.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumMoveGen.cpp",
+  "output": "CMakeFiles/qgo_lib.dir/src/QuantumMoveGen.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_lib.dir/src/QuantumCapture.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumCapture.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumCapture.cpp",
+  "output": "CMakeFiles/qgo_lib.dir/src/QuantumCapture.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_lib.dir/src/QuantumUndo.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumUndo.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumUndo.cpp",
+  "output": "CMakeFiles/qgo_lib.dir/src/QuantumUndo.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_lib.dir/src/QuantumTarget.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumTarget.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumTarget.cpp",
+  "output": "CMakeFiles/qgo_lib.dir/src/QuantumTarget.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_lib.dir/src/QuantumRZone.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumRZone.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumRZone.cpp",
+  "output": "CMakeFiles/qgo_lib.dir/src/QuantumRZone.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_lib.dir/src/QuantumSearch.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumSearch.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumSearch.cpp",
+  "output": "CMakeFiles/qgo_lib.dir/src/QuantumSearch.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_lib.dir/src/QuantumLDSolver.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumLDSolver.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src/QuantumLDSolver.cpp",
+  "output": "CMakeFiles/qgo_lib.dir/src/QuantumLDSolver.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_solver.dir/main.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/main.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/main.cpp",
+  "output": "CMakeFiles/qgo_solver.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build/tests",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\" -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_tests.dir/test_main.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests/test_main.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests/test_main.cpp",
+  "output": "tests/CMakeFiles/qgo_tests.dir/test_main.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build/tests",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\" -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_tests.dir/test_entanglement.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests/test_entanglement.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests/test_entanglement.cpp",
+  "output": "tests/CMakeFiles/qgo_tests.dir/test_entanglement.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build/tests",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\" -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_tests.dir/test_rules.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests/test_rules.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests/test_rules.cpp",
+  "output": "tests/CMakeFiles/qgo_tests.dir/test_rules.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build/tests",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\" -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_tests.dir/test_capture.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests/test_capture.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests/test_capture.cpp",
+  "output": "tests/CMakeFiles/qgo_tests.dir/test_capture.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build/tests",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\" -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_tests.dir/test_state.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests/test_state.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests/test_state.cpp",
+  "output": "tests/CMakeFiles/qgo_tests.dir/test_state.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build/tests",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\" -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_tests.dir/test_ld.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests/test_ld.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests/test_ld.cpp",
+  "output": "tests/CMakeFiles/qgo_tests.dir/test_ld.cpp.o"
+},
+{
+  "directory": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/build/tests",
+  "command": "/usr/bin/c++  -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/src\" -I\"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests\"  -Wall -Wextra -O0 -g -g -std=gnu++17 -arch arm64 -o CMakeFiles/qgo_tests.dir/test_rzone.cpp.o -c \"/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests/test_rzone.cpp\"",
+  "file": "/Users/lenovo/Desktop/QuantumGo Life-and-Death solver/quantum/tests/test_rzone.cpp",
+  "output": "tests/CMakeFiles/qgo_tests.dir/test_rzone.cpp.o"
+}
+]

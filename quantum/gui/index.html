@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuantumGo 双棋盘死活求解与可视化系统 (QuantumGo L&D Solver GUI)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-icon">⚛</div>
+        <div class="brand-text">
+          <h1>QuantumGo <span>Life & Death Solver</span></h1>
+          <p class="subtitle">量子围棋双棋盘死活求解与纠缠级联可视化平台</p>
+        </div>
+      </div>
+      <div class="header-controls">
+        <div class="badge phase-badge" id="phaseBadge">阶段: 共用单点 (第3手+)</div>
+        <div class="badge turn-badge black-turn" id="turnBadge">当前行棋: 黑方</div>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="workspace">
+      <!-- Toolbar -->
+      <div class="toolbar glass-panel">
+        <div class="tool-group">
+          <label>模式:</label>
+          <button class="btn btn-primary" id="modePlayBtn">🎮 对弈/推演</button>
+          <button class="btn" id="modeEditBtn">✏️ 摆题模式</button>
+        </div>
+
+        <div class="tool-group edit-tools" id="editTools" style="display: none;">
+          <label>摆子:</label>
+          <button class="btn btn-sm active" id="toolBlackBtn">⚫ 放置黑子</button>
+          <button class="btn btn-sm" id="toolWhiteBtn">⚪ 放置白子</button>
+          <button class="btn btn-sm" id="toolLinkBtn">🔗 纠缠连线 (黑Q/白Q)</button>
+          <button class="btn btn-sm" id="toolTargetBtn">🎯 设定目标组</button>
+          <button class="btn btn-sm btn-danger" id="toolEraseBtn">🗑️ 擦除</button>
+        </div>
+
+        <div class="tool-group">
+          <label>死活求解:</label>
+          <button class="btn btn-accent" id="solveKillBtn">⚡ 求解 (白先杀黑)</button>
+          <button class="btn btn-accent-secondary" id="solveLiveBtn">🛡️ 求解 (黑先生存)</button>
+          <button class="btn btn-secondary" id="presetBtn">📚 经典预设</button>
+          <button class="btn btn-ghost" id="resetBtn">🔄 清空棋盘</button>
+        </div>
+      </div>
+
+      <!-- Dual Boards Container -->
+      <div class="dual-boards-container">
+        <!-- Board A (B1) -->
+        <div class="board-card glass-panel" id="boardACard">
+          <div class="board-card-header">
+            <h2>A 棋盘 <span class="board-sub">(Board 1)</span></h2>
+            <div class="board-status-tag" id="statusTagA">目差: 等待评估</div>
+          </div>
+          <div class="board-wrapper">
+            <div class="go-board" id="boardA">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Board B (B2) -->
+        <div class="board-card glass-panel" id="boardBCard">
+          <div class="board-card-header">
+            <h2>B 棋盘 <span class="board-sub">(Board 2)</span></h2>
+            <div class="board-status-tag" id="statusTagB">目差: 等待评估</div>
+          </div>
+          <div class="board-wrapper">
+            <div class="go-board" id="boardB">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Panel: Evaluation & Cascade Status -->
+      <div class="bottom-panel glass-panel">
+        <div class="eval-header">
+          <div class="eval-title">
+            <span class="icon">📊</span>
+            <strong>双棋盘评估（A/B目差 + MCTS/RZS死活判定）</strong>
+          </div>
+          <div class="eval-actions">
+            <button class="btn btn-sm" id="refreshEvalBtn">🔄 刷新评估</button>
+            <button class="btn btn-sm" id="toggleRZBtn">🗺️ 显示相关区 (RZ_Q)</button>
+          </div>
+        </div>
+
+        <div class="eval-grid">
+          <div class="eval-card eval-a">
+            <div class="eval-card-title">A 棋盘（局面估算）</div>
+            <div class="eval-card-value" id="evalAVal">黑 +0.5 目 (活子: 0)</div>
+          </div>
+          <div class="eval-card eval-b">
+            <div class="eval-card-title">B 棋盘（局面估算）</div>
+            <div class="eval-card-value" id="evalBVal">黑 +0.5 目 (活子: 0)</div>
+          </div>
+        </div>
+
+        <div class="solver-report" id="solverReport">
+          <div class="report-row">
+            <span class="label">求解状态:</span>
+            <span class="value result-tag" id="solveResultTag">就绪</span>
+            <span class="label">检索节点数:</span>
+            <span class="value" id="solveNodes">0 nodes</span>
+            <span class="label">耗时:</span>
+            <span class="value" id="solveTime">0.0 ms</span>
+          </div>
+          <div class="report-row pv-row">
+            <span class="label">最佳变例 (PV):</span>
+            <span class="value pv-sequence" id="solvePV">等待求解指令...</span>
+          </div>
+          <div class="report-row" id="cascadeLogContainer" style="display: none;">
+            <span class="label">级联捕获日志:</span>
+            <span class="value cascade-log" id="cascadeLog">无</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <svg class="entangle-overlay" id="entangleSvg"></svg>
+
+  <script src="app.js"></script>
+</body>
+</html>
