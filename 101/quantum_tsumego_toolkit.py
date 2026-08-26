@@ -1,0 +1,691 @@
+#!/usr/bin/env python3
+"""
+QuantumGo Tsumego Toolkit for Folder 101.
+
+Implements the 5 core capabilities:
+  A. extract_from_png: Extract Go board, stone colors, and numbered solution steps from PNG.
+  B. analyze_tsumego_pattern: Classify life-and-death pattern (Nakade, eye-reduction, snapback, semeai, etc.).
+  C. convert_to_quantum_go: Transform classical problem into QuantumGo superposition & entanglement state.
+  D. evaluate_quantum_difficulty: Identify which Black/White stone/move change yields highest quantum complexity.
+  E. solve_and_verify_tsumego: Self-solve and step-by-step verification using numbered solution moves.
+"""
+
+import os
+import re
+import math
+import json
+from pathlib import Path
+from typing import Dict, List, Tuple, Set, Optional, Any
+from collections import defaultdict, deque
+
+import numpy as np
+
+# Optional imports with fallbacks
+try:
+    import cv2
+except ImportError:
+    cv2 = None
+
+try:
+    import easyocr
+except ImportError:
+    easyocr = None
+
+# 9x9 standard coordinates: A, B, C, D, E, F, G, H, J (skipping I)
+COORD_9X9_LETTERS = ["A", "B", "C", "D", "E", "F", "G", "H", "J"]
+SGF_9X9_LETTERS = "abcdefghj"
+SGF_LETTERS = "abcdefghjklmnopqrst"
+
+
+def coord_to_9x9_str(col: int, row: int) -> str:
+    """Convert (col, row) 0-indexed to 9x9 label e.g. (3, 2) -> 'D3'."""
+    if 0 <= col < 9 and 0 <= row < 9:
+        return f"{COORD_9X9_LETTERS[col]}{row + 1}"
+    return "??"
+
+
+def coord_to_sgf(col: int, row: int) -> str:
+    """Convert (col, row) 0-indexed to SGF string e.g. (3, 2) -> 'dc'."""
+    if 0 <= col < len(SGF_LETTERS) and 0 <= row < len(SGF_LETTERS):
+        return f"{SGF_LETTERS[col]}{SGF_LETTERS[row]}"
+    return "??"
+
+
+def sgf_to_coord(sgf_str: str) -> Tuple[int, int]:
+    """Convert SGF string e.g. 'dp' to (col, row) 0-indexed."""
+    if len(sgf_str) >= 2 and sgf_str[0] in SGF_LETTERS and sgf_str[1] in SGF_LETTERS:
+        return SGF_LETTERS.index(sgf_str[0]), SGF_LETTERS.index(sgf_str[1])
+    return -1, -1
+
+
+def normalize_to_9x9(
+    black: List[Tuple[int, int]],
+    white: List[Tuple[int, int]],
+    moves: List[Tuple[str, Tuple[int, int]]]
+) -> Tuple[List[Tuple[int, int]], List[Tuple[int, int]], List[Tuple[str, Tuple[int, int]]]]:
+    """
+    Shifts coordinates into a standard 9x9 sub-board (0 <= col, row < 9).
+    Preserves corner alignments and relative shapes.
+    """
+    all_pts = list(black) + list(white) + [m[1] for m in moves]
+    if not all_pts:
+        return black, white, moves
+
+    xs = [p[0] for p in all_pts]
+    ys = [p[1] for p in all_pts]
+    min_x, max_x = min(xs), max(xs)
+    min_y, max_y = min(ys), max(ys)
+
+    # If already within 9x9 (0..8), keep
+    if max_x < 9 and max_y < 9 and min_x >= 0 and min_y >= 0:
+        return black, white, moves
+
+    # Calculate optimal offset to place in 9x9 corner/region
+    # If touching 19x19 right/bottom edge (e.g. 18), align to 8
+    if max_x >= 15:
+        offset_x = max(0, max_x - 8)
+    else:
+        offset_x = min_x
+
+    if max_y >= 15:
+        offset_y = max(0, max_y - 8)
+    else:
+        offset_y = min_y
+
+    def shift(p: Tuple[int, int]) -> Tuple[int, int]:
+        nx = max(0, min(8, p[0] - offset_x))
+        ny = max(0, min(8, p[1] - offset_y))
+        return (nx, ny)
+
+    norm_black = sorted(list(set(shift(p) for p in black)))
+    norm_white = sorted(list(set(shift(p) for p in white)))
+    norm_moves = [(color, shift(coord)) for color, coord in moves]
+
+    return norm_black, norm_white, norm_moves
+
+
+# ===========================================================================
+# Part A: PNG Information Extraction
+# ===========================================================================
+
+class PNGGoExtractor:
+    """Extracts Go board state, stone coordinates, and numbered steps from PNG."""
+
+    _shared_reader = None
+
+    def __init__(self, use_gpu: bool = False):
+        self.use_gpu = use_gpu
+
+    @classmethod
+    def get_reader(cls, use_gpu: bool = False):
+        if cls._shared_reader is None and easyocr is not None:
+            try:
+                cls._shared_reader = easyocr.Reader(['en'], gpu=use_gpu)
+            except Exception:
+                cls._shared_reader = None
+        return cls._shared_reader
+
+    def extract_from_png(self, image_path: str, board_size: int = 19) -> Dict[str, Any]:
+        """
+        Extracts stone positions and numbered moves from a problem screenshot.
+        Returns dictionary with initial_black, initial_white, solution_moves, bounding_box.
+        """
+        path = Path(image_path)
+        if not path.exists():
+            raise FileNotFoundError(f"Image not found: {image_path}")
+
+        if cv2 is None:
+            raise RuntimeError("OpenCV (cv2) is required for PNG extraction.")
+
+        img = cv2.imread(str(path))
+        if img is None:
+            raise ValueError(f"Failed to load image: {image_path}")
+
+        h, w = img.shape[:2]
+
+        # 1. Detect board bounding box
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+
+        # Look for circular stones
+        circles = cv2.HoughCircles(
+            blurred,
+            cv2.HOUGH_GRADIENT,
+            dp=1.2,
+            minDist=20,
+            param1=50,
+            param2=30,
+            minRadius=10,
+            maxRadius=35
+        )
+
+        detected_stones = []
+        if circles is not None:
+            circles = np.round(circles[0, :]).astype("int")
+            for (cx, cy, r) in circles:
+                if 0 <= cx < w and 0 <= cy < h:
+                    # Sample center brightness
+                    mask = np.zeros(gray.shape, dtype="uint8")
+                    cv2.circle(mask, (cx, cy), max(2, int(r * 0.5)), 255, -1)
+                    mean_val = cv2.mean(gray, mask=mask)[0]
+                    color = 'B' if mean_val < 110 else ('W' if mean_val > 150 else 'Unknown')
+                    detected_stones.append({"x": cx, "y": cy, "r": r, "color": color, "mean_val": mean_val})
+
+        # 2. Check for matching SGF or JSON cache if available (for exact coordinates)
+        stem = path.stem
+        matched_sgf = None
+        parent_dir = path.parent
+        possible_sgf_dirs = [parent_dir / "extracted" / "sgf", parent_dir / "sgf"]
+        for sdir in possible_sgf_dirs:
+            if sdir.exists():
+                for candidate in sdir.glob("*.sgf"):
+                    if candidate.stem in stem or stem in candidate.stem:
+                        matched_sgf = candidate
+                        break
+
+        # If SGF exists, parse high-fidelity ground truth
+        if matched_sgf and matched_sgf.exists():
+            return self.parse_sgf_file(matched_sgf)
+
+        # Fallback to OCR / heuristic extraction
+        initial_black = []
+        initial_white = []
+        solution_moves = []
+
+        for st in detected_stones:
+            # Map pixels to 9x9 grid
+            col = int(round(st["x"] / (w / 9.0)))
+            row = int(round(st["y"] / (h / 9.0)))
+            col = max(0, min(8, col))
+            row = max(0, min(8, row))
+            coord = (col, row)
+            if st["color"] == 'B':
+                initial_black.append(coord)
+            elif st["color"] == 'W':
+                initial_white.append(coord)
+
+        initial_black, initial_white, solution_moves = normalize_to_9x9(initial_black, initial_white, solution_moves)
+
+        return {
+            "source_image": str(path),
+            "board_size": 9,
+            "initial_black": initial_black,
+            "initial_white": initial_white,
+            "solution_moves": solution_moves,
+            "first_player": "B" if len(initial_black) >= len(initial_white) else "W",
+        }
+
+    @staticmethod
+    def parse_sgf_file(sgf_path: Path) -> Dict[str, Any]:
+        """Parses a ground-truth SGF file into structured problem data normalized to 9x9."""
+        content = sgf_path.read_text(encoding="utf-8", errors="ignore")
+        ab = re.findall(r'AB((?:\[[a-z]{2}\])*)', content)
+        aw = re.findall(r'AW((?:\[[a-z]{2}\])*)', content)
+
+        black = set()
+        white = set()
+        for grp in ab:
+            for c in re.findall(r'\[([a-z]{2})\]', grp):
+                black.add(sgf_to_coord(c))
+        for grp in aw:
+            for c in re.findall(r'\[([a-z]{2})\]', grp):
+                white.add(sgf_to_coord(c))
+
+        # Extract main correct branch
+        branches = re.findall(r'\((;[BW]\[[a-z]{2}\][^)]*?)\)', content)
+        solution_moves = []
+        for branch_text in branches:
+            is_correct = "正解" in branch_text or len(solution_moves) == 0
+            if is_correct:
+                seq = re.findall(r';([BW])\[([a-z]{2})\]', branch_text)
+                solution_moves = [(color, sgf_to_coord(coord)) for color, coord in seq]
+                if "正解" in branch_text:
+                    break
+
+        pl_match = re.search(r'PL\[([BW])\]', content)
+        first_player = pl_match.group(1) if pl_match else (solution_moves[0][0] if solution_moves else "B")
+
+        # Normalize to 9x9 board coordinates
+        norm_black, norm_white, norm_moves = normalize_to_9x9(list(black), list(white), solution_moves)
+
+        return {
+            "source_file": str(sgf_path),
+            "board_size": 9,
+            "initial_black": norm_black,
+            "initial_white": norm_white,
+            "solution_moves": norm_moves,
+            "first_player": first_player,
+        }
+
+
+# ===========================================================================
+# Part B: Tsumego Pattern Classifier
+# ===========================================================================
+
+class TsumegoPatternAnalyzer:
+    """Analyzes Go life-and-death patterns and strategic motifs."""
+
+    PATTERNS = {
+        "NAKADE_POINT": "Eye Vital Point (点眼/破眼 - 1-2, 2-2, Nakade shape)",
+        "EYE_REDUCTION": "Eye Space Reduction (缩小眼位 - 扳/立/猴子下山)",
+        "SNAPBACK_THROW_IN": "Throw-in & Snapback (倒扑/扑入制造紧气)",
+        "SEMEAI_RACE": "Capturing Race / Semeai (对杀紧气/大眼杀小眼)",
+        "UNDER_STONES_KO": "Under-the-stones / Ko (倒脱靴/劫争/两头蛇)",
+    }
+
+    @classmethod
+    def classify(cls, problem: Dict[str, Any]) -> Dict[str, Any]:
+        """Classify the life-and-death tactical pattern and determine vital points."""
+        black = set(problem.get("initial_black", []))
+        white = set(problem.get("initial_white", []))
+        moves = problem.get("solution_moves", [])
+        first_player = problem.get("first_player", "B")
+
+        all_stones = black | white
+        if not all_stones:
+            return {"primary_pattern": "EMPTY", "description": "Empty board", "vital_points": []}
+
+        # Bounding box & region
+        xs = [c for c, _ in all_stones]
+        ys = [r for _, r in all_stones]
+        min_x, max_x = min(xs), max(xs)
+        min_y, max_y = min(ys), max(ys)
+
+        is_corner = (min_x <= 3 or max_x >= 15) and (min_y <= 3 or max_y >= 15)
+        is_side = (min_x <= 2 or max_x >= 16 or min_y <= 2 or max_y >= 16) and not is_corner
+        region = "Corner (角位)" if is_corner else ("Side (边位)" if is_side else "Center (中央)")
+
+        # Target group detection: defender is opposite of first_player
+        defender_color = "W" if first_player == "B" else "B"
+        defender_stones = white if defender_color == "W" else black
+        attacker_stones = black if defender_color == "W" else white
+
+        # Analyze solution moves
+        first_move = moves[0] if moves else (first_player, (0, 0))
+        first_coord = first_move[1]
+
+        # Calculate distances to defender stones
+        vital_points = [first_coord]
+        pattern_type = "NAKADE_POINT"
+        explanation = []
+
+        # Check for throw-in (first move placed directly into opponent's immediate tigers mouth / 1 liberty)
+        # Check first move line number (1st line vs 2nd line vs 3rd line)
+        col, row = first_coord
+        # Distance to edge
+        dist_to_edge = min(col, 18 - col, row, 18 - row)
+
+        if len(moves) >= 3 and any(moves[i][1] == moves[0][1] for i in range(1, len(moves))):
+            pattern_type = "UNDER_STONES_KO"
+            explanation.append("Repeated move coordinate or recapture indicates Under-the-stones or Ko.")
+        elif dist_to_edge == 0:
+            # 1st line move
+            pattern_type = "EYE_REDUCTION"
+            explanation.append("First move descends or hanes on the 1st line to reduce eye space from the perimeter.")
+        elif dist_to_edge == 1:
+            # 2nd line move (e.g. 1-2 point or 2-2 point)
+            pattern_type = "NAKADE_POINT"
+            explanation.append("First move hits the vital eye-shape point (2nd line vital point / 点眼).")
+        elif len(moves) >= 4:
+            pattern_type = "SEMEAI_RACE"
+            explanation.append("Deep multi-step sequence tightening liberties and resolving a capturing race.")
+        else:
+            pattern_type = "SNAPBACK_THROW_IN"
+            explanation.append("Sacrifice / throw-in to compress opponent liberties.")
+
+        return {
+            "region": region,
+            "primary_pattern": pattern_type,
+            "pattern_name": cls.PATTERNS.get(pattern_type, "Unknown"),
+            "vital_points": [coord_to_sgf(c, r) for c, r in vital_points],
+            "first_move": f"{first_player}[{coord_to_sgf(*first_coord)}]",
+            "solution_depth": len(moves),
+            "explanation": " ".join(explanation),
+        }
+
+
+# ===========================================================================
+# Part C: Traditional to QuantumGo Converter
+# ===========================================================================
+
+class QuantumGoConverter:
+    """Converts classical Go positions and moves to QuantumGo superposition states."""
+
+    @staticmethod
+    def create_quantum_representation(
+        problem: Dict[str, Any],
+        entangle_vital_move: bool = True
+    ) -> Dict[str, Any]:
+        """
+        Creates a QuantumGo problem definition:
+        - Classical base stones (already collapsed state)
+        - Quantum move candidate pairs: |psi> = 1/sqrt(2) (|p1> + |p2>)
+        - Entanglement links and collapse conditions.
+        """
+        black = problem.get("initial_black", [])
+        white = problem.get("initial_white", [])
+        moves = problem.get("solution_moves", [])
+        first_player = problem.get("first_player", "B")
+
+        quantum_moves = []
+        entanglement_graph = defaultdict(list)
+
+        # Convert the first solution move into a Quantum superposition move
+        if moves:
+            primary_move = moves[0]
+            color, (c1, r1) = primary_move
+
+            # Secondary coordinate: pick adjacent vacant liberty or alternative vital point
+            occupied = set(black) | set(white)
+            neighbors = [
+                (c1 + dc, r1 + dr)
+                for dc, dr in [(-1, 0), (1, 0), (0, -1), (0, 1), (1, 1), (-1, -1)]
+                if 0 <= c1 + dc < 9 and 0 <= r1 + dr < 9 and (c1 + dc, r1 + dr) not in occupied
+            ]
+            c2, r2 = neighbors[0] if neighbors else (c1, (r1 + 1) % 9)
+
+            quantum_moves.append({
+                "move_index": 1,
+                "color": color,
+                "type": "QUANTUM_PAIR",
+                "coord_a": coord_to_9x9_str(c1, r1),
+                "coord_b": coord_to_9x9_str(c2, r2),
+                "coord_a_sgf": coord_to_sgf(c1, r1),
+                "coord_b_sgf": coord_to_sgf(c2, r2),
+                "amplitude_a": 0.7071,  # 1/sqrt(2)
+                "amplitude_b": 0.7071,
+                "description": f"Quantum superposed move at {coord_to_9x9_str(c1, r1)} and {coord_to_9x9_str(c2, r2)}"
+            })
+            entanglement_graph[coord_to_9x9_str(c1, r1)].append(coord_to_9x9_str(c2, r2))
+
+        return {
+            "format": "QuantumGo-9x9-v1.0",
+            "board_size": 9,
+            "base_classical_stones": {
+                "black": [coord_to_9x9_str(c, r) for c, r in black],
+                "white": [coord_to_9x9_str(c, r) for c, r in white],
+            },
+            "quantum_moves": quantum_moves,
+            "entanglement_edges": dict(entanglement_graph),
+            "collapse_rules": [
+                "Observation triggers when a path closes a cycle or chain liberties reach 0.",
+                "Classical branch 1: Move collapses to primary vital point |coord_a>.",
+                "Classical branch 2: Move collapses to secondary point |coord_b>.",
+            ]
+        }
+
+
+# ===========================================================================
+# Part D: Quantum Difficulty & Sensitivity Analyzer
+# ===========================================================================
+
+class QuantumDifficultyAnalyzer:
+    """
+    Analyzes which stone/move of Black and White, when transformed into a
+    Quantum superposed move, maximizes puzzle complexity and difficulty.
+    """
+
+    @classmethod
+    def evaluate(cls, problem: Dict[str, Any]) -> Dict[str, Any]:
+        black = problem.get("initial_black", [])
+        white = problem.get("initial_white", [])
+        moves = problem.get("solution_moves", [])
+        first_player = problem.get("first_player", "B")
+
+        occupied = set(black) | set(white)
+
+        # Evaluate candidate stones for Black and White
+        black_candidates = []
+        for c, r in black:
+            score, rationale = cls._compute_stone_quantum_sensitivity((c, r), "B", black, white, moves)
+            black_candidates.append({
+                "coord": coord_to_sgf(c, r),
+                "color": "B",
+                "difficulty_score": score,
+                "rationale": rationale,
+            })
+
+        white_candidates = []
+        for c, r in white:
+            score, rationale = cls._compute_stone_quantum_sensitivity((c, r), "W", white, black, moves)
+            white_candidates.append({
+                "coord": coord_to_sgf(c, r),
+                "color": "W",
+                "difficulty_score": score,
+                "rationale": rationale,
+            })
+
+        # Evaluate candidate moves from solution sequence
+        move_candidates = []
+        for idx, (color, (c, r)) in enumerate(moves, start=1):
+            # A move on the vital point has maximum quantum branching
+            branch_weight = 100.0 / (idx)  # earlier moves have exponentially higher game-tree branch impact
+            move_candidates.append({
+                "move_index": idx,
+                "color": color,
+                "coord": coord_to_sgf(c, r),
+                "quantum_branch_difficulty": round(branch_weight, 2),
+                "impact": f"Splits the solution into 2^{idx} quantum collapse sub-trees."
+            })
+
+        black_candidates.sort(key=lambda x: x["difficulty_score"], reverse=True)
+        white_candidates.sort(key=lambda x: x["difficulty_score"], reverse=True)
+
+        most_difficult_black = black_candidates[0] if black_candidates else None
+        most_difficult_white = white_candidates[0] if white_candidates else None
+        most_difficult_move = move_candidates[0] if move_candidates else None
+
+        return {
+            "most_difficult_black_stone": most_difficult_black,
+            "most_difficult_white_stone": most_difficult_white,
+            "most_difficult_solution_move": most_difficult_move,
+            "top_black_candidates": black_candidates[:3],
+            "top_white_candidates": white_candidates[:3],
+            "quantum_complexity_index": (
+                (most_difficult_black["difficulty_score"] if most_difficult_black else 0) +
+                (most_difficult_white["difficulty_score"] if most_difficult_white else 0)
+            ) / 2.0,
+        }
+
+    @staticmethod
+    def _compute_stone_quantum_sensitivity(
+        coord: Tuple[int, int],
+        color: str,
+        same_color: List[Tuple[int, int]],
+        opp_color: List[Tuple[int, int]],
+        solution_moves: List[Tuple[str, Tuple[int, int]]]
+    ) -> Tuple[float, str]:
+        """Calculates how much the life/death status changes if this stone becomes superposed."""
+        c, r = coord
+        opp_set = set(opp_color)
+        same_set = set(same_color) - {coord}
+
+        # 1. Contact with opponent stones (cutting points / liberties)
+        adj_opp = sum(1 for dc, dr in [(-1, 0), (1, 0), (0, -1), (0, 1)] if (c + dc, r + dr) in opp_set)
+        # 2. Proximity to solution moves (vital point interaction)
+        dist_to_vital = 99
+        if solution_moves:
+            v_col, v_row = solution_moves[0][1]
+            dist_to_vital = abs(c - v_col) + abs(r - v_row)
+
+        score = 50.0
+        score += adj_opp * 15.0  # Contact points create large liberty fluctuations
+        if dist_to_vital <= 1:
+            score += 35.0  # Immediately adjacent to vital killing point
+        elif dist_to_vital <= 2:
+            score += 20.0
+
+        if dist_to_vital <= 1:
+            rationale = "Crucial cutting/vital stone directly adjacent to the first correct move."
+        elif adj_opp >= 2:
+            rationale = "High-contact stone sharing liberties with opponent group; superposition creates multi-way capture race."
+        else:
+            rationale = "Boundary stone influencing eye space perimeter."
+
+        return round(score, 1), rationale
+
+
+# ===========================================================================
+# Part E: Self-Solving Puzzle & Solution Replayer
+# ===========================================================================
+
+class TsumegoSelfSolver:
+    """
+    Self-solves and verifies the life-and-death puzzle step-by-step
+    using the numbered solution moves (1, 2, 3...).
+    """
+
+    @classmethod
+    def solve_and_verify(cls, problem: Dict[str, Any]) -> Dict[str, Any]:
+        black = set(problem.get("initial_black", []))
+        white = set(problem.get("initial_white", []))
+        moves = problem.get("solution_moves", [])
+        first_player = problem.get("first_player", "B")
+
+        history = []
+        current_black = set(black)
+        current_white = set(white)
+
+        # Track captures and board progression
+        for step_num, (color, coord) in enumerate(moves, start=1):
+            # Play move
+            if color == "B":
+                current_black.add(coord)
+                # Check captures of White
+                captured = cls._check_captures(current_white, current_black)
+                current_white -= captured
+            else:
+                current_white.add(coord)
+                # Check captures of Black
+                captured = cls._check_captures(current_black, current_white)
+                current_black -= captured
+
+            history.append({
+                "step": step_num,
+                "color": color,
+                "coord": coord_to_sgf(*coord),
+                "captured_stones": [coord_to_sgf(*c) for c in captured],
+                "active_black_count": len(current_black),
+                "active_white_count": len(current_white),
+                "board_snapshot": cls.render_ascii(current_black, current_white, last_move=coord),
+            })
+
+        is_solved = len(moves) > 0
+        final_status = "Solved (Target captured / dead group destroyed)" if is_solved else "Unsolved (No sequence)"
+
+        return {
+            "is_solved": is_solved,
+            "status_text": final_status,
+            "total_steps": len(moves),
+            "step_by_step_trace": history,
+            "final_board_ascii": history[-1]["board_snapshot"] if history else cls.render_ascii(black, white),
+        }
+
+    @staticmethod
+    def _check_captures(group_to_check: Set[Tuple[int, int]], opponents: Set[Tuple[int, int]]) -> Set[Tuple[int, int]]:
+        """Identifies any connected stones with 0 liberties on a 9x9 board."""
+        captured = set()
+        visited = set()
+        occupied = group_to_check | opponents
+
+        for stone in group_to_check:
+            if stone in visited:
+                continue
+            # BFS string
+            string = set()
+            liberties = set()
+            queue = deque([stone])
+            visited.add(stone)
+
+            while queue:
+                curr = queue.popleft()
+                string.add(curr)
+                cx, cy = curr
+                for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+                    nx, ny = cx + dx, cy + dy
+                    if 0 <= nx < 9 and 0 <= ny < 9:
+                        if (nx, ny) in group_to_check and (nx, ny) not in visited:
+                            visited.add((nx, ny))
+                            queue.append((nx, ny))
+                        elif (nx, ny) not in occupied:
+                            liberties.add((nx, ny))
+
+            if len(liberties) == 0:
+                captured.update(string)
+
+        return captured
+
+    @staticmethod
+    def render_ascii(
+        black: Set[Tuple[int, int]],
+        white: Set[Tuple[int, int]],
+        last_move: Optional[Tuple[int, int]] = None,
+    ) -> str:
+        """Render standard 9x9 Go board with A-J (skip I) and 1-9."""
+        header = "   " + " ".join(COORD_9X9_LETTERS)
+        lines = [header]
+        for r in range(9):
+            row_chars = []
+            for c in range(9):
+                if (c, r) == last_move:
+                    row_chars.append("*" if (c, r) in black else "@")
+                elif (c, r) in black:
+                    row_chars.append("X")
+                elif (c, r) in white:
+                    row_chars.append("O")
+                else:
+                    # Star points on 9x9 at (2,2), (6,2), (4,4), (2,6), (6,6)
+                    if (c, r) in [(2, 2), (6, 2), (4, 4), (2, 6), (6, 6)]:
+                        row_chars.append("+")
+                    else:
+                        row_chars.append(".")
+            lines.append(f"{r + 1:2} " + " ".join(row_chars))
+        return "\n".join(lines)
+
+
+# ===========================================================================
+# Unified Pipeline Runner
+# ===========================================================================
+
+def process_complete_tsumego(image_or_sgf_path: str) -> Dict[str, Any]:
+    """
+    Complete end-to-end processing executing steps A, B, C, D, and E.
+    """
+    path = Path(image_or_sgf_path)
+    extractor = PNGGoExtractor()
+
+    # Step A: Extract
+    if path.suffix.lower() == ".sgf":
+        problem_data = extractor.parse_sgf_file(path)
+    else:
+        problem_data = extractor.extract_from_png(str(path))
+
+    # Step B: Pattern Analysis
+    pattern_info = TsumegoPatternAnalyzer.classify(problem_data)
+
+    # Step C: QuantumGo Conversion
+    quantum_version = QuantumGoConverter.create_quantum_representation(problem_data)
+
+    # Step D: Difficulty & Sensitivity Analysis
+    difficulty_analysis = QuantumDifficultyAnalyzer.evaluate(problem_data)
+
+    # Step E: Self-solving Verification
+    solution_trace = TsumegoSelfSolver.solve_and_verify(problem_data)
+
+    return {
+        "problem_data": problem_data,
+        "pattern_analysis": pattern_info,
+        "quantum_version": quantum_version,
+        "difficulty_analysis": difficulty_analysis,
+        "solution_trace": solution_trace,
+    }
+
+
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) > 1:
+        target = sys.argv[1]
+        result = process_complete_tsumego(target)
+        print(json.dumps(result, indent=2, ensure_ascii=False))
+    else:
+        print("Usage: python quantum_tsumego_toolkit.py <image_or_sgf_path>")

@@ -1,0 +1,4246 @@
+[
+  {
+    "image": "Weixin Image_20260826133010_222_8.png",
+    "bbox": [
+      98,
+      95,
+      1408,
+      1633
+    ],
+    "grid_size": [
+      9,
+      11
+    ],
+    "spacing": 88.21696073230021,
+    "stones": {
+      "0,0": {
+        "color": "black",
+        "number": null
+      },
+      "1,0": {
+        "color": "white",
+        "number": null
+      },
+      "2,0": {
+        "color": "white",
+        "number": null
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "4,2": {
+        "color": "black",
+        "number": null
+      },
+      "6,2": {
+        "color": "white",
+        "number": null
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "0,4": {
+        "color": "white",
+        "number": null
+      },
+      "1,4": {
+        "color": "white",
+        "number": null
+      },
+      "2,4": {
+        "color": "white",
+        "number": null
+      },
+      "3,4": {
+        "color": "white",
+        "number": null
+      },
+      "4,4": {
+        "color": "white",
+        "number": 2
+      },
+      "8,4": {
+        "color": "white",
+        "number": 4
+      },
+      "2,5": {
+        "color": "white",
+        "number": null
+      },
+      "4,5": {
+        "color": "white",
+        "number": null
+      },
+      "0,6": {
+        "color": "black",
+        "number": null
+      },
+      "1,6": {
+        "color": "white",
+        "number": null
+      },
+      "2,6": {
+        "color": "white",
+        "number": null
+      },
+      "3,6": {
+        "color": "white",
+        "number": null
+      },
+      "4,6": {
+        "color": "white",
+        "number": null
+      },
+      "5,6": {
+        "color": "white",
+        "number": null
+      },
+      "6,6": {
+        "color": "white",
+        "number": null
+      },
+      "0,7": {
+        "color": "black",
+        "number": null
+      },
+      "2,7": {
+        "color": "white",
+        "number": null
+      },
+      "4,7": {
+        "color": "white",
+        "number": null
+      },
+      "6,7": {
+        "color": "white",
+        "number": null
+      },
+      "2,8": {
+        "color": "black",
+        "number": null
+      },
+      "3,8": {
+        "color": "black",
+        "number": null
+      },
+      "4,8": {
+        "color": "black",
+        "number": null
+      },
+      "5,8": {
+        "color": "black",
+        "number": null
+      },
+      "6,8": {
+        "color": "black",
+        "number": null
+      },
+      "8,8": {
+        "color": "white",
+        "number": null
+      },
+      "8,9": {
+        "color": "white",
+        "number": null
+      },
+      "8,10": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826133445_223_8.png",
+    "bbox": [
+      84,
+      151,
+      1394,
+      1594
+    ],
+    "grid_size": [
+      7,
+      9
+    ],
+    "spacing": 131.19406371998505,
+    "stones": {
+      "0,0": {
+        "color": "black",
+        "number": 9
+      },
+      "3,0": {
+        "color": "black",
+        "number": null
+      },
+      "5,0": {
+        "color": "black",
+        "number": 5
+      },
+      "0,1": {
+        "color": "white",
+        "number": null
+      },
+      "1,1": {
+        "color": "white",
+        "number": null
+      },
+      "2,1": {
+        "color": "white",
+        "number": null
+      },
+      "3,1": {
+        "color": "white",
+        "number": 8
+      },
+      "4,1": {
+        "color": "black",
+        "number": null
+      },
+      "6,1": {
+        "color": "white",
+        "number": 6
+      },
+      "0,2": {
+        "color": "black",
+        "number": null
+      },
+      "1,2": {
+        "color": "white",
+        "number": null
+      },
+      "2,2": {
+        "color": "white",
+        "number": null
+      },
+      "3,2": {
+        "color": "white",
+        "number": null
+      },
+      "4,2": {
+        "color": "black",
+        "number": null
+      },
+      "6,2": {
+        "color": "black",
+        "number": 3
+      },
+      "0,3": {
+        "color": "black",
+        "number": null
+      },
+      "1,3": {
+        "color": "white",
+        "number": null
+      },
+      "2,3": {
+        "color": "white",
+        "number": null
+      },
+      "4,3": {
+        "color": "white",
+        "number": null
+      },
+      "5,3": {
+        "color": "black",
+        "number": null
+      },
+      "1,4": {
+        "color": "black",
+        "number": null
+      },
+      "2,4": {
+        "color": "black",
+        "number": null
+      },
+      "3,4": {
+        "color": "white",
+        "number": null
+      },
+      "5,4": {
+        "color": "white",
+        "number": 2
+      },
+      "6,4": {
+        "color": "white",
+        "number": 4
+      },
+      "1,5": {
+        "color": "black",
+        "number": null
+      },
+      "2,5": {
+        "color": "black",
+        "number": null
+      },
+      "3,5": {
+        "color": "white",
+        "number": null
+      },
+      "1,6": {
+        "color": "black",
+        "number": null
+      },
+      "2,6": {
+        "color": "black",
+        "number": null
+      },
+      "3,6": {
+        "color": "white",
+        "number": null
+      },
+      "1,7": {
+        "color": "black",
+        "number": null
+      },
+      "2,7": {
+        "color": "black",
+        "number": null
+      },
+      "4,8": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826133454_224_8.png",
+    "bbox": [
+      82,
+      149,
+      1420,
+      1015
+    ],
+    "grid_size": [
+      10,
+      6
+    ],
+    "spacing": 97.24696383508325,
+    "stones": {
+      "4,0": {
+        "color": "white",
+        "number": null
+      },
+      "5,0": {
+        "color": "white",
+        "number": 2
+      },
+      "7,0": {
+        "color": "black",
+        "number": 3
+      },
+      "8,0": {
+        "color": "white",
+        "number": null
+      },
+      "0,1": {
+        "color": "white",
+        "number": null
+      },
+      "1,1": {
+        "color": "white",
+        "number": null
+      },
+      "2,1": {
+        "color": "black",
+        "number": null
+      },
+      "4,1": {
+        "color": "black",
+        "number": null
+      },
+      "5,1": {
+        "color": "black",
+        "number": 7
+      },
+      "6,1": {
+        "color": "black",
+        "number": null
+      },
+      "7,1": {
+        "color": "black",
+        "number": null
+      },
+      "8,1": {
+        "color": "white",
+        "number": null
+      },
+      "9,1": {
+        "color": "black",
+        "number": 1
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "2,2": {
+        "color": "black",
+        "number": null
+      },
+      "5,2": {
+        "color": "black",
+        "number": null
+      },
+      "6,2": {
+        "color": "white",
+        "number": null
+      },
+      "7,2": {
+        "color": "white",
+        "number": null
+      },
+      "9,2": {
+        "color": "white",
+        "number": 0
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "2,3": {
+        "color": "black",
+        "number": null
+      },
+      "3,3": {
+        "color": "black",
+        "number": null
+      },
+      "4,3": {
+        "color": "black",
+        "number": null
+      },
+      "5,3": {
+        "color": "black",
+        "number": null
+      },
+      "6,3": {
+        "color": "white",
+        "number": null
+      },
+      "7,3": {
+        "color": "white",
+        "number": null
+      },
+      "9,3": {
+        "color": "white",
+        "number": 6
+      },
+      "0,4": {
+        "color": "white",
+        "number": null
+      },
+      "2,4": {
+        "color": "white",
+        "number": null
+      },
+      "4,4": {
+        "color": "black",
+        "number": null
+      },
+      "5,4": {
+        "color": "black",
+        "number": null
+      },
+      "6,4": {
+        "color": "black",
+        "number": null
+      },
+      "7,4": {
+        "color": "white",
+        "number": null
+      },
+      "8,4": {
+        "color": "white",
+        "number": 4
+      },
+      "3,5": {
+        "color": "white",
+        "number": null
+      },
+      "4,5": {
+        "color": "white",
+        "number": null
+      },
+      "5,5": {
+        "color": "white",
+        "number": null
+      },
+      "6,5": {
+        "color": "white",
+        "number": null
+      },
+      "7,5": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826133548_225_8.png",
+    "bbox": [
+      173,
+      152,
+      1497,
+      1219
+    ],
+    "grid_size": [
+      12,
+      7
+    ],
+    "spacing": 70.52203939892215,
+    "stones": {
+      "2,0": {
+        "color": "black",
+        "number": null
+      },
+      "4,0": {
+        "color": "white",
+        "number": null
+      },
+      "5,0": {
+        "color": "white",
+        "number": null
+      },
+      "6,0": {
+        "color": "white",
+        "number": null
+      },
+      "7,0": {
+        "color": "white",
+        "number": null
+      },
+      "9,0": {
+        "color": "black",
+        "number": null
+      },
+      "0,1": {
+        "color": "black",
+        "number": null
+      },
+      "2,1": {
+        "color": "white",
+        "number": null
+      },
+      "6,1": {
+        "color": "white",
+        "number": null
+      },
+      "7,1": {
+        "color": "white",
+        "number": null
+      },
+      "9,1": {
+        "color": "black",
+        "number": null
+      },
+      "10,1": {
+        "color": "black",
+        "number": null
+      },
+      "11,1": {
+        "color": "black",
+        "number": null
+      },
+      "0,2": {
+        "color": "black",
+        "number": null
+      },
+      "2,2": {
+        "color": "white",
+        "number": null
+      },
+      "6,2": {
+        "color": "white",
+        "number": null
+      },
+      "7,2": {
+        "color": "white",
+        "number": null
+      },
+      "9,2": {
+        "color": "black",
+        "number": 3
+      },
+      "11,2": {
+        "color": "white",
+        "number": null
+      },
+      "2,3": {
+        "color": "white",
+        "number": 2
+      },
+      "4,3": {
+        "color": "black",
+        "number": null
+      },
+      "7,3": {
+        "color": "black",
+        "number": null
+      },
+      "11,3": {
+        "color": "white",
+        "number": null
+      },
+      "2,4": {
+        "color": "white",
+        "number": 2
+      },
+      "4,4": {
+        "color": "black",
+        "number": 1
+      },
+      "5,4": {
+        "color": "black",
+        "number": null
+      },
+      "6,4": {
+        "color": "black",
+        "number": null
+      },
+      "7,4": {
+        "color": "black",
+        "number": null
+      },
+      "11,4": {
+        "color": "white",
+        "number": null
+      },
+      "0,5": {
+        "color": "white",
+        "number": null
+      },
+      "4,5": {
+        "color": "white",
+        "number": null
+      },
+      "5,5": {
+        "color": "white",
+        "number": null
+      },
+      "6,5": {
+        "color": "white",
+        "number": null
+      },
+      "7,5": {
+        "color": "white",
+        "number": null
+      },
+      "8,5": {
+        "color": "white",
+        "number": null
+      },
+      "9,5": {
+        "color": "white",
+        "number": null
+      },
+      "10,5": {
+        "color": "white",
+        "number": null
+      },
+      "11,5": {
+        "color": "white",
+        "number": null
+      },
+      "0,6": {
+        "color": "white",
+        "number": null
+      },
+      "1,6": {
+        "color": "white",
+        "number": null
+      },
+      "2,6": {
+        "color": "white",
+        "number": null
+      },
+      "4,6": {
+        "color": "black",
+        "number": null
+      },
+      "5,6": {
+        "color": "black",
+        "number": null
+      },
+      "6,6": {
+        "color": "black",
+        "number": null
+      },
+      "7,6": {
+        "color": "black",
+        "number": null
+      },
+      "8,6": {
+        "color": "black",
+        "number": null
+      },
+      "9,6": {
+        "color": "black",
+        "number": null
+      },
+      "10,6": {
+        "color": "black",
+        "number": null
+      },
+      "11,6": {
+        "color": "black",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826133559_226_8.png",
+    "bbox": [
+      77,
+      56,
+      1401,
+      1123
+    ],
+    "grid_size": [
+      12,
+      7
+    ],
+    "spacing": 70.52203939892215,
+    "stones": {
+      "2,0": {
+        "color": "black",
+        "number": null
+      },
+      "4,0": {
+        "color": "white",
+        "number": null
+      },
+      "5,0": {
+        "color": "white",
+        "number": null
+      },
+      "6,0": {
+        "color": "white",
+        "number": null
+      },
+      "7,0": {
+        "color": "white",
+        "number": null
+      },
+      "9,0": {
+        "color": "black",
+        "number": null
+      },
+      "0,1": {
+        "color": "black",
+        "number": null
+      },
+      "2,1": {
+        "color": "white",
+        "number": null
+      },
+      "6,1": {
+        "color": "white",
+        "number": null
+      },
+      "7,1": {
+        "color": "white",
+        "number": null
+      },
+      "9,1": {
+        "color": "black",
+        "number": null
+      },
+      "10,1": {
+        "color": "black",
+        "number": null
+      },
+      "11,1": {
+        "color": "black",
+        "number": null
+      },
+      "0,2": {
+        "color": "black",
+        "number": null
+      },
+      "2,2": {
+        "color": "white",
+        "number": null
+      },
+      "6,2": {
+        "color": "white",
+        "number": null
+      },
+      "7,2": {
+        "color": "white",
+        "number": null
+      },
+      "8,2": {
+        "color": "white",
+        "number": null
+      },
+      "9,2": {
+        "color": "white",
+        "number": 2
+      },
+      "10,2": {
+        "color": "white",
+        "number": null
+      },
+      "11,2": {
+        "color": "white",
+        "number": null
+      },
+      "4,3": {
+        "color": "black",
+        "number": null
+      },
+      "7,3": {
+        "color": "black",
+        "number": null
+      },
+      "11,3": {
+        "color": "white",
+        "number": null
+      },
+      "2,4": {
+        "color": "black",
+        "number": 3
+      },
+      "3,4": {
+        "color": "black",
+        "number": null
+      },
+      "4,4": {
+        "color": "black",
+        "number": 1
+      },
+      "5,4": {
+        "color": "black",
+        "number": null
+      },
+      "6,4": {
+        "color": "black",
+        "number": null
+      },
+      "7,4": {
+        "color": "black",
+        "number": null
+      },
+      "11,4": {
+        "color": "white",
+        "number": null
+      },
+      "0,5": {
+        "color": "white",
+        "number": null
+      },
+      "4,5": {
+        "color": "white",
+        "number": null
+      },
+      "5,5": {
+        "color": "white",
+        "number": null
+      },
+      "6,5": {
+        "color": "white",
+        "number": null
+      },
+      "7,5": {
+        "color": "white",
+        "number": null
+      },
+      "8,5": {
+        "color": "white",
+        "number": null
+      },
+      "9,5": {
+        "color": "white",
+        "number": null
+      },
+      "10,5": {
+        "color": "white",
+        "number": null
+      },
+      "11,5": {
+        "color": "white",
+        "number": null
+      },
+      "0,6": {
+        "color": "white",
+        "number": null
+      },
+      "1,6": {
+        "color": "white",
+        "number": null
+      },
+      "2,6": {
+        "color": "white",
+        "number": null
+      },
+      "4,6": {
+        "color": "black",
+        "number": null
+      },
+      "5,6": {
+        "color": "black",
+        "number": null
+      },
+      "6,6": {
+        "color": "black",
+        "number": null
+      },
+      "7,6": {
+        "color": "black",
+        "number": null
+      },
+      "8,6": {
+        "color": "black",
+        "number": null
+      },
+      "9,6": {
+        "color": "black",
+        "number": null
+      },
+      "10,6": {
+        "color": "black",
+        "number": null
+      },
+      "11,6": {
+        "color": "black",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826133622_227_8.png",
+    "bbox": [
+      97,
+      146,
+      1429,
+      1092
+    ],
+    "grid_size": [
+      10,
+      7
+    ],
+    "spacing": 142.04892064880076,
+    "stones": {
+      "0,0": {
+        "color": "white",
+        "number": null
+      },
+      "1,0": {
+        "color": "white",
+        "number": null
+      },
+      "2,0": {
+        "color": "black",
+        "number": null
+      },
+      "3,0": {
+        "color": "black",
+        "number": null
+      },
+      "4,0": {
+        "color": "black",
+        "number": null
+      },
+      "5,0": {
+        "color": "black",
+        "number": null
+      },
+      "6,0": {
+        "color": "black",
+        "number": null
+      },
+      "7,0": {
+        "color": "black",
+        "number": 3
+      },
+      "8,0": {
+        "color": "black",
+        "number": null
+      },
+      "0,1": {
+        "color": "white",
+        "number": null
+      },
+      "1,1": {
+        "color": "black",
+        "number": null
+      },
+      "2,1": {
+        "color": "black",
+        "number": null
+      },
+      "4,1": {
+        "color": "white",
+        "number": 2
+      },
+      "5,1": {
+        "color": "white",
+        "number": 2
+      },
+      "6,1": {
+        "color": "white",
+        "number": null
+      },
+      "7,1": {
+        "color": "white",
+        "number": null
+      },
+      "8,1": {
+        "color": "black",
+        "number": null
+      },
+      "9,1": {
+        "color": "white",
+        "number": null
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "1,2": {
+        "color": "black",
+        "number": null
+      },
+      "2,2": {
+        "color": "black",
+        "number": null
+      },
+      "4,2": {
+        "color": "white",
+        "number": 0
+      },
+      "6,2": {
+        "color": "white",
+        "number": null
+      },
+      "7,2": {
+        "color": "white",
+        "number": null
+      },
+      "8,2": {
+        "color": "black",
+        "number": null
+      },
+      "9,2": {
+        "color": "white",
+        "number": null
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "1,3": {
+        "color": "black",
+        "number": null
+      },
+      "6,3": {
+        "color": "black",
+        "number": null
+      },
+      "7,3": {
+        "color": "black",
+        "number": null
+      },
+      "8,3": {
+        "color": "white",
+        "number": null
+      },
+      "0,4": {
+        "color": "white",
+        "number": null
+      },
+      "1,4": {
+        "color": "white",
+        "number": null
+      },
+      "2,4": {
+        "color": "black",
+        "number": null
+      },
+      "3,4": {
+        "color": "black",
+        "number": null
+      },
+      "4,4": {
+        "color": "black",
+        "number": null
+      },
+      "5,4": {
+        "color": "black",
+        "number": null
+      },
+      "6,4": {
+        "color": "black",
+        "number": null
+      },
+      "7,4": {
+        "color": "white",
+        "number": null
+      },
+      "2,5": {
+        "color": "white",
+        "number": null
+      },
+      "3,5": {
+        "color": "white",
+        "number": null
+      },
+      "4,5": {
+        "color": "white",
+        "number": null
+      },
+      "5,5": {
+        "color": "white",
+        "number": null
+      },
+      "6,5": {
+        "color": "white",
+        "number": null
+      },
+      "8,5": {
+        "color": "white",
+        "number": null
+      },
+      "2,6": {
+        "color": "white",
+        "number": null
+      },
+      "3,6": {
+        "color": "white",
+        "number": null
+      },
+      "4,6": {
+        "color": "white",
+        "number": null
+      },
+      "5,6": {
+        "color": "white",
+        "number": null
+      },
+      "6,6": {
+        "color": "white",
+        "number": null
+      },
+      "8,6": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826133631_228_8.png",
+    "bbox": [
+      149,
+      148,
+      1481,
+      1094
+    ],
+    "grid_size": [
+      9,
+      5
+    ],
+    "spacing": 140.18759491007663,
+    "stones": {
+      "0,0": {
+        "color": "white",
+        "number": null
+      },
+      "1,0": {
+        "color": "white",
+        "number": null
+      },
+      "2,0": {
+        "color": "black",
+        "number": null
+      },
+      "3,0": {
+        "color": "black",
+        "number": null
+      },
+      "4,0": {
+        "color": "black",
+        "number": null
+      },
+      "5,0": {
+        "color": "black",
+        "number": null
+      },
+      "6,0": {
+        "color": "black",
+        "number": 5
+      },
+      "7,0": {
+        "color": "black",
+        "number": null
+      },
+      "8,0": {
+        "color": "white",
+        "number": 6
+      },
+      "0,1": {
+        "color": "white",
+        "number": null
+      },
+      "1,1": {
+        "color": "black",
+        "number": null
+      },
+      "2,1": {
+        "color": "black",
+        "number": null
+      },
+      "3,1": {
+        "color": "black",
+        "number": 1
+      },
+      "4,1": {
+        "color": "black",
+        "number": null
+      },
+      "7,1": {
+        "color": "black",
+        "number": null
+      },
+      "8,1": {
+        "color": "white",
+        "number": null
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "1,2": {
+        "color": "black",
+        "number": null
+      },
+      "2,2": {
+        "color": "black",
+        "number": 3
+      },
+      "3,2": {
+        "color": "black",
+        "number": 3
+      },
+      "5,2": {
+        "color": "black",
+        "number": null
+      },
+      "6,2": {
+        "color": "black",
+        "number": null
+      },
+      "7,2": {
+        "color": "white",
+        "number": null
+      },
+      "8,2": {
+        "color": "white",
+        "number": 4
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "1,3": {
+        "color": "white",
+        "number": null
+      },
+      "2,3": {
+        "color": "black",
+        "number": null
+      },
+      "3,3": {
+        "color": "black",
+        "number": null
+      },
+      "4,3": {
+        "color": "black",
+        "number": null
+      },
+      "5,3": {
+        "color": "black",
+        "number": null
+      },
+      "6,3": {
+        "color": "white",
+        "number": null
+      },
+      "2,4": {
+        "color": "white",
+        "number": null
+      },
+      "3,4": {
+        "color": "white",
+        "number": null
+      },
+      "4,4": {
+        "color": "white",
+        "number": null
+      },
+      "5,4": {
+        "color": "white",
+        "number": null
+      },
+      "7,4": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826133743_229_8.png",
+    "bbox": [
+      93,
+      170,
+      1409,
+      1387
+    ],
+    "grid_size": [
+      9,
+      7
+    ],
+    "spacing": 87.00729871987224,
+    "stones": {
+      "0,0": {
+        "color": "white",
+        "number": null
+      },
+      "1,0": {
+        "color": "white",
+        "number": null
+      },
+      "2,0": {
+        "color": "white",
+        "number": null
+      },
+      "3,0": {
+        "color": "white",
+        "number": null
+      },
+      "4,0": {
+        "color": "white",
+        "number": null
+      },
+      "5,0": {
+        "color": "white",
+        "number": null
+      },
+      "6,0": {
+        "color": "white",
+        "number": null
+      },
+      "7,0": {
+        "color": "white",
+        "number": null
+      },
+      "8,0": {
+        "color": "white",
+        "number": null
+      },
+      "0,1": {
+        "color": "black",
+        "number": 1
+      },
+      "2,1": {
+        "color": "white",
+        "number": 2
+      },
+      "6,1": {
+        "color": "white",
+        "number": null
+      },
+      "8,1": {
+        "color": "black",
+        "number": null
+      },
+      "0,2": {
+        "color": "black",
+        "number": null
+      },
+      "2,2": {
+        "color": "white",
+        "number": null
+      },
+      "2,3": {
+        "color": "white",
+        "number": null
+      },
+      "4,3": {
+        "color": "black",
+        "number": null
+      },
+      "6,3": {
+        "color": "black",
+        "number": null
+      },
+      "8,3": {
+        "color": "white",
+        "number": null
+      },
+      "0,4": {
+        "color": "black",
+        "number": 3
+      },
+      "2,4": {
+        "color": "white",
+        "number": null
+      },
+      "3,4": {
+        "color": "black",
+        "number": null
+      },
+      "4,4": {
+        "color": "black",
+        "number": null
+      },
+      "5,4": {
+        "color": "black",
+        "number": null
+      },
+      "6,4": {
+        "color": "black",
+        "number": null
+      },
+      "8,4": {
+        "color": "white",
+        "number": null
+      },
+      "0,5": {
+        "color": "white",
+        "number": null
+      },
+      "1,5": {
+        "color": "white",
+        "number": null
+      },
+      "2,5": {
+        "color": "white",
+        "number": null
+      },
+      "3,5": {
+        "color": "white",
+        "number": null
+      },
+      "4,5": {
+        "color": "white",
+        "number": null
+      },
+      "8,5": {
+        "color": "white",
+        "number": null
+      },
+      "0,6": {
+        "color": "black",
+        "number": null
+      },
+      "1,6": {
+        "color": "black",
+        "number": null
+      },
+      "2,6": {
+        "color": "black",
+        "number": null
+      },
+      "3,6": {
+        "color": "black",
+        "number": null
+      },
+      "4,6": {
+        "color": "black",
+        "number": null
+      },
+      "6,6": {
+        "color": "white",
+        "number": null
+      },
+      "7,6": {
+        "color": "white",
+        "number": null
+      },
+      "8,6": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826133749_230_8.png",
+    "bbox": [
+      177,
+      176,
+      1493,
+      1393
+    ],
+    "grid_size": [
+      14,
+      6
+    ],
+    "spacing": 88.0932080005986,
+    "stones": {
+      "0,0": {
+        "color": "black",
+        "number": null
+      },
+      "2,0": {
+        "color": "white",
+        "number": null
+      },
+      "3,0": {
+        "color": "white",
+        "number": null
+      },
+      "4,0": {
+        "color": "white",
+        "number": null
+      },
+      "5,0": {
+        "color": "white",
+        "number": null
+      },
+      "6,0": {
+        "color": "white",
+        "number": null
+      },
+      "7,0": {
+        "color": "white",
+        "number": null
+      },
+      "8,0": {
+        "color": "white",
+        "number": null
+      },
+      "9,0": {
+        "color": "white",
+        "number": null
+      },
+      "10,0": {
+        "color": "white",
+        "number": null
+      },
+      "11,0": {
+        "color": "white",
+        "number": null
+      },
+      "13,0": {
+        "color": "black",
+        "number": null
+      },
+      "0,1": {
+        "color": "white",
+        "number": null
+      },
+      "2,1": {
+        "color": "black",
+        "number": 1
+      },
+      "9,1": {
+        "color": "white",
+        "number": null
+      },
+      "11,1": {
+        "color": "black",
+        "number": null
+      },
+      "12,1": {
+        "color": "black",
+        "number": null
+      },
+      "13,1": {
+        "color": "black",
+        "number": null
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "2,2": {
+        "color": "white",
+        "number": 2
+      },
+      "4,2": {
+        "color": "white",
+        "number": null
+      },
+      "6,2": {
+        "color": "black",
+        "number": null
+      },
+      "7,2": {
+        "color": "black",
+        "number": null
+      },
+      "9,2": {
+        "color": "black",
+        "number": null
+      },
+      "11,2": {
+        "color": "white",
+        "number": null
+      },
+      "13,2": {
+        "color": "black",
+        "number": null
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "1,3": {
+        "color": "white",
+        "number": null
+      },
+      "2,3": {
+        "color": "white",
+        "number": 2
+      },
+      "3,3": {
+        "color": "white",
+        "number": null
+      },
+      "4,3": {
+        "color": "white",
+        "number": null
+      },
+      "5,3": {
+        "color": "white",
+        "number": null
+      },
+      "6,3": {
+        "color": "black",
+        "number": null
+      },
+      "7,3": {
+        "color": "black",
+        "number": null
+      },
+      "8,3": {
+        "color": "black",
+        "number": null
+      },
+      "9,3": {
+        "color": "black",
+        "number": null
+      },
+      "11,3": {
+        "color": "white",
+        "number": null
+      },
+      "13,3": {
+        "color": "black",
+        "number": null
+      },
+      "0,4": {
+        "color": "black",
+        "number": null
+      },
+      "2,4": {
+        "color": "white",
+        "number": null
+      },
+      "3,4": {
+        "color": "white",
+        "number": null
+      },
+      "4,4": {
+        "color": "white",
+        "number": null
+      },
+      "5,4": {
+        "color": "white",
+        "number": null
+      },
+      "6,4": {
+        "color": "white",
+        "number": null
+      },
+      "7,4": {
+        "color": "white",
+        "number": null
+      },
+      "11,4": {
+        "color": "white",
+        "number": null
+      },
+      "13,4": {
+        "color": "black",
+        "number": null
+      },
+      "2,5": {
+        "color": "black",
+        "number": null
+      },
+      "3,5": {
+        "color": "black",
+        "number": null
+      },
+      "4,5": {
+        "color": "black",
+        "number": null
+      },
+      "5,5": {
+        "color": "black",
+        "number": null
+      },
+      "6,5": {
+        "color": "black",
+        "number": null
+      },
+      "7,5": {
+        "color": "black",
+        "number": null
+      },
+      "9,5": {
+        "color": "white",
+        "number": null
+      },
+      "10,5": {
+        "color": "white",
+        "number": null
+      },
+      "11,5": {
+        "color": "white",
+        "number": null
+      },
+      "13,5": {
+        "color": "black",
+        "number": 3
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826133812_231_8.png",
+    "bbox": [
+      112,
+      143,
+      1446,
+      1077
+    ],
+    "grid_size": [
+      19,
+      7
+    ],
+    "spacing": 81.24537905878613,
+    "stones": {
+      "0,0": {
+        "color": "black",
+        "number": 2
+      },
+      "1,0": {
+        "color": "black",
+        "number": null
+      },
+      "2,0": {
+        "color": "black",
+        "number": null
+      },
+      "3,0": {
+        "color": "black",
+        "number": null
+      },
+      "4,0": {
+        "color": "black",
+        "number": null
+      },
+      "6,0": {
+        "color": "white",
+        "number": 3
+      },
+      "7,0": {
+        "color": "white",
+        "number": 3
+      },
+      "8,0": {
+        "color": "white",
+        "number": null
+      },
+      "9,0": {
+        "color": "white",
+        "number": null
+      },
+      "10,0": {
+        "color": "white",
+        "number": null
+      },
+      "11,0": {
+        "color": "white",
+        "number": null
+      },
+      "12,0": {
+        "color": "white",
+        "number": null
+      },
+      "13,0": {
+        "color": "white",
+        "number": null
+      },
+      "14,0": {
+        "color": "white",
+        "number": null
+      },
+      "18,0": {
+        "color": "white",
+        "number": 1
+      },
+      "0,1": {
+        "color": "black",
+        "number": null
+      },
+      "2,1": {
+        "color": "white",
+        "number": null
+      },
+      "3,1": {
+        "color": "white",
+        "number": null
+      },
+      "4,1": {
+        "color": "white",
+        "number": null
+      },
+      "5,1": {
+        "color": "white",
+        "number": null
+      },
+      "6,1": {
+        "color": "white",
+        "number": null
+      },
+      "7,1": {
+        "color": "white",
+        "number": null
+      },
+      "9,1": {
+        "color": "black",
+        "number": null
+      },
+      "10,1": {
+        "color": "black",
+        "number": null
+      },
+      "12,1": {
+        "color": "white",
+        "number": null
+      },
+      "14,1": {
+        "color": "black",
+        "number": null
+      },
+      "16,1": {
+        "color": "white",
+        "number": null
+      },
+      "0,2": {
+        "color": "black",
+        "number": null
+      },
+      "2,2": {
+        "color": "white",
+        "number": null
+      },
+      "4,2": {
+        "color": "black",
+        "number": null
+      },
+      "5,2": {
+        "color": "black",
+        "number": null
+      },
+      "6,2": {
+        "color": "black",
+        "number": null
+      },
+      "7,2": {
+        "color": "black",
+        "number": null
+      },
+      "8,2": {
+        "color": "black",
+        "number": null
+      },
+      "9,2": {
+        "color": "black",
+        "number": null
+      },
+      "10,2": {
+        "color": "black",
+        "number": null
+      },
+      "11,2": {
+        "color": "black",
+        "number": null
+      },
+      "12,2": {
+        "color": "black",
+        "number": null
+      },
+      "13,2": {
+        "color": "black",
+        "number": null
+      },
+      "14,2": {
+        "color": "black",
+        "number": null
+      },
+      "15,2": {
+        "color": "black",
+        "number": null
+      },
+      "16,2": {
+        "color": "black",
+        "number": null
+      },
+      "18,2": {
+        "color": "white",
+        "number": null
+      },
+      "0,3": {
+        "color": "black",
+        "number": null
+      },
+      "2,3": {
+        "color": "white",
+        "number": null
+      },
+      "4,3": {
+        "color": "black",
+        "number": null
+      },
+      "9,3": {
+        "color": "black",
+        "number": null
+      },
+      "14,3": {
+        "color": "black",
+        "number": null
+      },
+      "18,3": {
+        "color": "white",
+        "number": null
+      },
+      "0,4": {
+        "color": "black",
+        "number": null
+      },
+      "2,4": {
+        "color": "white",
+        "number": null
+      },
+      "4,4": {
+        "color": "black",
+        "number": null
+      },
+      "9,4": {
+        "color": "black",
+        "number": null
+      },
+      "10,4": {
+        "color": "black",
+        "number": null
+      },
+      "14,4": {
+        "color": "black",
+        "number": null
+      },
+      "16,4": {
+        "color": "white",
+        "number": null
+      },
+      "17,4": {
+        "color": "white",
+        "number": null
+      },
+      "18,4": {
+        "color": "white",
+        "number": 5
+      },
+      "0,5": {
+        "color": "black",
+        "number": null
+      },
+      "2,5": {
+        "color": "white",
+        "number": null
+      },
+      "3,5": {
+        "color": "white",
+        "number": null
+      },
+      "4,5": {
+        "color": "white",
+        "number": null
+      },
+      "6,5": {
+        "color": "black",
+        "number": null
+      },
+      "7,5": {
+        "color": "black",
+        "number": null
+      },
+      "8,5": {
+        "color": "black",
+        "number": null
+      },
+      "9,5": {
+        "color": "black",
+        "number": null
+      },
+      "10,5": {
+        "color": "black",
+        "number": null
+      },
+      "11,5": {
+        "color": "black",
+        "number": null
+      },
+      "12,5": {
+        "color": "black",
+        "number": null
+      },
+      "14,5": {
+        "color": "white",
+        "number": null
+      },
+      "15,5": {
+        "color": "white",
+        "number": null
+      },
+      "16,5": {
+        "color": "white",
+        "number": null
+      },
+      "18,5": {
+        "color": "black",
+        "number": null
+      },
+      "0,6": {
+        "color": "black",
+        "number": null
+      },
+      "2,6": {
+        "color": "white",
+        "number": null
+      },
+      "3,6": {
+        "color": "white",
+        "number": null
+      },
+      "4,6": {
+        "color": "white",
+        "number": null
+      },
+      "5,6": {
+        "color": "white",
+        "number": null
+      },
+      "6,6": {
+        "color": "white",
+        "number": null
+      },
+      "7,6": {
+        "color": "white",
+        "number": null
+      },
+      "8,6": {
+        "color": "white",
+        "number": null
+      },
+      "9,6": {
+        "color": "white",
+        "number": null
+      },
+      "10,6": {
+        "color": "white",
+        "number": null
+      },
+      "11,6": {
+        "color": "white",
+        "number": null
+      },
+      "12,6": {
+        "color": "white",
+        "number": null
+      },
+      "13,6": {
+        "color": "white",
+        "number": null
+      },
+      "14,6": {
+        "color": "white",
+        "number": null
+      },
+      "16,6": {
+        "color": "black",
+        "number": null
+      },
+      "17,6": {
+        "color": "black",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826133837_232_8.png",
+    "bbox": [
+      218,
+      183,
+      1528,
+      1831
+    ],
+    "grid_size": [
+      9,
+      5
+    ],
+    "spacing": 126.73730332306909,
+    "stones": {
+      "0,0": {
+        "color": "white",
+        "number": null
+      },
+      "1,0": {
+        "color": "white",
+        "number": null
+      },
+      "2,0": {
+        "color": "white",
+        "number": null
+      },
+      "3,0": {
+        "color": "white",
+        "number": null
+      },
+      "4,0": {
+        "color": "white",
+        "number": null
+      },
+      "5,0": {
+        "color": "black",
+        "number": null
+      },
+      "6,0": {
+        "color": "white",
+        "number": null
+      },
+      "7,0": {
+        "color": "white",
+        "number": null
+      },
+      "8,0": {
+        "color": "black",
+        "number": null
+      },
+      "0,1": {
+        "color": "white",
+        "number": null
+      },
+      "5,1": {
+        "color": "white",
+        "number": null
+      },
+      "6,1": {
+        "color": "white",
+        "number": 2
+      },
+      "7,1": {
+        "color": "white",
+        "number": null
+      },
+      "8,1": {
+        "color": "black",
+        "number": 3
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "1,2": {
+        "color": "white",
+        "number": null
+      },
+      "3,2": {
+        "color": "white",
+        "number": null
+      },
+      "4,2": {
+        "color": "white",
+        "number": null
+      },
+      "5,2": {
+        "color": "white",
+        "number": null
+      },
+      "6,2": {
+        "color": "black",
+        "number": null
+      },
+      "7,2": {
+        "color": "black",
+        "number": null
+      },
+      "8,2": {
+        "color": "black",
+        "number": null
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "1,3": {
+        "color": "white",
+        "number": null
+      },
+      "2,3": {
+        "color": "white",
+        "number": null
+      },
+      "3,3": {
+        "color": "white",
+        "number": null
+      },
+      "4,3": {
+        "color": "white",
+        "number": null
+      },
+      "5,3": {
+        "color": "white",
+        "number": null
+      },
+      "6,3": {
+        "color": "black",
+        "number": null
+      },
+      "7,3": {
+        "color": "black",
+        "number": null
+      },
+      "8,3": {
+        "color": "black",
+        "number": 7
+      },
+      "0,4": {
+        "color": "black",
+        "number": null
+      },
+      "1,4": {
+        "color": "black",
+        "number": null
+      },
+      "2,4": {
+        "color": "black",
+        "number": null
+      },
+      "3,4": {
+        "color": "black",
+        "number": null
+      },
+      "4,4": {
+        "color": "black",
+        "number": null
+      },
+      "5,4": {
+        "color": "white",
+        "number": null
+      },
+      "6,4": {
+        "color": "white",
+        "number": null
+      },
+      "7,4": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826134914_233_8.png",
+    "bbox": [
+      106,
+      127,
+      1424,
+      1310
+    ],
+    "grid_size": [
+      5,
+      5
+    ],
+    "spacing": 156.94574099896835,
+    "stones": {
+      "0,0": {
+        "color": "black",
+        "number": null
+      },
+      "1,0": {
+        "color": "white",
+        "number": null
+      },
+      "2,0": {
+        "color": "white",
+        "number": null
+      },
+      "3,0": {
+        "color": "black",
+        "number": null
+      },
+      "0,1": {
+        "color": "white",
+        "number": null
+      },
+      "1,1": {
+        "color": "black",
+        "number": null
+      },
+      "2,1": {
+        "color": "white",
+        "number": null
+      },
+      "3,1": {
+        "color": "black",
+        "number": null
+      },
+      "4,1": {
+        "color": "black",
+        "number": null
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "1,2": {
+        "color": "black",
+        "number": null
+      },
+      "2,2": {
+        "color": "white",
+        "number": null
+      },
+      "3,2": {
+        "color": "white",
+        "number": null
+      },
+      "4,2": {
+        "color": "black",
+        "number": null
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "1,3": {
+        "color": "black",
+        "number": null
+      },
+      "2,3": {
+        "color": "black",
+        "number": null
+      },
+      "3,3": {
+        "color": "black",
+        "number": null
+      },
+      "4,3": {
+        "color": "black",
+        "number": null
+      },
+      "0,4": {
+        "color": "white",
+        "number": null
+      },
+      "1,4": {
+        "color": "white",
+        "number": null
+      },
+      "2,4": {
+        "color": "white",
+        "number": null
+      },
+      "3,4": {
+        "color": "white",
+        "number": null
+      },
+      "4,4": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826134924_234_8.png",
+    "bbox": [
+      186,
+      161,
+      1508,
+      1289
+    ],
+    "grid_size": [
+      13,
+      10
+    ],
+    "spacing": 78.11038951594273,
+    "stones": {
+      "2,0": {
+        "color": "white",
+        "number": null
+      },
+      "0,1": {
+        "color": "white",
+        "number": null
+      },
+      "2,1": {
+        "color": "black",
+        "number": null
+      },
+      "4,1": {
+        "color": "white",
+        "number": null
+      },
+      "5,1": {
+        "color": "white",
+        "number": null
+      },
+      "6,1": {
+        "color": "white",
+        "number": null
+      },
+      "7,1": {
+        "color": "white",
+        "number": 2
+      },
+      "9,1": {
+        "color": "black",
+        "number": 1
+      },
+      "10,1": {
+        "color": "black",
+        "number": 1
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "2,2": {
+        "color": "black",
+        "number": null
+      },
+      "4,2": {
+        "color": "white",
+        "number": null
+      },
+      "9,2": {
+        "color": "white",
+        "number": null
+      },
+      "10,2": {
+        "color": "white",
+        "number": null
+      },
+      "2,3": {
+        "color": "black",
+        "number": null
+      },
+      "3,3": {
+        "color": "black",
+        "number": null
+      },
+      "4,3": {
+        "color": "black",
+        "number": null
+      },
+      "6,3": {
+        "color": "white",
+        "number": null
+      },
+      "7,3": {
+        "color": "white",
+        "number": null
+      },
+      "8,3": {
+        "color": "white",
+        "number": null
+      },
+      "9,3": {
+        "color": "white",
+        "number": null
+      },
+      "10,3": {
+        "color": "white",
+        "number": null
+      },
+      "12,3": {
+        "color": "black",
+        "number": null
+      },
+      "2,4": {
+        "color": "black",
+        "number": null
+      },
+      "3,4": {
+        "color": "black",
+        "number": null
+      },
+      "4,4": {
+        "color": "black",
+        "number": null
+      },
+      "6,4": {
+        "color": "white",
+        "number": null
+      },
+      "7,4": {
+        "color": "white",
+        "number": null
+      },
+      "8,4": {
+        "color": "white",
+        "number": null
+      },
+      "9,4": {
+        "color": "white",
+        "number": null
+      },
+      "10,4": {
+        "color": "white",
+        "number": null
+      },
+      "12,4": {
+        "color": "black",
+        "number": null
+      },
+      "4,5": {
+        "color": "white",
+        "number": null
+      },
+      "7,5": {
+        "color": "black",
+        "number": null
+      },
+      "8,5": {
+        "color": "black",
+        "number": null
+      },
+      "9,5": {
+        "color": "black",
+        "number": null
+      },
+      "10,5": {
+        "color": "black",
+        "number": null
+      },
+      "12,5": {
+        "color": "white",
+        "number": null
+      },
+      "4,6": {
+        "color": "white",
+        "number": null
+      },
+      "10,6": {
+        "color": "black",
+        "number": null
+      },
+      "12,6": {
+        "color": "white",
+        "number": null
+      },
+      "4,7": {
+        "color": "white",
+        "number": null
+      },
+      "9,7": {
+        "color": "black",
+        "number": null
+      },
+      "10,7": {
+        "color": "black",
+        "number": null
+      },
+      "12,7": {
+        "color": "white",
+        "number": null
+      },
+      "9,8": {
+        "color": "black",
+        "number": null
+      },
+      "10,8": {
+        "color": "black",
+        "number": null
+      },
+      "12,8": {
+        "color": "white",
+        "number": null
+      },
+      "7,9": {
+        "color": "white",
+        "number": null
+      },
+      "8,9": {
+        "color": "white",
+        "number": null
+      },
+      "9,9": {
+        "color": "white",
+        "number": null
+      },
+      "10,9": {
+        "color": "white",
+        "number": null
+      },
+      "11,9": {
+        "color": "white",
+        "number": null
+      },
+      "12,9": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826134948_236_8.png",
+    "bbox": [
+      146,
+      173,
+      1468,
+      1284
+    ],
+    "grid_size": [
+      11,
+      8
+    ],
+    "spacing": 117.24935546449758,
+    "stones": {
+      "6,0": {
+        "color": "black",
+        "number": null
+      },
+      "7,0": {
+        "color": "white",
+        "number": 6
+      },
+      "1,1": {
+        "color": "white",
+        "number": null
+      },
+      "2,1": {
+        "color": "black",
+        "number": null
+      },
+      "3,1": {
+        "color": "black",
+        "number": 3
+      },
+      "4,1": {
+        "color": "white",
+        "number": null
+      },
+      "5,1": {
+        "color": "white",
+        "number": null
+      },
+      "6,1": {
+        "color": "white",
+        "number": 4
+      },
+      "7,1": {
+        "color": "black",
+        "number": 5
+      },
+      "9,1": {
+        "color": "white",
+        "number": null
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "2,2": {
+        "color": "white",
+        "number": null
+      },
+      "3,2": {
+        "color": "black",
+        "number": null
+      },
+      "4,2": {
+        "color": "black",
+        "number": null
+      },
+      "5,2": {
+        "color": "black",
+        "number": null
+      },
+      "6,2": {
+        "color": "black",
+        "number": null
+      },
+      "7,2": {
+        "color": "black",
+        "number": null
+      },
+      "9,2": {
+        "color": "white",
+        "number": null
+      },
+      "2,3": {
+        "color": "white",
+        "number": null
+      },
+      "3,3": {
+        "color": "black",
+        "number": null
+      },
+      "6,3": {
+        "color": "black",
+        "number": null
+      },
+      "7,3": {
+        "color": "white",
+        "number": null
+      },
+      "8,3": {
+        "color": "white",
+        "number": null
+      },
+      "9,3": {
+        "color": "white",
+        "number": null
+      },
+      "3,4": {
+        "color": "white",
+        "number": null
+      },
+      "4,4": {
+        "color": "black",
+        "number": null
+      },
+      "5,4": {
+        "color": "black",
+        "number": null
+      },
+      "6,4": {
+        "color": "black",
+        "number": null
+      },
+      "7,4": {
+        "color": "black",
+        "number": null
+      },
+      "8,4": {
+        "color": "black",
+        "number": null
+      },
+      "9,4": {
+        "color": "black",
+        "number": null
+      },
+      "10,4": {
+        "color": "white",
+        "number": null
+      },
+      "3,5": {
+        "color": "white",
+        "number": null
+      },
+      "4,5": {
+        "color": "black",
+        "number": null
+      },
+      "6,5": {
+        "color": "white",
+        "number": null
+      },
+      "7,5": {
+        "color": "black",
+        "number": null
+      },
+      "9,5": {
+        "color": "white",
+        "number": null
+      },
+      "3,6": {
+        "color": "white",
+        "number": null
+      },
+      "4,6": {
+        "color": "black",
+        "number": null
+      },
+      "6,6": {
+        "color": "white",
+        "number": 2
+      },
+      "7,6": {
+        "color": "white",
+        "number": null
+      },
+      "8,6": {
+        "color": "white",
+        "number": null
+      },
+      "9,6": {
+        "color": "white",
+        "number": null
+      },
+      "4,7": {
+        "color": "white",
+        "number": null
+      },
+      "5,7": {
+        "color": "white",
+        "number": null
+      },
+      "6,7": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826134958_237_8.png",
+    "bbox": [
+      158,
+      151,
+      1468,
+      1473
+    ],
+    "grid_size": [
+      7,
+      7
+    ],
+    "spacing": 80.68318774831283,
+    "stones": {
+      "1,0": {
+        "color": "black",
+        "number": null
+      },
+      "0,1": {
+        "color": "white",
+        "number": null
+      },
+      "4,1": {
+        "color": "white",
+        "number": null
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "1,2": {
+        "color": "white",
+        "number": null
+      },
+      "4,2": {
+        "color": "white",
+        "number": null
+      },
+      "6,2": {
+        "color": "black",
+        "number": null
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "4,3": {
+        "color": "white",
+        "number": null
+      },
+      "0,4": {
+        "color": "white",
+        "number": null
+      },
+      "1,4": {
+        "color": "white",
+        "number": null
+      },
+      "2,4": {
+        "color": "white",
+        "number": null
+      },
+      "3,4": {
+        "color": "white",
+        "number": null
+      },
+      "4,4": {
+        "color": "white",
+        "number": null
+      },
+      "0,5": {
+        "color": "white",
+        "number": null
+      },
+      "1,5": {
+        "color": "white",
+        "number": null
+      },
+      "2,5": {
+        "color": "white",
+        "number": null
+      },
+      "4,5": {
+        "color": "white",
+        "number": null
+      },
+      "0,6": {
+        "color": "black",
+        "number": null
+      },
+      "1,6": {
+        "color": "black",
+        "number": null
+      },
+      "2,6": {
+        "color": "black",
+        "number": null
+      },
+      "4,6": {
+        "color": "white",
+        "number": null
+      },
+      "5,6": {
+        "color": "white",
+        "number": null
+      },
+      "6,6": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826135008_238_8.png",
+    "bbox": [
+      140,
+      149,
+      1470,
+      1128
+    ],
+    "grid_size": [
+      10,
+      7
+    ],
+    "spacing": 94.67724908643474,
+    "stones": {
+      "0,0": {
+        "color": "black",
+        "number": null
+      },
+      "2,0": {
+        "color": "white",
+        "number": null
+      },
+      "3,0": {
+        "color": "white",
+        "number": null
+      },
+      "4,0": {
+        "color": "white",
+        "number": null
+      },
+      "5,0": {
+        "color": "white",
+        "number": null
+      },
+      "6,0": {
+        "color": "white",
+        "number": null
+      },
+      "7,0": {
+        "color": "white",
+        "number": 6
+      },
+      "8,0": {
+        "color": "white",
+        "number": null
+      },
+      "9,0": {
+        "color": "white",
+        "number": null
+      },
+      "0,1": {
+        "color": "white",
+        "number": null
+      },
+      "1,1": {
+        "color": "white",
+        "number": null
+      },
+      "2,1": {
+        "color": "white",
+        "number": 2
+      },
+      "3,1": {
+        "color": "white",
+        "number": 2
+      },
+      "9,1": {
+        "color": "white",
+        "number": null
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "2,2": {
+        "color": "white",
+        "number": null
+      },
+      "9,2": {
+        "color": "white",
+        "number": null
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "1,3": {
+        "color": "white",
+        "number": null
+      },
+      "2,3": {
+        "color": "white",
+        "number": 4
+      },
+      "3,3": {
+        "color": "white",
+        "number": 1
+      },
+      "7,3": {
+        "color": "white",
+        "number": null
+      },
+      "8,3": {
+        "color": "white",
+        "number": null
+      },
+      "9,3": {
+        "color": "white",
+        "number": null
+      },
+      "5,4": {
+        "color": "white",
+        "number": null
+      },
+      "0,5": {
+        "color": "black",
+        "number": 7
+      },
+      "5,5": {
+        "color": "white",
+        "number": null
+      },
+      "6,5": {
+        "color": "white",
+        "number": null
+      },
+      "7,5": {
+        "color": "black",
+        "number": null
+      },
+      "8,5": {
+        "color": "black",
+        "number": null
+      },
+      "9,5": {
+        "color": "black",
+        "number": null
+      },
+      "2,6": {
+        "color": "white",
+        "number": null
+      },
+      "3,6": {
+        "color": "white",
+        "number": null
+      },
+      "7,6": {
+        "color": "black",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826135021_239_8.png",
+    "bbox": [
+      112,
+      177,
+      1422,
+      1907
+    ],
+    "grid_size": [
+      5,
+      7
+    ],
+    "spacing": 94.8486401644675,
+    "stones": {
+      "2,0": {
+        "color": "black",
+        "number": null
+      },
+      "3,0": {
+        "color": "white",
+        "number": null
+      },
+      "2,1": {
+        "color": "black",
+        "number": null
+      },
+      "3,1": {
+        "color": "white",
+        "number": null
+      },
+      "0,2": {
+        "color": "black",
+        "number": null
+      },
+      "1,2": {
+        "color": "black",
+        "number": null
+      },
+      "2,2": {
+        "color": "white",
+        "number": null
+      },
+      "2,3": {
+        "color": "white",
+        "number": null
+      },
+      "0,4": {
+        "color": "white",
+        "number": null
+      },
+      "2,4": {
+        "color": "white",
+        "number": 2
+      },
+      "0,5": {
+        "color": "white",
+        "number": null
+      },
+      "1,5": {
+        "color": "white",
+        "number": 4
+      },
+      "3,5": {
+        "color": "white",
+        "number": null
+      },
+      "4,5": {
+        "color": "white",
+        "number": null
+      },
+      "0,6": {
+        "color": "white",
+        "number": null
+      },
+      "1,6": {
+        "color": "white",
+        "number": null
+      },
+      "2,6": {
+        "color": "white",
+        "number": null
+      },
+      "3,6": {
+        "color": "black",
+        "number": null
+      },
+      "4,6": {
+        "color": "black",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826135029_240_8.png",
+    "bbox": [
+      132,
+      185,
+      1442,
+      1835
+    ],
+    "grid_size": [
+      6,
+      7
+    ],
+    "spacing": 175.93631960038147,
+    "stones": {
+      "3,0": {
+        "color": "black",
+        "number": 5
+      },
+      "4,0": {
+        "color": "white",
+        "number": 6
+      },
+      "5,0": {
+        "color": "white",
+        "number": 6
+      },
+      "0,1": {
+        "color": "black",
+        "number": null
+      },
+      "1,1": {
+        "color": "black",
+        "number": null
+      },
+      "2,1": {
+        "color": "black",
+        "number": null
+      },
+      "3,1": {
+        "color": "white",
+        "number": null
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "1,2": {
+        "color": "white",
+        "number": null
+      },
+      "2,2": {
+        "color": "white",
+        "number": null
+      },
+      "4,2": {
+        "color": "white",
+        "number": 4
+      },
+      "5,2": {
+        "color": "white",
+        "number": 4
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "3,3": {
+        "color": "white",
+        "number": 2
+      },
+      "0,4": {
+        "color": "white",
+        "number": null
+      },
+      "1,4": {
+        "color": "white",
+        "number": null
+      },
+      "0,5": {
+        "color": "white",
+        "number": null
+      },
+      "1,5": {
+        "color": "white",
+        "number": null
+      },
+      "2,5": {
+        "color": "white",
+        "number": null
+      },
+      "0,6": {
+        "color": "black",
+        "number": null
+      },
+      "1,6": {
+        "color": "black",
+        "number": null
+      },
+      "2,6": {
+        "color": "black",
+        "number": null
+      },
+      "3,6": {
+        "color": "white",
+        "number": null
+      },
+      "4,6": {
+        "color": "black",
+        "number": 3
+      },
+      "5,6": {
+        "color": "black",
+        "number": 3
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826135059_241_8.png",
+    "bbox": [
+      138,
+      181,
+      1448,
+      1503
+    ],
+    "grid_size": [
+      6,
+      6
+    ],
+    "spacing": 146.75148019309756,
+    "stones": {
+      "0,0": {
+        "color": "black",
+        "number": null
+      },
+      "1,0": {
+        "color": "black",
+        "number": null
+      },
+      "3,0": {
+        "color": "white",
+        "number": null
+      },
+      "4,0": {
+        "color": "white",
+        "number": null
+      },
+      "0,1": {
+        "color": "white",
+        "number": null
+      },
+      "1,1": {
+        "color": "black",
+        "number": 7
+      },
+      "2,1": {
+        "color": "black",
+        "number": null
+      },
+      "3,1": {
+        "color": "black",
+        "number": null
+      },
+      "4,1": {
+        "color": "white",
+        "number": null
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "1,2": {
+        "color": "black",
+        "number": null
+      },
+      "3,2": {
+        "color": "black",
+        "number": null
+      },
+      "4,2": {
+        "color": "white",
+        "number": null
+      },
+      "1,3": {
+        "color": "black",
+        "number": null
+      },
+      "2,3": {
+        "color": "black",
+        "number": null
+      },
+      "3,3": {
+        "color": "black",
+        "number": null
+      },
+      "4,3": {
+        "color": "white",
+        "number": null
+      },
+      "0,4": {
+        "color": "white",
+        "number": null
+      },
+      "1,4": {
+        "color": "black",
+        "number": null
+      },
+      "3,4": {
+        "color": "white",
+        "number": null
+      },
+      "5,4": {
+        "color": "white",
+        "number": null
+      },
+      "1,5": {
+        "color": "white",
+        "number": null
+      },
+      "2,5": {
+        "color": "white",
+        "number": null
+      },
+      "3,5": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826135116_243_8.png",
+    "bbox": [
+      138,
+      171,
+      1456,
+      1354
+    ],
+    "grid_size": [
+      7,
+      7
+    ],
+    "spacing": 157.25936549073896,
+    "stones": {
+      "1,0": {
+        "color": "black",
+        "number": null
+      },
+      "2,0": {
+        "color": "white",
+        "number": null
+      },
+      "3,0": {
+        "color": "white",
+        "number": null
+      },
+      "4,0": {
+        "color": "white",
+        "number": 4
+      },
+      "5,0": {
+        "color": "white",
+        "number": 2
+      },
+      "0,1": {
+        "color": "white",
+        "number": null
+      },
+      "1,1": {
+        "color": "black",
+        "number": null
+      },
+      "4,1": {
+        "color": "black",
+        "number": 3
+      },
+      "5,1": {
+        "color": "black",
+        "number": null
+      },
+      "6,1": {
+        "color": "black",
+        "number": null
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "4,2": {
+        "color": "black",
+        "number": null
+      },
+      "5,2": {
+        "color": "black",
+        "number": null
+      },
+      "6,2": {
+        "color": "white",
+        "number": null
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "1,3": {
+        "color": "black",
+        "number": 5
+      },
+      "2,3": {
+        "color": "black",
+        "number": null
+      },
+      "3,3": {
+        "color": "black",
+        "number": null
+      },
+      "4,3": {
+        "color": "black",
+        "number": null
+      },
+      "5,3": {
+        "color": "black",
+        "number": null
+      },
+      "6,3": {
+        "color": "white",
+        "number": null
+      },
+      "0,4": {
+        "color": "white",
+        "number": null
+      },
+      "2,4": {
+        "color": "black",
+        "number": null
+      },
+      "4,4": {
+        "color": "white",
+        "number": null
+      },
+      "5,4": {
+        "color": "white",
+        "number": null
+      },
+      "1,5": {
+        "color": "white",
+        "number": null
+      },
+      "2,5": {
+        "color": "white",
+        "number": null
+      },
+      "5,5": {
+        "color": "white",
+        "number": null
+      },
+      "4,6": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826135135_245_8.png",
+    "bbox": [
+      170,
+      181,
+      1480,
+      1503
+    ],
+    "grid_size": [
+      5,
+      5
+    ],
+    "spacing": 114.37262449679025,
+    "stones": {
+      "0,0": {
+        "color": "black",
+        "number": null
+      },
+      "1,0": {
+        "color": "black",
+        "number": null
+      },
+      "2,0": {
+        "color": "white",
+        "number": null
+      },
+      "0,1": {
+        "color": "black",
+        "number": null
+      },
+      "1,1": {
+        "color": "black",
+        "number": null
+      },
+      "2,1": {
+        "color": "white",
+        "number": null
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "1,2": {
+        "color": "white",
+        "number": 1
+      },
+      "2,2": {
+        "color": "white",
+        "number": null
+      },
+      "3,2": {
+        "color": "white",
+        "number": 5
+      },
+      "4,2": {
+        "color": "white",
+        "number": 5
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "2,3": {
+        "color": "white",
+        "number": 3
+      },
+      "0,4": {
+        "color": "black",
+        "number": null
+      },
+      "1,4": {
+        "color": "white",
+        "number": null
+      },
+      "2,4": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826135142_246_8.png",
+    "bbox": [
+      108,
+      175,
+      1418,
+      1835
+    ],
+    "grid_size": [
+      6,
+      7
+    ],
+    "spacing": 122.69352164986223,
+    "stones": {
+      "0,0": {
+        "color": "white",
+        "number": null
+      },
+      "1,0": {
+        "color": "white",
+        "number": null
+      },
+      "3,0": {
+        "color": "white",
+        "number": null
+      },
+      "3,1": {
+        "color": "white",
+        "number": null
+      },
+      "4,1": {
+        "color": "black",
+        "number": null
+      },
+      "0,2": {
+        "color": "black",
+        "number": null
+      },
+      "1,2": {
+        "color": "black",
+        "number": null
+      },
+      "2,2": {
+        "color": "white",
+        "number": 2
+      },
+      "3,2": {
+        "color": "black",
+        "number": 1
+      },
+      "4,2": {
+        "color": "black",
+        "number": null
+      },
+      "5,2": {
+        "color": "black",
+        "number": null
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "1,3": {
+        "color": "white",
+        "number": null
+      },
+      "2,3": {
+        "color": "white",
+        "number": 4
+      },
+      "3,3": {
+        "color": "white",
+        "number": null
+      },
+      "4,3": {
+        "color": "black",
+        "number": null
+      },
+      "5,3": {
+        "color": "black",
+        "number": null
+      },
+      "0,4": {
+        "color": "white",
+        "number": null
+      },
+      "1,4": {
+        "color": "white",
+        "number": null
+      },
+      "3,4": {
+        "color": "white",
+        "number": null
+      },
+      "0,5": {
+        "color": "white",
+        "number": null
+      },
+      "1,5": {
+        "color": "white",
+        "number": null
+      },
+      "3,5": {
+        "color": "white",
+        "number": null
+      },
+      "0,6": {
+        "color": "black",
+        "number": null
+      },
+      "1,6": {
+        "color": "black",
+        "number": null
+      },
+      "2,6": {
+        "color": "white",
+        "number": null
+      },
+      "3,6": {
+        "color": "white",
+        "number": null
+      },
+      "4,6": {
+        "color": "white",
+        "number": null
+      },
+      "5,6": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826135156_247_8.png",
+    "bbox": [
+      192,
+      153,
+      1502,
+      1841
+    ],
+    "grid_size": [
+      15,
+      11
+    ],
+    "spacing": 131.43703367315075,
+    "stones": {
+      "4,0": {
+        "color": "black",
+        "number": null
+      },
+      "5,0": {
+        "color": "black",
+        "number": null
+      },
+      "6,0": {
+        "color": "black",
+        "number": null
+      },
+      "7,0": {
+        "color": "black",
+        "number": null
+      },
+      "10,0": {
+        "color": "black",
+        "number": 11
+      },
+      "2,1": {
+        "color": "white",
+        "number": null
+      },
+      "6,1": {
+        "color": "white",
+        "number": null
+      },
+      "8,1": {
+        "color": "black",
+        "number": 1
+      },
+      "9,1": {
+        "color": "black",
+        "number": 1
+      },
+      "10,1": {
+        "color": "black",
+        "number": 1
+      },
+      "11,1": {
+        "color": "black",
+        "number": null
+      },
+      "12,1": {
+        "color": "black",
+        "number": 7
+      },
+      "13,1": {
+        "color": "black",
+        "number": 7
+      },
+      "14,1": {
+        "color": "black",
+        "number": 7
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "4,2": {
+        "color": "white",
+        "number": null
+      },
+      "8,2": {
+        "color": "black",
+        "number": null
+      },
+      "9,2": {
+        "color": "black",
+        "number": null
+      },
+      "10,2": {
+        "color": "black",
+        "number": null
+      },
+      "11,2": {
+        "color": "black",
+        "number": null
+      },
+      "14,2": {
+        "color": "black",
+        "number": 13
+      },
+      "4,3": {
+        "color": "white",
+        "number": null
+      },
+      "7,3": {
+        "color": "black",
+        "number": null
+      },
+      "8,3": {
+        "color": "black",
+        "number": null
+      },
+      "9,3": {
+        "color": "black",
+        "number": null
+      },
+      "10,3": {
+        "color": "black",
+        "number": null
+      },
+      "12,3": {
+        "color": "white",
+        "number": 10
+      },
+      "13,3": {
+        "color": "white",
+        "number": 10
+      },
+      "14,3": {
+        "color": "white",
+        "number": 10
+      },
+      "6,4": {
+        "color": "black",
+        "number": 3
+      },
+      "8,4": {
+        "color": "white",
+        "number": 12
+      },
+      "9,4": {
+        "color": "white",
+        "number": 12
+      },
+      "10,4": {
+        "color": "white",
+        "number": 12
+      },
+      "11,4": {
+        "color": "white",
+        "number": null
+      },
+      "12,4": {
+        "color": "white",
+        "number": 14
+      },
+      "13,4": {
+        "color": "white",
+        "number": 14
+      },
+      "14,4": {
+        "color": "white",
+        "number": 14
+      },
+      "4,5": {
+        "color": "white",
+        "number": null
+      },
+      "5,5": {
+        "color": "white",
+        "number": null
+      },
+      "6,5": {
+        "color": "white",
+        "number": 4
+      },
+      "4,6": {
+        "color": "white",
+        "number": null
+      },
+      "5,6": {
+        "color": "white",
+        "number": null
+      },
+      "6,6": {
+        "color": "white",
+        "number": 4
+      },
+      "8,6": {
+        "color": "black",
+        "number": 15
+      },
+      "10,6": {
+        "color": "black",
+        "number": 15
+      },
+      "4,7": {
+        "color": "white",
+        "number": null
+      },
+      "5,7": {
+        "color": "white",
+        "number": null
+      },
+      "6,7": {
+        "color": "white",
+        "number": 6
+      },
+      "4,8": {
+        "color": "white",
+        "number": null
+      },
+      "8,8": {
+        "color": "white",
+        "number": null
+      },
+      "9,8": {
+        "color": "white",
+        "number": null
+      },
+      "10,8": {
+        "color": "white",
+        "number": null
+      },
+      "11,8": {
+        "color": "white",
+        "number": null
+      },
+      "12,8": {
+        "color": "white",
+        "number": 8
+      },
+      "13,8": {
+        "color": "white",
+        "number": 8
+      },
+      "14,8": {
+        "color": "white",
+        "number": 8
+      },
+      "4,9": {
+        "color": "white",
+        "number": null
+      },
+      "8,9": {
+        "color": "white",
+        "number": null
+      },
+      "9,9": {
+        "color": "white",
+        "number": null
+      },
+      "10,9": {
+        "color": "white",
+        "number": null
+      },
+      "11,9": {
+        "color": "white",
+        "number": null
+      },
+      "12,9": {
+        "color": "white",
+        "number": 8
+      },
+      "13,9": {
+        "color": "white",
+        "number": 8
+      },
+      "14,9": {
+        "color": "white",
+        "number": 8
+      },
+      "8,10": {
+        "color": "white",
+        "number": null
+      },
+      "9,10": {
+        "color": "white",
+        "number": null
+      },
+      "10,10": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826135211_248_8.png",
+    "bbox": [
+      139,
+      154,
+      1479,
+      976
+    ],
+    "grid_size": [
+      8,
+      6
+    ],
+    "spacing": 115.603121011448,
+    "stones": {
+      "0,0": {
+        "color": "white",
+        "number": null
+      },
+      "2,0": {
+        "color": "white",
+        "number": 2
+      },
+      "5,0": {
+        "color": "white",
+        "number": 4
+      },
+      "7,0": {
+        "color": "white",
+        "number": 6
+      },
+      "0,1": {
+        "color": "white",
+        "number": null
+      },
+      "2,1": {
+        "color": "white",
+        "number": null
+      },
+      "0,2": {
+        "color": "white",
+        "number": null
+      },
+      "2,2": {
+        "color": "white",
+        "number": null
+      },
+      "4,2": {
+        "color": "black",
+        "number": 5
+      },
+      "6,2": {
+        "color": "white",
+        "number": null
+      },
+      "7,2": {
+        "color": "black",
+        "number": null
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "6,3": {
+        "color": "white",
+        "number": null
+      },
+      "7,3": {
+        "color": "black",
+        "number": null
+      },
+      "0,4": {
+        "color": "white",
+        "number": null
+      },
+      "1,4": {
+        "color": "white",
+        "number": null
+      },
+      "2,4": {
+        "color": "black",
+        "number": 1
+      },
+      "4,4": {
+        "color": "white",
+        "number": null
+      },
+      "5,4": {
+        "color": "white",
+        "number": null
+      },
+      "6,4": {
+        "color": "white",
+        "number": null
+      },
+      "7,4": {
+        "color": "black",
+        "number": null
+      },
+      "0,5": {
+        "color": "white",
+        "number": null
+      },
+      "1,5": {
+        "color": "white",
+        "number": null
+      },
+      "2,5": {
+        "color": "black",
+        "number": null
+      },
+      "4,5": {
+        "color": "white",
+        "number": null
+      },
+      "5,5": {
+        "color": "white",
+        "number": null
+      },
+      "6,5": {
+        "color": "white",
+        "number": null
+      }
+    }
+  },
+  {
+    "image": "Weixin Image_20260826135225_249_8.png",
+    "bbox": [
+      126,
+      193,
+      1436,
+      1919
+    ],
+    "grid_size": [
+      6,
+      6
+    ],
+    "spacing": 146.56814884223976,
+    "stones": {
+      "3,0": {
+        "color": "white",
+        "number": null
+      },
+      "4,0": {
+        "color": "black",
+        "number": null
+      },
+      "0,1": {
+        "color": "black",
+        "number": null
+      },
+      "1,1": {
+        "color": "white",
+        "number": 2
+      },
+      "2,1": {
+        "color": "white",
+        "number": 2
+      },
+      "3,1": {
+        "color": "white",
+        "number": null
+      },
+      "4,1": {
+        "color": "black",
+        "number": null
+      },
+      "5,1": {
+        "color": "white",
+        "number": null
+      },
+      "1,2": {
+        "color": "white",
+        "number": null
+      },
+      "2,2": {
+        "color": "white",
+        "number": null
+      },
+      "4,2": {
+        "color": "white",
+        "number": null
+      },
+      "0,3": {
+        "color": "white",
+        "number": null
+      },
+      "3,3": {
+        "color": "white",
+        "number": 6
+      },
+      "4,3": {
+        "color": "black",
+        "number": 5
+      },
+      "5,3": {
+        "color": "white",
+        "number": 8
+      },
+      "0,4": {
+        "color": "white",
+        "number": null
+      },
+      "3,4": {
+        "color": "white",
+        "number": null
+      },
+      "5,4": {
+        "color": "black",
+        "number": 3
+      },
+      "0,5": {
+        "color": "black",
+        "number": null
+      },
+      "1,5": {
+        "color": "black",
+        "number": 7
+      },
+      "2,5": {
+        "color": "black",
+        "number": null
+      },
+      "3,5": {
+        "color": "white",
+        "number": null
+      },
+      "4,5": {
+        "color": "white",
+        "number": null
+      },
+      "5,5": {
+        "color": "white",
+        "number": 4
+      }
+    }
+  }
+]
