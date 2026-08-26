@@ -27,7 +27,7 @@ IF(USE_CAFFE2)
 	
 	INCLUDE_DIRECTORIES(${Caffe2_INCLUDE_DIR} ${EIGEN3_INCLUDE_DIR} /usr/local/cuda/include )
 	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DUSE_CAFFE2")
-	SET(LIBS ${LIBS} ${Caffe2_LIBRARY} ${CUDA_LIBRARIES} ${CUDA_curand_LIBRARY} "-lglog -lprotobuf")
+	SET(LIBS ${LIBS} ${Caffe2_LIBRARY} ${CUDA_LIBRARIES} ${CUDA_curand_LIBRARY} "-L/usr/local/cuda/lib64/stubs -lcuda -lglog -lprotobuf")
 ENDIF()
 
 TARGET_LINK_LIBRARIES(CGI MCTPS ${LIBS} ${CMAKE_DL_LIBS})
