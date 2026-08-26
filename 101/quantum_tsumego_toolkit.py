@@ -360,16 +360,16 @@ class TsumegoPatternAnalyzer:
     """Analyzes Go life-and-death patterns and strategic motifs."""
 
     PATTERNS = {
-        "NAKADE_POINT": "Eye Vital Point (点眼/破眼 - 1-2, 2-2, Nakade shape)",
-        "EYE_REDUCTION": "Eye Space Reduction (缩小眼位 - 扳/立/猴子下山)",
-        "SNAPBACK_THROW_IN": "Throw-in & Snapback (倒扑/扑入制造紧气)",
-        "SEMEAI_RACE": "Capturing Race / Semeai (对杀紧气/大眼杀小眼)",
-        "UNDER_STONES_KO": "Under-the-stones / Ko (倒脱靴/劫争/两头蛇)",
+        "NAKADE_POINT": "Eye Vital Point (Nakade / Point-Eye)",
+        "EYE_REDUCTION": "Perimeter Space Reduction (Hane / Descent)",
+        "SNAPBACK_THROW_IN": "Sacrifice & Snapback (Throw-in / Squeeze)",
+        "SEMEAI_RACE": "Capturing Race (Semeai / Liberty Shortage)",
+        "UNDER_STONES_KO": "Under-the-Stones / Ko Contest",
     }
 
     @classmethod
     def classify(cls, problem: Dict[str, Any]) -> Dict[str, Any]:
-        """Classify the life-and-death tactical pattern and determine vital points."""
+        """Classify the life-and-death tactical pattern and determine vital points in 9x9 coordinates."""
         black = set(problem.get("initial_black", []))
         white = set(problem.get("initial_white", []))
         moves = problem.get("solution_moves", [])
@@ -377,7 +377,7 @@ class TsumegoPatternAnalyzer:
 
         all_stones = black | white
         if not all_stones:
-            return {"primary_pattern": "EMPTY", "description": "Empty board", "vital_points": []}
+            return {"primary_pattern": "EMPTY", "pattern_name": "Empty Board", "vital_points_9x9": [], "vital_points_sgf": []}
 
         # Bounding box & region
         xs = [c for c, _ in all_stones]
@@ -385,54 +385,50 @@ class TsumegoPatternAnalyzer:
         min_x, max_x = min(xs), max(xs)
         min_y, max_y = min(ys), max(ys)
 
-        is_corner = (min_x <= 3 or max_x >= 15) and (min_y <= 3 or max_y >= 15)
-        is_side = (min_x <= 2 or max_x >= 16 or min_y <= 2 or max_y >= 16) and not is_corner
-        region = "Corner (角位)" if is_corner else ("Side (边位)" if is_side else "Center (中央)")
+        is_corner = (min_x <= 2 or max_x >= 6) and (min_y <= 2 or max_y >= 6)
+        is_side = (min_x <= 1 or max_x >= 7 or min_y <= 1 or max_y >= 7) and not is_corner
+        region = "Corner" if is_corner else ("Side" if is_side else "Center")
 
-        # Target group detection: defender is opposite of first_player
-        defender_color = "W" if first_player == "B" else "B"
-        defender_stones = white if defender_color == "W" else black
-        attacker_stones = black if defender_color == "W" else white
-
-        # Analyze solution moves
         first_move = moves[0] if moves else (first_player, (0, 0))
-        first_coord = first_move[1]
+        first_color, first_coord = first_move
+        col, row = first_coord
+        first_9x9_str = coord_to_9x9_str(col, row)
+        first_sgf_str = coord_to_sgf(col, row)
 
-        # Calculate distances to defender stones
         vital_points = [first_coord]
         pattern_type = "NAKADE_POINT"
         explanation = []
 
-        # Check for throw-in (first move placed directly into opponent's immediate tigers mouth / 1 liberty)
-        # Check first move line number (1st line vs 2nd line vs 3rd line)
-        col, row = first_coord
-        # Distance to edge
-        dist_to_edge = min(col, 18 - col, row, 18 - row)
+        dist_to_edge = min(col, 8 - col, row, 8 - row)
 
         if len(moves) >= 3 and any(moves[i][1] == moves[0][1] for i in range(1, len(moves))):
             pattern_type = "UNDER_STONES_KO"
             explanation.append("Repeated move coordinate or recapture indicates Under-the-stones or Ko.")
         elif dist_to_edge == 0:
-            # 1st line move
             pattern_type = "EYE_REDUCTION"
-            explanation.append("First move descends or hanes on the 1st line to reduce eye space from the perimeter.")
+            explanation.append("First move descends or hanes on the 1st line to reduce eye space from perimeter.")
         elif dist_to_edge == 1:
-            # 2nd line move (e.g. 1-2 point or 2-2 point)
             pattern_type = "NAKADE_POINT"
-            explanation.append("First move hits the vital eye-shape point (2nd line vital point / 点眼).")
+            explanation.append("First move strikes the vital eye-shape point (2nd line vital point / Nakade).")
         elif len(moves) >= 4:
             pattern_type = "SEMEAI_RACE"
-            explanation.append("Deep multi-step sequence tightening liberties and resolving a capturing race.")
+            explanation.append("Multi-step sequence tightening liberties in a mutual capturing race.")
         else:
             pattern_type = "SNAPBACK_THROW_IN"
-            explanation.append("Sacrifice / throw-in to compress opponent liberties.")
+            explanation.append("Sacrificial throw-in to compress opponent liberties.")
+
+        color_name = "Black" if first_color == "B" else "White"
 
         return {
             "region": region,
             "primary_pattern": pattern_type,
-            "pattern_name": cls.PATTERNS.get(pattern_type, "Unknown"),
-            "vital_points": [coord_to_sgf(c, r) for c, r in vital_points],
-            "first_move": f"{first_player}[{coord_to_sgf(*first_coord)}]",
+            "pattern_name": cls.PATTERNS.get(pattern_type, "Standard Tsumego"),
+            "vital_points_9x9": [coord_to_9x9_str(c, r) for c, r in vital_points],
+            "vital_points_sgf": [coord_to_sgf(c, r) for c, r in vital_points],
+            "first_move": f"{color_name} at {first_9x9_str}",
+            "first_move_coord_9x9": first_9x9_str,
+            "first_move_coord_sgf": first_sgf_str,
+            "first_move_xy": [col, row],
             "solution_depth": len(moves),
             "explanation": " ".join(explanation),
         }
@@ -453,6 +449,8 @@ class QuantumGoConverter:
         """
         Creates a QuantumGo problem definition:
         - Classical base stones (already collapsed state)
+        - Selected Black Quantum Stone (|A> + |B>)
+        - Selected White Quantum Stone (|A> + |B>)
         - Quantum move candidate pairs: |psi> = 1/sqrt(2) (|p1> + |p2>)
         - Entanglement links and collapse conditions.
         """
@@ -465,6 +463,9 @@ class QuantumGoConverter:
         entanglement_graph = defaultdict(list)
         occupied = set(black) | set(white)
 
+        black_q_piece = None
+        white_q_piece = None
+
         # 1. Black Quantum Stone (BQ)
         if black:
             b_stone = max(black, key=lambda p: QuantumDifficultyAnalyzer._compute_stone_quantum_sensitivity(p, "B", black, white, moves)[0])
@@ -474,20 +475,35 @@ class QuantumGoConverter:
                 for dc, dr in [(-1, 0), (1, 0), (0, -1), (0, 1), (1, 1), (-1, -1)]
                 if 0 <= c1 + dc < 9 and 0 <= r1 + dr < 9 and (c1 + dc, r1 + dr) not in occupied
             ]
-            c2, r2 = adj_b[0] if adj_b else ((c1 + 1) % 9, r1)
+            c2, r2 = adj_b[0] if adj_b else (((c1 + 1) % 9), r1)
+            b_str_a = coord_to_9x9_str(c1, r1)
+            b_str_b = coord_to_9x9_str(c2, r2)
+            black_q_piece = {
+                "color": "B",
+                "label": "Black Quantum Piece",
+                "primary_coord_9x9": b_str_a,
+                "secondary_coord_9x9": b_str_b,
+                "primary_xy": [c1, r1],
+                "secondary_xy": [c2, r2],
+                "state_ket": f"|{b_str_a}⟩ + |{b_str_b}⟩",
+                "probability_split": "50% / 50%",
+                "description": f"Black stone at {b_str_a} superposed into state |{b_str_a}⟩ + |{b_str_b}⟩"
+            }
             quantum_moves.append({
                 "move_index": 1,
                 "color": "B",
                 "type": "QUANTUM_PAIR",
-                "coord_a": coord_to_9x9_str(c1, r1),
-                "coord_b": coord_to_9x9_str(c2, r2),
+                "coord_a": b_str_a,
+                "coord_b": b_str_b,
+                "coord_a_xy": [c1, r1],
+                "coord_b_xy": [c2, r2],
                 "coord_a_sgf": coord_to_sgf(c1, r1),
                 "coord_b_sgf": coord_to_sgf(c2, r2),
                 "amplitude_a": 0.7071,
                 "amplitude_b": 0.7071,
-                "description": f"Black Quantum stone at {coord_to_9x9_str(c1, r1)} and {coord_to_9x9_str(c2, r2)}"
+                "description": f"Black Quantum stone at {b_str_a} and {b_str_b}"
             })
-            entanglement_graph[coord_to_9x9_str(c1, r1)].append(coord_to_9x9_str(c2, r2))
+            entanglement_graph[b_str_a].append(b_str_b)
 
         # 2. White Quantum Stone (WQ)
         if white:
@@ -498,20 +514,35 @@ class QuantumGoConverter:
                 for dc, dr in [(-1, 0), (1, 0), (0, -1), (0, 1), (1, 1), (-1, -1)]
                 if 0 <= wc1 + dc < 9 and 0 <= wr1 + dr < 9 and (wc1 + dc, wr1 + dr) not in occupied and (wc1 + dc, wr1 + dr) != (c2, r2)
             ]
-            wc2, wr2 = adj_w[0] if adj_w else (wc1, (wr1 + 1) % 9)
+            wc2, wr2 = adj_w[0] if adj_w else (wc1, ((wr1 + 1) % 9))
+            w_str_a = coord_to_9x9_str(wc1, wr1)
+            w_str_b = coord_to_9x9_str(wc2, wr2)
+            white_q_piece = {
+                "color": "W",
+                "label": "White Quantum Piece",
+                "primary_coord_9x9": w_str_a,
+                "secondary_coord_9x9": w_str_b,
+                "primary_xy": [wc1, wr1],
+                "secondary_xy": [wc2, wr2],
+                "state_ket": f"|{w_str_a}⟩ + |{w_str_b}⟩",
+                "probability_split": "50% / 50%",
+                "description": f"White stone at {w_str_a} superposed into state |{w_str_a}⟩ + |{w_str_b}⟩"
+            }
             quantum_moves.append({
                 "move_index": 2,
                 "color": "W",
                 "type": "QUANTUM_PAIR",
-                "coord_a": coord_to_9x9_str(wc1, wr1),
-                "coord_b": coord_to_9x9_str(wc2, wr2),
+                "coord_a": w_str_a,
+                "coord_b": w_str_b,
+                "coord_a_xy": [wc1, wr1],
+                "coord_b_xy": [wc2, wr2],
                 "coord_a_sgf": coord_to_sgf(wc1, wr1),
                 "coord_b_sgf": coord_to_sgf(wc2, wr2),
                 "amplitude_a": 0.7071,
                 "amplitude_b": 0.7071,
-                "description": f"White Quantum stone at {coord_to_9x9_str(wc1, wr1)} and {coord_to_9x9_str(wc2, wr2)}"
+                "description": f"White Quantum stone at {w_str_a} and {w_str_b}"
             })
-            entanglement_graph[coord_to_9x9_str(wc1, wr1)].append(coord_to_9x9_str(wc2, wr2))
+            entanglement_graph[w_str_a].append(w_str_b)
 
         return {
             "format": "QuantumGo-9x9-v1.0",
@@ -520,6 +551,8 @@ class QuantumGoConverter:
                 "black": [coord_to_9x9_str(c, r) for c, r in black],
                 "white": [coord_to_9x9_str(c, r) for c, r in white],
             },
+            "black_quantum_piece": black_q_piece,
+            "white_quantum_piece": white_q_piece,
             "quantum_moves": quantum_moves,
             "entanglement_edges": dict(entanglement_graph),
             "collapse_rules": [
@@ -553,8 +586,11 @@ class QuantumDifficultyAnalyzer:
         black_candidates = []
         for c, r in black:
             score, rationale = cls._compute_stone_quantum_sensitivity((c, r), "B", black, white, moves)
+            coord_str = coord_to_9x9_str(c, r)
             black_candidates.append({
-                "coord": coord_to_sgf(c, r),
+                "coord_9x9": coord_str,
+                "coord_sgf": coord_to_sgf(c, r),
+                "xy": [c, r],
                 "color": "B",
                 "difficulty_score": score,
                 "rationale": rationale,
@@ -563,8 +599,11 @@ class QuantumDifficultyAnalyzer:
         white_candidates = []
         for c, r in white:
             score, rationale = cls._compute_stone_quantum_sensitivity((c, r), "W", white, black, moves)
+            coord_str = coord_to_9x9_str(c, r)
             white_candidates.append({
-                "coord": coord_to_sgf(c, r),
+                "coord_9x9": coord_str,
+                "coord_sgf": coord_to_sgf(c, r),
+                "xy": [c, r],
                 "color": "W",
                 "difficulty_score": score,
                 "rationale": rationale,
@@ -573,14 +612,18 @@ class QuantumDifficultyAnalyzer:
         # Evaluate candidate moves from solution sequence
         move_candidates = []
         for idx, (color, (c, r)) in enumerate(moves, start=1):
-            # A move on the vital point has maximum quantum branching
-            branch_weight = 100.0 / (idx)  # earlier moves have exponentially higher game-tree branch impact
+            branch_weight = 100.0 / idx
+            coord_str = coord_to_9x9_str(c, r)
+            color_name = "Black" if color == "B" else "White"
             move_candidates.append({
                 "move_index": idx,
                 "color": color,
-                "coord": coord_to_sgf(c, r),
+                "color_name": color_name,
+                "coord_9x9": coord_str,
+                "coord_sgf": coord_to_sgf(c, r),
+                "xy": [c, r],
                 "quantum_branch_difficulty": round(branch_weight, 2),
-                "impact": f"Splits the solution into 2^{idx} quantum collapse sub-trees."
+                "impact": f"Move {idx} ({color_name} at {coord_str}) splits the state space into 2^{idx} quantum collapse trees."
             })
 
         black_candidates.sort(key=lambda x: x["difficulty_score"], reverse=True)
@@ -678,8 +721,12 @@ class TsumegoSelfSolver:
             history.append({
                 "step": step_num,
                 "color": color,
-                "coord": coord_to_sgf(*coord),
-                "captured_stones": [coord_to_sgf(*c) for c in captured],
+                "color_name": "Black" if color == "B" else "White",
+                "coord_9x9": coord_to_9x9_str(*coord),
+                "coord_sgf": coord_to_sgf(*coord),
+                "xy": list(coord),
+                "captured_stones_9x9": [coord_to_9x9_str(*c) for c in captured],
+                "captured_stones_sgf": [coord_to_sgf(*c) for c in captured],
                 "active_black_count": len(current_black),
                 "active_white_count": len(current_white),
                 "board_snapshot": cls.render_ascii(current_black, current_white, last_move=coord),
@@ -796,6 +843,54 @@ def process_complete_tsumego(image_or_sgf_path: str) -> Dict[str, Any]:
     }
 
 
+def export_to_9x9_sgf(result: Dict[str, Any], title: str = "QuantumGo-9x9") -> str:
+    """Generates standard SGF with 9x9 board, solution sequence, and quantum metadata."""
+    pdata = result.get("problem_data", {})
+    qver = result.get("quantum_version", {})
+    pat = result.get("pattern_analysis", {})
+    diff = result.get("difficulty_analysis", {})
+
+    b_stones = "".join(f"[{coord_to_sgf(*p)}]" for p in pdata.get("initial_black", []))
+    w_stones = "".join(f"[{coord_to_sgf(*p)}]" for p in pdata.get("initial_white", []))
+
+    q_moves = qver.get("quantum_moves", [])
+    q_notes = []
+    if qver.get("black_quantum_piece"):
+        bq = qver["black_quantum_piece"]
+        q_notes.append(f"Black Q-Piece: {bq['state_ket']}")
+    if qver.get("white_quantum_piece"):
+        wq = qver["white_quantum_piece"]
+        q_notes.append(f"White Q-Piece: {wq['state_ket']}")
+
+    q_comment = " | ".join(q_notes)
+    pattern_name = pat.get("pattern_name", "Tsumego")
+    first_player = pdata.get("first_player", "B")
+
+    sgf_lines = [
+        f"(;GM[1]FF[4]CA[UTF-8]SZ[9]GN[{title}]PL[{first_player}]",
+        f"GC[{pattern_name} | {q_comment}]",
+        f"AB{b_stones}AW{w_stones}",
+    ]
+
+    # Add main correct solution branch
+    moves = pdata.get("solution_moves", [])
+    if moves:
+        branch = []
+        for color, coord in moves:
+            branch.append(f";{color}[{coord_to_sgf(*coord)}]")
+        branch_str = "".join(branch)
+        sgf_lines.append(f"({branch_str}N[Correct Solution]))")
+    else:
+        sgf_lines.append(")")
+
+    return "\n".join(sgf_lines)
+
+
+def export_to_quantum_json(result: Dict[str, Any]) -> str:
+    """Generates complete structured QuantumGo 9x9 JSON definition."""
+    return json.dumps(result, indent=2, ensure_ascii=False)
+
+
 if __name__ == "__main__":
     import sys
     if len(sys.argv) > 1:
@@ -804,3 +899,4 @@ if __name__ == "__main__":
         print(json.dumps(result, indent=2, ensure_ascii=False))
     else:
         print("Usage: python quantum_tsumego_toolkit.py <image_or_sgf_path>")
+
