@@ -65,9 +65,9 @@ The architecture must stay centered on:
 
 ---
 
-# 1. Repository First, Code Second
+# 1. Folder First, Code Second
 
-Before writing implementation code, the agent MUST inspect the existing `study-LD-RZ` repository and identify the actual code paths for:
+Before writing implementation code, the agent MUST inspect the existing `study-LD-RZ-solver` folder and identify the actual code paths for:
 
 - board representation,
 - group/liberty handling,
@@ -84,9 +84,9 @@ Before writing implementation code, the agent MUST inspect the existing `study-L
 - problem input,
 - solution-tree output.
 
-The repository contains the core engine under `CGI/` and uses tsumego/L&D problem input and solver output. Reuse its architecture rather than replacing it wholesale.
+The folder contains the core engine under `CGI/` and uses tsumego/L&D problem input and solver output. Reuse its architecture rather than replacing it wholesale.
 
-The agent MUST produce a short repository map before major modifications.
+The agent MUST produce a short folder map before major modifications.
 
 Example format:
 
