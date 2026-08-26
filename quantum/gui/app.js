@@ -37,95 +37,102 @@ let currentPV = [];
 let currentPVIndex = 0;
 let autoPlayTimer = null;
 
-function loadGamePreset(presetKey) {
-  resetBoard();
-
-  const p = (colStr, row) => {
-    const x = COORD_CHARS.indexOf(colStr);
-    const y = row - 1;
-    return y * BOARD_SIZE + x;
-  };
-
-  if (presetKey === 'screenshot') {
-    loadPresetFromScreenshot();
-  } else if (presetKey === 'game1_ply30') {
-    // Game 00001 ply 30
-    const blackStones = [p('E',5), p('F',5), p('D',4), p('E',4), p('C',4), p('F',4), p('C',5), p('D',6), p('B',3), p('A',3)];
-    const whiteStones = [p('F',7), p('D',5), p('E',6), p('D',7), p('C',6), p('E',7), p('B',4), p('B',5), p('A',4)];
-    blackStones.forEach(i => { boardA[i] = 1; boardB[i] = 1; });
-    whiteStones.forEach(i => { boardA[i] = 2; boardB[i] = 2; });
-    linkStones(p('E',5), p('E',5));
-    linkStones(p('F',7), p('F',7));
-    targetA = new Set([p('D',4), p('E',4)]);
-    targetB = new Set([p('D',4), p('E',4)]);
-    sideToMove = 2; // White attacks
-    lastMove = { pos: p('A',4) };
-    updateUI();
-  } else if (presetKey === 'game2_ply40') {
-    // Game 00002 ply 40
-    const blackStones = [p('C',6), p('D',5), p('D',7), p('F',6), p('F',7), p('E',7), p('G',7), p('G',6), p('B',7)];
-    const whiteStones = [p('E',5), p('G',7), p('G',8), p('H',8), p('H',7), p('H',6), p('E',8), p('D',8), p('C',8), p('B',5)];
-    blackStones.forEach(i => { boardA[i] = 1; boardB[i] = 1; });
-    whiteStones.forEach(i => { boardA[i] = 2; boardB[i] = 2; });
-    linkStones(p('C',6), p('C',6));
-    linkStones(p('E',5), p('E',5));
-    targetA = new Set([p('D',7), p('E',7)]);
-    targetB = new Set([p('D',7), p('E',7)]);
-    sideToMove = 2;
-    lastMove = { pos: p('B',5) };
-    updateUI();
-  } else if (presetKey === 'corner_kill') {
-    // Corner squeeze
-    boardA[p('A',9)] = 1; boardA[p('B',9)] = 1;
-    boardB[p('A',9)] = 1; boardB[p('B',9)] = 1;
-    boardA[p('A',8)] = 2; boardA[p('B',8)] = 2; boardA[p('C',9)] = 2;
-    boardB[p('A',8)] = 2; boardB[p('B',8)] = 2; boardB[p('C',9)] = 2;
-    linkStones(p('A',9), p('B',9));
-    targetA = new Set([p('A',9), p('B',9)]);
-    targetB = new Set([p('A',9), p('B',9)]);
-    sideToMove = 2;
-    updateUI();
-  }
+// Helper: coordinate to index
+function coordToPos(colStr, row) {
+  const x = COORD_CHARS.indexOf(colStr.toUpperCase());
+  const y = row - 1;
+  if (x === -1 || y < 0 || y >= BOARD_SIZE) return -1;
+  return y * BOARD_SIZE + x;
 }
+
+// Preset from user screenshot
+function loadPresetFromScreenshot() {
+  resetBoard();
 
   // Board A stones (from screenshot Board A)
   // Black: C7, D6, E7, G7, D4, F5, F3, E2
-  const blackA = [p('C',7), p('D',6), p('E',7), p('G',7), p('D',4), p('F',5), p('F',3), p('E',2)];
-  blackA.forEach(idx => boardA[idx] = 1);
+  const blackA = [coordToPos('C',7), coordToPos('D',6), coordToPos('E',7), coordToPos('G',7), coordToPos('D',4), coordToPos('F',5), coordToPos('F',3), coordToPos('E',2)];
+  blackA.forEach(idx => { if (idx !== -1) boardA[idx] = 1; });
 
   // White: E8 (with red dot), D7, F6, B5, C5, E3, G4, G3
-  const whiteA = [p('E',8), p('D',7), p('F',6), p('B',5), p('C',5), p('E',3), p('G',4), p('G',3)];
-  whiteA.forEach(idx => boardA[idx] = 2);
+  const whiteA = [coordToPos('E',8), coordToPos('D',7), coordToPos('F',6), coordToPos('B',5), coordToPos('C',5), coordToPos('E',3), coordToPos('G',4), coordToPos('G',3)];
+  whiteA.forEach(idx => { if (idx !== -1) boardA[idx] = 2; });
 
   // Board B stones (from screenshot Board B)
   // Black: C7, D6, E7, G7, D4, F3, E2, E6 (with BQ)
-  const blackB = [p('C',7), p('D',6), p('E',7), p('G',7), p('D',4), p('F',3), p('E',2), p('E',6)];
-  blackB.forEach(idx => boardB[idx] = 1);
+  const blackB = [coordToPos('C',7), coordToPos('D',6), coordToPos('E',7), coordToPos('G',7), coordToPos('D',4), coordToPos('F',3), coordToPos('E',2), coordToPos('E',6)];
+  blackB.forEach(idx => { if (idx !== -1) boardB[idx] = 1; });
 
   // White: E8 (with red dot), D7, F6, B5, C5, E3, G4, G3, F5 (with WQ)
-  const whiteB = [p('E',8), p('D',7), p('F',6), p('B',5), p('C',5), p('E',3), p('G',4), p('G',3), p('F',5)];
-  whiteB.forEach(idx => boardB[idx] = 2);
+  const whiteB = [coordToPos('E',8), coordToPos('D',7), coordToPos('F',6), coordToPos('B',5), coordToPos('C',5), coordToPos('E',3), coordToPos('G',4), coordToPos('G',3), coordToPos('F',5)];
+  whiteB.forEach(idx => { if (idx !== -1) boardB[idx] = 2; });
 
   // Entangled pairs from screenshot:
   // Pair 1: Black Q on A: F5 <-> B: E6 (BQ)
-  linkStones(p('F',5), p('E',6));
+  linkStones(coordToPos('F',5), coordToPos('E',6));
 
   // Pair 2: White Q on A: E6 <-> B: F5 (WQ)
-  boardA[p('E',6)] = 2;
-  linkStones(p('E',6), p('F',5));
+  boardA[coordToPos('E',6)] = 2;
+  linkStones(coordToPos('E',6), coordToPos('F',5));
 
   // Last move: E8
-  lastMove = { pos: p('E',8) };
+  lastMove = { pos: coordToPos('E',8) };
 
   // Set target: Black central group (F5 on A, E6 on B)
-  targetA = new Set([p('F',5)]);
-  targetB = new Set([p('E',6)]);
+  targetA = new Set([coordToPos('F',5)]);
+  targetB = new Set([coordToPos('E',6)]);
 
   sideToMove = 2; // White to move (attacker)
   updateUI();
 }
 
+function loadGamePreset(presetKey) {
+  resetBoard();
+
+  if (presetKey === 'screenshot') {
+    loadPresetFromScreenshot();
+  } else if (presetKey === 'game1_ply30') {
+    // Game 00001 ply 30
+    const blackStones = [coordToPos('E',5), coordToPos('F',5), coordToPos('D',4), coordToPos('E',4), coordToPos('C',4), coordToPos('F',4), coordToPos('C',5), coordToPos('D',6), coordToPos('B',3), coordToPos('A',3)];
+    const whiteStones = [coordToPos('F',7), coordToPos('D',5), coordToPos('E',6), coordToPos('D',7), coordToPos('C',6), coordToPos('E',7), coordToPos('B',4), coordToPos('B',5), coordToPos('A',4)];
+    blackStones.forEach(i => { if (i !== -1) { boardA[i] = 1; boardB[i] = 1; } });
+    whiteStones.forEach(i => { if (i !== -1) { boardA[i] = 2; boardB[i] = 2; } });
+    linkStones(coordToPos('E',5), coordToPos('E',5));
+    linkStones(coordToPos('F',7), coordToPos('F',7));
+    targetA = new Set([coordToPos('D',4), coordToPos('E',4)]);
+    targetB = new Set([coordToPos('D',4), coordToPos('E',4)]);
+    sideToMove = 2; // White attacks
+    lastMove = { pos: coordToPos('A',4) };
+    updateUI();
+  } else if (presetKey === 'game2_ply40') {
+    // Game 00002 ply 40
+    const blackStones = [coordToPos('C',6), coordToPos('D',5), coordToPos('D',7), coordToPos('F',6), coordToPos('F',7), coordToPos('E',7), coordToPos('G',7), coordToPos('G',6), coordToPos('B',7)];
+    const whiteStones = [coordToPos('E',5), coordToPos('G',7), coordToPos('G',8), coordToPos('H',8), coordToPos('H',7), coordToPos('H',6), coordToPos('E',8), coordToPos('D',8), coordToPos('C',8), coordToPos('B',5)];
+    blackStones.forEach(i => { if (i !== -1) { boardA[i] = 1; boardB[i] = 1; } });
+    whiteStones.forEach(i => { if (i !== -1) { boardA[i] = 2; boardB[i] = 2; } });
+    linkStones(coordToPos('C',6), coordToPos('C',6));
+    linkStones(coordToPos('E',5), coordToPos('E',5));
+    targetA = new Set([coordToPos('D',7), coordToPos('E',7)]);
+    targetB = new Set([coordToPos('D',7), coordToPos('E',7)]);
+    sideToMove = 2;
+    lastMove = { pos: coordToPos('B',5) };
+    updateUI();
+  } else if (presetKey === 'corner_kill') {
+    // Corner squeeze
+    boardA[coordToPos('A',9)] = 1; boardA[coordToPos('B',9)] = 1;
+    boardB[coordToPos('A',9)] = 1; boardB[coordToPos('B',9)] = 1;
+    boardA[coordToPos('A',8)] = 2; boardA[coordToPos('B',8)] = 2; boardA[coordToPos('C',9)] = 2;
+    boardB[coordToPos('A',8)] = 2; boardB[coordToPos('B',8)] = 2; boardB[coordToPos('C',9)] = 2;
+    linkStones(coordToPos('A',9), coordToPos('B',9));
+    targetA = new Set([coordToPos('A',9), coordToPos('B',9)]);
+    targetB = new Set([coordToPos('A',9), coordToPos('B',9)]);
+    sideToMove = 2;
+    updateUI();
+  }
+}
+
 function linkStones(posA, posB) {
+  if (posA === -1 || posB === -1) return;
   partnerA[posA] = posB;
   partnerB[posB] = posA;
 }
@@ -147,7 +154,10 @@ function unlinkStone(boardId, pos) {
 }
 
 function resetBoard() {
-  if (autoPlayTimer) clearInterval(autoPlayTimer);
+  if (autoPlayTimer) {
+    clearInterval(autoPlayTimer);
+    autoPlayTimer = null;
+  }
   boardA.fill(0);
   boardB.fill(0);
   partnerA.fill(-1);
@@ -162,10 +172,19 @@ function resetBoard() {
   sideToMove = 1;
   moveNumber = 3;
 
-  document.getElementById('solveResultTag').className = 'value result-tag';
-  document.getElementById('solveResultTag').innerText = 'Ready';
-  document.getElementById('solvePV').innerText = 'Click "⚡ Direct Answer" to compute exact solution line';
-  document.getElementById('cascadeLogContainer').style.display = 'none';
+  const resTag = document.getElementById('solveResultTag');
+  if (resTag) {
+    resTag.className = 'value result-tag';
+    resTag.innerText = 'Ready';
+  }
+  const pvElem = document.getElementById('solvePV');
+  if (pvElem) {
+    pvElem.innerText = 'Click "⚡ Direct Answer" to compute exact solution line';
+  }
+  const logContainer = document.getElementById('cascadeLogContainer');
+  if (logContainer) {
+    logContainer.style.display = 'none';
+  }
 
   updateUI();
 }
@@ -292,11 +311,13 @@ function applyCommonMove(pos, color) {
 
   const logElem = document.getElementById('cascadeLog');
   const logContainer = document.getElementById('cascadeLogContainer');
-  if (cascadeLog.length > 0) {
-    logContainer.style.display = 'flex';
-    logElem.innerText = cascadeLog.join(' ➔ ');
-  } else {
-    logContainer.style.display = 'none';
+  if (logElem && logContainer) {
+    if (cascadeLog.length > 0) {
+      logContainer.style.display = 'flex';
+      logElem.innerText = cascadeLog.join(' ➔ ');
+    } else {
+      logContainer.style.display = 'none';
+    }
   }
 
   updateUI();
@@ -323,6 +344,7 @@ function stringToPos(str) {
 // ── Rendering ─────────────────────────────────────────────────────────────────
 function renderBoard(containerId, boardArray, partnerArray, targetSet, rzSet, boardId) {
   const container = document.getElementById(containerId);
+  if (!container) return;
   container.innerHTML = '';
 
   for (let y = BOARD_SIZE - 1; y >= 0; y--) {
@@ -443,32 +465,37 @@ function updateUI() {
 
   // Turn badge
   const turnBadge = document.getElementById('turnBadge');
-  turnBadge.className = `badge turn-badge ${sideToMove === 1 ? 'black-turn' : 'white-turn'}`;
-  turnBadge.innerText = `Turn: ${sideToMove === 1 ? 'Black' : 'White'}`;
+  if (turnBadge) {
+    turnBadge.className = `badge turn-badge ${sideToMove === 1 ? 'black-turn' : 'white-turn'}`;
+    turnBadge.innerText = `Turn: ${sideToMove === 1 ? 'Black' : 'White'}`;
+  }
 
   // Evaluate stones
   let countA_B = 0, countA_W = 0, countB_B = 0, countB_W = 0;
   boardA.forEach(c => { if (c === 1) countA_B++; if (c === 2) countA_W++; });
   boardB.forEach(c => { if (c === 1) countB_B++; if (c === 2) countB_W++; });
 
-  document.getElementById('evalAVal').innerText = `Black: ${countA_B} stones | White: ${countA_W} stones`;
-  document.getElementById('evalBVal').innerText = `Black: ${countB_B} stones | White: ${countB_W} stones`;
-  document.getElementById('statusTagA').innerText = `Stones: ${countA_B + countA_W}`;
-  document.getElementById('statusTagB').innerText = `Stones: ${countB_B + countB_W}`;
+  const evalA = document.getElementById('evalAVal');
+  const evalB = document.getElementById('evalBVal');
+  const tagA = document.getElementById('statusTagA');
+  const tagB = document.getElementById('statusTagB');
+
+  if (evalA) evalA.innerText = `Black: ${countA_B} stones | White: ${countA_W} stones`;
+  if (evalB) evalB.innerText = `Black: ${countB_B} stones | White: ${countB_W} stones`;
+  if (tagA) tagA.innerText = `Stones: ${countA_B + countA_W}`;
+  if (tagB) tagB.innerText = `Stones: ${countB_B + countB_W}`;
 }
 
 // ── Direct Answer & Self-Play Engine ─────────────────────────────────────────
 function computeSolution() {
-  // Check target group existence
   const hasTarget = (targetA.size > 0 || targetB.size > 0);
-  const isKillObjective = (sideToMove === 2); // White attacks
+  const isKillObjective = (sideToMove === 2);
 
   let result = 'DEAD';
   let pvMoves = [];
 
   if (hasTarget && isKillObjective) {
     result = 'DEAD';
-    // Exact killing variation: W plays D5/F4 to squeeze liberties, triggering cascade removal of BQ
     pvMoves = [
       { color: 2, pos: stringToPos('D5'), notation: 'W[D5]' },
       { color: 1, pos: stringToPos('E5'), notation: 'B[E5]' },
@@ -488,7 +515,6 @@ function computeSolution() {
   return { result, pvMoves, nodes: 78, timeMs: 1.4 };
 }
 
-// "⚡ Direct Answer (Auto-Solve)" button: instantly calculates and animates full variation
 function directAnswer() {
   const startTime = performance.now();
   const sol = computeSolution();
@@ -498,13 +524,18 @@ function directAnswer() {
   currentPVIndex = 0;
 
   const resTag = document.getElementById('solveResultTag');
-  resTag.className = `value result-tag ${sol.result === 'DEAD' ? 'dead' : 'alive'}`;
-  resTag.innerText = sol.result === 'DEAD' ? 'DEAD (Target Captured via Cascade)' : 'ALIVE (Target Unconditional Life)';
-  document.getElementById('solveNodes').innerText = `${sol.nodes} nodes`;
-  document.getElementById('solveTime').innerText = `${elapsed} ms`;
-  document.getElementById('solvePV').innerText = sol.pvMoves.map(m => m.notation).join(' ➔ ');
+  if (resTag) {
+    resTag.className = `value result-tag ${sol.result === 'DEAD' ? 'dead' : 'alive'}`;
+    resTag.innerText = sol.result === 'DEAD' ? 'DEAD (Target Captured via Cascade)' : 'ALIVE (Target Unconditional Life)';
+  }
+  const nodesElem = document.getElementById('solveNodes');
+  const timeElem = document.getElementById('solveTime');
+  const pvElem = document.getElementById('solvePV');
 
-  // Auto-play the solution sequence with animated delay
+  if (nodesElem) nodesElem.innerText = `${sol.nodes} nodes`;
+  if (timeElem) timeElem.innerText = `${elapsed} ms`;
+  if (pvElem) pvElem.innerText = sol.pvMoves.map(m => m.notation).join(' ➔ ');
+
   if (autoPlayTimer) clearInterval(autoPlayTimer);
 
   autoPlayTimer = setInterval(() => {
@@ -523,15 +554,18 @@ function directAnswer() {
   }, 600);
 }
 
-// "▶️ Step-by-Step Play" button: plays one step of the solution sequence at a time
 function stepSelfPlay() {
   if (currentPV.length === 0 || currentPVIndex >= currentPV.length) {
     const sol = computeSolution();
     currentPV = sol.pvMoves;
     currentPVIndex = 0;
-    document.getElementById('solveResultTag').className = `value result-tag ${sol.result === 'DEAD' ? 'dead' : 'alive'}`;
-    document.getElementById('solveResultTag').innerText = sol.result === 'DEAD' ? 'DEAD' : 'ALIVE';
-    document.getElementById('solvePV').innerText = sol.pvMoves.map(m => m.notation).join(' ➔ ');
+    const resTag = document.getElementById('solveResultTag');
+    if (resTag) {
+      resTag.className = `value result-tag ${sol.result === 'DEAD' ? 'dead' : 'alive'}`;
+      resTag.innerText = sol.result === 'DEAD' ? 'DEAD' : 'ALIVE';
+    }
+    const pvElem = document.getElementById('solvePV');
+    if (pvElem) pvElem.innerText = sol.pvMoves.map(m => m.notation).join(' ➔ ');
   }
 
   if (currentPVIndex < currentPV.length) {
@@ -547,40 +581,60 @@ function stepSelfPlay() {
 
 // ── Event Listeners ──────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('modePlayBtn').addEventListener('click', () => {
-    mode = 'play';
-    document.getElementById('modePlayBtn').classList.add('btn-primary');
-    document.getElementById('modeEditBtn').classList.remove('btn-primary');
-    document.getElementById('editTools').style.display = 'none';
-  });
+  const modePlayBtn = document.getElementById('modePlayBtn');
+  const modeEditBtn = document.getElementById('modeEditBtn');
+  const editTools = document.getElementById('editTools');
 
-  document.getElementById('modeEditBtn').addEventListener('click', () => {
-    mode = 'edit';
-    document.getElementById('modeEditBtn').classList.add('btn-primary');
-    document.getElementById('modePlayBtn').classList.remove('btn-primary');
-    document.getElementById('editTools').style.display = 'flex';
-  });
+  if (modePlayBtn && modeEditBtn && editTools) {
+    modePlayBtn.addEventListener('click', () => {
+      mode = 'play';
+      modePlayBtn.classList.add('btn-primary');
+      modeEditBtn.classList.remove('btn-primary');
+      editTools.style.display = 'none';
+    });
+
+    modeEditBtn.addEventListener('click', () => {
+      mode = 'edit';
+      modeEditBtn.classList.add('btn-primary');
+      modePlayBtn.classList.remove('btn-primary');
+      editTools.style.display = 'flex';
+    });
+  }
 
   ['toolBlackBtn', 'toolWhiteBtn', 'toolLinkBtn', 'toolTargetBtn', 'toolEraseBtn'].forEach(id => {
-    document.getElementById(id).addEventListener('click', (e) => {
-      document.querySelectorAll('.edit-tools .btn').forEach(b => b.classList.remove('active'));
-      e.target.classList.add('active');
-      editTool = id.replace('tool', '').replace('Btn', '').toLowerCase();
+    const btn = document.getElementById(id);
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        document.querySelectorAll('.edit-tools .btn').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        editTool = id.replace('tool', '').replace('Btn', '').toLowerCase();
+      });
+    }
+  });
+
+  const daBtn = document.getElementById('directAnswerBtn');
+  const sspBtn = document.getElementById('stepSelfPlayBtn');
+  const gSelect = document.getElementById('gameSelect');
+  const rBtn = document.getElementById('resetBtn');
+  const rzBtn = document.getElementById('toggleRZBtn');
+  const refBtn = document.getElementById('refreshEvalBtn');
+
+  if (daBtn) daBtn.addEventListener('click', directAnswer);
+  if (sspBtn) sspBtn.addEventListener('click', stepSelfPlay);
+  if (gSelect) {
+    gSelect.addEventListener('change', (e) => {
+      loadGamePreset(e.target.value);
     });
-  });
+  }
+  if (rBtn) rBtn.addEventListener('click', resetBoard);
+  if (rzBtn) {
+    rzBtn.addEventListener('click', () => {
+      showRZ = !showRZ;
+      updateUI();
+    });
+  }
+  if (refBtn) refBtn.addEventListener('click', updateUI);
 
-  document.getElementById('directAnswerBtn').addEventListener('click', directAnswer);
-  document.getElementById('stepSelfPlayBtn').addEventListener('click', stepSelfPlay);
-  document.getElementById('gameSelect').addEventListener('change', (e) => {
-    loadGamePreset(e.target.value);
-  });
-  document.getElementById('resetBtn').addEventListener('click', resetBoard);
-  document.getElementById('toggleRZBtn').addEventListener('click', () => {
-    showRZ = !showRZ;
-    updateUI();
-  });
-  document.getElementById('refreshEvalBtn').addEventListener('click', updateUI);
-
-  // Load preset on startup
+  // Initialize board with reference preset
   loadPresetFromScreenshot();
 });
