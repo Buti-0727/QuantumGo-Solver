@@ -1,0 +1,28 @@
+(;GM[1]FF[4]CA[UTF-8]AP[QuantumGo:1.0]
+SZ[7]
+KM[18.0]
+PB[QuantumGo AI]
+PW[QuantumGo AI]
+EV[Self-Play Training]
+DT[2026-08-10]
+RU[QuantumGo - Dual Board Chinese Rules]
+RE[W+18.0]
+C[QuantumGo Dual Board Game\n
+Board A and Board B are quantum entangled.\n
+Each move affects both boards.]
+
+;B[fe]C[Move 1: A:+ B:+]
+;W[cb]C[Move 2: A:+ B:+ BlackQ:fe]
+;B[dd]C[Move 3: A:+ B:+ BlackQ:fe WhiteQ:cb]
+;W[ed]C[Move 4: A:+ B:+ BlackQ:fe WhiteQ:cb]
+;B[ec]C[Move 5: A:+ B:+ BlackQ:fe WhiteQ:cb]
+;W[ee]C[Move 6: A:+ B:+ BlackQ:fe WhiteQ:cb]
+;B[de]C[Move 7: A:+ B:+ BlackQ:fe WhiteQ:cb]
+;W[bf]C[Move 8: A:+ B:+ BlackQ:fe WhiteQ:cb]
+;B[af]C[Move 9: A:+ B:+ BlackQ:fe WhiteQ:cb]
+;W[ce]C[Move 10: A:+ B:+ BlackQ:fe WhiteQ:cb]
+;B[df]C[Move 11: A:+ B:+ BlackQ:fe WhiteQ:cb]
+;W[ef]C[Move 12: A:+ B:+ BlackQ:fe WhiteQ:cb]
+;B[]C[Move 13: PASS]
+;W[]C[Move 14: PASS]
+)
