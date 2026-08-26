@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document is the implementation protocol for coding agents working on the QuantumGo Life-and-Death (L&D) solver based on the `study-LD-RZ` repository.
+This document is the implementation protocol for coding agents working on the QuantumGo Life-and-Death (L&D) solver based on the `study-LD-RZ-solver` folder.
 
 The implementation must extend the repository's **Relevance-Zone-based exact life-and-death solving approach** to the project's QuantumGo rules.
 
