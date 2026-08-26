@@ -1,0 +1,815 @@
+{
+  "id": 28571,
+  "qid": 28571,
+  "publicid": 28571,
+  "orgid": 0,
+  "levelname": "3K",
+  "min_levelname": "",
+  "max_levelname": "",
+  "qtype": 1,
+  "qtypename": "死活题",
+  "status": 2,
+  "userid": 4868,
+  "username": "as12as120",
+  "hasdia": true,
+  "dias": [],
+  "attr_type": 0,
+  "layoutnumber": 1,
+  "issingle": true,
+  "enable_answer": true,
+  "sms_count": 1,
+  "edit_count": 0,
+  "islei": false,
+  "leiid": 0,
+  "taotaiid": 0,
+  "bookinfos": [
+    {
+      "bookname": "死活妙机",
+      "bookid": 166,
+      "pinyin": "miaoji",
+      "nodename": "根目录",
+      "bookurl": "miaoji"
+    }
+  ],
+  "specs": [],
+  "taskresult": {
+    "ok_nums": [
+      8,
+      14,
+      10,
+      8,
+      82,
+      15,
+      27,
+      37,
+      38,
+      49,
+      124,
+      247,
+      290,
+      459,
+      505,
+      512,
+      417,
+      271,
+      196,
+      110,
+      79,
+      53,
+      46,
+      36,
+      24,
+      31,
+      28,
+      16,
+      15,
+      22
+    ],
+    "fail_nums": [
+      14,
+      16,
+      14,
+      16,
+      39,
+      32,
+      58,
+      78,
+      84,
+      127,
+      268,
+      633,
+      527,
+      519,
+      409,
+      263,
+      192,
+      116,
+      72,
+      31,
+      25,
+      19,
+      18,
+      11,
+      4,
+      8,
+      5,
+      2,
+      0,
+      3
+    ],
+    "ok_total": 3769,
+    "fail_total": 3603
+  },
+  "xuandians": [],
+  "xds": [],
+  "options": [],
+  "vote": 4.8,
+  "name": "第11题",
+  "title": "第11题 白先\n第9题的变化。黑若走△位曲，白棋应怎样走？\n黑棋有什么意图应该明白。",
+  "c": "amsTQVcQHRATQFYQHRATQ1YQHRATQlMQHRATXVUQHRATXFYQHRATXFcQHRATQFcQHRATQlcQHRATQlYQHRATQlEQHRATQlAQbBwRaRBBUxIdEhBAUBIdEhBAUhIdEhBDVBIdEhBAVxIdEhBDVxIdEhBCVxIdEhBCWRIdEhBeVxIdEhBeUhIdEhBfVRIdEhBcUhIdEhBdUhIdEhBdUxIdEhBdWRIdEhBcVhJsbw==",
+  "r": 1,
+  "prepos": [
+    [
+      "se",
+      "rd",
+      "qd",
+      "pa",
+      "og"
+    ],
+    [
+      "sb",
+      "ra",
+      "rc"
+    ]
+  ],
+  "xv": 9,
+  "points": [],
+  "lu": 19,
+  "blackfirst": false,
+  "is_share": true,
+  "answers": [
+    {
+      "id": 3387043,
+      "st": 1,
+      "ty": 1,
+      "nu": 16,
+      "username": "x_34138234419347",
+      "userid": 2565426,
+      "pts": [
+        {
+          "p": "sc",
+          "c": ""
+        },
+        {
+          "p": "qb",
+          "c": ""
+        },
+        {
+          "p": "rb",
+          "c": ""
+        },
+        {
+          "p": "mf",
+          "c": ""
+        },
+        {
+          "p": "nf",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787293477
+    },
+    {
+      "id": 3267007,
+      "st": 1,
+      "ty": 1,
+      "nu": 15,
+      "username": "棋开得用生",
+      "userid": 2371726,
+      "pts": [
+        {
+          "p": "sc",
+          "c": ""
+        },
+        {
+          "p": "qb",
+          "c": ""
+        },
+        {
+          "p": "rb",
+          "c": ""
+        },
+        {
+          "p": "qc",
+          "c": ""
+        },
+        {
+          "p": "oe",
+          "c": ""
+        },
+        {
+          "p": "sd",
+          "c": ""
+        },
+        {
+          "p": "od",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "sa",
+          "c": ""
+        },
+        {
+          "p": "rb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1782525922
+    },
+    {
+      "id": 3108760,
+      "st": 1,
+      "ty": 1,
+      "nu": 14,
+      "username": "折腾群王景煜",
+      "userid": 2322511,
+      "pts": [
+        {
+          "p": "sc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1772877007
+    },
+    {
+      "id": 141651,
+      "st": 2,
+      "ty": 1,
+      "nu": 1,
+      "username": "as12as120",
+      "userid": 4913,
+      "pts": [
+        {
+          "p": "sc",
+          "c": "正解图\r\n白1拳，故意走在单官上，是正解。 正解"
+        },
+        {
+          "p": "qb",
+          "c": ""
+        },
+        {
+          "p": "rb",
+          "c": "对黑2刺，白3接，成刀五的死棋。"
+        }
+      ],
+      "v": 0,
+      "ok_count": 28,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 1,
+      "created": 1383359864
+    },
+    {
+      "id": 3387764,
+      "st": 1,
+      "ty": 1,
+      "nu": 17,
+      "username": "送果童子（猫小九）",
+      "userid": 2442351,
+      "pts": [
+        {
+          "p": "sc",
+          "c": ""
+        },
+        {
+          "p": "qb",
+          "c": ""
+        },
+        {
+          "p": "rb",
+          "c": "白粘刀把五"
+        },
+        {
+          "p": "qc",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "od",
+          "c": ""
+        },
+        {
+          "p": "of",
+          "c": ""
+        },
+        {
+          "p": "oe",
+          "c": ""
+        },
+        {
+          "p": "me",
+          "c": ""
+        },
+        {
+          "p": "nf",
+          "c": ""
+        },
+        {
+          "p": "mf",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "sf",
+          "c": "黑无气"
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787310919
+    },
+    {
+      "id": 2692097,
+      "st": 1,
+      "ty": 2,
+      "nu": 11,
+      "username": "袁策1",
+      "userid": 1871030,
+      "pts": [
+        {
+          "p": "sc",
+          "c": ""
+        },
+        {
+          "p": "qb",
+          "c": ""
+        },
+        {
+          "p": "rb",
+          "c": ""
+        },
+        {
+          "p": "qc",
+          "c": ""
+        },
+        {
+          "p": "of",
+          "c": ""
+        },
+        {
+          "p": "oe",
+          "c": ""
+        },
+        {
+          "p": "nf",
+          "c": ""
+        },
+        {
+          "p": "sd",
+          "c": ""
+        },
+        {
+          "p": "sf",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "me",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": "紧气后的结果"
+        },
+        {
+          "p": "sa",
+          "c": ""
+        },
+        {
+          "p": "rb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1750327954
+    },
+    {
+      "id": 141652,
+      "st": 2,
+      "ty": 3,
+      "nu": 2,
+      "username": "as12as120",
+      "userid": 4913,
+      "pts": [
+        {
+          "p": "qb",
+          "c": "失败图 失败图"
+        },
+        {
+          "p": "sc",
+          "c": "白棋若走1位做眼，黑2扑入，成劫。"
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 21,
+      "error_count": 0,
+      "created": 1383359864
+    },
+    {
+      "id": 1198589,
+      "st": 2,
+      "ty": 3,
+      "nu": 7,
+      "username": "081225",
+      "userid": 625025,
+      "pts": [
+        {
+          "p": "rb",
+          "c": ""
+        },
+        {
+          "p": "sc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 51,
+      "error_count": 0,
+      "created": 1595209387
+    }
+  ],
+  "ans_count": 8,
+  "andata": {
+    "0": {
+      "subs": [
+        1,
+        4,
+        6
+      ],
+      "p": 0,
+      "id": 0,
+      "aids": [],
+      "pt": "",
+      "o": 0,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "1": {
+      "subs": [
+        2
+      ],
+      "p": 0,
+      "id": 1,
+      "aids": [
+        141651
+      ],
+      "pt": "sc",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": "正解图\r\n白1拳，故意走在单官上，是正解。 正解"
+    },
+    "2": {
+      "subs": [
+        3
+      ],
+      "p": 1,
+      "id": 2,
+      "aids": [
+        141651
+      ],
+      "pt": "qb",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "3": {
+      "subs": [],
+      "p": 2,
+      "id": 3,
+      "aids": [
+        141651
+      ],
+      "pt": "rb",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": "对黑2刺，白3接，成刀五的死棋。"
+    },
+    "4": {
+      "subs": [
+        5
+      ],
+      "p": 0,
+      "id": 4,
+      "aids": [
+        141652
+      ],
+      "pt": "qb",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": "失败图 失败图"
+    },
+    "5": {
+      "subs": [],
+      "p": 4,
+      "id": 5,
+      "aids": [
+        141652
+      ],
+      "pt": "sc",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": "白棋若走1位做眼，黑2扑入，成劫。"
+    },
+    "6": {
+      "subs": [
+        7
+      ],
+      "p": 0,
+      "id": 6,
+      "aids": [
+        1198589
+      ],
+      "pt": "rb",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "7": {
+      "subs": [],
+      "p": 6,
+      "id": 7,
+      "aids": [
+        1198589
+      ],
+      "pt": "sc",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    }
+  },
+  "disuse": 9,
+  "sx": 10,
+  "sy": 10,
+  "pos_x1": 9,
+  "pos_x2": 18,
+  "pos_y1": 0,
+  "pos_y2": 9,
+  "ineb": false,
+  "extendwidth": 0,
+  "signs": [],
+  "luozis": [],
+  "isguess": false,
+  "objtype": "timu",
+  "ru": 2,
+  "f": false,
+  "showai": true,
+  "content": "amsTXVcRHRATQ1ARHRATXVYRHRATQlcRHRATQFYRHRATQVYRHRATQ1cRHRATQVcRHRATQ1IRHRATQ1YRHRATXFQRHRATQ1ERbBwRaBFcUhIdExFBUBIdExFdUhIdExFcWRIdExFcUxIdExFAUxIdExFCVBIdExFBVxIdExFeVRIdExFCVxIdExFfUhIdExFDVxIdExFfVxIdExFdVhIdExFBUhIdExFDWRJsbg==",
+  "ok_answers": "amsTQFARHRATQlERHRATQVERbG0=",
+  "change_answers": "am0=",
+  "fail_answers": "amsTQlERHRATQFARbBwRaBFBUxIdExFAUhJsbg==",
+  "level": 209,
+  "desc": "第11题 白先\n第9题的变化。黑若走△位曲，白棋应怎样走？\n黑棋有什么意图应该明白。",
+  "yes_count": 3769,
+  "no_count": 3603,
+  "pos": [],
+  "attrtype": 0,
+  "showrettip": false,
+  "is_public": true,
+  "inerror": false,
+  "qshids": [],
+  "myan": null,
+  "hasbook": false,
+  "hasspec": false,
+  "myoper": {
+    "mystar": false,
+    "mytags": [],
+    "tags": []
+  },
+  "candisuseall": false,
+  "userlevel": 0,
+  "clicktime": 500,
+  "xz": 0,
+  "musthide": 0,
+  "hidetime": 5,
+  "comments": [
+    {
+      "id": 24970,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": null,
+      "username": "greenhand",
+      "userid": 4260,
+      "headpath": "headicon_128.jpg",
+      "updated": 1384316308,
+      "showcontent": "这题出人意料的简单。"
+    },
+    {
+      "id": 133280,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "ninipipi",
+      "userid": 1788,
+      "headpath": "headicon_128.jpg",
+      "updated": 1467338774,
+      "showcontent": "这题并不简单，需要思路的转换"
+    },
+    {
+      "id": 481098,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_68070211514",
+      "userid": 162303,
+      "headpath": "head/2020/3/16/162303_8661_18_54.png",
+      "updated": 1565248072,
+      "showcontent": "同意☀"
+    },
+    {
+      "id": 774170,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "羿澄1009",
+      "userid": 798362,
+      "headpath": "head/2022/4/12/798362_86918_38_10.png",
+      "updated": 1590706421,
+      "showcontent": "同意"
+    },
+    {
+      "id": 1090586,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "天涯胡天牧",
+      "userid": 1014966,
+      "headpath": "headicon_128.jpg",
+      "updated": 1631792773,
+      "showcontent": "7秒过。"
+    },
+    {
+      "id": 1119808,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_3134590419292",
+      "userid": 860808,
+      "headpath": "head/2021/11/7/860808_69526_49_23.png",
+      "updated": 1636882991,
+      "showcontent": "大家暂停讨论，我说：”这明明是第6题，怎么是第11题？又是哪儿来的第9题？它还说“黑若走△位曲”△是……？<br/>      请各位棋友回答以上3条问题，谢谢。"
+    },
+    {
+      "id": 1243557,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "乐弈杨锦源",
+      "userid": 1245256,
+      "headpath": "headicon_128.jpg",
+      "updated": 1653654630,
+      "showcontent": "<a href=\"/u/wx_3134590419292/\" target=\"_blank\">@wx_3134590419292</a> 我也那么想，估计是其他题没入库"
+    },
+    {
+      "id": 1350684,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_55449071192328",
+      "userid": 1051080,
+      "headpath": "head/2022/12/2/1051080_18713_21_6.png",
+      "updated": 1663684360,
+      "showcontent": "三角应该是忘加了"
+    },
+    {
+      "id": 1415433,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "蒋元麒蒋元麒蒋元麒蒋元麒",
+      "userid": 1544804,
+      "headpath": "headicon_128.jpg",
+      "updated": 1671094399,
+      "showcontent": "就知道黑想搭解（打劫）"
+    },
+    {
+      "id": 1453193,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "两万元吃亏棋钟",
+      "userid": 888032,
+      "headpath": "head/2023/1/8/888032_71732_57_8.png",
+      "updated": 1673838115,
+      "showcontent": "<a href=\"/u/kenny/\" target=\"_blank\">@kenny</a>，删楼上，答案10乱提交答案"
+    },
+    {
+      "id": 1464122,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "晓光下棋",
+      "userid": 553628,
+      "headpath": "head/2020/12/10/553628_22208_12_59.png",
+      "updated": 1674646377,
+      "showcontent": "我还看成黑先了，结果对了"
+    },
+    {
+      "id": 2178829,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "陈俊丞2015",
+      "userid": 1884456,
+      "headpath": "head/2024/4/10/1884456_5030_31_22.png",
+      "updated": 1753173254,
+      "showcontent": "若走△位曲，我勒个三角。"
+    },
+    {
+      "id": 2223840,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "小小龙女",
+      "userid": 1266419,
+      "headpath": "head/2024/11/25/1266419_23306_30_14.png",
+      "updated": 1755411939,
+      "showcontent": "我也看成了黑先，结果也对了。"
+    },
+    {
+      "id": 2664787,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "Kevin邓",
+      "userid": 2351062,
+      "headpath": "headicon_128.jpg",
+      "updated": 1784102700,
+      "showcontent": "简单"
+    },
+    {
+      "id": 2749137,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "依旧老叟戏顽童",
+      "userid": 2483709,
+      "headpath": "head/2026/8/18/2364581_79203_52_10.png",
+      "updated": 1787286027,
+      "showcontent": "我看成黑先了，不过，过程全错，结果全对"
+    },
+    {
+      "id": 2750126,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "w_53138021519285",
+      "userid": 2562468,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787307797,
+      "showcontent": "太太太太太简单了"
+    }
+  ]
+}

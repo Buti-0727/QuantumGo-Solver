@@ -1,0 +1,2360 @@
+{
+  "id": 28202,
+  "qid": 28202,
+  "publicid": 28202,
+  "orgid": 0,
+  "levelname": "1D+",
+  "min_levelname": "",
+  "max_levelname": "",
+  "qtype": 2,
+  "qtypename": "手筋题",
+  "status": 2,
+  "userid": 2730,
+  "username": "爱乐奕",
+  "hasdia": true,
+  "dias": [],
+  "attr_type": 0,
+  "layoutnumber": 1,
+  "issingle": true,
+  "enable_answer": true,
+  "sms_count": 1,
+  "edit_count": 5,
+  "islei": false,
+  "leiid": 0,
+  "taotaiid": 0,
+  "bookinfos": [
+    {
+      "bookname": "杰作诘棋词典（修订版）",
+      "bookid": 28198,
+      "pinyin": "",
+      "nodename": "手筋部分（B级）",
+      "bookurl": 28198
+    },
+    {
+      "bookname": "《银冈棋院高段班手筋练习题》",
+      "bookid": 30779,
+      "pinyin": "",
+      "nodename": "综合手筋（下）",
+      "bookurl": 30779
+    }
+  ],
+  "specs": [],
+  "taskresult": {
+    "ok_nums": [
+      2,
+      1,
+      1,
+      4,
+      3,
+      4,
+      4,
+      8,
+      8,
+      10,
+      8,
+      15,
+      9,
+      16,
+      31,
+      45,
+      53,
+      129,
+      82,
+      136,
+      144,
+      133,
+      105,
+      55,
+      52,
+      45,
+      37,
+      26,
+      28,
+      37
+    ],
+    "fail_nums": [
+      11,
+      8,
+      3,
+      6,
+      6,
+      6,
+      17,
+      20,
+      27,
+      34,
+      31,
+      38,
+      35,
+      41,
+      76,
+      128,
+      150,
+      313,
+      174,
+      174,
+      138,
+      134,
+      70,
+      47,
+      32,
+      27,
+      20,
+      12,
+      6,
+      12
+    ],
+    "ok_total": 1231,
+    "fail_total": 1796
+  },
+  "xuandians": [],
+  "xds": [],
+  "options": [],
+  "vote": 4.8,
+  "name": "第13题 打吃的窍门",
+  "title": "关山利一九段创作。黑△和白△交换的地方，产生常用之筋。不要错过稍微的间隙而穿破白。",
+  "c": "amsTVl0QHRATV1wQHRATVFwQHRATVF0QHRATVV8QHRATVF4QHRATV14QHRATVFgQHRATV1gQHRATVlgQbBwRaRBXQxIdEhBXQBIdEhBXQRIdEhBXXhIdEhBUQRIdEhBRQRIdEhBWXxIdEhBRXBIdEhBUXBIdEhBRWxIdEhBRWBIdEhBRVhJsbw==",
+  "r": 1,
+  "prepos": [
+    [
+      "od",
+      "ne",
+      "nf",
+      "of",
+      "mg"
+    ],
+    [
+      "re",
+      "qe",
+      "pe"
+    ]
+  ],
+  "xv": 1,
+  "points": [],
+  "lu": 19,
+  "blackfirst": true,
+  "is_share": true,
+  "answers": [
+    {
+      "id": 341487,
+      "st": 2,
+      "ty": 1,
+      "nu": 1,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 13,
+      "change_count": 0,
+      "bad_count": 2,
+      "error_count": 1,
+      "created": 1459699999
+    },
+    {
+      "id": 2910658,
+      "st": 1,
+      "ty": 1,
+      "nu": 21,
+      "username": "sensen2023",
+      "userid": 1675056,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1761125306
+    },
+    {
+      "id": 953651,
+      "st": 1,
+      "ty": 1,
+      "nu": 6,
+      "username": "guoxiaodai",
+      "userid": 28118,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "kd",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1576488988
+    },
+    {
+      "id": 988285,
+      "st": 1,
+      "ty": 1,
+      "nu": 8,
+      "username": "胡凯瑞",
+      "userid": 132059,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "kd",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "jb",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "me",
+          "c": ""
+        },
+        {
+          "p": "ke",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1580132068
+    },
+    {
+      "id": 3167441,
+      "st": 1,
+      "ty": 1,
+      "nu": 22,
+      "username": "w_6862002191229",
+      "userid": 1793194,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "kd",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1776604756
+    },
+    {
+      "id": 1281560,
+      "st": 1,
+      "ty": 1,
+      "nu": 10,
+      "username": "叶雨祺1",
+      "userid": 602314,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "kd",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 2,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1603726620
+    },
+    {
+      "id": 1355429,
+      "st": 1,
+      "ty": 1,
+      "nu": 11,
+      "username": "金旭文",
+      "userid": 393396,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 2,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1612661590
+    },
+    {
+      "id": 1980779,
+      "st": 1,
+      "ty": 1,
+      "nu": 14,
+      "username": "wx_22171534114622",
+      "userid": 409899,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1673659090
+    },
+    {
+      "id": 2116018,
+      "st": 1,
+      "ty": 1,
+      "nu": 15,
+      "username": "张以萱",
+      "userid": 890427,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1687055218
+    },
+    {
+      "id": 2607467,
+      "st": 1,
+      "ty": 1,
+      "nu": 20,
+      "username": "麒麟轩",
+      "userid": 1564017,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1742699648
+    },
+    {
+      "id": 3388494,
+      "st": 1,
+      "ty": 1,
+      "nu": 25,
+      "username": "wx_42129814919712",
+      "userid": 2450002,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787360531
+    },
+    {
+      "id": 341490,
+      "st": 2,
+      "ty": 1,
+      "nu": 4,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 11,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1459700035
+    },
+    {
+      "id": 3388658,
+      "st": 1,
+      "ty": 1,
+      "nu": 27,
+      "username": "AI围棋",
+      "userid": 2461016,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "kd",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "me",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787363751
+    },
+    {
+      "id": 3388848,
+      "st": 1,
+      "ty": 1,
+      "nu": 30,
+      "username": "w_14566812193513",
+      "userid": 1264536,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "kd",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787367806
+    },
+    {
+      "id": 3388846,
+      "st": 1,
+      "ty": 1,
+      "nu": 29,
+      "username": "w_14566812193513",
+      "userid": 1264536,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "kd",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787367790
+    },
+    {
+      "id": 3389164,
+      "st": 1,
+      "ty": 1,
+      "nu": 32,
+      "username": "g_23740619416",
+      "userid": 2417799,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787377662
+    },
+    {
+      "id": 341488,
+      "st": 2,
+      "ty": 2,
+      "nu": 2,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "kd",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 50,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1459700009
+    },
+    {
+      "id": 341489,
+      "st": 2,
+      "ty": 2,
+      "nu": 3,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 51,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1459700017
+    },
+    {
+      "id": 1857012,
+      "st": 1,
+      "ty": 2,
+      "nu": 13,
+      "username": "李知博",
+      "userid": 1017365,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "kd",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "jb",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "me",
+          "c": ""
+        },
+        {
+          "p": "ke",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 2,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1661348668
+    },
+    {
+      "id": 2560572,
+      "st": 1,
+      "ty": 2,
+      "nu": 17,
+      "username": "尉清扬",
+      "userid": 1477236,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "kd",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1737256202
+    },
+    {
+      "id": 3388537,
+      "st": 1,
+      "ty": 2,
+      "nu": 26,
+      "username": "x_371339573193911",
+      "userid": 2504499,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "kd",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "jb",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787361204
+    },
+    {
+      "id": 3388659,
+      "st": 1,
+      "ty": 2,
+      "nu": 28,
+      "username": "AI围棋",
+      "userid": 2461016,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787363760
+    },
+    {
+      "id": 719357,
+      "st": 2,
+      "ty": 2,
+      "nu": 5,
+      "username": "王小月",
+      "userid": 143146,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "kd",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 51,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1545005414
+    },
+    {
+      "id": 3390040,
+      "st": 1,
+      "ty": 2,
+      "nu": 33,
+      "username": "a_121396070194122",
+      "userid": 2584741,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787400386
+    },
+    {
+      "id": 978122,
+      "st": 1,
+      "ty": 3,
+      "nu": 7,
+      "username": "郑善文",
+      "userid": 401565,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 2,
+      "error_count": 0,
+      "created": 1579352438
+    },
+    {
+      "id": 998466,
+      "st": 1,
+      "ty": 3,
+      "nu": 9,
+      "username": "sherry0213",
+      "userid": 86519,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 1,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1580806260
+    },
+    {
+      "id": 1355430,
+      "st": 1,
+      "ty": 3,
+      "nu": 12,
+      "username": "金旭文",
+      "userid": 393396,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "kd",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "jb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1612661601
+    },
+    {
+      "id": 2543836,
+      "st": 1,
+      "ty": 3,
+      "nu": 16,
+      "username": "乌鹭魏新洋",
+      "userid": 1379036,
+      "pts": [
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1735560959
+    },
+    {
+      "id": 2564531,
+      "st": 1,
+      "ty": 3,
+      "nu": 18,
+      "username": "wx_59936574193227",
+      "userid": 1911415,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1737679921
+    },
+    {
+      "id": 2564533,
+      "st": 1,
+      "ty": 3,
+      "nu": 19,
+      "username": "wx_59936574193227",
+      "userid": 1911415,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "nb",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": "还有劫的味道"
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1737680014
+    },
+    {
+      "id": 3388445,
+      "st": 1,
+      "ty": 3,
+      "nu": 23,
+      "username": "来看看看",
+      "userid": 2307291,
+      "pts": [
+        {
+          "p": "ld",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787359075
+    },
+    {
+      "id": 3388468,
+      "st": 1,
+      "ty": 3,
+      "nu": 24,
+      "username": "x_53121539419010",
+      "userid": 2335568,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "kb",
+          "c": ""
+        },
+        {
+          "p": "kc",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787359873
+    },
+    {
+      "id": 3390554,
+      "st": 1,
+      "ty": 3,
+      "nu": 34,
+      "username": "wx_1138022919505",
+      "userid": 2562486,
+      "pts": [
+        {
+          "p": "lc",
+          "c": ""
+        },
+        {
+          "p": "lb",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ld",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787441031
+    }
+  ],
+  "ans_count": 33,
+  "andata": {
+    "0": {
+      "subs": [
+        1
+      ],
+      "p": 0,
+      "id": 0,
+      "aids": [],
+      "pt": "",
+      "o": 0,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "1": {
+      "subs": [
+        2
+      ],
+      "p": 0,
+      "id": 1,
+      "aids": [
+        341487,
+        341490,
+        341488,
+        341489,
+        719357
+      ],
+      "pt": "lc",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "2": {
+      "subs": [
+        3
+      ],
+      "p": 1,
+      "id": 2,
+      "aids": [
+        341487,
+        341490,
+        341488,
+        341489,
+        719357
+      ],
+      "pt": "lb",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "3": {
+      "subs": [
+        4,
+        8
+      ],
+      "p": 2,
+      "id": 3,
+      "aids": [
+        341487,
+        341490,
+        341488,
+        341489,
+        719357
+      ],
+      "pt": "mb",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "4": {
+      "subs": [
+        5
+      ],
+      "p": 3,
+      "id": 4,
+      "aids": [
+        341487
+      ],
+      "pt": "nb",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "5": {
+      "subs": [
+        6
+      ],
+      "p": 4,
+      "id": 5,
+      "aids": [
+        341487
+      ],
+      "pt": "md",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "6": {
+      "subs": [
+        7
+      ],
+      "p": 5,
+      "id": 6,
+      "aids": [
+        341487
+      ],
+      "pt": "nc",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "7": {
+      "subs": [],
+      "p": 6,
+      "id": 7,
+      "aids": [
+        341487
+      ],
+      "pt": "kb",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "8": {
+      "subs": [
+        9
+      ],
+      "p": 3,
+      "id": 8,
+      "aids": [
+        341490,
+        341488,
+        341489,
+        719357
+      ],
+      "pt": "ld",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "9": {
+      "subs": [
+        10,
+        12,
+        14
+      ],
+      "p": 8,
+      "id": 9,
+      "aids": [
+        341490,
+        341488,
+        341489,
+        719357
+      ],
+      "pt": "kc",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "10": {
+      "subs": [
+        11
+      ],
+      "p": 9,
+      "id": 10,
+      "aids": [
+        341490
+      ],
+      "pt": "nb",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "11": {
+      "subs": [],
+      "p": 10,
+      "id": 11,
+      "aids": [
+        341490
+      ],
+      "pt": "kb",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "12": {
+      "subs": [
+        13,
+        16
+      ],
+      "p": 9,
+      "id": 12,
+      "aids": [
+        341488,
+        719357
+      ],
+      "pt": "kd",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "13": {
+      "subs": [],
+      "p": 12,
+      "id": 13,
+      "aids": [
+        341488
+      ],
+      "pt": "md",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "14": {
+      "subs": [
+        15
+      ],
+      "p": 9,
+      "id": 14,
+      "aids": [
+        341489
+      ],
+      "pt": "kb",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "15": {
+      "subs": [],
+      "p": 14,
+      "id": 15,
+      "aids": [
+        341489
+      ],
+      "pt": "nc",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "16": {
+      "subs": [],
+      "p": 12,
+      "id": 16,
+      "aids": [
+        719357
+      ],
+      "pt": "kb",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    }
+  },
+  "disuse": 1,
+  "sx": 16,
+  "sy": 10,
+  "pos_x1": 3,
+  "pos_x2": 18,
+  "pos_y1": 0,
+  "pos_y2": 9,
+  "ineb": false,
+  "extendwidth": 1,
+  "signs": [],
+  "luozis": [],
+  "isguess": false,
+  "objtype": "timu",
+  "ru": 1,
+  "f": false,
+  "showai": false,
+  "content": "amsTWFQQHRATXFcQHRATXlcQHRATWFcQHRATXFQQHRATXlQQHRATXVYQHRATX1UQHRATWFYQHRATXVQQbBwRaRBDVBIdEhBVUhIdEhBcVRIdEhBCUhIdEhBfUhIdEhBAVBIdEhBYUhIdEhBdVBIdEhBCVBIdEhBbUhIdEhBCVxIdEhBfVxJsbw==",
+  "ok_answers": "amsTXlEQHRATXlAQHRATX1AQHRATXFAQHRATX1YQHRATXFEQHRATWVAQbBwRaRBeUhIdEhBeUxIdEhBfUxIdEhBeVRIdEhBZUhIdEhBcUxIdEhBZUxJsbw==",
+  "change_answers": "amsTXlEQHRATXlAQHRATX1AQHRATXlYQHRATWVEQHRATWVYQHRATX1YQbBwRaRBeUhIdEhBeUxIdEhBfUxIdEhBeVRIdEhBZUhIdEhBZUxIdEhBcUhJsHhJpE1xSEB4SE1xTEB4SE11TEB4SE1xVEB4SE1tSEB4SE1tVEB4SE1tTEG9v",
+  "fail_answers": "am0=",
+  "level": 350,
+  "desc": "关山利一九段创作。黑△和白△交换的地方，产生常用之筋。不要错过稍微的间隙而穿破白。",
+  "yes_count": 1231,
+  "no_count": 1796,
+  "pos": [],
+  "attrtype": 0,
+  "showrettip": false,
+  "is_public": true,
+  "inerror": false,
+  "qshids": [],
+  "myan": null,
+  "hasbook": false,
+  "hasspec": false,
+  "myoper": {
+    "mystar": false,
+    "mytags": [],
+    "tags": []
+  },
+  "candisuseall": false,
+  "userlevel": 0,
+  "clicktime": 0,
+  "xz": 0,
+  "musthide": 0,
+  "hidetime": 5,
+  "comments": [
+    {
+      "id": 167989,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_181918611919",
+      "userid": 56464,
+      "headpath": "headicon_128.jpg",
+      "updated": 1482419060,
+      "showcontent": "活在里面就不算？答案2黑7先拐下去难道不好？"
+    },
+    {
+      "id": 1103764,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "和和易中游",
+      "userid": 370429,
+      "headpath": "headicon_128.jpg",
+      "updated": 1634120351,
+      "showcontent": "还有个扑<br/>啊"
+    },
+    {
+      "id": 2385722,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "三石小",
+      "userid": 2293014,
+      "headpath": "head/2025/8/27/2174293_58141_46_18.png",
+      "updated": 1767071243,
+      "showcontent": "打吃的窍门 ？"
+    },
+    {
+      "id": 2529512,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "曹仁周",
+      "userid": 2464334,
+      "headpath": "headicon_128.jpg",
+      "updated": 1775826084,
+      "showcontent": "大吃的窍门"
+    },
+    {
+      "id": 2750904,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "快乐生活",
+      "userid": 583377,
+      "headpath": "head/2021/7/17/583377_73256_50_54.png",
+      "updated": 1787358914,
+      "showcontent": "标题与内容不是很相符。"
+    },
+    {
+      "id": 2750954,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "王嘉烨",
+      "userid": 2508908,
+      "headpath": "userhead/6.jpg",
+      "updated": 1787360835,
+      "showcontent": "999k"
+    },
+    {
+      "id": 2751832,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_24124999519366",
+      "userid": 2383726,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787380144,
+      "showcontent": "太简单了，相思断"
+    },
+    {
+      "id": 2752191,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389160,
+      "showcontent": "<a href=\"/q/55555/\" target=\"_blank\">Q-55555</a>"
+    },
+    {
+      "id": 2752196,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389228,
+      "showcontent": "<a href=\"/q/99999/\" target=\"_blank\">Q-99999</a>"
+    },
+    {
+      "id": 2752198,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389265,
+      "showcontent": "<a href=\"/q/100000/\" target=\"_blank\">Q-100000</a>"
+    },
+    {
+      "id": 2752202,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389335,
+      "showcontent": "Q123839"
+    },
+    {
+      "id": 2752203,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389366,
+      "showcontent": "It is so easy"
+    },
+    {
+      "id": 2752204,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389386,
+      "showcontent": "unicorn"
+    },
+    {
+      "id": 2752206,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389462,
+      "showcontent": "Q-539300"
+    },
+    {
+      "id": 2752207,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389484,
+      "showcontent": "<a href=\"/q/500182/\" target=\"_blank\">Q-500182</a>"
+    },
+    {
+      "id": 2752209,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389523,
+      "showcontent": "<a href=\"/q/510000/\" target=\"_blank\">Q-510000</a>"
+    },
+    {
+      "id": 2752214,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389542,
+      "showcontent": "Q-520000"
+    },
+    {
+      "id": 2752216,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389567,
+      "showcontent": "Q-515000"
+    },
+    {
+      "id": 2752218,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389584,
+      "showcontent": "Q-512000"
+    },
+    {
+      "id": 2752219,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389597,
+      "showcontent": "<a href=\"/q/510000/\" target=\"_blank\">Q-510000</a>"
+    },
+    {
+      "id": 2752220,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389613,
+      "showcontent": "<a href=\"/q/511000/\" target=\"_blank\">Q-511000</a>"
+    },
+    {
+      "id": 2752222,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389638,
+      "showcontent": "<a href=\"/q/510500/\" target=\"_blank\">Q-510500</a>"
+    },
+    {
+      "id": 2752223,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389657,
+      "showcontent": "<a href=\"/q/510100/\" target=\"_blank\">Q-510100</a>"
+    },
+    {
+      "id": 2752225,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389694,
+      "showcontent": "<a href=\"/q/510300/\" target=\"_blank\">Q-510300</a>"
+    },
+    {
+      "id": 2752226,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389711,
+      "showcontent": "<a href=\"/q/510400/\" target=\"_blank\">Q-510400</a>"
+    },
+    {
+      "id": 2752228,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389748,
+      "showcontent": "<a href=\"/q/510370/\" target=\"_blank\">Q-510370</a>"
+    },
+    {
+      "id": 2752230,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389764,
+      "showcontent": "<a href=\"/q/510340/\" target=\"_blank\">Q-510340</a>"
+    },
+    {
+      "id": 2752231,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389806,
+      "showcontent": "<a href=\"/q/510350/\" target=\"_blank\">Q-510350</a>"
+    },
+    {
+      "id": 2752232,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389824,
+      "showcontent": "<a href=\"/q/510355/\" target=\"_blank\">Q-510355</a>"
+    },
+    {
+      "id": 2752233,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389840,
+      "showcontent": "<a href=\"/q/510351/\" target=\"_blank\">Q-510351</a>"
+    },
+    {
+      "id": 2752236,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389859,
+      "showcontent": "<a href=\"/q/510353/\" target=\"_blank\">Q-510353</a>"
+    },
+    {
+      "id": 2752238,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389875,
+      "showcontent": "<a href=\"/q/510354/\" target=\"_blank\">Q-510354</a>"
+    },
+    {
+      "id": 2752241,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "年糕三三",
+      "userid": 2225125,
+      "headpath": "userhead/11.jpg",
+      "updated": 1787389923,
+      "showcontent": "一共有510354道题"
+    },
+    {
+      "id": 2752315,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "折腾群何思潼",
+      "userid": 2580620,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787391261,
+      "showcontent": "Q-1546645"
+    },
+    {
+      "id": 2752316,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "折腾群何思潼",
+      "userid": 2580620,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787391278,
+      "showcontent": "<a href=\"/q/154664/\" target=\"_blank\">Q-154664</a>"
+    }
+  ]
+}

@@ -1,0 +1,1618 @@
+{
+  "id": 440428,
+  "qid": 440428,
+  "publicid": 392277,
+  "orgid": 0,
+  "levelname": "13K",
+  "min_levelname": "",
+  "max_levelname": "",
+  "qtype": 2,
+  "qtypename": "手筋题",
+  "status": 2,
+  "userid": 1678728,
+  "username": "周希宸的大号",
+  "hasdia": true,
+  "dias": [],
+  "attr_type": 0,
+  "layoutnumber": 1,
+  "issingle": true,
+  "enable_answer": true,
+  "sms_count": 0,
+  "edit_count": 0,
+  "islei": false,
+  "leiid": 0,
+  "taotaiid": 0,
+  "bookinfos": [],
+  "specs": [],
+  "taskresult": {
+    "ok_nums": [
+      952,
+      1115,
+      1351,
+      735,
+      942,
+      374,
+      236,
+      195,
+      156,
+      118,
+      97,
+      78,
+      60,
+      35,
+      39,
+      36,
+      34,
+      26,
+      19,
+      15,
+      9,
+      20,
+      11,
+      13,
+      8,
+      12,
+      11,
+      2,
+      2,
+      1
+    ],
+    "fail_nums": [
+      531,
+      513,
+      525,
+      325,
+      294,
+      115,
+      61,
+      55,
+      44,
+      29,
+      34,
+      31,
+      16,
+      10,
+      16,
+      8,
+      7,
+      5,
+      2,
+      3,
+      2,
+      5,
+      3,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ok_total": 6702,
+    "fail_total": 2635
+  },
+  "xuandians": [],
+  "xds": [],
+  "options": [],
+  "vote": 4.9,
+  "name": "",
+  "title": "",
+  "c": "amsTVlERHRATVlARHRATV1cRHRATVlcRbBwRaBFXUxIdExFVUxIdExFXUhIdExFVUhIdExFQVRIdExFVVRIdExFXVBJsbg==",
+  "r": 2,
+  "prepos": [
+    [
+      "be",
+      "ce",
+      "dd",
+      "de"
+    ],
+    [
+      "bd",
+      "bf",
+      "cd"
+    ]
+  ],
+  "xv": 10,
+  "points": [],
+  "lu": 9,
+  "blackfirst": true,
+  "is_share": true,
+  "answers": [
+    {
+      "id": 3390298,
+      "st": 1,
+      "ty": 1,
+      "nu": 22,
+      "username": "a_1319708191122",
+      "userid": 2584924,
+      "pts": [
+        {
+          "p": "ee",
+          "c": ""
+        },
+        {
+          "p": "fe",
+          "c": ""
+        },
+        {
+          "p": "ef",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787407965
+    },
+    {
+      "id": 2348996,
+      "st": 2,
+      "ty": 1,
+      "nu": 1,
+      "username": "周希宸的大号",
+      "userid": 1764013,
+      "pts": [
+        {
+          "p": "ee",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 77,
+      "change_count": 2,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1715173105
+    },
+    {
+      "id": 2524604,
+      "st": 1,
+      "ty": 1,
+      "nu": 9,
+      "username": "无敌小六六",
+      "userid": 1803601,
+      "pts": [
+        {
+          "p": "ee",
+          "c": ""
+        },
+        {
+          "p": "fe",
+          "c": ""
+        },
+        {
+          "p": "fd",
+          "c": ""
+        },
+        {
+          "p": "ec",
+          "c": ""
+        },
+        {
+          "p": "ff",
+          "c": ""
+        },
+        {
+          "p": "ge",
+          "c": ""
+        },
+        {
+          "p": "ef",
+          "c": ""
+        },
+        {
+          "p": "gf",
+          "c": ""
+        },
+        {
+          "p": "gg",
+          "c": ""
+        },
+        {
+          "p": "hg",
+          "c": ""
+        },
+        {
+          "p": "hh",
+          "c": ""
+        },
+        {
+          "p": "hf",
+          "c": ""
+        },
+        {
+          "p": "ad",
+          "c": ""
+        },
+        {
+          "p": "gh",
+          "c": ""
+        },
+        {
+          "p": "fg",
+          "c": ""
+        },
+        {
+          "p": "ih",
+          "c": ""
+        },
+        {
+          "p": "fh",
+          "c": ""
+        },
+        {
+          "p": "hi",
+          "c": ""
+        },
+        {
+          "p": "bc",
+          "c": ""
+        },
+        {
+          "p": "cc",
+          "c": ""
+        },
+        {
+          "p": "bb",
+          "c": ""
+        },
+        {
+          "p": "cb",
+          "c": ""
+        },
+        {
+          "p": "ba",
+          "c": ""
+        },
+        {
+          "p": "fi",
+          "c": ""
+        },
+        {
+          "p": "ca",
+          "c": ""
+        },
+        {
+          "p": "fb",
+          "c": ""
+        },
+        {
+          "p": "ei",
+          "c": ""
+        },
+        {
+          "p": "gi",
+          "c": ""
+        },
+        {
+          "p": "eh",
+          "c": ""
+        },
+        {
+          "p": "da",
+          "c": ""
+        },
+        {
+          "p": "ea",
+          "c": ""
+        },
+        {
+          "p": "eb",
+          "c": ""
+        },
+        {
+          "p": "db",
+          "c": ""
+        },
+        {
+          "p": "ac",
+          "c": ""
+        },
+        {
+          "p": "ab",
+          "c": ""
+        },
+        {
+          "p": "da",
+          "c": ""
+        },
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "fa",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1733400435
+    },
+    {
+      "id": 3388487,
+      "st": 1,
+      "ty": 1,
+      "nu": 15,
+      "username": "Frank.M",
+      "userid": 1032239,
+      "pts": [
+        {
+          "p": "ee",
+          "c": ""
+        },
+        {
+          "p": "ef",
+          "c": ""
+        },
+        {
+          "p": "fd",
+          "c": ""
+        },
+        {
+          "p": "ec",
+          "c": ""
+        },
+        {
+          "p": "ff",
+          "c": ""
+        },
+        {
+          "p": "fc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787360285
+    },
+    {
+      "id": 3388576,
+      "st": 1,
+      "ty": 1,
+      "nu": 16,
+      "username": "a_171395561191122",
+      "userid": 2584009,
+      "pts": [
+        {
+          "p": "ee",
+          "c": ""
+        },
+        {
+          "p": "ef",
+          "c": ""
+        },
+        {
+          "p": "ec",
+          "c": ""
+        },
+        {
+          "p": "fd",
+          "c": ""
+        },
+        {
+          "p": "cc",
+          "c": ""
+        },
+        {
+          "p": "db",
+          "c": ""
+        },
+        {
+          "p": "bc",
+          "c": ""
+        },
+        {
+          "p": "ad",
+          "c": ""
+        },
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "ac",
+          "c": ""
+        },
+        {
+          "p": "ab",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 2,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787361746
+    },
+    {
+      "id": 3388676,
+      "st": 1,
+      "ty": 1,
+      "nu": 17,
+      "username": "xiaogaoxing",
+      "userid": 2538133,
+      "pts": [
+        {
+          "p": "cc",
+          "c": ""
+        },
+        {
+          "p": "bc",
+          "c": ""
+        },
+        {
+          "p": "ec",
+          "c": ""
+        },
+        {
+          "p": "cb",
+          "c": ""
+        },
+        {
+          "p": "ee",
+          "c": ""
+        },
+        {
+          "p": "fd",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787364116
+    },
+    {
+      "id": 3389072,
+      "st": 1,
+      "ty": 1,
+      "nu": 18,
+      "username": "a_5136317919930",
+      "userid": 2538659,
+      "pts": [
+        {
+          "p": "ee",
+          "c": ""
+        },
+        {
+          "p": "ec",
+          "c": ""
+        },
+        {
+          "p": "cc",
+          "c": ""
+        },
+        {
+          "p": "bc",
+          "c": ""
+        },
+        {
+          "p": "cb",
+          "c": ""
+        },
+        {
+          "p": "bb",
+          "c": ""
+        },
+        {
+          "p": "ca",
+          "c": ""
+        },
+        {
+          "p": "ba",
+          "c": ""
+        },
+        {
+          "p": "ad",
+          "c": ""
+        },
+        {
+          "p": "ac",
+          "c": ""
+        },
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "af",
+          "c": ""
+        },
+        {
+          "p": "ab",
+          "c": ""
+        },
+        {
+          "p": "aa",
+          "c": ""
+        },
+        {
+          "p": "ab",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787374811
+    },
+    {
+      "id": 2524529,
+      "st": 1,
+      "ty": 2,
+      "nu": 8,
+      "username": "Aofytm",
+      "userid": 1371507,
+      "pts": [
+        {
+          "p": "ee",
+          "c": ""
+        },
+        {
+          "p": "fe",
+          "c": ""
+        },
+        {
+          "p": "fd",
+          "c": ""
+        },
+        {
+          "p": "ec",
+          "c": ""
+        },
+        {
+          "p": "ff",
+          "c": ""
+        },
+        {
+          "p": "ge",
+          "c": ""
+        },
+        {
+          "p": "ef",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1733396752
+    },
+    {
+      "id": 2524688,
+      "st": 1,
+      "ty": 2,
+      "nu": 10,
+      "username": "wx_5796433519422",
+      "userid": 1956557,
+      "pts": [
+        {
+          "p": "ee",
+          "c": ""
+        },
+        {
+          "p": "ec",
+          "c": ""
+        },
+        {
+          "p": "ef",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1733404356
+    },
+    {
+      "id": 3390324,
+      "st": 1,
+      "ty": 2,
+      "nu": 23,
+      "username": "wx_371387105191912",
+      "userid": 2572081,
+      "pts": [
+        {
+          "p": "ee",
+          "c": ""
+        },
+        {
+          "p": "fe",
+          "c": ""
+        },
+        {
+          "p": "ef",
+          "c": ""
+        },
+        {
+          "p": "eg",
+          "c": ""
+        },
+        {
+          "p": "ff",
+          "c": ""
+        },
+        {
+          "p": "gf",
+          "c": ""
+        },
+        {
+          "p": "fg",
+          "c": ""
+        },
+        {
+          "p": "fh",
+          "c": ""
+        },
+        {
+          "p": "gg",
+          "c": ""
+        },
+        {
+          "p": "hg",
+          "c": ""
+        },
+        {
+          "p": "gh",
+          "c": ""
+        },
+        {
+          "p": "hh",
+          "c": ""
+        },
+        {
+          "p": "eh",
+          "c": ""
+        },
+        {
+          "p": "fi",
+          "c": ""
+        },
+        {
+          "p": "ei",
+          "c": ""
+        },
+        {
+          "p": "gi",
+          "c": ""
+        },
+        {
+          "p": "hi",
+          "c": ""
+        },
+        {
+          "p": "dg",
+          "c": ""
+        },
+        {
+          "p": "ch",
+          "c": ""
+        },
+        {
+          "p": "cg",
+          "c": ""
+        },
+        {
+          "p": "bh",
+          "c": ""
+        },
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "bg",
+          "c": ""
+        },
+        {
+          "p": "af",
+          "c": ""
+        },
+        {
+          "p": "dh",
+          "c": ""
+        },
+        {
+          "p": "ge",
+          "c": ""
+        },
+        {
+          "p": "cc",
+          "c": ""
+        },
+        {
+          "p": "cb",
+          "c": ""
+        },
+        {
+          "p": "ag",
+          "c": ""
+        },
+        {
+          "p": "ad",
+          "c": ""
+        },
+        {
+          "p": "bc",
+          "c": ""
+        },
+        {
+          "p": "ac",
+          "c": ""
+        },
+        {
+          "p": "ab",
+          "c": ""
+        },
+        {
+          "p": "ec",
+          "c": ""
+        },
+        {
+          "p": "eb",
+          "c": ""
+        },
+        {
+          "p": "fd",
+          "c": ""
+        },
+        {
+          "p": "fb",
+          "c": ""
+        },
+        {
+          "p": "db",
+          "c": ""
+        },
+        {
+          "p": "da",
+          "c": ""
+        },
+        {
+          "p": "bb",
+          "c": ""
+        },
+        {
+          "p": "ca",
+          "c": ""
+        },
+        {
+          "p": "ba",
+          "c": ""
+        },
+        {
+          "p": "gc",
+          "c": ""
+        },
+        {
+          "p": "fc",
+          "c": ""
+        },
+        {
+          "p": "gd",
+          "c": ""
+        },
+        {
+          "p": "he",
+          "c": ""
+        },
+        {
+          "p": "hc",
+          "c": ""
+        },
+        {
+          "p": "if",
+          "c": ""
+        },
+        {
+          "p": "ih",
+          "c": ""
+        },
+        {
+          "p": "ie",
+          "c": ""
+        },
+        {
+          "p": "hd",
+          "c": ""
+        },
+        {
+          "p": "hf",
+          "c": ""
+        },
+        {
+          "p": "id",
+          "c": ""
+        },
+        {
+          "p": "aa",
+          "c": ""
+        },
+        {
+          "p": "ig",
+          "c": ""
+        },
+        {
+          "p": "aa",
+          "c": ""
+        },
+        {
+          "p": "ba",
+          "c": ""
+        },
+        {
+          "p": "bb",
+          "c": ""
+        },
+        {
+          "p": "cb",
+          "c": ""
+        },
+        {
+          "p": "db",
+          "c": ""
+        },
+        {
+          "p": "dc",
+          "c": ""
+        },
+        {
+          "p": "hh",
+          "c": ""
+        },
+        {
+          "p": "hg",
+          "c": ""
+        },
+        {
+          "p": "ed",
+          "c": ""
+        },
+        {
+          "p": "fd",
+          "c": ""
+        },
+        {
+          "p": "fc",
+          "c": ""
+        },
+        {
+          "p": "ec",
+          "c": ""
+        },
+        {
+          "p": "fe",
+          "c": ""
+        },
+        {
+          "p": "ge",
+          "c": ""
+        },
+        {
+          "p": "gf",
+          "c": ""
+        },
+        {
+          "p": "hf",
+          "c": ""
+        },
+        {
+          "p": "he",
+          "c": ""
+        },
+        {
+          "p": "ie",
+          "c": ""
+        },
+        {
+          "p": "fh",
+          "c": ""
+        },
+        {
+          "p": "fi",
+          "c": ""
+        },
+        {
+          "p": "dg",
+          "c": ""
+        },
+        {
+          "p": "df",
+          "c": ""
+        },
+        {
+          "p": "eg",
+          "c": ""
+        },
+        {
+          "p": "cg",
+          "c": ""
+        },
+        {
+          "p": "eg",
+          "c": ""
+        },
+        {
+          "p": "dg",
+          "c": ""
+        },
+        {
+          "p": "cf",
+          "c": ""
+        },
+        {
+          "p": "bf",
+          "c": ""
+        },
+        {
+          "p": "af",
+          "c": ""
+        },
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "ac",
+          "c": ""
+        },
+        {
+          "p": "ad",
+          "c": ""
+        },
+        {
+          "p": "cd",
+          "c": ""
+        },
+        {
+          "p": "bd",
+          "c": ""
+        },
+        {
+          "p": "ah",
+          "c": ""
+        },
+        {
+          "p": "ai",
+          "c": ""
+        },
+        {
+          "p": "bi",
+          "c": ""
+        },
+        {
+          "p": "ci",
+          "c": ""
+        },
+        {
+          "p": "ea",
+          "c": ""
+        },
+        {
+          "p": "fa",
+          "c": ""
+        },
+        {
+          "p": "ic",
+          "c": ""
+        },
+        {
+          "p": "ib",
+          "c": ""
+        },
+        {
+          "p": "ia",
+          "c": ""
+        },
+        {
+          "p": "ha",
+          "c": ""
+        },
+        {
+          "p": "hb",
+          "c": ""
+        },
+        {
+          "p": "gb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787408653
+    },
+    {
+      "id": 3390013,
+      "st": 1,
+      "ty": 3,
+      "nu": 21,
+      "username": "烨哥哥耶",
+      "userid": 2532755,
+      "pts": [
+        {
+          "p": "ef",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787399583
+    },
+    {
+      "id": 2421209,
+      "st": 1,
+      "ty": 3,
+      "nu": 2,
+      "username": "郑善觉22",
+      "userid": 1504623,
+      "pts": [
+        {
+          "p": "fe",
+          "c": ""
+        },
+        {
+          "p": "ee",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 2,
+      "error_count": 0,
+      "created": 1722829291
+    },
+    {
+      "id": 2439524,
+      "st": 1,
+      "ty": 3,
+      "nu": 3,
+      "username": "wx_51042364191727",
+      "userid": 2078554,
+      "pts": [
+        {
+          "p": "cc",
+          "c": ""
+        },
+        {
+          "p": "ee",
+          "c": ""
+        },
+        {
+          "p": "bc",
+          "c": ""
+        },
+        {
+          "p": "ae",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 2,
+      "error_count": 0,
+      "created": 1724224285
+    },
+    {
+      "id": 2524528,
+      "st": 1,
+      "ty": 3,
+      "nu": 7,
+      "username": "Aofytm",
+      "userid": 1371507,
+      "pts": [
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "ee",
+          "c": ""
+        },
+        {
+          "p": "ad",
+          "c": ""
+        },
+        {
+          "p": "ac",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1733396721
+    },
+    {
+      "id": 2524690,
+      "st": 1,
+      "ty": 3,
+      "nu": 11,
+      "username": "VIP1",
+      "userid": 1190171,
+      "pts": [
+        {
+          "p": "ef",
+          "c": ""
+        },
+        {
+          "p": "ee",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 2,
+      "error_count": 0,
+      "created": 1733404567
+    },
+    {
+      "id": 2605111,
+      "st": 1,
+      "ty": 3,
+      "nu": 12,
+      "username": "renyuhuai",
+      "userid": 2204458,
+      "pts": [
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "ee",
+          "c": ""
+        },
+        {
+          "p": "cc",
+          "c": ""
+        },
+        {
+          "p": "ad",
+          "c": ""
+        },
+        {
+          "p": "bc",
+          "c": ""
+        },
+        {
+          "p": "af",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1742386068
+    },
+    {
+      "id": 3388439,
+      "st": 1,
+      "ty": 3,
+      "nu": 13,
+      "username": "来看看看",
+      "userid": 2307291,
+      "pts": [
+        {
+          "p": "af",
+          "c": ""
+        },
+        {
+          "p": "ee",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787358913
+    },
+    {
+      "id": 3389138,
+      "st": 1,
+      "ty": 3,
+      "nu": 19,
+      "username": "wx_2583141319585",
+      "userid": 1742757,
+      "pts": [
+        {
+          "p": "cc",
+          "c": ""
+        },
+        {
+          "p": "ee",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787376790
+    },
+    {
+      "id": 3388444,
+      "st": 1,
+      "ty": 3,
+      "nu": 14,
+      "username": "a_27130776119297",
+      "userid": 2463414,
+      "pts": [
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "ee",
+          "c": ""
+        },
+        {
+          "p": "cc",
+          "c": ""
+        },
+        {
+          "p": "ad",
+          "c": ""
+        },
+        {
+          "p": "ec",
+          "c": ""
+        },
+        {
+          "p": "af",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787358989
+    },
+    {
+      "id": 3389140,
+      "st": 1,
+      "ty": 3,
+      "nu": 20,
+      "username": "wx_2583141319585",
+      "userid": 1742757,
+      "pts": [
+        {
+          "p": "cc",
+          "c": ""
+        },
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "ee",
+          "c": ""
+        },
+        {
+          "p": "fe",
+          "c": ""
+        },
+        {
+          "p": "ef",
+          "c": ""
+        },
+        {
+          "p": "eg",
+          "c": ""
+        },
+        {
+          "p": "ff",
+          "c": ""
+        },
+        {
+          "p": "gf",
+          "c": ""
+        },
+        {
+          "p": "fg",
+          "c": ""
+        },
+        {
+          "p": "fh",
+          "c": ""
+        },
+        {
+          "p": "gg",
+          "c": ""
+        },
+        {
+          "p": "hg",
+          "c": ""
+        },
+        {
+          "p": "gh",
+          "c": ""
+        },
+        {
+          "p": "gi",
+          "c": ""
+        },
+        {
+          "p": "hh",
+          "c": ""
+        },
+        {
+          "p": "ih",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787376804
+    }
+  ],
+  "ans_count": 20,
+  "andata": {
+    "0": {
+      "subs": [
+        1
+      ],
+      "p": 0,
+      "id": 0,
+      "aids": [],
+      "pt": "",
+      "o": 0,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "1": {
+      "subs": [],
+      "p": 0,
+      "id": 1,
+      "aids": [
+        2348996
+      ],
+      "pt": "ee",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    }
+  },
+  "disuse": 3,
+  "sx": 9,
+  "sy": 9,
+  "pos_x1": 0,
+  "pos_x2": 8,
+  "pos_y1": 0,
+  "pos_y2": 8,
+  "ineb": false,
+  "extendwidth": 1,
+  "signs": [],
+  "luozis": [],
+  "isguess": false,
+  "objtype": "timu",
+  "ru": 1,
+  "f": false,
+  "showai": true,
+  "content": "amsTUFcQHRATUVcQHRATVlcQHRATVlYQbBwRaRBQVRIdEhBQVxIdEhBWVxIdEhBRVRIdEhBXVRIdEhBWUhIdEhBRVxJsbw==",
+  "ok_answers": "amsTV1cQbG0=",
+  "change_answers": "am0=",
+  "fail_answers": "am0=",
+  "level": -53,
+  "desc": "",
+  "yes_count": 6702,
+  "no_count": 2635,
+  "pos": [],
+  "attrtype": 0,
+  "showrettip": false,
+  "is_public": true,
+  "inerror": false,
+  "qshids": [],
+  "myan": null,
+  "hasbook": false,
+  "hasspec": false,
+  "myoper": {
+    "mystar": false,
+    "mytags": [],
+    "tags": []
+  },
+  "candisuseall": false,
+  "userlevel": 0,
+  "clicktime": 500,
+  "xz": 0,
+  "musthide": 0,
+  "hidetime": 5,
+  "comments": [
+    {
+      "id": 1977687,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "renyuhuai",
+      "userid": 2204458,
+      "headpath": "userhead/13.jpg",
+      "updated": 1733373279,
+      "showcontent": "简单"
+    },
+    {
+      "id": 1977691,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "单子峻",
+      "userid": 2135744,
+      "headpath": "head/2025/6/16/2026785_94793_46_40.png",
+      "updated": 1733373833,
+      "showcontent": "简单"
+    },
+    {
+      "id": 2589401,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_15133123119517",
+      "userid": 2492580,
+      "headpath": "headicon_128.jpg",
+      "updated": 1779340606,
+      "showcontent": "我错了"
+    },
+    {
+      "id": 2750889,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "侯景轩",
+      "userid": 2122825,
+      "headpath": "head/2026/8/22/2014854_25130_9_9.png",
+      "updated": 1787358217,
+      "showcontent": "我对了"
+    },
+    {
+      "id": 2750994,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "黑暗时代围棋天神杀手Kobe\u0005\u0005",
+      "userid": 2451845,
+      "headpath": "head/2026/8/16/2332550_88507_19_44.png",
+      "updated": 1787361736,
+      "showcontent": "666"
+    },
+    {
+      "id": 2751153,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "刘卓明",
+      "userid": 2025505,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787365311,
+      "showcontent": "简单"
+    },
+    {
+      "id": 2751748,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "LouisPoon",
+      "userid": 1827647,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787378215,
+      "showcontent": "肥肠煎蛋（非常简单）"
+    },
+    {
+      "id": 2751818,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "a_51135811919011",
+      "userid": 2531491,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787379537,
+      "showcontent": "简简单单"
+    },
+    {
+      "id": 2752345,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "折腾群韩奕倬",
+      "userid": 2518289,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787392260,
+      "showcontent": "简单"
+    },
+    {
+      "id": 2752436,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "LYZ",
+      "userid": 2407736,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787395985,
+      "showcontent": "简单"
+    },
+    {
+      "id": 2752698,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "a_12137793119372",
+      "userid": 2559290,
+      "headpath": "userhead/20.jpg",
+      "updated": 1787401655,
+      "showcontent": "煎蛋🍳"
+    },
+    {
+      "id": 2752734,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_441343403195923",
+      "userid": 2510133,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787402410,
+      "showcontent": "炒鸡煎蛋（超级简单）"
+    },
+    {
+      "id": 2752792,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "是小哆呀",
+      "userid": 2518088,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787403326,
+      "showcontent": "抢首屏"
+    },
+    {
+      "id": 2752923,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "柚米01",
+      "userid": 2449359,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787409365,
+      "showcontent": "煎蛋🍳"
+    }
+  ]
+}

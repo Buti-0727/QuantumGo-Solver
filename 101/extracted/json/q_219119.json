@@ -1,0 +1,2362 @@
+{
+  "id": 249675,
+  "qid": 249675,
+  "publicid": 219119,
+  "orgid": 0,
+  "levelname": "4K",
+  "min_levelname": "",
+  "max_levelname": "",
+  "qtype": 1,
+  "qtypename": "死活题",
+  "status": 2,
+  "userid": 22918,
+  "username": "kenny",
+  "hasdia": true,
+  "dias": [],
+  "attr_type": 0,
+  "layoutnumber": 1,
+  "issingle": true,
+  "enable_answer": true,
+  "sms_count": 0,
+  "edit_count": 0,
+  "islei": false,
+  "leiid": 0,
+  "taotaiid": 0,
+  "bookinfos": [],
+  "specs": [],
+  "taskresult": {
+    "ok_nums": [
+      9,
+      15,
+      5,
+      12,
+      16,
+      7,
+      27,
+      39,
+      122,
+      328,
+      577,
+      483,
+      513,
+      482,
+      351,
+      139,
+      85,
+      62,
+      30,
+      25,
+      32,
+      28,
+      15,
+      18,
+      15,
+      19,
+      11,
+      5,
+      6,
+      11
+    ],
+    "fail_nums": [
+      27,
+      17,
+      23,
+      32,
+      31,
+      31,
+      48,
+      102,
+      324,
+      757,
+      1105,
+      694,
+      583,
+      420,
+      252,
+      94,
+      36,
+      37,
+      24,
+      21,
+      7,
+      15,
+      6,
+      11,
+      5,
+      5,
+      2,
+      1,
+      0,
+      1
+    ],
+    "ok_total": 3487,
+    "fail_total": 4711
+  },
+  "xuandians": [],
+  "xds": [],
+  "options": [],
+  "vote": 4.9,
+  "name": "",
+  "title": "",
+  "c": "amsTUVgRHRATUFgRHRATV1gRHRATUV8RHRATVl8RHRATUl4RHRATVl4RHRATVl0RHRATVlwRHRATV0MRHRATV0IRHRATUUERHRATUEERHRATVkERbBwRaBFQXRIdExFXXRIdExFRXBIdExFXXBIdExFRXxIdExFXXxIdExFXXhIdExFQQRIdExFRQBIdExFQQBIdExFSQxJsbg==",
+  "r": 2,
+  "prepos": [
+    [
+      "kb",
+      "kc",
+      "kd",
+      "lb",
+      "le"
+    ],
+    [
+      "lc",
+      "ld",
+      "mb"
+    ]
+  ],
+  "xv": 7,
+  "points": [],
+  "lu": 19,
+  "blackfirst": true,
+  "is_share": true,
+  "answers": [
+    {
+      "id": 2770668,
+      "st": 1,
+      "ty": 1,
+      "nu": 25,
+      "username": "浩然棋院谢志源",
+      "userid": 2143211,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "sb",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "sa",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1753854089
+    },
+    {
+      "id": 1905934,
+      "st": 1,
+      "ty": 1,
+      "nu": 11,
+      "username": "wx_2452480719437",
+      "userid": 1186757,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1666610794
+    },
+    {
+      "id": 2226326,
+      "st": 1,
+      "ty": 1,
+      "nu": 15,
+      "username": "w_5071768819619",
+      "userid": 1544717,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "pb",
+          "c": ""
+        },
+        {
+          "p": "sa",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "mc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1699450841
+    },
+    {
+      "id": 2235149,
+      "st": 1,
+      "ty": 1,
+      "nu": 16,
+      "username": "wx_445620901934",
+      "userid": 1256077,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1700743648
+    },
+    {
+      "id": 2329837,
+      "st": 1,
+      "ty": 1,
+      "nu": 19,
+      "username": "x_31691668191031",
+      "userid": 1498728,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1713091033
+    },
+    {
+      "id": 2766574,
+      "st": 1,
+      "ty": 1,
+      "nu": 24,
+      "username": "wx_7872690191017",
+      "userid": 1809047,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1753674310
+    },
+    {
+      "id": 2751455,
+      "st": 1,
+      "ty": 1,
+      "nu": 23,
+      "username": "wx_7872690191017",
+      "userid": 1809047,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "pb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 2,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1752927889
+    },
+    {
+      "id": 3059033,
+      "st": 1,
+      "ty": 1,
+      "nu": 27,
+      "username": "wx_2465972919208",
+      "userid": 1445293,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1770359221
+    },
+    {
+      "id": 3389080,
+      "st": 1,
+      "ty": 1,
+      "nu": 32,
+      "username": "a_5136317919930",
+      "userid": 2538659,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "sb",
+          "c": ""
+        },
+        {
+          "p": "sc",
+          "c": ""
+        },
+        {
+          "p": "sa",
+          "c": ""
+        },
+        {
+          "p": "pb",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "mc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787374954
+    },
+    {
+      "id": 1410096,
+      "st": 2,
+      "ty": 1,
+      "nu": 1,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "sb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 54,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1618156943
+    },
+    {
+      "id": 3390019,
+      "st": 1,
+      "ty": 1,
+      "nu": 34,
+      "username": "x_29112699919486",
+      "userid": 2206931,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "pb",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "mc",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        },
+        {
+          "p": "ka",
+          "c": ""
+        },
+        {
+          "p": "ja",
+          "c": ""
+        },
+        {
+          "p": "sa",
+          "c": ""
+        },
+        {
+          "p": "sb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787399893
+    },
+    {
+      "id": 1410097,
+      "st": 2,
+      "ty": 1,
+      "nu": 2,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 53,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1618156947
+    },
+    {
+      "id": 3391725,
+      "st": 1,
+      "ty": 1,
+      "nu": 38,
+      "username": "xiaogaoxing",
+      "userid": 2538133,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "pb",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "sb",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "sa",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787477416
+    },
+    {
+      "id": 1410098,
+      "st": 2,
+      "ty": 2,
+      "nu": 3,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 50,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1618156953
+    },
+    {
+      "id": 1410099,
+      "st": 2,
+      "ty": 2,
+      "nu": 4,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 50,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1618156961
+    },
+    {
+      "id": 1447798,
+      "st": 2,
+      "ty": 2,
+      "nu": 7,
+      "username": "wx_396599011484",
+      "userid": 135408,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 51,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1622440324
+    },
+    {
+      "id": 3390177,
+      "st": 1,
+      "ty": 3,
+      "nu": 35,
+      "username": "erichaha2017",
+      "userid": 2488440,
+      "pts": [
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787404184
+    },
+    {
+      "id": 3390178,
+      "st": 1,
+      "ty": 3,
+      "nu": 36,
+      "username": "erichaha2017",
+      "userid": 2488440,
+      "pts": [
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787404194
+    },
+    {
+      "id": 3390179,
+      "st": 1,
+      "ty": 3,
+      "nu": 37,
+      "username": "erichaha2017",
+      "userid": 2488440,
+      "pts": [
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787404203
+    },
+    {
+      "id": 1410100,
+      "st": 2,
+      "ty": 3,
+      "nu": 5,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 50,
+      "error_count": 0,
+      "created": 1618156970
+    },
+    {
+      "id": 1410101,
+      "st": 2,
+      "ty": 3,
+      "nu": 6,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "pb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 50,
+      "error_count": 0,
+      "created": 1618156975
+    },
+    {
+      "id": 3202979,
+      "st": 1,
+      "ty": 3,
+      "nu": 28,
+      "username": "wx_2062016419218",
+      "userid": 1361082,
+      "pts": [
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1778667375
+    },
+    {
+      "id": 1727626,
+      "st": 1,
+      "ty": 3,
+      "nu": 9,
+      "username": "wx_2236597193212",
+      "userid": 589173,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "mc",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "sa",
+          "c": ""
+        },
+        {
+          "p": "pb",
+          "c": ""
+        },
+        {
+          "p": "sb",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "sc",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1650549181
+    },
+    {
+      "id": 1749953,
+      "st": 1,
+      "ty": 3,
+      "nu": 10,
+      "username": "w_0228517192721",
+      "userid": 564444,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "pb",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 2,
+      "error_count": 0,
+      "created": 1651992655
+    },
+    {
+      "id": 2077174,
+      "st": 1,
+      "ty": 3,
+      "nu": 14,
+      "username": "周慕溪",
+      "userid": 1287717,
+      "pts": [
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1682512135
+    },
+    {
+      "id": 2271013,
+      "st": 1,
+      "ty": 3,
+      "nu": 17,
+      "username": "南阳野人",
+      "userid": 395639,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "pb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1705752436
+    },
+    {
+      "id": 2316543,
+      "st": 1,
+      "ty": 3,
+      "nu": 18,
+      "username": "w_24795274195727",
+      "userid": 1678785,
+      "pts": [
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "pb",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1711497603
+    },
+    {
+      "id": 2548798,
+      "st": 1,
+      "ty": 3,
+      "nu": 22,
+      "username": "wx_571110325195229",
+      "userid": 2180378,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1736042886
+    },
+    {
+      "id": 3361360,
+      "st": 1,
+      "ty": 3,
+      "nu": 30,
+      "username": "x_35138251619488",
+      "userid": 2565678,
+      "pts": [
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1786493087
+    },
+    {
+      "id": 3389079,
+      "st": 1,
+      "ty": 3,
+      "nu": 31,
+      "username": "a_5136317919930",
+      "userid": 2538659,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "ka",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        },
+        {
+          "p": "pb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787374933
+    },
+    {
+      "id": 3389673,
+      "st": 1,
+      "ty": 3,
+      "nu": 33,
+      "username": "w_171336271193031",
+      "userid": 2499794,
+      "pts": [
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "nc",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "sb",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "ka",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787387647
+    }
+  ],
+  "ans_count": 31,
+  "andata": {
+    "0": {
+      "subs": [
+        1,
+        21
+      ],
+      "p": 0,
+      "id": 0,
+      "aids": [],
+      "pt": "",
+      "o": 0,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "1": {
+      "subs": [
+        2,
+        9,
+        13
+      ],
+      "p": 0,
+      "id": 1,
+      "aids": [
+        1410096,
+        1410097,
+        1410098,
+        1410099,
+        1447798
+      ],
+      "pt": "ob",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "2": {
+      "subs": [
+        3
+      ],
+      "p": 1,
+      "id": 2,
+      "aids": [
+        1410096,
+        1410097,
+        1447798
+      ],
+      "pt": "na",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "3": {
+      "subs": [
+        4
+      ],
+      "p": 2,
+      "id": 3,
+      "aids": [
+        1410096,
+        1410097,
+        1447798
+      ],
+      "pt": "oc",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "4": {
+      "subs": [
+        5
+      ],
+      "p": 3,
+      "id": 4,
+      "aids": [
+        1410096,
+        1410097,
+        1447798
+      ],
+      "pt": "nc",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "5": {
+      "subs": [
+        6,
+        19
+      ],
+      "p": 4,
+      "id": 5,
+      "aids": [
+        1410096,
+        1410097,
+        1447798
+      ],
+      "pt": "pa",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "6": {
+      "subs": [
+        7,
+        8
+      ],
+      "p": 5,
+      "id": 6,
+      "aids": [
+        1410096,
+        1410097
+      ],
+      "pt": "qa",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "7": {
+      "subs": [],
+      "p": 6,
+      "id": 7,
+      "aids": [
+        1410096
+      ],
+      "pt": "sb",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "8": {
+      "subs": [],
+      "p": 6,
+      "id": 8,
+      "aids": [
+        1410097
+      ],
+      "pt": "la",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "9": {
+      "subs": [
+        10
+      ],
+      "p": 1,
+      "id": 9,
+      "aids": [
+        1410098
+      ],
+      "pt": "pa",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "10": {
+      "subs": [
+        11
+      ],
+      "p": 9,
+      "id": 10,
+      "aids": [
+        1410098
+      ],
+      "pt": "nc",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "11": {
+      "subs": [
+        12
+      ],
+      "p": 10,
+      "id": 11,
+      "aids": [
+        1410098
+      ],
+      "pt": "oc",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "12": {
+      "subs": [],
+      "p": 11,
+      "id": 12,
+      "aids": [
+        1410098
+      ],
+      "pt": "na",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "13": {
+      "subs": [
+        14
+      ],
+      "p": 1,
+      "id": 13,
+      "aids": [
+        1410099
+      ],
+      "pt": "oa",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "14": {
+      "subs": [
+        15
+      ],
+      "p": 13,
+      "id": 14,
+      "aids": [
+        1410099
+      ],
+      "pt": "pa",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "15": {
+      "subs": [
+        16
+      ],
+      "p": 14,
+      "id": 15,
+      "aids": [
+        1410099
+      ],
+      "pt": "na",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "16": {
+      "subs": [
+        17
+      ],
+      "p": 15,
+      "id": 16,
+      "aids": [
+        1410099
+      ],
+      "pt": "nc",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "17": {
+      "subs": [
+        18
+      ],
+      "p": 16,
+      "id": 17,
+      "aids": [
+        1410099
+      ],
+      "pt": "la",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "18": {
+      "subs": [],
+      "p": 17,
+      "id": 18,
+      "aids": [
+        1410099
+      ],
+      "pt": "oc",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "19": {
+      "subs": [
+        20
+      ],
+      "p": 5,
+      "id": 19,
+      "aids": [
+        1447798
+      ],
+      "pt": "la",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "20": {
+      "subs": [],
+      "p": 19,
+      "id": 20,
+      "aids": [
+        1447798
+      ],
+      "pt": "qa",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "21": {
+      "subs": [
+        22
+      ],
+      "p": 0,
+      "id": 21,
+      "aids": [
+        1410100,
+        1410101
+      ],
+      "pt": "pa",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "22": {
+      "subs": [
+        23,
+        25
+      ],
+      "p": 21,
+      "id": 22,
+      "aids": [
+        1410100,
+        1410101
+      ],
+      "pt": "qa",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "23": {
+      "subs": [
+        24
+      ],
+      "p": 22,
+      "id": 23,
+      "aids": [
+        1410100
+      ],
+      "pt": "na",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "24": {
+      "subs": [],
+      "p": 23,
+      "id": 24,
+      "aids": [
+        1410100
+      ],
+      "pt": "ob",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "25": {
+      "subs": [
+        26
+      ],
+      "p": 22,
+      "id": 25,
+      "aids": [
+        1410101
+      ],
+      "pt": "ob",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "26": {
+      "subs": [
+        27
+      ],
+      "p": 25,
+      "id": 26,
+      "aids": [
+        1410101
+      ],
+      "pt": "oc",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "27": {
+      "subs": [
+        28
+      ],
+      "p": 26,
+      "id": 27,
+      "aids": [
+        1410101
+      ],
+      "pt": "na",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "28": {
+      "subs": [],
+      "p": 27,
+      "id": 28,
+      "aids": [
+        1410101
+      ],
+      "pt": "pb",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    }
+  },
+  "disuse": 7,
+  "sx": 12,
+  "sy": 7,
+  "pos_x1": 7,
+  "pos_x2": 18,
+  "pos_y1": 0,
+  "pos_y2": 6,
+  "ineb": false,
+  "extendwidth": 0,
+  "signs": [],
+  "luozis": [],
+  "isguess": false,
+  "objtype": "timu",
+  "ru": 1,
+  "f": false,
+  "showai": true,
+  "content": "amsTX1MQHRATQFAQHRATX1cQHRATXFcQHRATQ1YQHRATXlAQHRATXlcQHRATQlYQHRATQFcQHRATWVYQHRATWVEQHRATXVcQHRATWVAQHRATQFEQbBwRaRBAUBIdEhBfUxIdEhBfVRIdEhBcVRIdEhBCUhIdEhBDUhIdEhBDUxIdEhBeUhIdEhBcUxIdEhBdVRIdEhBeVRJsbw==",
+  "ok_answers": "amsTXVAQHRATXFMQHRATXVEQHRATXFEQHRATQlMQHRATQ1MQHRATQVAQbBwRaRBdUxIdEhBcUBIdEhBdUhIdEhBcUhIdEhBCUBIdEhBDUBIdEhBeUBJsbw==",
+  "change_answers": "amsTXVAQHRATQlMQHRATXFEQHRATXVEQHRATXFMQbBwRaRBdUxIdEhBdUBIdEhBCUBIdEhBcUBIdEhBcUhIdEhBeUBIdEhBdUhJsHhJpE19TEB4SE15QEB4SE19SEB4SE15SEB4SE0BQEB4SE1xQEB4SE0FQEG9v",
+  "fail_answers": "amsTQlMQHRATQ1MQHRATXFMQHRATXVAQbBwRaRBCUBIdEhBDUBIdEhBdUxIdEhBdUhIdEhBcUBIdEhBCUxJsbw==",
+  "level": 171,
+  "desc": "",
+  "yes_count": 3487,
+  "no_count": 4711,
+  "pos": [],
+  "attrtype": 0,
+  "showrettip": false,
+  "is_public": true,
+  "inerror": false,
+  "qshids": [],
+  "myan": null,
+  "hasbook": false,
+  "hasspec": false,
+  "myoper": {
+    "mystar": false,
+    "mytags": [],
+    "tags": []
+  },
+  "candisuseall": false,
+  "userlevel": 0,
+  "clicktime": 500,
+  "xz": 0,
+  "musthide": 0,
+  "hidetime": 5,
+  "comments": [
+    {
+      "id": 1030737,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "w_4722470419310",
+      "userid": 554885,
+      "headpath": "head/2020/11/5/554885_74744_52_29.png",
+      "updated": 1621853221,
+      "showcontent": "到此一游"
+    },
+    {
+      "id": 1037322,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "w_4722470419310",
+      "userid": 554885,
+      "headpath": "head/2020/11/5/554885_74744_52_29.png",
+      "updated": 1623458580,
+      "showcontent": "丨什么字"
+    },
+    {
+      "id": 1364345,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "Tiger-xie",
+      "userid": 930902,
+      "headpath": "headicon_128.jpg",
+      "updated": 1665231661,
+      "showcontent": "gun"
+    },
+    {
+      "id": 1571553,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_32510128191828",
+      "userid": 1161509,
+      "headpath": "headicon_128.jpg",
+      "updated": 1688802195,
+      "showcontent": "金鸡独立"
+    },
+    {
+      "id": 1802706,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "秦砚慈",
+      "userid": 1828519,
+      "headpath": "head/2025/2/7/1828519_37940_42_8.png",
+      "updated": 1715482054,
+      "showcontent": "金鸡独立"
+    },
+    {
+      "id": 2006627,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "大名杨恭默",
+      "userid": 2059052,
+      "headpath": "head/2025/11/18/1955587_28507_6_56.png",
+      "updated": 1737103516,
+      "showcontent": "金鸡到此一游"
+    },
+    {
+      "id": 2062476,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "满子boy",
+      "userid": 2197308,
+      "headpath": "headicon_128.jpg",
+      "updated": 1743161853,
+      "showcontent": "你好你好你好你好我的头发是真发"
+    },
+    {
+      "id": 2158633,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "唐梓奇hq",
+      "userid": 2264317,
+      "headpath": "head/2026/6/20/2147252_51770_53_39.png",
+      "updated": 1751895974,
+      "showcontent": "ｘｘｘ到此一游"
+    },
+    {
+      "id": 2174916,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_7872690191017",
+      "userid": 1809047,
+      "headpath": "userhead/2.jpg",
+      "updated": 1752927968,
+      "showcontent": "kenny,求入場"
+    },
+    {
+      "id": 2256738,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "折腾群黄辰煜",
+      "userid": 2249382,
+      "headpath": "headicon_128.jpg",
+      "updated": 1757497421,
+      "showcontent": "你有2"
+    },
+    {
+      "id": 2263333,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "于婧初hq",
+      "userid": 2082631,
+      "headpath": "head/2026/4/5/1977678_37458_12_20.png",
+      "updated": 1758014013,
+      "showcontent": "jīn jī dú lì"
+    },
+    {
+      "id": 2344502,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "DYY109",
+      "userid": 2423072,
+      "headpath": "headicon_128.jpg",
+      "updated": 1763890100,
+      "showcontent": "隐藏的老鼠偷油"
+    },
+    {
+      "id": 2374445,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "w_2198450719322",
+      "userid": 1985283,
+      "headpath": "headicon_128.jpg",
+      "updated": 1766202265,
+      "showcontent": "金鸡独立"
+    },
+    {
+      "id": 2436923,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "德羿于承溪",
+      "userid": 2163301,
+      "headpath": "headicon_128.jpg",
+      "updated": 1770292317,
+      "showcontent": "0987"
+    },
+    {
+      "id": 2547605,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "张文禾666",
+      "userid": 1110123,
+      "headpath": "userhead/2.jpg",
+      "updated": 1776861524,
+      "showcontent": "简单粗暴"
+    },
+    {
+      "id": 2620151,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_29126872119319",
+      "userid": 2408674,
+      "headpath": "headicon_128.jpg",
+      "updated": 1781327735,
+      "showcontent": "紧急无意（金鸡独立）"
+    },
+    {
+      "id": 2641991,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "重视全局",
+      "userid": 2373844,
+      "headpath": "head/2026/6/6/2254522_75001_21_23.png",
+      "updated": 1782893461,
+      "showcontent": "<a href=\"/q/6/\" target=\"_blank\">Q-6</a>"
+    },
+    {
+      "id": 2641993,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "重视全局",
+      "userid": 2373844,
+      "headpath": "head/2026/6/6/2254522_75001_21_23.png",
+      "updated": 1782893496,
+      "showcontent": "<a href=\"/q/666/\" target=\"_blank\">Q-666</a>"
+    },
+    {
+      "id": 2641995,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "重视全局",
+      "userid": 2373844,
+      "headpath": "head/2026/6/6/2254522_75001_21_23.png",
+      "updated": 1782893523,
+      "showcontent": "<a href=\"/q/66/\" target=\"_blank\">Q-66</a>"
+    },
+    {
+      "id": 2641997,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "重视全局",
+      "userid": 2373844,
+      "headpath": "head/2026/6/6/2254522_75001_21_23.png",
+      "updated": 1782893538,
+      "showcontent": "<a href=\"/q/6666/\" target=\"_blank\">Q-6666</a>"
+    },
+    {
+      "id": 2641998,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "重视全局",
+      "userid": 2373844,
+      "headpath": "head/2026/6/6/2254522_75001_21_23.png",
+      "updated": 1782893564,
+      "showcontent": "<a href=\"/q/66666/\" target=\"_blank\">Q-66666</a>"
+    },
+    {
+      "id": 2642002,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "重视全局",
+      "userid": 2373844,
+      "headpath": "head/2026/6/6/2254522_75001_21_23.png",
+      "updated": 1782893605,
+      "showcontent": "Q-666666"
+    },
+    {
+      "id": 2750942,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "王嘉烨",
+      "userid": 2508908,
+      "headpath": "userhead/6.jpg",
+      "updated": 1787360586,
+      "showcontent": "算是个金鸡独立吧。"
+    },
+    {
+      "id": 2751198,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "白沅粲",
+      "userid": 1807126,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787365933,
+      "showcontent": "一些地区已成为该地第一高峰"
+    },
+    {
+      "id": 2752451,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "LYZ",
+      "userid": 2407736,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787396349,
+      "showcontent": "金鸡独立"
+    },
+    {
+      "id": 2752702,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "chenmake",
+      "userid": 2549821,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787401732,
+      "showcontent": "老鼠偷油"
+    },
+    {
+      "id": 2752884,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "茉莉公主",
+      "userid": 2409944,
+      "headpath": "userhead/18.jpg",
+      "updated": 1787407050,
+      "showcontent": "好题"
+    },
+    {
+      "id": 2753007,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "w_52122936919613",
+      "userid": 2354542,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787440630,
+      "showcontent": "哦，对了。"
+    }
+  ]
+}

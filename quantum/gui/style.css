@@ -355,11 +355,6 @@ body {
   border-radius: 4px;
 }
 
-.grid-cell.target-stone {
-  box-shadow: inset 0 0 0 2.5px var(--accent-rose);
-  border-radius: 50%;
-}
-
 /* Stones */
 .stone {
   position: absolute;
@@ -388,32 +383,39 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-/* Entangled badge (BQ / WQ) */
+/* Quantum piece (黑Q / 白Q): exact reference style with red text */
+.stone.quantum-entangled {
+  border: none !important;
+}
+
 .badge-q {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 900;
-  letter-spacing: -0.05em;
-  padding: 1px 3px;
-  border-radius: 3px;
-  background: rgba(255, 255, 255, 0.95);
-  color: #dc2626;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  color: #ff0000 !important;
+  background: transparent !important;
+  text-align: center;
+  user-select: none;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
 .stone.black .badge-q {
-  background: rgba(0, 0, 0, 0.85);
-  color: #ef4444;
-  border: 1px solid #ef4444;
+  color: #ff0000 !important;
+  background: transparent !important;
+}
+
+.stone.white .badge-q {
+  color: #ff0000 !important;
+  background: transparent !important;
 }
 
 /* Last move red dot */
 .last-move-dot {
   position: absolute;
-  width: 9px;
-  height: 9px;
-  background: #dc2626;
+  width: 10px;
+  height: 10px;
+  background: #ff0000;
   border-radius: 50%;
-  box-shadow: 0 0 6px #ef4444;
+  box-shadow: 0 0 4px rgba(255, 0, 0, 0.8);
   z-index: 6;
 }
 

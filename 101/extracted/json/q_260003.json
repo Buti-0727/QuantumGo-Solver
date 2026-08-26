@@ -1,0 +1,741 @@
+{
+  "id": 294539,
+  "qid": 294539,
+  "publicid": 260003,
+  "orgid": 0,
+  "levelname": "10K+",
+  "min_levelname": "",
+  "max_levelname": "",
+  "qtype": 1,
+  "qtypename": "死活题",
+  "status": 2,
+  "userid": 22918,
+  "username": "kenny",
+  "hasdia": true,
+  "dias": [],
+  "attr_type": 0,
+  "layoutnumber": 1,
+  "issingle": true,
+  "enable_answer": true,
+  "sms_count": 0,
+  "edit_count": 0,
+  "islei": false,
+  "leiid": 0,
+  "taotaiid": 0,
+  "bookinfos": [],
+  "specs": [],
+  "taskresult": {
+    "ok_nums": [
+      29,
+      21,
+      484,
+      1126,
+      1082,
+      1487,
+      1109,
+      936,
+      594,
+      274,
+      153,
+      120,
+      78,
+      62,
+      45,
+      49,
+      40,
+      24,
+      22,
+      16,
+      16,
+      22,
+      4,
+      15,
+      6,
+      8,
+      20,
+      6,
+      1,
+      5
+    ],
+    "fail_nums": [
+      20,
+      43,
+      1052,
+      1884,
+      1065,
+      1072,
+      541,
+      372,
+      228,
+      97,
+      80,
+      55,
+      39,
+      20,
+      25,
+      15,
+      13,
+      9,
+      10,
+      14,
+      9,
+      7,
+      3,
+      5,
+      1,
+      2,
+      1,
+      0,
+      0,
+      0
+    ],
+    "ok_total": 7854,
+    "fail_total": 6682
+  },
+  "xuandians": [],
+  "xds": [],
+  "options": [],
+  "vote": 5.0,
+  "name": "",
+  "title": "",
+  "c": "amsTUFgRHRATUV8RHRATV18RHRATVl8RHRATUV4RHRATUF4RHRATVV4RHRATUl0RHRATVV0RHRATVVwRHRATVUMRHRATUEIRHRATV0IRHRATVkIRHRATUUERHRATUUARbBwRaBFSXBIdExFWXBIdExFRXxIdExFQXxIdExFWXxIdExFRXhIdExFSQRIdExFQQRIdExFXQRIdExFRQBIdExFSQxJsbg==",
+  "r": 2,
+  "prepos": [
+    [
+      "kc",
+      "lb",
+      "ld",
+      "le",
+      "mb"
+    ],
+    [
+      "ma",
+      "me",
+      "nb"
+    ]
+  ],
+  "xv": 1,
+  "points": [],
+  "lu": 19,
+  "blackfirst": true,
+  "is_share": true,
+  "answers": [
+    {
+      "id": 1625142,
+      "st": 2,
+      "ty": 1,
+      "nu": 1,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "od",
+          "c": ""
+        },
+        {
+          "p": "oe",
+          "c": ""
+        },
+        {
+          "p": "nd",
+          "c": ""
+        },
+        {
+          "p": "pe",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 55,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 1,
+      "created": 1640426604
+    },
+    {
+      "id": 1625143,
+      "st": 2,
+      "ty": 2,
+      "nu": 2,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "od",
+          "c": ""
+        },
+        {
+          "p": "oe",
+          "c": ""
+        },
+        {
+          "p": "nd",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "pe",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 51,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1640426610
+    },
+    {
+      "id": 2266780,
+      "st": 1,
+      "ty": 2,
+      "nu": 10,
+      "username": "沈驿杨8890",
+      "userid": 1538752,
+      "pts": [
+        {
+          "p": "nd",
+          "c": ""
+        },
+        {
+          "p": "oe",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "od",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1705225832
+    },
+    {
+      "id": 1625144,
+      "st": 2,
+      "ty": 3,
+      "nu": 3,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "oe",
+          "c": ""
+        },
+        {
+          "p": "od",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 51,
+      "error_count": 0,
+      "created": 1640426614
+    },
+    {
+      "id": 1625145,
+      "st": 2,
+      "ty": 3,
+      "nu": 4,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "nd",
+          "c": ""
+        },
+        {
+          "p": "od",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 51,
+      "error_count": 0,
+      "created": 1640426618
+    },
+    {
+      "id": 1625146,
+      "st": 2,
+      "ty": 3,
+      "nu": 5,
+      "username": "kenny",
+      "userid": 23199,
+      "pts": [
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "oe",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 51,
+      "error_count": 0,
+      "created": 1640426623
+    },
+    {
+      "id": 2266779,
+      "st": 1,
+      "ty": 3,
+      "nu": 9,
+      "username": "沈驿杨8890",
+      "userid": 1538752,
+      "pts": [
+        {
+          "p": "nd",
+          "c": ""
+        },
+        {
+          "p": "oe",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1705225802
+    },
+    {
+      "id": 3377523,
+      "st": 1,
+      "ty": 3,
+      "nu": 13,
+      "username": "heyy",
+      "userid": 2277460,
+      "pts": [
+        {
+          "p": "od",
+          "c": ""
+        },
+        {
+          "p": "oe",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787013672
+    }
+  ],
+  "ans_count": 8,
+  "andata": {
+    "0": {
+      "subs": [
+        1,
+        8,
+        10,
+        12
+      ],
+      "p": 0,
+      "id": 0,
+      "aids": [],
+      "pt": "",
+      "o": 0,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "1": {
+      "subs": [
+        2
+      ],
+      "p": 0,
+      "id": 1,
+      "aids": [
+        1625142,
+        1625143
+      ],
+      "pt": "od",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "2": {
+      "subs": [
+        3
+      ],
+      "p": 1,
+      "id": 2,
+      "aids": [
+        1625142,
+        1625143
+      ],
+      "pt": "oe",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "3": {
+      "subs": [
+        4,
+        6
+      ],
+      "p": 2,
+      "id": 3,
+      "aids": [
+        1625142,
+        1625143
+      ],
+      "pt": "nd",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "4": {
+      "subs": [
+        5
+      ],
+      "p": 3,
+      "id": 4,
+      "aids": [
+        1625142
+      ],
+      "pt": "pe",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "5": {
+      "subs": [],
+      "p": 4,
+      "id": 5,
+      "aids": [
+        1625142
+      ],
+      "pt": "md",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "6": {
+      "subs": [
+        7
+      ],
+      "p": 3,
+      "id": 6,
+      "aids": [
+        1625143
+      ],
+      "pt": "md",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "7": {
+      "subs": [],
+      "p": 6,
+      "id": 7,
+      "aids": [
+        1625143
+      ],
+      "pt": "pe",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "8": {
+      "subs": [
+        9
+      ],
+      "p": 0,
+      "id": 8,
+      "aids": [
+        1625144
+      ],
+      "pt": "oe",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "9": {
+      "subs": [],
+      "p": 8,
+      "id": 9,
+      "aids": [
+        1625144
+      ],
+      "pt": "od",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "10": {
+      "subs": [
+        11
+      ],
+      "p": 0,
+      "id": 10,
+      "aids": [
+        1625145
+      ],
+      "pt": "nd",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "11": {
+      "subs": [],
+      "p": 10,
+      "id": 11,
+      "aids": [
+        1625145
+      ],
+      "pt": "od",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "12": {
+      "subs": [
+        13
+      ],
+      "p": 0,
+      "id": 12,
+      "aids": [
+        1625146
+      ],
+      "pt": "la",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "13": {
+      "subs": [],
+      "p": 12,
+      "id": 13,
+      "aids": [
+        1625146
+      ],
+      "pt": "oe",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    }
+  },
+  "disuse": 5,
+  "sx": 11,
+  "sy": 8,
+  "pos_x1": 8,
+  "pos_x2": 18,
+  "pos_y1": 0,
+  "pos_y2": 7,
+  "ineb": false,
+  "extendwidth": 0,
+  "signs": [],
+  "luozis": [],
+  "isguess": false,
+  "objtype": "timu",
+  "ru": 2,
+  "f": false,
+  "showai": true,
+  "content": "amsTQVERHRATXlERHRATQlYRHRATQFERHRATQlARHRATQlcRHRATX1ERHRATX1YRHRATXlARHRATXVURHRATQ1URHRATWFARHRATX1cRHRATXFURHRATXlURHRATXVIRbBwRaBFeUBIdExFdUhIdExFBUBIdExFcUxIdExFeVBIdExFDUhIdExFdVBIdExFCUxIdExFdUxIdExFDVRIdExFDUBJsbg==",
+  "ok_answers": "amsTXFcRHRATXFYRHRATXVcRHRATQ1YRHRATXlcRbG0=",
+  "change_answers": "amsTXFcRHRATXFYRHRATXVcRHRATXlcRHRATQ1YRbG0=",
+  "fail_answers": "amsTXFYRHRATXFcRbBwRaBFdVRIdExFcVRJsHxNoE1xQER8TE19UEW5u",
+  "level": 20,
+  "desc": "",
+  "yes_count": 7854,
+  "no_count": 6682,
+  "pos": [],
+  "attrtype": 0,
+  "showrettip": false,
+  "is_public": true,
+  "inerror": false,
+  "qshids": [],
+  "myan": null,
+  "hasbook": false,
+  "hasspec": false,
+  "myoper": {
+    "mystar": false,
+    "mytags": [],
+    "tags": []
+  },
+  "candisuseall": false,
+  "userlevel": 0,
+  "clicktime": 500,
+  "xz": 0,
+  "musthide": 0,
+  "hidetime": 5,
+  "comments": [
+    {
+      "id": 1213536,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_26526907193812",
+      "userid": 1190578,
+      "headpath": "headicon_128.jpg",
+      "updated": 1650704988,
+      "showcontent": "我想的太多了吧？"
+    },
+    {
+      "id": 1345468,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_46400356194029",
+      "userid": 964907,
+      "headpath": "headicon_128.jpg",
+      "updated": 1662990767,
+      "showcontent": "对"
+    },
+    {
+      "id": 1361502,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "真没会",
+      "userid": 1499079,
+      "headpath": "head/2022/9/13/1499079_21927_46_34.png",
+      "updated": 1664976827,
+      "showcontent": "想太多"
+    },
+    {
+      "id": 1361503,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "jx陈尚涵",
+      "userid": 359487,
+      "headpath": "headicon_128.jpg",
+      "updated": 1664976913,
+      "showcontent": "巨简"
+    },
+    {
+      "id": 1505068,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "苏天祺",
+      "userid": 1322466,
+      "headpath": "headicon_128.jpg",
+      "updated": 1678872322,
+      "showcontent": "简单"
+    },
+    {
+      "id": 1535761,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "huxueyin",
+      "userid": 854056,
+      "headpath": "head/2022/3/6/854056_44047_17_29.png",
+      "updated": 1683027567,
+      "showcontent": "t"
+    },
+    {
+      "id": 1580904,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_21837461193818",
+      "userid": 1753152,
+      "headpath": "headicon_128.jpg",
+      "updated": 1689909246,
+      "showcontent": "好简单"
+    },
+    {
+      "id": 1671234,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "x_56697973192110",
+      "userid": 1510384,
+      "headpath": "headicon_128.jpg",
+      "updated": 1700883644,
+      "showcontent": "好t简单。0@@¢／⑤"
+    },
+    {
+      "id": 2152029,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "刘卜易",
+      "userid": 2231451,
+      "headpath": "headicon_128.jpg",
+      "updated": 1751440650,
+      "showcontent": "太简单了吧"
+    },
+    {
+      "id": 2307221,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "SAI101",
+      "userid": 2299378,
+      "headpath": "userhead/14.jpg",
+      "updated": 1761021470,
+      "showcontent": "666"
+    },
+    {
+      "id": 2518885,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "退回好棋😀",
+      "userid": 1644257,
+      "headpath": "userhead/7.jpg",
+      "updated": 1775188742,
+      "showcontent": "有病了，讨厌死了。"
+    }
+  ]
+}

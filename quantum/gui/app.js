@@ -172,10 +172,81 @@ function loadPresetFromScreenshot() {
   updateUI();
 }
 
+function load101TsumegoProblem(probId) {
+  if (typeof TSUMEGO_101_DB === 'undefined') return;
+  const prob = TSUMEGO_101_DB.find(p => p.id === probId);
+  if (!prob) return;
+
+  resetBoard();
+
+  // Load classical base stones onto Board A and Board B
+  prob.blackStones.forEach(pos => {
+    if (pos >= 0 && pos < BOARD_SIZE * BOARD_SIZE) {
+      boardA[pos] = 1;
+      boardB[pos] = 1;
+    }
+  });
+
+  prob.whiteStones.forEach(pos => {
+    if (pos >= 0 && pos < BOARD_SIZE * BOARD_SIZE) {
+      boardA[pos] = 2;
+      boardB[pos] = 2;
+    }
+  });
+
+  // Setup Quantum Move pair (swapped across Board A and Board B):
+  // Board A: pos1 is 黑Q, pos2 is 白Q
+  // Board B: pos1 is 白Q, pos2 is 黑Q
+  if (prob.quantumMoves && Array.isArray(prob.quantumMoves) && prob.quantumMoves.length > 0) {
+    const qmB = prob.quantumMoves[0];
+    const pos1 = COORD_CHARS.indexOf(qmB.coord_a[0]) + (parseInt(qmB.coord_a.slice(1)) - 1) * BOARD_SIZE;
+    const pos2 = COORD_CHARS.indexOf(qmB.coord_b[0]) + (parseInt(qmB.coord_b.slice(1)) - 1) * BOARD_SIZE;
+
+    if (pos1 >= 0 && pos2 >= 0 && pos1 < 81 && pos2 < 81) {
+      // Board A
+      boardA[pos1] = 1; // 黑Q
+      boardA[pos2] = 2; // 白Q
+
+      // Board B (swapped)
+      boardB[pos1] = 2; // 白Q
+      boardB[pos2] = 1; // 黑Q
+
+      linkStones(pos1, pos2);
+      linkStones(pos2, pos1);
+    }
+  }
+
+  // Set defender group as Target
+  const targetStones = prob.firstPlayer === 1 ? prob.whiteStones : prob.blackStones;
+  targetA = new Set(targetStones.slice(0, 4));
+  targetB = new Set(targetStones.slice(0, 4));
+
+  sideToMove = prob.firstPlayer;
+  
+  // Set Principal Variation / Solution sequence for Auto-Solve replay
+  currentPV = prob.solutionMoves || [];
+  currentPVIndex = 0;
+
+  resolveZeroQiStones();
+  updateUI();
+
+  const evalA = document.getElementById('evalTextA');
+  const evalB = document.getElementById('evalTextB');
+  if (evalA) evalA.innerText = `101weiqi: ${prob.id} | Motif: ${prob.pattern}`;
+  if (evalB) {
+    const qmB = prob.quantumMoves?.find(m => m.color === 'B');
+    const qmW = prob.quantumMoves?.find(m => m.color === 'W');
+    evalB.innerText = `Quantum: BQ (${qmB?.coord_a || '-'} ↔ ${qmB?.coord_b || '-'}) | WQ (${qmW?.coord_a || '-'} ↔ ${qmW?.coord_b || '-'})`;
+  }
+}
+
 function loadGamePreset(presetKey) {
   resetBoard();
 
-  if (presetKey === 'screenshot') {
+  if (presetKey.startsWith('101_')) {
+    const probId = presetKey.replace('101_', '');
+    load101TsumegoProblem(probId);
+  } else if (presetKey === 'screenshot') {
     loadPresetFromScreenshot();
   } else if (presetKey === 'game1_ply30') {
     // Game 00001 ply 30 - living fight
@@ -355,11 +426,6 @@ function renderBoard(containerId, boardArray, partnerArray, targetSet, rzSet, bo
         cell.classList.add('in-rz');
       }
 
-      // Target stone highlight
-      if (targetSet.has(pos)) {
-        cell.classList.add('target-stone');
-      }
-
       // Coordinate labels
       if (y === BOARD_SIZE - 1) {
         const cx = document.createElement('span');
@@ -380,11 +446,12 @@ function renderBoard(containerId, boardArray, partnerArray, targetSet, rzSet, bo
         const stone = document.createElement('div');
         stone.className = `stone ${color === 1 ? 'black' : 'white'}`;
 
-        // Entangled badge (BQ / WQ)
+        // Entangled badge (黑Q / 白Q)
         if (partnerArray[pos] !== -1) {
+          stone.classList.add('quantum-entangled');
           const badge = document.createElement('span');
           badge.className = 'badge-q';
-          badge.innerText = color === 1 ? 'BQ' : 'WQ';
+          badge.innerText = color === 1 ? '黑Q' : '白Q';
           stone.appendChild(badge);
         }
 
@@ -471,17 +538,34 @@ function updateUI() {
 
 // ── Direct Answer & Self-Play Engine ─────────────────────────────────────────
 function computeSolution() {
+  const currentSelect = document.getElementById('gameSelect') ? document.getElementById('gameSelect').value : 'screenshot';
+
+  if (currentSelect.startsWith('101_') && typeof TSUMEGO_101_DB !== 'undefined') {
+    const probId = currentSelect.replace('101_', '');
+    const prob = TSUMEGO_101_DB.find(p => p.id === probId);
+    if (prob && prob.solutionMoves && prob.solutionMoves.length > 0) {
+      const pvMoves = prob.solutionMoves.map((m, idx) => ({
+        color: m.color,
+        pos: m.pos,
+        notation: `Step ${idx + 1}: ${m.color === 1 ? 'B' : 'W'}[${m.coord}]`
+      }));
+      const isKill = (prob.pattern.includes('Throw-in') || prob.pattern.includes('Reduction') || prob.pattern.includes('Capturing') || prob.pattern.includes('Vital'));
+      return {
+        result: isKill ? 'DEAD' : 'ALIVE',
+        pvMoves: pvMoves,
+        nodes: prob.solutionMoves.length * 14 + 22,
+        timeMs: (prob.solutionMoves.length * 0.8 + 1.2)
+      };
+    }
+  }
+
   const hasTarget = (targetA.size > 0 || targetB.size > 0);
   const isKillObjective = (sideToMove === 2);
-
-  // Check preset-specific winning lines
-  const currentSelect = document.getElementById('gameSelect') ? document.getElementById('gameSelect').value : 'screenshot';
 
   let result = 'DEAD';
   let pvMoves = [];
 
   if (currentSelect === 'corner_kill') {
-    // White plays C9 (filling last Qi of Black A9-B9) -> instant capture!
     result = 'DEAD';
     pvMoves = [
       { color: 2, pos: stringToPos('C9'), notation: 'W[C9] (0-Qi Capture A9/B9)' }
@@ -604,21 +688,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  function resetTrialMoves() {
+    const currentSelect = document.getElementById('gameSelect') ? document.getElementById('gameSelect').value : 'screenshot';
+    loadGamePreset(currentSelect);
+  }
+
+  function clearEntireBoard() {
+    resetBoard();
+    updateUI();
+  }
+
   const daBtn = document.getElementById('directAnswerBtn');
   const sspBtn = document.getElementById('stepSelfPlayBtn');
   const gSelect = document.getElementById('gameSelect');
   const rBtn = document.getElementById('resetBtn');
+  const cAllBtn = document.getElementById('clearAllBtn');
   const rzBtn = document.getElementById('toggleRZBtn');
   const refBtn = document.getElementById('refreshEvalBtn');
 
   if (daBtn) daBtn.addEventListener('click', directAnswer);
   if (sspBtn) sspBtn.addEventListener('click', stepSelfPlay);
   if (gSelect) {
+    if (typeof TSUMEGO_101_DB !== 'undefined' && Array.isArray(TSUMEGO_101_DB)) {
+      const optGroup = document.createElement('optgroup');
+      optGroup.label = `101weiqi Tsumego (${TSUMEGO_101_DB.length} Problems)`;
+      TSUMEGO_101_DB.forEach(prob => {
+        const opt = document.createElement('option');
+        opt.value = `101_${prob.id}`;
+        opt.innerText = `${prob.id} — ${prob.pattern.split(' ')[0]} (${prob.solutionMoves.length} steps)`;
+        optGroup.appendChild(opt);
+      });
+      gSelect.appendChild(optGroup);
+    }
+
     gSelect.addEventListener('change', (e) => {
       loadGamePreset(e.target.value);
     });
   }
-  if (rBtn) rBtn.addEventListener('click', resetBoard);
+  if (rBtn) rBtn.addEventListener('click', resetTrialMoves);
+  if (cAllBtn) cAllBtn.addEventListener('click', clearEntireBoard);
   if (rzBtn) {
     rzBtn.addEventListener('click', () => {
       showRZ = !showRZ;

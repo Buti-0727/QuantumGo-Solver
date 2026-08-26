@@ -1,0 +1,629 @@
+{
+  "id": 91443,
+  "qid": 91443,
+  "publicid": 91443,
+  "orgid": 0,
+  "levelname": "12K+",
+  "min_levelname": "",
+  "max_levelname": "",
+  "qtype": 1,
+  "qtypename": "死活题",
+  "status": 2,
+  "userid": 58025,
+  "username": "弈学园围棋",
+  "hasdia": true,
+  "dias": [],
+  "attr_type": 0,
+  "layoutnumber": 1,
+  "issingle": true,
+  "enable_answer": true,
+  "sms_count": 0,
+  "edit_count": 0,
+  "islei": false,
+  "leiid": 0,
+  "taotaiid": 0,
+  "bookinfos": [],
+  "specs": [],
+  "taskresult": {
+    "ok_nums": [
+      166,
+      672,
+      1578,
+      1828,
+      1782,
+      2008,
+      1582,
+      735,
+      476,
+      371,
+      268,
+      224,
+      164,
+      126,
+      83,
+      65,
+      56,
+      47,
+      47,
+      40,
+      25,
+      16,
+      19,
+      17,
+      12,
+      16,
+      17,
+      6,
+      5,
+      1
+    ],
+    "fail_nums": [
+      695,
+      1411,
+      1735,
+      1962,
+      1140,
+      605,
+      207,
+      91,
+      58,
+      48,
+      35,
+      30,
+      17,
+      23,
+      15,
+      8,
+      8,
+      7,
+      8,
+      11,
+      6,
+      5,
+      4,
+      2,
+      2,
+      4,
+      3,
+      1,
+      0,
+      0
+    ],
+    "ok_total": 12452,
+    "fail_total": 8141
+  },
+  "xuandians": [],
+  "xds": [],
+  "options": [],
+  "vote": 4.7,
+  "name": "",
+  "title": "",
+  "c": "amsTVlAQHRATVlMQHRATVVEQHRATWlEQHRATW1AQHRATVFYQHRATVVcQHRATV1cQHRATUVcQHRATUFYQHRATUFEQHRATUFAQHRATVFMQHRATV1AQbBwRaRBaUBIdEhBaUxIdEhBVUxIdEhBUUxIdEhBRUBIdEhBRUxIdEhBRUhIdEhBWUhIdEhBXUhIdEhBUUhJsbw==",
+  "r": 1,
+  "prepos": [
+    [
+      "bd",
+      "ad",
+      "cg",
+      "ch",
+      "bi"
+    ],
+    [
+      "ah",
+      "bh",
+      "bg"
+    ]
+  ],
+  "xv": 7,
+  "points": [],
+  "lu": 9,
+  "blackfirst": true,
+  "is_share": true,
+  "answers": [
+    {
+      "id": 498381,
+      "st": 2,
+      "ty": 1,
+      "nu": 1,
+      "username": "弈学园围棋",
+      "userid": 58452,
+      "pts": [
+        {
+          "p": "ae",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 5,
+      "change_count": 1,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1495702072
+    },
+    {
+      "id": 3390934,
+      "st": 1,
+      "ty": 1,
+      "nu": 9,
+      "username": "a_471370049192718",
+      "userid": 2548347,
+      "pts": [
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "ag",
+          "c": ""
+        },
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "be",
+          "c": ""
+        },
+        {
+          "p": "ad",
+          "c": ""
+        },
+        {
+          "p": "ed",
+          "c": ""
+        },
+        {
+          "p": "fd",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 1,
+      "created": 1787453092
+    },
+    {
+      "id": 3390739,
+      "st": 1,
+      "ty": 2,
+      "nu": 7,
+      "username": "LHC戴楚湉",
+      "userid": 2450335,
+      "pts": [
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "ag",
+          "c": ""
+        },
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "be",
+          "c": ""
+        },
+        {
+          "p": "ad",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787448857
+    },
+    {
+      "id": 3390740,
+      "st": 1,
+      "ty": 2,
+      "nu": 8,
+      "username": "LHC戴楚湉",
+      "userid": 2450335,
+      "pts": [
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "ag",
+          "c": ""
+        },
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "ad",
+          "c": ""
+        },
+        {
+          "p": "be",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787448870
+    },
+    {
+      "id": 547191,
+      "st": 2,
+      "ty": 2,
+      "nu": 2,
+      "username": "我叫小Q",
+      "userid": 54120,
+      "pts": [
+        {
+          "p": "ae",
+          "c": ""
+        },
+        {
+          "p": "ag",
+          "c": ""
+        },
+        {
+          "p": "ae",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 4,
+      "change_count": 11,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1510466063
+    }
+  ],
+  "ans_count": 5,
+  "andata": {
+    "0": {
+      "subs": [
+        1
+      ],
+      "p": 0,
+      "id": 0,
+      "aids": [],
+      "pt": "",
+      "o": 0,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "1": {
+      "subs": [
+        2
+      ],
+      "p": 0,
+      "id": 1,
+      "aids": [
+        498381,
+        547191
+      ],
+      "pt": "ae",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "2": {
+      "subs": [
+        3
+      ],
+      "p": 1,
+      "id": 2,
+      "aids": [
+        547191
+      ],
+      "pt": "ag",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "3": {
+      "subs": [],
+      "p": 2,
+      "id": 3,
+      "aids": [
+        547191
+      ],
+      "pt": "ae",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    }
+  },
+  "disuse": 3,
+  "sx": 9,
+  "sy": 9,
+  "pos_x1": 0,
+  "pos_x2": 8,
+  "pos_y1": 0,
+  "pos_y2": 8,
+  "ineb": false,
+  "extendwidth": 0,
+  "signs": [],
+  "luozis": [],
+  "isguess": false,
+  "objtype": "timu",
+  "ru": 2,
+  "f": false,
+  "showai": true,
+  "content": "amsTVlARHRATUFERHRATUVcRHRATVlQRHRATUFsRHRATVlYRHRATUVERHRATV1ERHRATV1URHRATUlURHRATUVYRHRATUlcRHRATUFQRHRATUVoRbBwRaBFSUhIdExFRVxIdExFRVhIdExFQUhIdExFRWRIdExFQVRIdExFQVBIdExFQVxIdExFSWRIdExFRUhJsbg==",
+  "ok_answers": "amsTUlYRbG0=",
+  "change_answers": "amsTUlYRHRATUlQRHRATUlYRbG0=",
+  "fail_answers": "am0=",
+  "level": -21,
+  "desc": "",
+  "yes_count": 12452,
+  "no_count": 8141,
+  "pos": [],
+  "attrtype": 0,
+  "showrettip": false,
+  "is_public": true,
+  "inerror": false,
+  "qshids": [],
+  "myan": null,
+  "hasbook": false,
+  "hasspec": false,
+  "myoper": {
+    "mystar": false,
+    "mytags": [],
+    "tags": []
+  },
+  "candisuseall": false,
+  "userlevel": 0,
+  "clicktime": 500,
+  "xz": 0,
+  "musthide": 0,
+  "hidetime": 5,
+  "comments": [
+    {
+      "id": 204067,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "jiangxl44",
+      "userid": 22003,
+      "headpath": "head/2015/10/12/22003_79143_45_46.png",
+      "updated": 1499146872,
+      "showcontent": "这有3K？"
+    },
+    {
+      "id": 1145516,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "SG宋子骏",
+      "userid": 1246732,
+      "headpath": "head/2022/4/10/1246732_91334_27_57.png",
+      "updated": 1641636567,
+      "showcontent": "刀把五"
+    },
+    {
+      "id": 1248941,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "任鑫铭",
+      "userid": 1219187,
+      "headpath": "headicon_128.jpg",
+      "updated": 1654229334,
+      "showcontent": "有3k啊!"
+    },
+    {
+      "id": 1248943,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "任鑫铭",
+      "userid": 1219187,
+      "headpath": "headicon_128.jpg",
+      "updated": 1654229359,
+      "showcontent": "也有1k呢！"
+    },
+    {
+      "id": 1248944,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "任鑫铭",
+      "userid": 1219187,
+      "headpath": "headicon_128.jpg",
+      "updated": 1654229408,
+      "showcontent": "但是没有100k！"
+    },
+    {
+      "id": 1272287,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "刘弘屹",
+      "userid": 1118325,
+      "headpath": "head/2023/2/1/1118325_2503_12_38.png",
+      "updated": 1656729969,
+      "showcontent": "刀八五"
+    },
+    {
+      "id": 1394409,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "见缝不插针",
+      "userid": 1268388,
+      "headpath": "headicon_128.jpg",
+      "updated": 1668860724,
+      "showcontent": "<a href=\"/u/kenny/\" target=\"_blank\">@kenny</a> 删删贴"
+    },
+    {
+      "id": 1458095,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "刘沛霖101",
+      "userid": 1435830,
+      "headpath": "headicon_128.jpg",
+      "updated": 1674184280,
+      "showcontent": "刀把五。"
+    },
+    {
+      "id": 1751648,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "高睿泽",
+      "userid": 1671660,
+      "headpath": "userhead/9.jpg",
+      "updated": 1709895777,
+      "showcontent": "刀把五🔪"
+    },
+    {
+      "id": 1779532,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "Yiyi17",
+      "userid": 1944881,
+      "headpath": "headicon_128.jpg",
+      "updated": 1713244799,
+      "showcontent": "刀把五"
+    },
+    {
+      "id": 1911961,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "Alicia_Mack",
+      "userid": 2051864,
+      "headpath": "headicon_128.jpg",
+      "updated": 1725769117,
+      "showcontent": "麦田"
+    },
+    {
+      "id": 2301850,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "VTPero_Official",
+      "userid": 2400780,
+      "headpath": "head/2025/10/5/2281464_17900_28_52.png",
+      "updated": 1760632681,
+      "showcontent": "应该再多加一步不然知道的都太简单了"
+    },
+    {
+      "id": 2423110,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "max2odd",
+      "userid": 2385373,
+      "headpath": "headicon_128.jpg",
+      "updated": 1769597895,
+      "showcontent": "你们从哪里知道的@kenny？"
+    },
+    {
+      "id": 2423111,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "max2odd",
+      "userid": 2385373,
+      "headpath": "headicon_128.jpg",
+      "updated": 1769597931,
+      "showcontent": "这题简单"
+    },
+    {
+      "id": 2423117,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "max2odd",
+      "userid": 2385373,
+      "headpath": "headicon_128.jpg",
+      "updated": 1769598090,
+      "showcontent": "@kenny是什么？？？"
+    },
+    {
+      "id": 2666952,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "w_33136563219537",
+      "userid": 2542245,
+      "headpath": "headicon_128.jpg",
+      "updated": 1784202058,
+      "showcontent": "他今天吐血了"
+    },
+    {
+      "id": 2753071,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_421130821191315",
+      "userid": 2212903,
+      "headpath": "userhead/2.jpg",
+      "updated": 1787444842,
+      "showcontent": "<a href=\"/q/1/\" target=\"_blank\">Q-1</a>"
+    },
+    {
+      "id": 2753603,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "李成蹊1",
+      "userid": 1860868,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787458327,
+      "showcontent": "想来惠栽"
+    },
+    {
+      "id": 2753607,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "李成蹊1",
+      "userid": 1860868,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787458352,
+      "showcontent": "来了吗"
+    },
+    {
+      "id": 2754127,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "小兰花刀",
+      "userid": 2544022,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787472078,
+      "showcontent": "刀五"
+    },
+    {
+      "id": 2754176,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "Lost-TR",
+      "userid": 2564245,
+      "headpath": "head/2026/8/8/2445146_33718_50_26.png",
+      "updated": 1787474001,
+      "showcontent": "好难啊，居然花了我5秒来想"
+    }
+  ]
+}

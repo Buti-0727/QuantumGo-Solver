@@ -1,0 +1,11 @@
+(;GM[1]FF[4]CA[UTF-8]SZ[19]GN[Q-106471]PL[B]GC[TOLIVE]AB[db][cb][bb][ec][ed][cd][ee][ce][df][dg][dh][bh][bj]AW[dc][cc][bc][dd][bd][de][cf][bg][ah]
+(;B[nt];W[ot];B[ps];W[pt];B[rt]N[正解])
+(;B[nt];W[rt];B[os]N[正解变例1])
+(;B[ps];W[pt];B[rt];W[os]N[正解变例2])
+(;B[rt];W[ps];B[ot];W[nt]N[正解变例3])
+(;B[ot];W[nt];B[os];W[ps]N[正解变例4])
+(;B[nt];W[rt];B[pt];W[ot]N[正解变例5])
+(;B[nt];W[ot];B[ps];W[pt];B[rt];W[os];B[pr]N[变化13])
+(;B[ot];W[rt];B[os]N[变化15])
+(;B[qt]N[变化20])
+(;B[rt];W[qt];B[ps];W[os];B[pt]N[变化17]))

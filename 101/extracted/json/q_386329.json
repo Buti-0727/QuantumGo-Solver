@@ -1,0 +1,1079 @@
+{
+  "id": 434291,
+  "qid": 434291,
+  "publicid": 386329,
+  "orgid": 0,
+  "levelname": "6K+",
+  "min_levelname": "",
+  "max_levelname": "",
+  "qtype": 1,
+  "qtypename": "死活题",
+  "status": 2,
+  "userid": 617668,
+  "username": "misscathy",
+  "hasdia": true,
+  "dias": [],
+  "attr_type": 0,
+  "layoutnumber": 1,
+  "issingle": true,
+  "enable_answer": true,
+  "sms_count": 0,
+  "edit_count": 0,
+  "islei": false,
+  "leiid": 0,
+  "taotaiid": 0,
+  "bookinfos": [],
+  "specs": [],
+  "taskresult": {
+    "ok_nums": [
+      11,
+      7,
+      10,
+      11,
+      9,
+      22,
+      77,
+      317,
+      360,
+      591,
+      657,
+      506,
+      350,
+      185,
+      64,
+      44,
+      31,
+      35,
+      22,
+      22,
+      17,
+      14,
+      5,
+      15,
+      9,
+      7,
+      7,
+      4,
+      7,
+      12
+    ],
+    "fail_nums": [
+      12,
+      13,
+      18,
+      31,
+      50,
+      88,
+      235,
+      1027,
+      736,
+      635,
+      535,
+      327,
+      181,
+      86,
+      31,
+      21,
+      21,
+      14,
+      9,
+      20,
+      5,
+      15,
+      2,
+      3,
+      5,
+      6,
+      4,
+      1,
+      0,
+      0
+    ],
+    "ok_total": 3428,
+    "fail_total": 4131
+  },
+  "xuandians": [],
+  "xds": [],
+  "options": [],
+  "vote": 5.0,
+  "name": "",
+  "title": "改编自第18届“赤霄春笋杯”围棋升段赛实战",
+  "c": "amsTVkIQHRATV0IQHRATVEIQHRATVUIQHRATWkIQHRATW0IQHRATWEIQHRATXkIQHRATUEMQHRATUUMQHRATUEAQHRATVEAQHRATVUAQHRATWEAQHRATWUAQHRATUEEQHRATWkEQHRATW0EQbBwRaRBWQBIdEhBXQBIdEhBUQBIdEhBVQBIdEhBbQBIdEhBRQxIdEhBWQxIdEhBaQxIdEhBbQxIdEhBRQhIdEhBXQhIdEhBVQhJsbw==",
+  "r": 1,
+  "prepos": [
+    [
+      "pd",
+      "pe",
+      "pf",
+      "pg",
+      "ph"
+    ],
+    [
+      "qd",
+      "qe",
+      "qf"
+    ]
+  ],
+  "xv": 5,
+  "points": [],
+  "lu": 19,
+  "blackfirst": true,
+  "is_share": true,
+  "answers": [
+    {
+      "id": 2404539,
+      "st": 1,
+      "ty": 1,
+      "nu": 7,
+      "username": "乐弈梁紫宸1",
+      "userid": 1870086,
+      "pts": [
+        {
+          "p": "sj",
+          "c": ""
+        },
+        {
+          "p": "sf",
+          "c": ""
+        },
+        {
+          "p": "qh",
+          "c": ""
+        },
+        {
+          "p": "re",
+          "c": ""
+        },
+        {
+          "p": "rg",
+          "c": ""
+        },
+        {
+          "p": "rf",
+          "c": ""
+        },
+        {
+          "p": "qj",
+          "c": ""
+        },
+        {
+          "p": "rg",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 2,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1721480089
+    },
+    {
+      "id": 2544252,
+      "st": 1,
+      "ty": 1,
+      "nu": 8,
+      "username": "大名丁嘉樱",
+      "userid": 1826204,
+      "pts": [
+        {
+          "p": "sj",
+          "c": ""
+        },
+        {
+          "p": "sf",
+          "c": ""
+        },
+        {
+          "p": "qh",
+          "c": ""
+        },
+        {
+          "p": "re",
+          "c": ""
+        },
+        {
+          "p": "rg",
+          "c": ""
+        },
+        {
+          "p": "rf",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 2,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1735630717
+    },
+    {
+      "id": 2641527,
+      "st": 1,
+      "ty": 1,
+      "nu": 14,
+      "username": "beibei07",
+      "userid": 2227962,
+      "pts": [
+        {
+          "p": "sj",
+          "c": "正解"
+        },
+        {
+          "p": "sf",
+          "c": ""
+        },
+        {
+          "p": "qh",
+          "c": "好棋"
+        },
+        {
+          "p": "re",
+          "c": ""
+        },
+        {
+          "p": "rg",
+          "c": "成功啦"
+        }
+      ],
+      "v": 0,
+      "ok_count": 5,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1746184931
+    },
+    {
+      "id": 3019795,
+      "st": 1,
+      "ty": 1,
+      "nu": 16,
+      "username": "wx_361893719105",
+      "userid": 1358671,
+      "pts": [
+        {
+          "p": "sf",
+          "c": ""
+        },
+        {
+          "p": "re",
+          "c": ""
+        },
+        {
+          "p": "qh",
+          "c": ""
+        },
+        {
+          "p": "sg",
+          "c": ""
+        },
+        {
+          "p": "sj",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1768144189
+    },
+    {
+      "id": 3389114,
+      "st": 1,
+      "ty": 1,
+      "nu": 19,
+      "username": "a_55139572719622",
+      "userid": 2584263,
+      "pts": [
+        {
+          "p": "sj",
+          "c": ""
+        },
+        {
+          "p": "re",
+          "c": ""
+        },
+        {
+          "p": "qh",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787375647
+    },
+    {
+      "id": 2310194,
+      "st": 2,
+      "ty": 1,
+      "nu": 1,
+      "username": "misscathy",
+      "userid": 636989,
+      "pts": [
+        {
+          "p": "sj",
+          "c": ""
+        },
+        {
+          "p": "sf",
+          "c": ""
+        },
+        {
+          "p": "qh",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 55,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1710647426
+    },
+    {
+      "id": 3390018,
+      "st": 1,
+      "ty": 1,
+      "nu": 20,
+      "username": "x_29112699919486",
+      "userid": 2206931,
+      "pts": [
+        {
+          "p": "re",
+          "c": ""
+        },
+        {
+          "p": "sd",
+          "c": ""
+        },
+        {
+          "p": "sf",
+          "c": ""
+        },
+        {
+          "p": "qh",
+          "c": ""
+        },
+        {
+          "p": "qj",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787399850
+    },
+    {
+      "id": 3095575,
+      "st": 1,
+      "ty": 2,
+      "nu": 17,
+      "username": "wx_8447293194824",
+      "userid": 1048081,
+      "pts": [
+        {
+          "p": "sj",
+          "c": ""
+        },
+        {
+          "p": "sf",
+          "c": ""
+        },
+        {
+          "p": "qh",
+          "c": ""
+        },
+        {
+          "p": "re",
+          "c": ""
+        },
+        {
+          "p": "rg",
+          "c": ""
+        },
+        {
+          "p": "rf",
+          "c": ""
+        },
+        {
+          "p": "qj",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1772104438
+    },
+    {
+      "id": 2310195,
+      "st": 2,
+      "ty": 2,
+      "nu": 2,
+      "username": "misscathy",
+      "userid": 636989,
+      "pts": [
+        {
+          "p": "sj",
+          "c": ""
+        },
+        {
+          "p": "qh",
+          "c": ""
+        },
+        {
+          "p": "sf",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 2,
+      "change_count": 51,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1710647431
+    },
+    {
+      "id": 2310196,
+      "st": 2,
+      "ty": 3,
+      "nu": 3,
+      "username": "misscathy",
+      "userid": 636989,
+      "pts": [
+        {
+          "p": "sf",
+          "c": ""
+        },
+        {
+          "p": "re",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 51,
+      "error_count": 0,
+      "created": 1710647439
+    },
+    {
+      "id": 2310197,
+      "st": 2,
+      "ty": 3,
+      "nu": 4,
+      "username": "misscathy",
+      "userid": 636989,
+      "pts": [
+        {
+          "p": "qh",
+          "c": ""
+        },
+        {
+          "p": "sj",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 52,
+      "error_count": 0,
+      "created": 1710647446
+    },
+    {
+      "id": 2404538,
+      "st": 1,
+      "ty": 3,
+      "nu": 6,
+      "username": "乐弈梁紫宸1",
+      "userid": 1870086,
+      "pts": [
+        {
+          "p": "sj",
+          "c": ""
+        },
+        {
+          "p": "sf",
+          "c": ""
+        },
+        {
+          "p": "qh",
+          "c": ""
+        },
+        {
+          "p": "re",
+          "c": ""
+        },
+        {
+          "p": "qj",
+          "c": ""
+        },
+        {
+          "p": "rg",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1721480074
+    },
+    {
+      "id": 2598091,
+      "st": 1,
+      "ty": 3,
+      "nu": 9,
+      "username": "zyd362300653",
+      "userid": 1204708,
+      "pts": [
+        {
+          "p": "sj",
+          "c": ""
+        },
+        {
+          "p": "re",
+          "c": ""
+        },
+        {
+          "p": "sf",
+          "c": ""
+        },
+        {
+          "p": "sg",
+          "c": ""
+        },
+        {
+          "p": "rf",
+          "c": ""
+        },
+        {
+          "p": "qh",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1741538274
+    },
+    {
+      "id": 2598608,
+      "st": 1,
+      "ty": 3,
+      "nu": 10,
+      "username": "午浩宇",
+      "userid": 2019232,
+      "pts": [
+        {
+          "p": "sj",
+          "c": ""
+        },
+        {
+          "p": "sf",
+          "c": ""
+        },
+        {
+          "p": "qj",
+          "c": ""
+        },
+        {
+          "p": "qh",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1741611869
+    },
+    {
+      "id": 2599182,
+      "st": 1,
+      "ty": 3,
+      "nu": 11,
+      "username": "浩然棋院吴宇轩",
+      "userid": 2173082,
+      "pts": [
+        {
+          "p": "qh",
+          "c": ""
+        },
+        {
+          "p": "sj",
+          "c": ""
+        },
+        {
+          "p": "sh",
+          "c": ""
+        },
+        {
+          "p": "si",
+          "c": ""
+        },
+        {
+          "p": "sk",
+          "c": ""
+        },
+        {
+          "p": "sf",
+          "c": ""
+        },
+        {
+          "p": "qj",
+          "c": ""
+        },
+        {
+          "p": "re",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1741697605
+    }
+  ],
+  "ans_count": 15,
+  "andata": {
+    "0": {
+      "subs": [
+        1,
+        6,
+        8
+      ],
+      "p": 0,
+      "id": 0,
+      "aids": [],
+      "pt": "",
+      "o": 0,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "1": {
+      "subs": [
+        2,
+        4
+      ],
+      "p": 0,
+      "id": 1,
+      "aids": [
+        2310194,
+        2310195
+      ],
+      "pt": "sj",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "2": {
+      "subs": [
+        3
+      ],
+      "p": 1,
+      "id": 2,
+      "aids": [
+        2310194
+      ],
+      "pt": "sf",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "3": {
+      "subs": [],
+      "p": 2,
+      "id": 3,
+      "aids": [
+        2310194
+      ],
+      "pt": "qh",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "4": {
+      "subs": [
+        5
+      ],
+      "p": 1,
+      "id": 4,
+      "aids": [
+        2310195
+      ],
+      "pt": "qh",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "5": {
+      "subs": [],
+      "p": 4,
+      "id": 5,
+      "aids": [
+        2310195
+      ],
+      "pt": "sf",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "6": {
+      "subs": [
+        7
+      ],
+      "p": 0,
+      "id": 6,
+      "aids": [
+        2310196
+      ],
+      "pt": "sf",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "7": {
+      "subs": [],
+      "p": 6,
+      "id": 7,
+      "aids": [
+        2310196
+      ],
+      "pt": "re",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "8": {
+      "subs": [
+        9
+      ],
+      "p": 0,
+      "id": 8,
+      "aids": [
+        2310197
+      ],
+      "pt": "qh",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "9": {
+      "subs": [],
+      "p": 8,
+      "id": 9,
+      "aids": [
+        2310197
+      ],
+      "pt": "sj",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    }
+  },
+  "disuse": 5,
+  "sx": 6,
+  "sy": 14,
+  "pos_x1": 13,
+  "pos_x2": 18,
+  "pos_y1": 0,
+  "pos_y2": 13,
+  "ineb": false,
+  "extendwidth": 0,
+  "signs": [],
+  "luozis": [],
+  "isguess": false,
+  "objtype": "timu",
+  "ru": 2,
+  "f": false,
+  "showai": true,
+  "content": "amsTQVgRHRATQ1kRHRATQVERHRATQ18RHRATQVURHRATQFERHRATQFoRHRATQlARHRATQ1QRHRATQlERHRATQVQRHRATQ1cRHRATQFsRHRATQVkRHRATQ1YRHRATQ1oRHRATQ1URHRATQ1sRbBwRaBFAVhIdExFCVBIdExFCVRIdExFCWBIdExFCVxIdExFAVBIdExFBWRIdExFBWBIdExFBVRIdExFCVhIdExFAUhIdExFBUhJsbg==",
+  "ok_answers": "amsTQFkRHRATQFURHRATQlsRbG0=",
+  "change_answers": "amsTQFkRHRATQlsRHRATQFURbG0=",
+  "fail_answers": "amsTQFURHRATQVYRbBwRaBFCWRIdExFAWxJsbg==",
+  "level": 122,
+  "desc": "改编自第18届“赤霄春笋杯”围棋升段赛实战",
+  "yes_count": 3428,
+  "no_count": 4131,
+  "pos": [],
+  "attrtype": 0,
+  "showrettip": false,
+  "is_public": true,
+  "inerror": false,
+  "qshids": [],
+  "myan": null,
+  "hasbook": false,
+  "hasspec": false,
+  "myoper": {
+    "mystar": false,
+    "mytags": [],
+    "tags": []
+  },
+  "candisuseall": false,
+  "userlevel": 0,
+  "clicktime": 500,
+  "xz": 0,
+  "musthide": 0,
+  "hidetime": 5,
+  "comments": [
+    {
+      "id": 1757628,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "misscathy",
+      "userid": 636989,
+      "headpath": "head/2026/1/29/617668_55676_2_20.png",
+      "updated": 1710647464,
+      "showcontent": "<a href=\"/u/kenny/\" target=\"_blank\">@kenny</a>，求入库谢谢！"
+    },
+    {
+      "id": 1757749,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "涵涵学弈棋",
+      "userid": 1482770,
+      "headpath": "head/2026/7/3/1410950_3803_45_6.png",
+      "updated": 1710659384,
+      "showcontent": "perfect"
+    },
+    {
+      "id": 1854953,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_678459619498",
+      "userid": 1660689,
+      "headpath": "headicon_128.jpg",
+      "updated": 1721201747,
+      "showcontent": "别想太多就行！"
+    },
+    {
+      "id": 1855529,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "🇦🇱🇦🇱",
+      "userid": 1863292,
+      "headpath": "head/2025/1/12/1863292_42515_4_56.png",
+      "updated": 1721225356,
+      "showcontent": "10000K"
+    },
+    {
+      "id": 2012184,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "笑玮~",
+      "userid": 1834373,
+      "headpath": "head/2026/8/20/1744587_1938_49_45.png",
+      "updated": 1737707063,
+      "showcontent": "第一次做错了，第二次做对"
+    },
+    {
+      "id": 2017817,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "笑.玮",
+      "userid": 1834339,
+      "headpath": "head/2026/5/15/1744554_56033_59_35.png",
+      "updated": 1738382050,
+      "showcontent": "↑我的另一个号<br/>第三次做对了。"
+    },
+    {
+      "id": 2305496,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "笑玮~",
+      "userid": 1834373,
+      "headpath": "head/2026/8/20/1744587_1938_49_45.png",
+      "updated": 1760875997,
+      "showcontent": "@wx_29482355195619 不是，谁说那个是你号了"
+    },
+    {
+      "id": 2305503,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "笑玮~",
+      "userid": 1834373,
+      "headpath": "head/2026/8/20/1744587_1938_49_45.png",
+      "updated": 1760876067,
+      "showcontent": "有深井吧"
+    },
+    {
+      "id": 2498631,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "misscathy",
+      "userid": 636989,
+      "headpath": "head/2026/1/29/617668_55676_2_20.png",
+      "updated": 1773819719,
+      "showcontent": "难绷"
+    },
+    {
+      "id": 2591624,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "张文禾666",
+      "userid": 1110123,
+      "headpath": "userhead/2.jpg",
+      "updated": 1779461178,
+      "showcontent": "笑玮~就是我号呀"
+    },
+    {
+      "id": 2591628,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "张文禾666",
+      "userid": 1110123,
+      "headpath": "userhead/2.jpg",
+      "updated": 1779461294,
+      "showcontent": "我有2个号这是小号"
+    },
+    {
+      "id": 2642273,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "张文禾666",
+      "userid": 1110123,
+      "headpath": "userhead/2.jpg",
+      "updated": 1782903994,
+      "showcontent": "撤回了"
+    },
+    {
+      "id": 2695388,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "笑玮~",
+      "userid": 1834373,
+      "headpath": "head/2026/8/20/1744587_1938_49_45.png",
+      "updated": 1785465943,
+      "showcontent": "？"
+    },
+    {
+      "id": 2695391,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "笑玮~",
+      "userid": 1834373,
+      "headpath": "head/2026/8/20/1744587_1938_49_45.png",
+      "updated": 1785465995,
+      "showcontent": "你撤回就撤全了啊"
+    },
+    {
+      "id": 2695395,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "笑玮~",
+      "userid": 1834373,
+      "headpath": "head/2026/8/20/1744587_1938_49_45.png",
+      "updated": 1785466094,
+      "showcontent": "😂"
+    },
+    {
+      "id": 2751716,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "jn彧",
+      "userid": 1626006,
+      "headpath": "head/2023/2/19/1626006_95049_17_25.png",
+      "updated": 1787377704,
+      "showcontent": "自己下的出着放心"
+    },
+    {
+      "id": 2752367,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "KoayXuePi",
+      "userid": 1225570,
+      "headpath": "head/2025/7/11/1174117_44392_48_34.png",
+      "updated": 1787393363,
+      "showcontent": "冷静的一手"
+    },
+    {
+      "id": 2752446,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "LYZ",
+      "userid": 2407736,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787396254,
+      "showcontent": "简单"
+    },
+    {
+      "id": 2752831,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "jn彧",
+      "userid": 1626006,
+      "headpath": "head/2023/2/19/1626006_95049_17_25.png",
+      "updated": 1787404788,
+      "showcontent": "<a href=\"/q/510347/\" target=\"_blank\">Q-510347</a>"
+    },
+    {
+      "id": 2752907,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_1211368881911",
+      "userid": 2222446,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787408610,
+      "showcontent": "先连再打。"
+    }
+  ]
+}

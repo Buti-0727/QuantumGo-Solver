@@ -65,41 +65,57 @@ def normalize_to_9x9(
 ) -> Tuple[List[Tuple[int, int]], List[Tuple[int, int]], List[Tuple[str, Tuple[int, int]]]]:
     """
     Shifts coordinates into a standard 9x9 sub-board (0 <= col, row < 9).
-    Preserves corner alignments and relative shapes.
+    Computes bounding box strictly from initial stones to avoid coordinate squashing.
     """
-    all_pts = list(black) + list(white) + [m[1] for m in moves]
-    if not all_pts:
+    all_stones = list(black) + list(white)
+    if not all_stones:
         return black, white, moves
 
-    xs = [p[0] for p in all_pts]
-    ys = [p[1] for p in all_pts]
+    xs = [p[0] for p in all_stones]
+    ys = [p[1] for p in all_stones]
     min_x, max_x = min(xs), max(xs)
     min_y, max_y = min(ys), max(ys)
 
-    # If already within 9x9 (0..8), keep
-    if max_x < 9 and max_y < 9 and min_x >= 0 and min_y >= 0:
-        return black, white, moves
+    width = max_x - min_x + 1
+    height = max_y - min_y + 1
 
-    # Calculate optimal offset to place in 9x9 corner/region
-    # If touching 19x19 right/bottom edge (e.g. 18), align to 8
-    if max_x >= 15:
-        offset_x = max(0, max_x - 8)
-    else:
-        offset_x = min_x
+    pad_x = max(0, (9 - width) // 2) if width <= 9 else 0
+    pad_y = max(0, (9 - height) // 2) if height <= 9 else 0
 
-    if max_y >= 15:
-        offset_y = max(0, max_y - 8)
-    else:
-        offset_y = min_y
+    if min_x == 0:
+        pad_x = 0
+    if min_y == 0:
+        pad_y = 0
+    if max_x == 18 and width <= 9:
+        pad_x = 9 - width
+    if max_y == 18 and height <= 9:
+        pad_y = 9 - height
 
-    def shift(p: Tuple[int, int]) -> Tuple[int, int]:
+    offset_x = min_x - pad_x
+    offset_y = min_y - pad_y
+
+    def shift_stone(p: Tuple[int, int]) -> Tuple[int, int]:
         nx = max(0, min(8, p[0] - offset_x))
         ny = max(0, min(8, p[1] - offset_y))
         return (nx, ny)
 
-    norm_black = sorted(list(set(shift(p) for p in black)))
-    norm_white = sorted(list(set(shift(p) for p in white)))
-    norm_moves = [(color, shift(coord)) for color, coord in moves]
+    norm_black = sorted(list(set(shift_stone(p) for p in black)))
+    norm_white = sorted(list(set(shift_stone(p) for p in white)))
+
+    norm_moves = []
+    for col, (mx, my) in moves:
+        # If move was recorded in flipped/opposite corner coordinates, map it into local region
+        if abs(mx - min_x) > 9:
+            if max_x > 9 and mx < 9:
+                mx = 18 - mx
+            elif max_x <= 9 and mx > 9:
+                mx = 18 - mx
+        if abs(my - min_y) > 9:
+            if max_y > 9 and my < 9:
+                my = 18 - my
+            elif max_y <= 9 and my > 9:
+                my = 18 - my
+        norm_moves.append((col, shift_stone((mx, my))))
 
     return norm_black, norm_white, norm_moves
 
@@ -125,10 +141,10 @@ class PNGGoExtractor:
                 cls._shared_reader = None
         return cls._shared_reader
 
-    def extract_from_png(self, image_path: str, board_size: int = 19) -> Dict[str, Any]:
+    def extract_from_png(self, image_path: str, board_size: int = 9) -> Dict[str, Any]:
         """
-        Extracts stone positions and numbered moves from a problem screenshot.
-        Returns dictionary with initial_black, initial_white, solution_moves, bounding_box.
+        Extracts all stones and numbered solution steps from any 101weiqi screenshot.
+        Uses adaptive LAB color segmentation, circular contour filtering, and OCR.
         """
         path = Path(image_path)
         if not path.exists():
@@ -143,76 +159,154 @@ class PNGGoExtractor:
 
         h, w = img.shape[:2]
 
-        # 1. Detect board bounding box
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+        # 1. Isolate wood board region if inside full browser screenshot
+        lab = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
+        l, a, b = cv2.split(lab)
+        board_mask = (l > 70) & (l < 220) & (b > 130) & (b < 190) & (a > 115) & (a < 155)
+        board_mask_u8 = board_mask.astype(np.uint8) * 255
+        cnts, _ = cv2.findContours(board_mask_u8, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-        # Look for circular stones
-        circles = cv2.HoughCircles(
-            blurred,
-            cv2.HOUGH_GRADIENT,
-            dp=1.2,
-            minDist=20,
-            param1=50,
-            param2=30,
-            minRadius=10,
-            maxRadius=35
-        )
+        board_x, board_y, board_w, board_h = 0, 0, w, h
+        if cnts:
+            c = max(cnts, key=cv2.contourArea)
+            if cv2.contourArea(c) > 0.25 * w * h:
+                board_x, board_y, board_w, board_h = cv2.boundingRect(c)
 
-        detected_stones = []
-        if circles is not None:
-            circles = np.round(circles[0, :]).astype("int")
-            for (cx, cy, r) in circles:
-                if 0 <= cx < w and 0 <= cy < h:
-                    # Sample center brightness
-                    mask = np.zeros(gray.shape, dtype="uint8")
-                    cv2.circle(mask, (cx, cy), max(2, int(r * 0.5)), 255, -1)
-                    mean_val = cv2.mean(gray, mask=mask)[0]
-                    color = 'B' if mean_val < 110 else ('W' if mean_val > 150 else 'Unknown')
-                    detected_stones.append({"x": cx, "y": cy, "r": r, "color": color, "mean_val": mean_val})
+        board_roi = img[board_y:board_y + board_h, board_x:board_x + board_w]
+        rh, rw = board_roi.shape[:2]
+        gray = cv2.cvtColor(board_roi, cv2.COLOR_BGR2GRAY)
 
-        # 2. Check for matching SGF or JSON cache if available (for exact coordinates)
-        stem = path.stem
-        matched_sgf = None
-        parent_dir = path.parent
-        possible_sgf_dirs = [parent_dir / "extracted" / "sgf", parent_dir / "sgf"]
-        for sdir in possible_sgf_dirs:
-            if sdir.exists():
-                for candidate in sdir.glob("*.sgf"):
-                    if candidate.stem in stem or stem in candidate.stem:
-                        matched_sgf = candidate
-                        break
+        # 2. Detect stones inside board ROI
+        black_mask = cv2.inRange(gray, 0, 95)
+        white_mask = cv2.inRange(gray, 195, 255)
 
-        # If SGF exists, parse high-fidelity ground truth
-        if matched_sgf and matched_sgf.exists():
-            return self.parse_sgf_file(matched_sgf)
+        kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (9, 9))
+        black_clean = cv2.morphologyEx(black_mask, cv2.MORPH_OPEN, kernel)
+        white_clean = cv2.morphologyEx(white_mask, cv2.MORPH_OPEN, kernel)
 
-        # Fallback to OCR / heuristic extraction
+        r_min = int(rw * 0.025)
+        r_max = int(rw * 0.09)
+        min_area = np.pi * (r_min ** 2) * 0.45
+
+        raw_detected = []
+        for c in cv2.findContours(black_clean, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[0]:
+            area = cv2.contourArea(c)
+            (cx, cy), r = cv2.minEnclosingCircle(c)
+            if r_min <= r <= r_max and area > min_area:
+                raw_detected.append(('B', int(cx), int(cy), int(r)))
+
+        for c in cv2.findContours(white_clean, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[0]:
+            area = cv2.contourArea(c)
+            (cx, cy), r = cv2.minEnclosingCircle(c)
+            if r_min <= r <= r_max and area > min_area:
+                raw_detected.append(('W', int(cx), int(cy), int(r)))
+
+        if not raw_detected:
+            return {
+                "source_image": str(path),
+                "board_size": 9,
+                "initial_black": [],
+                "initial_white": [],
+                "solution_moves": [],
+                "first_player": "B"
+            }
+
+        # 3. Infer 9x9 grid lines from stone clusters and board geometry
+        xs = np.array([s[1] for s in raw_detected])
+        ys = np.array([s[2] for s in raw_detected])
+        rs = np.array([s[3] for s in raw_detected])
+        median_r = np.median(rs)
+
+        def cluster_1d(coords, tol=median_r * 0.6):
+            sorted_c = np.sort(coords)
+            clusters = []
+            curr = [sorted_c[0]]
+            for x in sorted_c[1:]:
+                if x - curr[-1] < tol:
+                    curr.append(x)
+                else:
+                    clusters.append(float(np.mean(curr)))
+                    curr = [x]
+            clusters.append(float(np.mean(curr)))
+            return np.array(clusters)
+
+        col_centers = cluster_1d(xs)
+        row_centers = cluster_1d(ys)
+
+        diffs_x = np.diff(col_centers) if len(col_centers) > 1 else np.array([median_r * 2.1])
+        diffs_y = np.diff(row_centers) if len(row_centers) > 1 else np.array([median_r * 2.1])
+        step = float(np.median(np.concatenate([diffs_x, diffs_y])))
+
+        # Anchor origin
+        min_cx = float(np.min(col_centers))
+        min_cy = float(np.min(row_centers))
+
+        # Check if first stone sits on row 1 instead of row 0 (detect top edge distance)
+        edge_top_dist = min_cy
+        edge_left_dist = min_cx
+        start_row_offset = 1 if edge_top_dist > step * 1.2 else 0
+        start_col_offset = 1 if edge_left_dist > step * 1.2 else 0
+
+        x0 = min_cx - start_col_offset * step
+        y0 = min_cy - start_row_offset * step
+
+        # 4. Map stones to 9x9 coordinates and check for move numbers (OCR)
+        reader = self.get_reader(self.use_gpu)
         initial_black = []
         initial_white = []
         solution_moves = []
 
-        for st in detected_stones:
-            # Map pixels to 9x9 grid
-            col = int(round(st["x"] / (w / 9.0)))
-            row = int(round(st["y"] / (h / 9.0)))
-            col = max(0, min(8, col))
-            row = max(0, min(8, row))
-            coord = (col, row)
-            if st["color"] == 'B':
-                initial_black.append(coord)
-            elif st["color"] == 'W':
-                initial_white.append(coord)
+        for color, cx, cy, cr in raw_detected:
+            col_idx = int(round((cx - x0) / step))
+            row_idx = int(round((cy - y0) / step))
+            col_idx = max(0, min(8, col_idx))
+            row_idx = max(0, min(8, row_idx))
+            coord = (col_idx, row_idx)
 
-        initial_black, initial_white, solution_moves = normalize_to_9x9(initial_black, initial_white, solution_moves)
+            # Check for move numbers inside stone
+            roi_r = int(cr * 0.6)
+            stone_roi = gray[max(0, cy - roi_r):min(rh, cy + roi_r), max(0, cx - roi_r):min(rw, cx + roi_r)]
+            move_num = None
+
+            if stone_roi.size > 0 and reader is not None:
+                if color == 'B':
+                    _, roi_bin = cv2.threshold(stone_roi, 160, 255, cv2.THRESH_BINARY)
+                else:
+                    _, roi_bin = cv2.threshold(stone_roi, 90, 255, cv2.THRESH_BINARY_INV)
+
+                try:
+                    ocr_res = reader.readtext(roi_bin)
+                    for _, text, conf in ocr_res:
+                        digits = re.findall(r'\d+', text)
+                        if digits and conf > 0.4:
+                            move_num = int(digits[0])
+                            break
+                except Exception:
+                    pass
+
+            if move_num is not None:
+                solution_moves.append((move_num, color, coord))
+            else:
+                if color == 'B':
+                    initial_black.append(coord)
+                else:
+                    initial_white.append(coord)
+
+        # Sort solution moves by step number
+        solution_moves.sort(key=lambda m: m[0])
+        clean_solution = [(m[1], m[2]) for m in solution_moves]
+
+        # Deduplicate
+        initial_black = sorted(list(set(initial_black)))
+        initial_white = sorted(list(set(initial_white)))
 
         return {
             "source_image": str(path),
             "board_size": 9,
             "initial_black": initial_black,
             "initial_white": initial_white,
-            "solution_moves": solution_moves,
-            "first_player": "B" if len(initial_black) >= len(initial_white) else "W",
+            "solution_moves": clean_solution,
+            "first_player": clean_solution[0][0] if clean_solution else ("B" if len(initial_black) >= len(initial_white) else "W"),
         }
 
     @staticmethod
@@ -369,34 +463,55 @@ class QuantumGoConverter:
 
         quantum_moves = []
         entanglement_graph = defaultdict(list)
+        occupied = set(black) | set(white)
 
-        # Convert the first solution move into a Quantum superposition move
-        if moves:
-            primary_move = moves[0]
-            color, (c1, r1) = primary_move
-
-            # Secondary coordinate: pick adjacent vacant liberty or alternative vital point
-            occupied = set(black) | set(white)
-            neighbors = [
+        # 1. Black Quantum Stone (BQ)
+        if black:
+            b_stone = max(black, key=lambda p: QuantumDifficultyAnalyzer._compute_stone_quantum_sensitivity(p, "B", black, white, moves)[0])
+            c1, r1 = b_stone
+            adj_b = [
                 (c1 + dc, r1 + dr)
                 for dc, dr in [(-1, 0), (1, 0), (0, -1), (0, 1), (1, 1), (-1, -1)]
                 if 0 <= c1 + dc < 9 and 0 <= r1 + dr < 9 and (c1 + dc, r1 + dr) not in occupied
             ]
-            c2, r2 = neighbors[0] if neighbors else (c1, (r1 + 1) % 9)
-
+            c2, r2 = adj_b[0] if adj_b else ((c1 + 1) % 9, r1)
             quantum_moves.append({
                 "move_index": 1,
-                "color": color,
+                "color": "B",
                 "type": "QUANTUM_PAIR",
                 "coord_a": coord_to_9x9_str(c1, r1),
                 "coord_b": coord_to_9x9_str(c2, r2),
                 "coord_a_sgf": coord_to_sgf(c1, r1),
                 "coord_b_sgf": coord_to_sgf(c2, r2),
-                "amplitude_a": 0.7071,  # 1/sqrt(2)
+                "amplitude_a": 0.7071,
                 "amplitude_b": 0.7071,
-                "description": f"Quantum superposed move at {coord_to_9x9_str(c1, r1)} and {coord_to_9x9_str(c2, r2)}"
+                "description": f"Black Quantum stone at {coord_to_9x9_str(c1, r1)} and {coord_to_9x9_str(c2, r2)}"
             })
             entanglement_graph[coord_to_9x9_str(c1, r1)].append(coord_to_9x9_str(c2, r2))
+
+        # 2. White Quantum Stone (WQ)
+        if white:
+            w_stone = max(white, key=lambda p: QuantumDifficultyAnalyzer._compute_stone_quantum_sensitivity(p, "W", white, black, moves)[0])
+            wc1, wr1 = w_stone
+            adj_w = [
+                (wc1 + dc, wr1 + dr)
+                for dc, dr in [(-1, 0), (1, 0), (0, -1), (0, 1), (1, 1), (-1, -1)]
+                if 0 <= wc1 + dc < 9 and 0 <= wr1 + dr < 9 and (wc1 + dc, wr1 + dr) not in occupied and (wc1 + dc, wr1 + dr) != (c2, r2)
+            ]
+            wc2, wr2 = adj_w[0] if adj_w else (wc1, (wr1 + 1) % 9)
+            quantum_moves.append({
+                "move_index": 2,
+                "color": "W",
+                "type": "QUANTUM_PAIR",
+                "coord_a": coord_to_9x9_str(wc1, wr1),
+                "coord_b": coord_to_9x9_str(wc2, wr2),
+                "coord_a_sgf": coord_to_sgf(wc1, wr1),
+                "coord_b_sgf": coord_to_sgf(wc2, wr2),
+                "amplitude_a": 0.7071,
+                "amplitude_b": 0.7071,
+                "description": f"White Quantum stone at {coord_to_9x9_str(wc1, wr1)} and {coord_to_9x9_str(wc2, wr2)}"
+            })
+            entanglement_graph[coord_to_9x9_str(wc1, wr1)].append(coord_to_9x9_str(wc2, wr2))
 
         return {
             "format": "QuantumGo-9x9-v1.0",

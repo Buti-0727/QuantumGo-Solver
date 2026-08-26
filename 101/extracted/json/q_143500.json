@@ -1,0 +1,1523 @@
+{
+  "id": 161205,
+  "qid": 161205,
+  "publicid": 143500,
+  "orgid": 0,
+  "levelname": "5D",
+  "min_levelname": "",
+  "max_levelname": "",
+  "qtype": 1,
+  "qtypename": "死活题",
+  "status": 2,
+  "userid": 9252,
+  "username": "方块A",
+  "hasdia": true,
+  "dias": [],
+  "attr_type": 0,
+  "layoutnumber": 1,
+  "issingle": true,
+  "enable_answer": true,
+  "sms_count": 0,
+  "edit_count": 0,
+  "islei": false,
+  "leiid": 0,
+  "taotaiid": 0,
+  "bookinfos": [
+    {
+      "bookname": "诘棋新作",
+      "bookid": 28396,
+      "pinyin": "",
+      "nodename": "根目录",
+      "bookurl": 28396
+    },
+    {
+      "bookname": "诘棋名家专著",
+      "bookid": 201,
+      "pinyin": "qiantian",
+      "nodename": "孙志刚 诘棋新作",
+      "bookurl": "qiantian"
+    }
+  ],
+  "specs": [],
+  "taskresult": {
+    "ok_nums": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      2,
+      3,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      2,
+      2,
+      3,
+      7,
+      11,
+      21,
+      19,
+      52,
+      53,
+      90,
+      112,
+      101,
+      178,
+      119
+    ],
+    "fail_nums": [
+      1,
+      2,
+      2,
+      2,
+      1,
+      4,
+      5,
+      9,
+      8,
+      9,
+      5,
+      8,
+      12,
+      9,
+      3,
+      8,
+      12,
+      11,
+      14,
+      21,
+      17,
+      32,
+      43,
+      119,
+      74,
+      74,
+      72,
+      54,
+      65,
+      32
+    ],
+    "ok_total": 787,
+    "fail_total": 728
+  },
+  "xuandians": [],
+  "xds": [],
+  "options": [],
+  "vote": 4.5,
+  "name": "96 - 2",
+  "title": "孙志刚三段创作 难度：C",
+  "c": "amsTUUEQHRATUEEQHRATUUAQHRATU0AQHRATV0MQHRATUUMQHRATU0MQHRATV10QHRATVl0QHRATVFwQHRATUVwQHRATVF8QHRATUV8QHRATVF4QHRATUV4QHRATV1kQHRATU1kQHRATV1gQHRATVlgQHRATUVgQHRATUFgQbBwRaRBQQxIdEhBQQBIdEhBQQRIdEhBRXhIdEhBWXxIdEhBQXxIdEhBXXBIdEhBWXRIdEhBQXRIdEhBWWhIdEhBRWhIdEhBQWhJsbw==",
+  "r": 1,
+  "prepos": [
+    [
+      "sc",
+      "sb",
+      "rc",
+      "ra",
+      "qe"
+    ],
+    [
+      "rb",
+      "qb",
+      "pb"
+    ]
+  ],
+  "xv": 8,
+  "points": [],
+  "lu": 19,
+  "blackfirst": true,
+  "is_share": true,
+  "answers": [
+    {
+      "id": 3391565,
+      "st": 1,
+      "ty": 1,
+      "nu": 9,
+      "username": "wx_46137879119113",
+      "userid": 2560452,
+      "pts": [
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "pc",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787473360
+    },
+    {
+      "id": 3393497,
+      "st": 1,
+      "ty": 1,
+      "nu": 15,
+      "username": "a_491300654193319",
+      "userid": 2453489,
+      "pts": [
+        {
+          "p": "oa",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787550629
+    },
+    {
+      "id": 3391568,
+      "st": 1,
+      "ty": 1,
+      "nu": 10,
+      "username": "wx_46137879119113",
+      "userid": 2560452,
+      "pts": [
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "pc",
+          "c": ""
+        },
+        {
+          "p": "pd",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "ne",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787473464
+    },
+    {
+      "id": 3391571,
+      "st": 1,
+      "ty": 1,
+      "nu": 11,
+      "username": "wx_46137879119113",
+      "userid": 2560452,
+      "pts": [
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "pc",
+          "c": ""
+        },
+        {
+          "p": "sa",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "ra",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "oc",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "qa",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "ja",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 2,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787473580
+    },
+    {
+      "id": 858907,
+      "st": 2,
+      "ty": 1,
+      "nu": 1,
+      "username": "方块A",
+      "userid": 9316,
+      "pts": [
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "pc",
+          "c": ""
+        },
+        {
+          "p": "sa",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 56,
+      "change_count": 0,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1566343135
+    },
+    {
+      "id": 3390988,
+      "st": 1,
+      "ty": 2,
+      "nu": 8,
+      "username": "孙浩博1",
+      "userid": 1211616,
+      "pts": [
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787454273
+    },
+    {
+      "id": 858908,
+      "st": 2,
+      "ty": 2,
+      "nu": 2,
+      "username": "方块A",
+      "userid": 9316,
+      "pts": [
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "pc",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "sa",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "le",
+          "c": ""
+        },
+        {
+          "p": "ja",
+          "c": ""
+        },
+        {
+          "p": "ne",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 1,
+      "change_count": 51,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1566343170
+    },
+    {
+      "id": 3392315,
+      "st": 1,
+      "ty": 2,
+      "nu": 12,
+      "username": "a_3916827192215",
+      "userid": 2546808,
+      "pts": [
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "pc",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "sa",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "le",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 1,
+      "bad_count": 0,
+      "error_count": 0,
+      "created": 1787492731
+    },
+    {
+      "id": 858909,
+      "st": 2,
+      "ty": 3,
+      "nu": 3,
+      "username": "方块A",
+      "userid": 9316,
+      "pts": [
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        },
+        {
+          "p": "pc",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "mc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 51,
+      "error_count": 0,
+      "created": 1566343221
+    },
+    {
+      "id": 870383,
+      "st": 2,
+      "ty": 3,
+      "nu": 4,
+      "username": "清一董睿楠",
+      "userid": 287348,
+      "pts": [
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "pc",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "sa",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "ra",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 53,
+      "error_count": 0,
+      "created": 1567504750
+    },
+    {
+      "id": 1378760,
+      "st": 2,
+      "ty": 3,
+      "nu": 6,
+      "username": "李硕澄19",
+      "userid": 553745,
+      "pts": [
+        {
+          "p": "pc",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 52,
+      "error_count": 0,
+      "created": 1614494559
+    },
+    {
+      "id": 3392378,
+      "st": 1,
+      "ty": 3,
+      "nu": 13,
+      "username": "海海公主",
+      "userid": 2451403,
+      "pts": [
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "pc",
+          "c": ""
+        },
+        {
+          "p": "ob",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "sa",
+          "c": ""
+        },
+        {
+          "p": "la",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        },
+        {
+          "p": "na",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787496925
+    },
+    {
+      "id": 3392388,
+      "st": 1,
+      "ty": 3,
+      "nu": 14,
+      "username": "w_491390136194415",
+      "userid": 2576328,
+      "pts": [
+        {
+          "p": "oa",
+          "c": ""
+        },
+        {
+          "p": "pa",
+          "c": ""
+        },
+        {
+          "p": "mb",
+          "c": ""
+        },
+        {
+          "p": "ma",
+          "c": ""
+        },
+        {
+          "p": "pc",
+          "c": ""
+        },
+        {
+          "p": "md",
+          "c": ""
+        },
+        {
+          "p": "mc",
+          "c": ""
+        }
+      ],
+      "v": 0,
+      "ok_count": 0,
+      "change_count": 0,
+      "bad_count": 1,
+      "error_count": 0,
+      "created": 1787497906
+    }
+  ],
+  "ans_count": 13,
+  "andata": {
+    "0": {
+      "subs": [
+        1,
+        14,
+        30
+      ],
+      "p": 0,
+      "id": 0,
+      "aids": [],
+      "pt": "",
+      "o": 0,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "1": {
+      "subs": [
+        2
+      ],
+      "p": 0,
+      "id": 1,
+      "aids": [
+        858907,
+        858908
+      ],
+      "pt": "pa",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "2": {
+      "subs": [
+        3
+      ],
+      "p": 1,
+      "id": 2,
+      "aids": [
+        858907,
+        858908
+      ],
+      "pt": "oa",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "3": {
+      "subs": [
+        4,
+        6
+      ],
+      "p": 2,
+      "id": 3,
+      "aids": [
+        858907,
+        858908
+      ],
+      "pt": "pc",
+      "o": 1,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "4": {
+      "subs": [
+        5
+      ],
+      "p": 3,
+      "id": 4,
+      "aids": [
+        858907
+      ],
+      "pt": "sa",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "5": {
+      "subs": [],
+      "p": 4,
+      "id": 5,
+      "aids": [
+        858907
+      ],
+      "pt": "ob",
+      "o": 1,
+      "c": 0,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "6": {
+      "subs": [
+        7
+      ],
+      "p": 3,
+      "id": 6,
+      "aids": [
+        858908
+      ],
+      "pt": "ob",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "7": {
+      "subs": [
+        8
+      ],
+      "p": 6,
+      "id": 7,
+      "aids": [
+        858908
+      ],
+      "pt": "mb",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "8": {
+      "subs": [
+        9
+      ],
+      "p": 7,
+      "id": 8,
+      "aids": [
+        858908
+      ],
+      "pt": "sa",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "9": {
+      "subs": [
+        10
+      ],
+      "p": 8,
+      "id": 9,
+      "aids": [
+        858908
+      ],
+      "pt": "ma",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "10": {
+      "subs": [
+        11
+      ],
+      "p": 9,
+      "id": 10,
+      "aids": [
+        858908
+      ],
+      "pt": "la",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "11": {
+      "subs": [
+        12
+      ],
+      "p": 10,
+      "id": 11,
+      "aids": [
+        858908
+      ],
+      "pt": "le",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "12": {
+      "subs": [
+        13
+      ],
+      "p": 11,
+      "id": 12,
+      "aids": [
+        858908
+      ],
+      "pt": "ja",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "13": {
+      "subs": [],
+      "p": 12,
+      "id": 13,
+      "aids": [
+        858908
+      ],
+      "pt": "ne",
+      "o": 0,
+      "c": 1,
+      "f": 0,
+      "u": 0,
+      "tip": ""
+    },
+    "14": {
+      "subs": [
+        15
+      ],
+      "p": 0,
+      "id": 14,
+      "aids": [
+        858909,
+        870383
+      ],
+      "pt": "oa",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "15": {
+      "subs": [
+        16,
+        22
+      ],
+      "p": 14,
+      "id": 15,
+      "aids": [
+        858909,
+        870383
+      ],
+      "pt": "pa",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "16": {
+      "subs": [
+        17
+      ],
+      "p": 15,
+      "id": 16,
+      "aids": [
+        858909
+      ],
+      "pt": "mb",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "17": {
+      "subs": [
+        18
+      ],
+      "p": 16,
+      "id": 17,
+      "aids": [
+        858909
+      ],
+      "pt": "ma",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "18": {
+      "subs": [
+        19
+      ],
+      "p": 17,
+      "id": 18,
+      "aids": [
+        858909
+      ],
+      "pt": "pc",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "19": {
+      "subs": [
+        20
+      ],
+      "p": 18,
+      "id": 19,
+      "aids": [
+        858909
+      ],
+      "pt": "md",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "20": {
+      "subs": [
+        21
+      ],
+      "p": 19,
+      "id": 20,
+      "aids": [
+        858909
+      ],
+      "pt": "ob",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "21": {
+      "subs": [],
+      "p": 20,
+      "id": 21,
+      "aids": [
+        858909
+      ],
+      "pt": "mc",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "22": {
+      "subs": [
+        23
+      ],
+      "p": 15,
+      "id": 22,
+      "aids": [
+        870383
+      ],
+      "pt": "pc",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "23": {
+      "subs": [
+        24
+      ],
+      "p": 22,
+      "id": 23,
+      "aids": [
+        870383
+      ],
+      "pt": "ob",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "24": {
+      "subs": [
+        25
+      ],
+      "p": 23,
+      "id": 24,
+      "aids": [
+        870383
+      ],
+      "pt": "mb",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "25": {
+      "subs": [
+        26
+      ],
+      "p": 24,
+      "id": 25,
+      "aids": [
+        870383
+      ],
+      "pt": "sa",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "26": {
+      "subs": [
+        27
+      ],
+      "p": 25,
+      "id": 26,
+      "aids": [
+        870383
+      ],
+      "pt": "ma",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "27": {
+      "subs": [
+        28
+      ],
+      "p": 26,
+      "id": 27,
+      "aids": [
+        870383
+      ],
+      "pt": "na",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "28": {
+      "subs": [
+        29
+      ],
+      "p": 27,
+      "id": 28,
+      "aids": [
+        870383
+      ],
+      "pt": "la",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "29": {
+      "subs": [],
+      "p": 28,
+      "id": 29,
+      "aids": [
+        870383
+      ],
+      "pt": "ra",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "30": {
+      "subs": [
+        31
+      ],
+      "p": 0,
+      "id": 30,
+      "aids": [
+        1378760
+      ],
+      "pt": "pc",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "31": {
+      "subs": [
+        32
+      ],
+      "p": 30,
+      "id": 31,
+      "aids": [
+        1378760
+      ],
+      "pt": "ob",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "32": {
+      "subs": [
+        33
+      ],
+      "p": 31,
+      "id": 32,
+      "aids": [
+        1378760
+      ],
+      "pt": "pa",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    },
+    "33": {
+      "subs": [],
+      "p": 32,
+      "id": 33,
+      "aids": [
+        1378760
+      ],
+      "pt": "mb",
+      "o": 0,
+      "c": 0,
+      "f": 1,
+      "u": 0,
+      "tip": ""
+    }
+  },
+  "disuse": 1,
+  "sx": 12,
+  "sy": 8,
+  "pos_x1": 7,
+  "pos_x2": 18,
+  "pos_y1": 0,
+  "pos_y2": 7,
+  "ineb": false,
+  "extendwidth": 0,
+  "signs": [],
+  "luozis": [],
+  "isguess": false,
+  "objtype": "timu",
+  "ru": 2,
+  "f": false,
+  "showai": true,
+  "content": "amsTWVcRHRATWVERHRATWFIRHRATX1ARHRATXlARHRATWFYRHRATQlIRHRATXFcRHRATWVARHRATQFARHRATXlURHRATQVIRHRATWVYRHRATXFYRHRATXVARHRATQFERHRATQlYRHRATXVURHRATX1URHRATQlARHRATQVARbBwRaBFcUhIdExFBUxIdExFeVBIdExFYUxIdExFdVRIdExFCUxIdExFfUxIdExFdUxIdExFYVRIdExFYUhIdExFfVRIdExFDUxJsbg==",
+  "ok_answers": "amsTQ1IRHRATXFIRHRATQ1ARHRATQFIRHRATXFERbG0=",
+  "change_answers": "amsTQ1IRHRATXFIRHRATQ1ARHRATXFERHRATXlERHRATQFIRHRATXlIRHRATX1IRHRATX1YRHRATWVIRHRATXVYRbG0=",
+  "fail_answers": "amsTXFIRHRATQ1IRHRATXlERHRATXlIRHRATQ1ARHRATXlcRHRATXFERHRATXlARbBwRaBFcUBIdExFDUBIdExFDUhIdExFcUxIdExFeUxIdExFAUBIdExFeUBIdExFdUBIdExFfUBIdExFBUBJsHxNoE0BSER8TE19TER8TE0BQER8TE11TEW5u",
+  "level": 500,
+  "desc": "孙志刚三段创作 难度：C",
+  "yes_count": 787,
+  "no_count": 728,
+  "pos": [],
+  "attrtype": 0,
+  "showrettip": false,
+  "is_public": true,
+  "inerror": false,
+  "qshids": [],
+  "myan": null,
+  "hasbook": false,
+  "hasspec": false,
+  "myoper": {
+    "mystar": false,
+    "mytags": [],
+    "tags": []
+  },
+  "candisuseall": false,
+  "userlevel": 0,
+  "clicktime": 0,
+  "xz": 0,
+  "musthide": 0,
+  "hidetime": 5,
+  "comments": [
+    {
+      "id": 894783,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "NDSZLG",
+      "userid": 661571,
+      "headpath": "headicon_128.jpg",
+      "updated": 1601012546,
+      "showcontent": "这个题做过的难道 没人质疑吗。。。"
+    },
+    {
+      "id": 894786,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "刘泊含2019",
+      "userid": 401621,
+      "headpath": "head/2021/7/16/401621_87371_28_35.png",
+      "updated": 1601013076,
+      "showcontent": "<a href=\"/u/NDSZLG/\" target=\"_blank\">@NDSZLG</a>，质疑啥。。。"
+    },
+    {
+      "id": 1624958,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "北京沈行之",
+      "userid": 100404,
+      "headpath": "headicon_128.jpg",
+      "updated": 1693741813,
+      "showcontent": "这题出得不太好"
+    },
+    {
+      "id": 1688293,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "丁行知",
+      "userid": 1179618,
+      "headpath": "headicon_128.jpg",
+      "updated": 1703304708,
+      "showcontent": "此题不属于5D了"
+    },
+    {
+      "id": 2200606,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "岑来19",
+      "userid": 1156892,
+      "headpath": "head/2025/9/27/1108360_87916_23_41.png",
+      "updated": 1754301238,
+      "showcontent": "这题诗人啊"
+    },
+    {
+      "id": 2507859,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "晶莹剔透",
+      "userid": 1192004,
+      "headpath": "head/2026/1/22/1141834_12620_2_53.png",
+      "updated": 1774437538,
+      "showcontent": "楼上，这题是道题，不是人。【杠精】"
+    },
+    {
+      "id": 2753239,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "喜欢天然",
+      "userid": 2110797,
+      "headpath": "head/2026/8/25/2003787_56606_5_44.png",
+      "updated": 1787449388,
+      "showcontent": "超简单，做错了3次才做对，原来这手棋其实是打劫"
+    },
+    {
+      "id": 2753438,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "wx_579717901936",
+      "userid": 1968132,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787453491,
+      "showcontent": "难"
+    },
+    {
+      "id": 2753556,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "梦幻帝王",
+      "userid": 759880,
+      "headpath": "head/2026/8/21/734667_66709_40_11.png",
+      "updated": 1787457019,
+      "showcontent": "这道题难度居然只被评为C....我还有很长的路要走"
+    },
+    {
+      "id": 2753945,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "依旧老叟戏顽童",
+      "userid": 2483709,
+      "headpath": "head/2026/8/18/2364581_79203_52_10.png",
+      "updated": 1787467307,
+      "showcontent": "好难！"
+    },
+    {
+      "id": 2753946,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "依旧老叟戏顽童",
+      "userid": 2483709,
+      "headpath": "head/2026/8/18/2364581_79203_52_10.png",
+      "updated": 1787467330,
+      "showcontent": "都吃掉一块棋了，还不对"
+    },
+    {
+      "id": 2754252,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "castle526",
+      "userid": 601701,
+      "headpath": "head/2026/6/30/583687_75385_53_24.png",
+      "updated": 1787476086,
+      "showcontent": "不会"
+    },
+    {
+      "id": 2754476,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "w_5913467191905",
+      "userid": 2514905,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787480614,
+      "showcontent": "拿下"
+    },
+    {
+      "id": 2754526,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "王嘉烨",
+      "userid": 2508908,
+      "headpath": "userhead/6.jpg",
+      "updated": 1787481949,
+      "showcontent": "直接捉虾！"
+    },
+    {
+      "id": 2755002,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "w_491390136194415",
+      "userid": 2576328,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787497490,
+      "showcontent": "？？"
+    },
+    {
+      "id": 2755003,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "w_491390136194415",
+      "userid": 2576328,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787497508,
+      "showcontent": "？？？？"
+    },
+    {
+      "id": 2755010,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "mxzy",
+      "userid": 1689113,
+      "headpath": "headicon_128.jpg",
+      "updated": 1787497736,
+      "showcontent": "稳健地吃个尾巴都不许，悲"
+    },
+    {
+      "id": 2759778,
+      "dou": 0,
+      "doustatus": 0,
+      "douname": "",
+      "username": "喜欢天然",
+      "userid": 2110797,
+      "headpath": "head/2026/8/25/2003787_56606_5_44.png",
+      "updated": 1787665473,
+      "showcontent": "我直接拿下，这题做不出来的人段位就是12K"
+    }
+  ]
+}
