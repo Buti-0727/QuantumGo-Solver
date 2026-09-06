@@ -12,6 +12,7 @@ set(TEST_SRCS
     test_ld.cpp
     test_rzone.cpp
     test_games_eval.cpp
+    test_quantum_switch.cpp
 )
 
 add_executable(qgo_tests ${TEST_SRCS})

@@ -220,29 +220,39 @@ HTML_PAGE = """<!DOCTYPE html>
           </div>
         </div>
 
-        <!-- Step 4 Card -->
+        <!-- Step 4 Card: 2-Stone Switch Difficulty Optimization -->
         <div class="card" style="margin-top: 16px;">
-          <h2>4. Maximum Quantum Difficulty Sensitivity</h2>
+          <h2>4. 2-Stone Quantum Switch Optimization</h2>
           
-          <div class="metric-row">
-            <span>Most Sensitive Black Stone</span>
-            <span class="metric-val" id="diffBlack">-</span>
+          <div class="q-piece-box purple-border" id="optSwitchBox" style="margin-bottom: 12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <strong style="color: #38bdf8;">🏆 Optimal 2-Stone Quantum Switch</strong>
+              <span class="badge badge-purple" id="optSwitchScore">Score: -</span>
+            </div>
+            <div style="margin-top: 6px; font-size: 0.9rem;">
+              <span style="color: #c084fc; font-weight: 600;" id="optSwitchBlack">Black: -</span> &nbsp;|&nbsp; 
+              <span style="color: #f59e0b; font-weight: 600;" id="optSwitchWhite">White: -</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;" id="optSwitchRat">Combinatorial optimization across all Black x White stone pairs</p>
+            <div style="font-size: 0.78rem; color: #34d399; margin-top: 4px;" id="optSwitchMult">Estimated Search Node Multiplier: -</div>
           </div>
-          <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px;" id="diffBlackRat">-</div>
-          
-          <div class="metric-row">
-            <span>Most Sensitive White Stone</span>
-            <span class="metric-val" id="diffWhite">-</span>
-          </div>
-          <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px;" id="diffWhiteRat">-</div>
-          
-          <div class="metric-row">
-            <span>Highest Branching Solution Move</span>
-            <span class="metric-val" id="diffMove">-</span>
-          </div>
-          <div class="metric-row">
-            <span>Quantum Complexity Index</span>
-            <span class="metric-val" id="quantumIndex">-</span>
+
+          <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 6px;">Top-5 Hardest Stone Switch Pairs</div>
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.78rem; text-align: left;">
+              <thead>
+                <tr style="border-bottom: 1px solid var(--card-border); color: var(--text-muted);">
+                  <th style="padding: 4px;">#</th>
+                  <th style="padding: 4px;">Black</th>
+                  <th style="padding: 4px;">White</th>
+                  <th style="padding: 4px;">Score</th>
+                  <th style="padding: 4px;">Expansion</th>
+                </tr>
+              </thead>
+              <tbody id="switchLeaderboard">
+                <tr><td colspan="5" style="padding: 8px; text-align: center; color: var(--text-muted);">Load a problem to evaluate pairs</td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -388,22 +398,31 @@ HTML_PAGE = """<!DOCTYPE html>
         document.getElementById('wqDesc').innerText = "None detected";
       }
 
-      // Difficulty stones
-      if (diff.most_difficult_black_stone) {
-        const d = diff.most_difficult_black_stone;
-        document.getElementById('diffBlack').innerText = `${d.coord_9x9} (Sensitivity: ${d.difficulty_score})`;
-        document.getElementById('diffBlackRat').innerText = d.rationale;
+      // 2-Stone Switch Optimization
+      if (diff.optimal_2stone_switch) {
+        const opt = diff.optimal_2stone_switch;
+        document.getElementById('optSwitchScore').innerText = `Score: ${opt.difficulty_score}`;
+        document.getElementById('optSwitchBlack').innerText = `Black: ${opt.black_stone.coord_9x9} ➔ ${opt.black_stone.partner_9x9}`;
+        document.getElementById('optSwitchWhite').innerText = `White: ${opt.white_stone.coord_9x9} ➔ ${opt.white_stone.partner_9x9}`;
+        document.getElementById('optSwitchRat').innerText = opt.rationale;
+        document.getElementById('optSwitchMult').innerText = `Estimated Search Expansion: ${opt.metrics.estimated_node_multiplier}× (Nodes: ~${opt.metrics.search_expansion})`;
       }
-      if (diff.most_difficult_white_stone) {
-        const d = diff.most_difficult_white_stone;
-        document.getElementById('diffWhite').innerText = `${d.coord_9x9} (Sensitivity: ${d.difficulty_score})`;
-        document.getElementById('diffWhiteRat').innerText = d.rationale;
+
+      // Leaderboard rows
+      const tbody = document.getElementById('switchLeaderboard');
+      if (diff.top_switch_leaderboard && diff.top_switch_leaderboard.length > 0) {
+        tbody.innerHTML = diff.top_switch_leaderboard.map((item, idx) => `
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer;" onclick="selectSwitchPair('${item.black_stone.coord_9x9}', '${item.white_stone.coord_9x9}')" title="${item.rationale}">
+            <td style="padding: 6px 4px; font-weight: 600; color: var(--accent);">#${idx + 1}</td>
+            <td style="padding: 6px 4px; color: #c084fc;">${item.black_stone.coord_9x9}</td>
+            <td style="padding: 6px 4px; color: #f59e0b;">${item.white_stone.coord_9x9}</td>
+            <td style="padding: 6px 4px; font-weight: 600;">${item.difficulty_score}</td>
+            <td style="padding: 6px 4px; color: #34d399;">${item.metrics.estimated_node_multiplier}×</td>
+          </tr>
+        `).join('');
+      } else {
+        tbody.innerHTML = '<tr><td colspan="5" style="padding: 8px; text-align: center; color: var(--text-muted);">No switch data</td></tr>';
       }
-      if (diff.most_difficult_solution_move) {
-        const m = diff.most_difficult_solution_move;
-        document.getElementById('diffMove').innerText = `Step ${m.move_index} (${m.color_name} at ${m.coord_9x9})`;
-      }
-      document.getElementById('quantumIndex').innerText = diff.quantum_complexity_index || "-";
 
       updateCodeView();
       drawBoard9x9();
@@ -611,6 +630,38 @@ HTML_PAGE = """<!DOCTYPE html>
       showQuantumOverlay = !showQuantumOverlay;
       document.getElementById('qModeBtn').innerText = showQuantumOverlay ? "🔮 Quantum: ON" : "⚪ Classical: ON";
       drawBoard9x9();
+    }
+
+    function selectSwitchPair(bCoord, wCoord) {
+      if (!currentResult || !currentResult.difficulty_analysis) return;
+      const diff = currentResult.difficulty_analysis;
+      const pair = (diff.top_switch_leaderboard || []).find(
+        p => p.black_stone.coord_9x9 === bCoord && p.white_stone.coord_9x9 === wCoord
+      );
+      if (pair) {
+        currentResult.quantum_version.black_quantum_piece = {
+          color: "B",
+          primary_coord_9x9: pair.black_stone.coord_9x9,
+          secondary_coord_9x9: pair.black_stone.partner_9x9,
+          primary_xy: pair.black_stone.xy,
+          secondary_xy: pair.black_stone.partner_xy,
+          state_ket: `|${pair.black_stone.coord_9x9}⟩ + |${pair.black_stone.partner_9x9}⟩`,
+          probability_split: "50% / 50%"
+        };
+        currentResult.quantum_version.white_quantum_piece = {
+          color: "W",
+          primary_coord_9x9: pair.white_stone.coord_9x9,
+          secondary_coord_9x9: pair.white_stone.partner_9x9,
+          primary_xy: pair.white_stone.xy,
+          secondary_xy: pair.white_stone.partner_xy,
+          state_ket: `|${pair.white_stone.coord_9x9}⟩ + |${pair.white_stone.partner_9x9}⟩`,
+          probability_split: "50% / 50%"
+        };
+        showQuantumOverlay = true;
+        document.getElementById('qModeBtn').innerText = "🔮 Quantum: ON";
+        drawBoard9x9();
+        showToast(`Selected Quantum Switch: Black ${bCoord} & White ${wCoord} (Score: ${pair.difficulty_score})`);
+      }
     }
 
     function highlightPiece(color) {

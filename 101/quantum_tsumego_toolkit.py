@@ -633,16 +633,27 @@ class QuantumDifficultyAnalyzer:
         most_difficult_white = white_candidates[0] if white_candidates else None
         most_difficult_move = move_candidates[0] if move_candidates else None
 
+        # Run exhaustive 2-stone switch combinatorial optimizer
+        from quantum_switch_tester import QuantumSwitchOptimizer
+        optimizer = QuantumSwitchOptimizer(problem, board_size=9)
+        pair_eval = optimizer.evaluate_all()
+
         return {
             "most_difficult_black_stone": most_difficult_black,
             "most_difficult_white_stone": most_difficult_white,
             "most_difficult_solution_move": most_difficult_move,
             "top_black_candidates": black_candidates[:3],
             "top_white_candidates": white_candidates[:3],
+            "optimal_2stone_switch": pair_eval.get("top_switch"),
+            "top_switch_leaderboard": pair_eval.get("leaderboard", []),
+            "pair_matrix": {
+                "black_labels": pair_eval.get("black_labels", []),
+                "white_labels": pair_eval.get("white_labels", []),
+                "matrix": pair_eval.get("difficulty_matrix", []),
+            },
             "quantum_complexity_index": (
-                (most_difficult_black["difficulty_score"] if most_difficult_black else 0) +
-                (most_difficult_white["difficulty_score"] if most_difficult_white else 0)
-            ) / 2.0,
+                (pair_eval["top_switch"]["difficulty_score"] if pair_eval.get("top_switch") else 0)
+            ),
         }
 
     @staticmethod

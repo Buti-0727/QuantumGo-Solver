@@ -42,22 +42,28 @@ def main():
         diff = res["difficulty_analysis"]
         sol = res["solution_trace"]
 
-        mb = diff["most_difficult_black_stone"]
-        mw = diff["most_difficult_white_stone"]
-        mm = diff["most_difficult_solution_move"]
+        mb = diff.get("most_difficult_black_stone")
+        mw = diff.get("most_difficult_white_stone")
+        mm = diff.get("most_difficult_solution_move")
+        opt2 = diff.get("optimal_2stone_switch")
 
         sections.append(f"## 题目 {qid} (截图编号: {label}) — {pdata['first_player']}先\n")
         sections.append(f"- **【B. 战术模式】**: `{pat['pattern_name']}` ({pat['region']})\n")
-        sections.append(f"  - **要害急所**: `{', '.join(pat['vital_points'])}`\n")
+        vital_pts = pat.get('vital_points_9x9', pat.get('vital_points', []))
+        sections.append(f"  - **要害急所**: `{', '.join(vital_pts)}`\n")
         sections.append(f"  - **模式说明**: {pat['explanation']}\n")
-        sections.append(f"- **【C. 量子围棋转换】**: 首手量子对 `{qver['quantum_moves'][0]['coord_a']}` 与 `{qver['quantum_moves'][0]['coord_b']}` 形成叠加态\n")
-        sections.append(f"- **【D. 最大量子难度分析】**:\n")
-        if mb:
-            sections.append(f"  - **黑棋最具难度量子化棋子**: `{mb['coord']}` (难度分: {mb['difficulty_score']} - {mb['rationale']})\n")
-        if mw:
-            sections.append(f"  - **白棋最具难度量子化棋子**: `{mw['coord']}` (难度分: {mw['difficulty_score']} - {mw['rationale']})\n")
+        sections.append(f"- **【C. 量子围棋转换】**: 首手量子对 `{qver['quantum_moves'][0]['coord_a'] if qver.get('quantum_moves') else '??'}` 与 `{qver['quantum_moves'][0]['coord_b'] if qver.get('quantum_moves') else '??'}` 形成叠加态\n")
+        sections.append(f"- **【D. 最大量子难度分析 (2-Stone Switch Optimization)】**:\n")
+        if opt2:
+            b_str = opt2['black_stone']['coord_9x9']
+            w_str = opt2['white_stone']['coord_9x9']
+            sections.append(f"  - 🏆 **最难 2-Stone 量子切换组合**: 黑子 `{b_str}` + 白子 `{w_str}` (难度总分: **`{opt2['difficulty_score']}`**, 搜索树膨胀: **`{opt2['metrics']['estimated_node_multiplier']}×`**)\n")
+            sections.append(f"  - **战术机理**: {opt2['rationale']}\n")
+        elif mb and mw:
+            sections.append(f"  - **黑棋最具难度棋子**: `{mb.get('coord_9x9', mb.get('coord', '??'))}` (难度分: {mb.get('difficulty_score')})\n")
+            sections.append(f"  - **白棋最具难度棋子**: `{mw.get('coord_9x9', mw.get('coord', '??'))}` (难度分: {mw.get('difficulty_score')})\n")
         if mm:
-            sections.append(f"  - **最具分支难度的解题手**: 第 {mm['move_index']} 手 `{mm['coord']}` ({mm['impact']})\n")
+            sections.append(f"  - **最具分支难度的解题手**: 第 {mm['move_index']} 手 `{mm.get('coord_9x9', mm.get('coord', '??'))}` ({mm['impact']})\n")
         sections.append(f"- **【E. 解题与验证】**: {sol['status_text']}，共 {sol['total_steps']} 手\n")
         sections.append("```text\n")
         sections.append(sol["final_board_ascii"])
