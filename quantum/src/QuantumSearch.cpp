@@ -55,53 +55,53 @@ LDResult QuantumSearch::search(QuantumBoardState& state,
     // Generate candidates
     auto candidates = generateCandidates(state, rzone);
 
-    LDResult result = isAttacker ? LDResult::ALIVE : LDResult::DEAD;
-    // Attacker (OR node): wants DEAD — succeeds if ANY child is DEAD
-    // Defender (AND node): wants ALIVE — succeeds if ALL children are ALIVE
-
+    LDResult result = LDResult::UNKNOWN;
     QuantumUndoRecord rec;
-    std::vector<QuantumMove> childPv;
+    bool allOpponentWins = true;
 
     for (const auto& move : candidates) {
         QuantumCapture::applyMove(state, move, rec);
-        // Update target after move (remove captured target stones)
-        QuantumTarget updTarget = target;
-        updTarget.update(state);
 
         std::vector<QuantumMove> localPv;
-        LDResult childResult = search(state, updTarget, rzone, depth - 1,
+        LDResult childResult = search(state, target, rzone, depth - 1,
                                       !isAttacker, localPv);
         QuantumUndo::undo(state, rec);
         rec = {};  // clear for next iteration
 
         if (isAttacker) {
-            // OR node: attacker wants DEAD
+            // Attacker wants DEAD
             if (childResult == LDResult::DEAD) {
                 result = LDResult::DEAD;
                 pv.clear();
                 pv.push_back(move);
                 pv.insert(pv.end(), localPv.begin(), localPv.end());
+                allOpponentWins = false;
                 break;  // found a kill — stop
+            } else if (childResult != LDResult::ALIVE) {
+                allOpponentWins = false;
             }
         } else {
-            // AND node: defender wants ALIVE
+            // Defender wants ALIVE
             if (childResult == LDResult::ALIVE) {
                 result = LDResult::ALIVE;
                 pv.clear();
                 pv.push_back(move);
                 pv.insert(pv.end(), localPv.begin(), localPv.end());
-                // Continue to verify all moves lead to ALIVE? For correctness,
-                // we need the defender to survive EVERY attacker response.
-                // In AND/OR: defender succeeds if ONE defender move forces life.
-                break;
+                allOpponentWins = false;
+                break;  // found a living defense — stop
+            } else if (childResult != LDResult::DEAD) {
+                allOpponentWins = false;
             }
         }
     }
 
-    // If attacker found no DEAD → target is ALIVE from attacker's node
-    // If defender found no ALIVE → target is DEAD from defender's node
-    if (isAttacker && result == LDResult::ALIVE) result = LDResult::ALIVE;
-    if (!isAttacker && result == LDResult::DEAD)  result = LDResult::DEAD;
+    if (result == LDResult::UNKNOWN) {
+        if (allOpponentWins && !candidates.empty()) {
+            result = isAttacker ? LDResult::ALIVE : LDResult::DEAD;
+        } else {
+            result = LDResult::UNKNOWN;
+        }
+    }
 
     tt_[h] = result;
     return result;

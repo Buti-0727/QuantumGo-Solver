@@ -294,7 +294,13 @@ class PNGGoExtractor:
 
         # Sort solution moves by step number
         solution_moves.sort(key=lambda m: m[0])
-        clean_solution = [(m[1], m[2]) for m in solution_moves]
+        # Strictly enforce Black plays one move then White plays one move consecutively
+        clean_solution = []
+        expected_color = "B"
+        for m_num, color, coord in solution_moves:
+            if color == expected_color:
+                clean_solution.append((color, coord))
+                expected_color = "W" if expected_color == "B" else "B"
 
         # Deduplicate
         initial_black = sorted(list(set(initial_black)))
@@ -327,17 +333,25 @@ class PNGGoExtractor:
 
         # Extract main correct branch
         branches = re.findall(r'\((;[BW]\[[a-z]{2}\][^)]*?)\)', content)
-        solution_moves = []
+        raw_solution_moves = []
         for branch_text in branches:
-            is_correct = "正解" in branch_text or len(solution_moves) == 0
+            is_correct = ("正解" in branch_text or "Correct" in branch_text) or len(raw_solution_moves) == 0
             if is_correct:
                 seq = re.findall(r';([BW])\[([a-z]{2})\]', branch_text)
-                solution_moves = [(color, sgf_to_coord(coord)) for color, coord in seq]
-                if "正解" in branch_text:
+                raw_solution_moves = [(color, sgf_to_coord(coord)) for color, coord in seq]
+                if "正解" in branch_text or "Correct" in branch_text:
                     break
 
         pl_match = re.search(r'PL\[([BW])\]', content)
-        first_player = pl_match.group(1) if pl_match else (solution_moves[0][0] if solution_moves else "B")
+        first_player = pl_match.group(1) if pl_match else (raw_solution_moves[0][0] if raw_solution_moves else "B")
+
+        # Strictly enforce Black plays one move then White plays one move consecutively
+        solution_moves = []
+        expected_color = first_player
+        for color, coord in raw_solution_moves:
+            if color == expected_color:
+                solution_moves.append((color, coord))
+                expected_color = "W" if expected_color == "B" else "B"
 
         # Normalize to 9x9 board coordinates
         norm_black, norm_white, norm_moves = normalize_to_9x9(list(black), list(white), solution_moves)
@@ -708,8 +722,16 @@ class TsumegoSelfSolver:
     def solve_and_verify(cls, problem: Dict[str, Any]) -> Dict[str, Any]:
         black = set(problem.get("initial_black", []))
         white = set(problem.get("initial_white", []))
-        moves = problem.get("solution_moves", [])
+        raw_moves = problem.get("solution_moves", [])
         first_player = problem.get("first_player", "B")
+
+        # Strictly enforce consecutive alternating moves (Black then White)
+        moves = []
+        expected = first_player
+        for color, coord in raw_moves:
+            if color == expected:
+                moves.append((color, coord))
+                expected = "W" if expected == "B" else "B"
 
         history = []
         current_black = set(black)

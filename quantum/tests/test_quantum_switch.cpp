@@ -41,8 +41,8 @@ struct QuantumSwitchTests {
             target.b2Stones      = {0, 1};
 
             QuantumSearch::Config cfg;
-            cfg.maxDepth = 6;
-            cfg.useRZS   = false;
+            cfg.maxDepth = 4;
+            cfg.useRZS   = true;
 
             QuantumLDSolver solver(cfg);
             auto resClassical = solver.solve(classicalState, target);

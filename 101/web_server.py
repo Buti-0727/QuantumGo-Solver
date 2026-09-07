@@ -551,7 +551,10 @@ HTML_PAGE = """<!DOCTYPE html>
         ctx.fillText(currentStepIndex, pad + lc * cellSize, pad + lr * cellSize);
       }
 
-      document.getElementById('stepDisplay').innerText = currentStepIndex === 0 ? "Initial State" : `Step ${currentStepIndex} of ${moves.length}`;
+      const currentMoveInfo = (currentStepIndex > 0 && currentStepIndex <= moves.length)
+        ? ` (${moves[currentStepIndex - 1][0] === 'B' ? '⚫ Black' : '⚪ White'} plays ${COORD_CHARS[moves[currentStepIndex - 1][1][0]]}${moves[currentStepIndex - 1][1][1] + 1})`
+        : '';
+      document.getElementById('stepDisplay').innerText = currentStepIndex === 0 ? "Initial State" : `Step ${currentStepIndex} of ${moves.length}${currentMoveInfo}`;
     }
 
     function drawStone(ctx, px, py, r, gradStart, gradEnd) {

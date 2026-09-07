@@ -32,18 +32,21 @@ struct LDTests {
 
         // ── Test 2: Unconditional life detection ──────────────────────────
         registerTest("LD::unconditional_life_detection", [](){
-            // 5x5. Black group with >=2 liberties on both boards.
+            // 5x5. Black group with 2 genuine separate eyes on both boards.
             QuantumBoardState s(5);
             s.moveNumber_ = 3;
-            s.board(BoardId::B1).placeStone(12, QColor::BLACK); // center
-            s.board(BoardId::B2).placeStone(12, QColor::BLACK);
+            // Eyes at (1,1)=6 and (3,1)=8 surrounded by black stones at {1, 3, 5, 7, 9, 11, 13}
+            std::vector<int> stones = {1, 3, 5, 7, 9, 11, 13};
+            for (int p : stones) {
+                s.board(BoardId::B1).placeStone(p, QColor::BLACK);
+                s.board(BoardId::B2).placeStone(p, QColor::BLACK);
+            }
             QuantumTarget t;
             t.defenderColor = QColor::BLACK;
             t.attackerColor = QColor::WHITE;
-            t.b1Stones = {12};
-            t.b2Stones = {12};
-            // Center has 4 liberties on empty 5x5
-            CHECK(t.hasUnconditionalLife(s), "Center stone has >=2 libs = unconditional life");
+            t.b1Stones = stones;
+            t.b2Stones = stones;
+            CHECK(t.hasUnconditionalLife(s), "Target with two genuine eyes has unconditional life");
         });
 
         // ── Test 3: Solver: immediate life (can't be killed) ─────────────
